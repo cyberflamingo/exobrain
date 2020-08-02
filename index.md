@@ -2,12 +2,18 @@
 tags: [home]
 ---
 
-# Neuron Template
+# exobrain 外付け脳 exo-cerveau
 
-You are viewing a [neuron-template](https://github.com/srid/neuron-template) Zettelkasten published by [neuron](https://neuron.zettel.page/). [GitHub Pages](https://pages.github.com/) is used to automatically publish this site every time the underlying Git repository is updated.
 
-Get started by reading <README>.
+This is my exobrain, or personal wiki, where I upload notes for futur reference or share what could be useful to other people.
 
-Other pages on this zettelkasten (this demonstrates how to use tag queries):
+The difference with [my blog](https://www.cyberflamingo.net/) is that I will not write lengthy form post, only notes. The blog serves another purpose.
 
-<z:zettels?tag=other>
+See also <a35e6aea>
+
+## Credits
+
+I use the amazing [Neuron](https://neuron.zettel.page/) writen by the even
+more amazing [Sridhar Ratnakumar](https://www.srid.ca/)!
+
+<d6cf318e>
