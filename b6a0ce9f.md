@@ -15,5 +15,11 @@ Here is a bunch of notes of things I am working on.
 
 
 ## Software related
+
 * <bed2654e>
 * <c7120da0>
+
+
+## Operating System
+
+* <d79888d8>
