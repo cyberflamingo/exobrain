@@ -14,12 +14,16 @@ Here is a bunch of notes of things I am working on.
 * <f6590254> The programming language I use to learn programming.
 
 
-## Software related
+## Programming related
 
 * <bed2654e>
 * <c7120da0>
 
 
-## Operating System
+## Operating Systems
 
 * <d79888d8>
+
+
+## Other Softwares
+* <8eab8221>
