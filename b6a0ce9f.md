@@ -9,12 +9,12 @@ works.
 
 Here is a bunch of notes of things I am working on.
 
-## Programming languages
+## Programming Languages
 
 * <f6590254> The programming language I use to learn programming.
 
 
-## Programming related
+## Programming Related
 
 * <bed2654e>
 * <c7120da0>
@@ -22,7 +22,7 @@ Here is a bunch of notes of things I am working on.
 
 ## Operating Systems
 
-* <d79888d8>
+* <8cdbd18b>
 
 
 ## Other Softwares
