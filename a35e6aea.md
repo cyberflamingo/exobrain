@@ -1,9 +1,9 @@
 ---
 date: 2020-08-02
 tags:
-  - English
+  - english
   - 日本語
-  - Français
+  - français
 ---
 
 # What language should I write in?
