@@ -9,6 +9,7 @@ works.
 
 Here is a bunch of notes of things I am working on.
 
+
 ## Programming Languages
 
 * <f6590254> The programming language I use to learn programming.
@@ -29,7 +30,16 @@ Here is a bunch of notes of things I am working on.
 
 
 ## Git
+
 * <0775696d>
 
+
 ## Other Softwares
+
 * <8eab8221>
+* <844cf815>
+
+
+## Other
+
+* <9fb1418f>
