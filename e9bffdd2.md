@@ -25,7 +25,7 @@ the term, using it as a pejorative catchall to dismiss any entrepreneur who
 isn't thinking in terms of "growth" and "big exit"[^2].
 
 One critic that seems to often comes up is "how can it be a _real_ business if
-you are note puting the hours?" but as David Heinemeier Hansson puts it:
+you are not putting the hours?" but as David Heinemeier Hansson puts it:
 
 > It’s been a long time since there was a direct correlation with the number of
 > hours you work and the success you enjoy. It’s an antiquated notion from the
