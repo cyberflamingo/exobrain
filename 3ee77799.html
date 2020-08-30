@@ -69,7 +69,7 @@ F_{n} =
 1                &amp; \quad \text{, } n = 1 \\
 F_{n-1} + F_{n-2}  &amp; \quad \text{, } n &gt; 1
 \end{cases}
-$$</span></p><p>The beginning of the sequence is thus:</p><blockquote><p>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144…</p></blockquote><h2 id="how-it-translate-in-programming">How it Translate in Programming</h2><p>We can write this sequence in Ruby using a recurion, like the code shown below.</p><div class="pandoc-code highlighted"><pre><code class="ruby"><span class="kw">def</span><span class=""> fibonacci(n)</span>
+$$</span></p><p>The beginning of the sequence is thus:</p><blockquote><p>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144…</p></blockquote><h2 id="how-it-translates-in-programming">How it Translates in Programming</h2><p>We can write this sequence in Ruby using a recurion, like the code shown below.</p><div class="pandoc-code highlighted"><pre><code class="ruby"><span class="kw">def</span><span class=""> fibonacci(n)</span>
 <span class="">  </span><span class="kw">return</span><span class=""> </span><span class="dv">1</span><span class=""> </span><span class="kw">if</span><span class=""> n &lt;= </span><span class="dv">2</span>
 <span class="">  fibonacci(n - </span><span class="dv">1</span><span class="">) + fibonacci(n - </span><span class="dv">2</span><span class="">)</span>
 <span class="kw">end</span>
