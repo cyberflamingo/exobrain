@@ -13,6 +13,7 @@ Here is a bunch of notes of things I am working on.
 ## Programming Languages
 
 * <f6590254> The programming language I use to learn programming.
+* <1497d8aa>
 
 
 ## Programming Related
