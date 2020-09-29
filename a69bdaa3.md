@@ -7,6 +7,15 @@ date: 2020-08-24T13:35
 Variables are **pointers** to a place (or address space) in memory. This is a
 very important concept to understand.
 
+```ruby
+a = "Baguette"
+
+#    a = "Baguette"
+#    ^        ^
+#    |        |
+# variable  object
+```
+
 _Label_ which refere to a **physical memory address** in the computer is another
 term used to describe variables.
 
