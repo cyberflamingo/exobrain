@@ -136,6 +136,11 @@ existing string, which is also pointed to by the variable `b`
 Both `a` and `b` are pointing to the same thing.
 
 
+{.ui .info .message}
+Mutation are performed on **objects referenced by variables**, not variables
+themselves.
+
+
 Sources:
 
 * [Variables as Pointers](https://launchschool.com/books/ruby/read/more_stuff#variables_as_pointers)
