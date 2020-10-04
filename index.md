@@ -2,18 +2,31 @@
 tags: [home]
 ---
 
-# exobrain 外付け脳 exo-cerveau
+# 外付け脳 (exobrain)
+
+Welcome to my exobrain, where I upload and share notes for everyone to see.
+
+This exobrain uses <9fc4b649> which lets me easily write down things I want to
+remember and make association between notes and thoughts.
+
+I also have [a blog](https://www.cyberflamingo.net/) where I write more lengthy
+post about security and privacy, in Japanese (see also <a35e6aea>).
 
 
-This is my exobrain, or personal wiki, where I upload notes for futur reference or share what could be useful to other people.
+## Portals
 
-The difference with [my blog](https://www.cyberflamingo.net/) is that I will not write lengthy form post, only notes. The blog serves another purpose.
+* <d6cf318e> (this is mainly a group of Zettel used to test the Neuron
+  software)
+* <cecb6a47>
+* <6ff2fd98>
 
-See also <a35e6aea>
+Tags are a bit all over the place right now and need some more tuning.
+
+[[z:tags]]
+
 
 ## Credits
 
 I use the amazing [Neuron](https://neuron.zettel.page/) writen by the even
 more amazing [Sridhar Ratnakumar](https://www.srid.ca/)!
 
-<d6cf318e>
