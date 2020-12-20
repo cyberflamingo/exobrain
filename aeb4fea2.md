@@ -4,7 +4,7 @@ date: 2020-09-20T15:20
 
 # Deciding Whether Part of a Code is a Block or Not
 
-In <f6590254?cf>, variable scope is defined by a _block_ (see <f1956036?cf>).
+In [[f6590254]], variable scope is defined by a _block_ (see [[f1956036]]).
 A block is usually delimited by curly brace `{}` or `do/end` pair.
 
 However this not always the case:
@@ -42,7 +42,7 @@ puts b              # 3
 ```
 
 While it would seem `for...do/end` creates a new inner scope, it is actually
-not the case. `for` is a 
+not the case. `for` is a
 [keyword](https://docs.ruby-lang.org/en/2.7.0/doc/keywords_rdoc.html) part of
 the Ruby language and not a method invocation.
 
