@@ -28,6 +28,7 @@ Here is a bunch of notes of things I am working on.
 * [[[51940c9b]]]
 * [[[a69bdaa3]]]
 * [[[b877d36f]]]
+* [[[tabbing-bracing-style]]]
 
 
 ## Operating Systems
