@@ -29,6 +29,7 @@ Here is a bunch of notes of things I am working on.
 * [[[a69bdaa3]]]
 * [[[b877d36f]]]
 * [[[tabbing-bracing-style]]]
+* [[[pairwise-testing]]]
 
 
 ## Operating Systems
