@@ -179,3 +179,112 @@ string object `'hello'`.
 This code demonstrates the concept of loop with breaking condition.
 
 **Time:** 10:18
+
+## Example 5
+
+```ruby
+def greetings(str)
+  puts str
+  puts "Goodbye"
+end
+
+word = "Hello"
+
+greetings(word)
+```
+
+**Answer:**
+
+The code return nothing and outputs:
+
+```ruby
+Hello
+Goodbye
+```
+
+On `line 1-4` we are defining the `greetings` method with one parameter `str`.
+
+On `line 2` we are calling the `puts` method and passing in the local
+variable `str` which points to the string object `Hello`. This line outputs
+`Hello` and return `nil`.
+
+On `line 3` we are calling the `puts` method and passing it the string
+`"Goodbye"`. This line output `Hello` and return `nil`.
+
+On `line 6` we are initializing the local variable `word` with the object
+string `"Hello"`.
+
+On `line 8` we are calling the `greetings` method passing in the local variable
+`word` to it.
+
+This code demonstrate the concept of local variable scope. The local variable
+`word` is accessible inside the `greetings` method because we are passing it
+as an argument when calling the same method.
+
+**Time:** 07:23
+
+
+## Example 6
+
+```ruby
+arr = [1, 2, 3, 4]
+
+counter = 0
+sum = 0
+
+loop do
+  sum += arr[counter]
+  counter += 1
+  break if counter == arr.size
+end 
+
+puts "Your total is #{sum}"
+```
+
+The code returns `nil` and output `Your total is 10`.
+
+On `line 1` we are initializing the local variable `arr` to an array object of
+elements from `1` to `4`.
+
+On `line 3` we are initializing the local variable `counter` to an integer
+object `0`.
+
+On `line 4` we are initializing the local variable `sum` to an integer object
+`0`.
+
+On `line 6-10` we are calling the `loop` method and passing in the `do..end`
+block.
+
+Inside the loop on `line 7` we are reassigning the local variable `sum` to
+`sum + arr[counter]`, which `+=` is a shorthand of.
+
+On `line 8` we are reassigning the local variable `counter` to `counter + 1`.
+
+On `line 9` we are breaking out of the lopp if the condition is met.
+
+On `line 11` we are calling the `puts` method and passing in the string `"Your
+total is #{sum}"` to it. The local variable `sum` will be outputed as the actual
+value it points to, stringified (like if we are using the `.to_s` method.
+
+This code demonstrates the concept of local variable scopes. The `sum` variable
+is modified inside the loop but its results still appears outside it on the last
+line.
+
+**Time:** 10:05
+
+
+## Example 7
+
+```ruby
+a = 'Bob'
+
+5.times do |x|
+  a = 'Bill'
+end
+
+p a
+```
+
+**Answer:**
+
+
