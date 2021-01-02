@@ -7,7 +7,7 @@ date: 2020-09-20T15:20
 In [[f6590254]], variable scope is defined by a _block_ (see [[f1956036]]).
 A block is usually delimited by curly brace `{}` or `do/end` pair.
 
-However this not always the case:
+However this is not always the case:
 
 **Code delimited by `{}` or `do/end` is considered a block if the delimiters
 follows a method invocation.**

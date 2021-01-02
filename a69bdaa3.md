@@ -23,10 +23,10 @@ term used to describe variables.
 ## Reassignment vs Mutability
 
 Examples are probably the fastest way to get the point accross. Here is two to
-to illustrate the point above.
+illustrate the point above.
 
 
-## Reassignment
+### Reassignment
 
 First let's see what happen when we reassigne a variable to a completly different
 address in memory:
@@ -81,7 +81,7 @@ This can be schematized like this:
 address in memory. It is now pointing to a new string.
 
 
-## Mutability
+### Mutability
 
 ```ruby
 a = 'Hello'
@@ -93,7 +93,7 @@ puts b  # Hello
 a << ' there'
 
 puts a  # Hello there
-puts b  # Hello There
+puts b  # Hello there
 ```
 
 Using the principle of label we discussed above, we can illustrate the code
@@ -131,7 +131,7 @@ above like the schema below:
 ```
 
 This time, `a << ' there'` results in **mutating the caller**, modifying the
-existing string, which is also pointed to by the variable `b`
+existing string, which is also pointed to by the variable `b`.
 
 Both `a` and `b` are pointing to the same thing.
 
