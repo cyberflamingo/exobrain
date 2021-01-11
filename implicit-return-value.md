@@ -4,7 +4,7 @@ date: 2021-01-11T12:24
 
 # Implicit Return Value of Method Invocations and Blocks
 
-Method in Ruby implicitly returns its last line unless it's preceeded by an
+Methods in Ruby implicitly returns their last line unless it's preceeded by an
 explicit `return`.
 
 ```ruby
@@ -44,12 +44,11 @@ puts '---------'
 puts new_str
 ```
 
-One would think the code above outputs `new_value` two times. But it doesnn't
-because the method `random_method` last line is `puts str`. The method
-`#puts` always returns `nil`. This is what is returned by `random_ method` as well.
+One would think the code above outputs `new_value` two times. But it doesn't
+because the method `random_method`'s last line is `puts str`. The method
+`#puts` always returns `nil`, which is what `random_ method` returns as well.
 
 It is possible to explicitly return a value using the `return` keyword.
-
 
 ```ruby
 def random_method(str)
@@ -66,10 +65,10 @@ Here, `'new value'` is returned and the code after is not executed. It's aid to
 b _unreachable_.
 
 {.ui .info .message}
-The rule of implicit return also apply to block.
+The rule of implicit return also apply to blocks.
 
-This is most well illustrated by the (`#select`
-method)[[collection-methods#select]]:
+This is most well illustrated by the [`#select`
+method](collection-methods.md#select):
 
 ```ruby
 (1..10).to_a.select do |num|
