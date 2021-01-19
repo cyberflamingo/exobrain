@@ -1,11 +1,14 @@
 ---
 date: 2020-12-30T11:09
+tags:
+  - cheatsheet
 ---
 
-# Keystroke Idioms in Kakoune
+Keystroke Idioms in Kakoune
+===========================
 
 | English                         | Kakoune              |
-| ------------------------------- | -------------------- |
+|---------------------------------|----------------------|
 | Delete Word                     | `dw`                 |
 | Delete up to Whitespace         | `<a-w>d`             |
 | Delete Inner Word               | `<a-i>wd`            |
@@ -17,11 +20,6 @@ date: 2020-12-30T11:09
 | Indent 3 lines down             | `xXX>`               |
 | Unindent within braces          | `<a-i>}<`            |
 | Replace all occurence           | `%s` word to replace |
-
-
-## Multiple Selections
-
-| English                         | Kakoune              |
-| ------------------------------- | -------------------- |
 | Multiple selections             | `Shift + c`          |
 
+[Source](https://cosine.blue/2019-09-06-kakoune.html)
