@@ -86,9 +86,13 @@ On `line 10` we are **calling** the method `looping` and passing in the string
   * Defining (with parameter(s))
   * Calling (with argument(s))
   * Passing in (a block)
+* Blocks: they are...
+  * Called
+  * Executed
 * Codes…
   * Output
   * Return
+  * Mutate
 
 Objects are _physical spaces in memory_. Local variables are **referencing**
 them.
