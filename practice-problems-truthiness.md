@@ -9,7 +9,7 @@ date: 2020-12-28T16:47
 ```ruby
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-new_array = arr.select do |n| 
+new_array = arr.select do |n|
   n + 1
 end
 
@@ -46,3 +46,33 @@ returns `false` or `nil`, therefore each value returned by the block are
 evaluated to `true` and therefore all returned to the new array created by
 `select`. This new array is used as the array object used in the initialization
 of `new_array`.
+
+## Example 2
+
+```ruby
+arr = [1, 2, 3].any? do |num|
+  "hi"
+end
+
+p arr
+```
+
+**Answer:**
+
+This code outputs `true` and return `true`.
+
+On `line 5` we are calling the method `p` passing in the  local variable `arr`.
+
+The local variable `arr` is defined on `line 1`. It is defined with the return
+value of the method call `any?` on object array `[1, 2, 3]` passing in a
+`do..end` block.
+
+The method `any?` return `true` when at least one block passed to it returns
+`true`. Here, it return `true` because on `line 1-3`, the `do..end` block
+return the local string `"hi"` which always evaluates to true.
+
+This problem demonstrates how the method `any?` works, as well as truthiness in
+Ruby.
+
+**Time**: 07:53
+
