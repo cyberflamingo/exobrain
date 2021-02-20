@@ -101,7 +101,7 @@ loop do
   c = 3
   a = c
 
-break
+  break
 end
 
 puts a
@@ -236,7 +236,7 @@ loop do
   sum += arr[counter]
   counter += 1
   break if counter == arr.size
-end 
+end
 
 puts "Your total is #{sum}"
 ```
@@ -287,4 +287,67 @@ p a
 
 **Answer:**
 
+The code outputs `"Bill"` and returns `"Bill"`.
 
+On `line 1` we are initializing local variable `a` to a String object.
+
+On `line 3-5` we are calling the `times` method on Integer object `5`, passing
+in a `do..end` block as an argument. The `do...end` block is executed once for
+as many times as the `times` method is called (5 times), passing in the count
+time as a parameter. Afterwards, the `times` method returns the Integer it was
+called upon (`5`).
+
+On `line 4`, we are reassigning the local variable `a` to a new String object
+`"Bill"`.
+
+On `line 7` we are palling the method `p`, passing in the local variable `a` to
+it.
+
+This code demonstrates how scopes work in Ruby.
+
+**Time:** 09:01
+
+## Example 8
+
+```ruby
+animal = "dog"
+
+loop do |_|
+  animal = "cat"
+  var = "ball"
+  break
+end
+
+puts animal
+puts var
+```
+
+**Answer:**
+
+The code will output `"cat"` and return `nil` then raise a `undefined local
+variable` error.
+
+On `line 1` we are initializing the local variable animal to a string object.
+
+On `line 3-7` we are calling the method `loop` and passing in a `do..end`
+block as an argument.
+
+The `do..end` block is executed for each loop, with the parameter `_`.
+
+On `line 4` we are reassigning the local variable `animal` to a new string of
+value `"cat"`.
+
+On `line 5` we are initializing the local variable `var` to a string object.
+
+On `line 6` we are using keyword `break` to break out of the loop.
+
+On `line 9` we are calling the method `puts` and passing in local variable
+`animal` as an argument.
+
+On `line 10` we are calling the method `puts` and passing in the local variable
+`var`. Since `var` is initialized in a different scope, an error is raised at
+this point.
+
+This code demonstrates the concept of local variable in Ruby.
+
+**Time: 08:58**
