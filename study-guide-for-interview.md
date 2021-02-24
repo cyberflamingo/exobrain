@@ -41,4 +41,4 @@ Checklist of Topics to Review
 
 - Ruby switch statement `case` and one liner (`when..then`)
 - Ternary operator `condition ? true : false`
-- Maths Shortcut Tricks
+- [[[maths-shortcut-tricks-code]]]
