@@ -4,8 +4,7 @@ tags:
   - cheatsheet
 ---
 
-Keystroke Idioms in Kakoune
-===========================
+# Keystroke Idioms in Kakoune
 
 | English                         | Kakoune              |
 |---------------------------------|----------------------|
