@@ -25,7 +25,7 @@ Checklist of Topics to Review
 
 - `Array#push`, `Array#shift`, and `Array#pop`, `Array#unshift`
 - `Array#center`
-- Mutation in arrays
+- [[[mutation-in-arrays]]]
 - `inject`/`reduce`
 - `any`
 - `sort_by`
