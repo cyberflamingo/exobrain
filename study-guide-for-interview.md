@@ -21,6 +21,7 @@ Checklist of Topics to Review
 - `String#gsub`
 - `Kernel#format` method (favore over `sprintf`)
 - `String#delete` and `String#count`
+- [[[practice-problems-string-manipulation]]]
 
 ### Collections: Array and Hash
 
