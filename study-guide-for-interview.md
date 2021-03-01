@@ -16,6 +16,7 @@ Checklist of Topics to Review
 
 ### String
 
+- [[[ruby-substrings]]]
 - `String#casecmp`
 - `String#gsub`
 - `Kernel#format` method (favore over `sprintf`)
