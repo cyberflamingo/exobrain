@@ -19,4 +19,4 @@ Each exercices should take on average 5min to solve.
 
 * [[[practice-problems-local-variable-scope]]]
 * [[[practice-problems-truthiness]]]
-
+* [[[practice-problems-variable-shadowing]]]
