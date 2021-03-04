@@ -31,6 +31,7 @@ Checklist of Topics to Review
 - `inject`/`reduce`
 - `any`
 - `sort_by`
+- [[[practice-problems-arrays-manipulation]]]
 
 ### Loop
 
