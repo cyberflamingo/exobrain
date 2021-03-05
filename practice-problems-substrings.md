@@ -104,3 +104,99 @@ p repeated_substring_pattern("abcabcabcabc") == true
 ```
 
 **Time:** 36:17
+
+## Example 2
+
+```ruby
+=begin
+
+Write a method to find the longest common prefix string amongst an array of
+strings.
+
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+- Input: ["flower", "flow", "flight"]
+- Output: "f1"
+
+Example 2:
+
+- Input: ["dog", "racecar", "car"]
+- Output: ""
+
+Explanation: there is no common prefix among the input strings.
+
+Note:
+
+All given inputs are in lowecase letters a-z.
+
+# PEDAC
+
+## Problem
+
+Input: an array of strings (english lowercase letters)
+Output: Common prefix between strings or empty string if none found
+
+Clarify:
+
+- Prefix therefore first letter matters
+- Same string in array: return string itself
+- Size matter (not that much)
+
+## Examples
+
+See above
+
+## Data
+Arrays
+
+## Algorithm
+
+. Return "" if first letters of each string is different
+. Return first string if each string are the same
+
+. CREATE SUBSTRING
+  . Iterate from first char of first string of array until string size
+    . Save the resulting substring in a local variable
+
+. CHECK PREFIX
+  . Check if resulting substring is same substring in each string of array
+    . Continue if true
+    . Return current substring - last character otherwise
+
+=end
+def same_prefix(array, substring, substring_size)
+  substring_array = array.select do |str|
+    str[0...substring_size] == substring
+  end
+
+  substring_array.size == array.size
+end
+
+def common_prefix(array)
+  return array[0] if array.all?(array[0])
+
+  substring = String.new
+
+  0.upto(array[0].size) do |char|
+    substring = array[0][0...char]
+
+    if same_prefix(array, substring, char)
+      next
+    else
+      return substring[0...-1]
+    end
+  end
+
+  ''
+end
+
+p common_prefix(["flower", "flow", "flight"]) == "fl"
+p common_prefix(["dog", "racecar", "car"]) == ""
+p common_prefix(["interspecies", "interstellar", "interstate"]) == "inters"
+p common_prefix(["throne", "dungeon"]) == ""
+p common_prefix(["throne", "throne"]) == "throne"
+```
+
+**Time:** 23:13
