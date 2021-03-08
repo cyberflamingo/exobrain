@@ -177,3 +177,80 @@ p next_bigger_num(123456789) == 123456798
 ```
 
 **Time:** 54:32
+
+
+## Example 3
+
+```ruby
+=begin
+
+Write a function scramble(str1, str2) taht returns true if a portion of str1
+characters can be rearranged to match str2, otherwise returns false.
+
+For example:
+str1 is 'rkqodlw' and str2 is 'world' the output should return true.
+str1 is 'cedewaraaossoqqyt' and str2 is 'codewars' should return true.
+str1 is 'katas' and str2 is 'steak' should return false.
+
+Only lower case letters will be used (a-z). No punctuation or digits will be
+included.
+
+# PEDAC
+
+## Problem
+
+Create a method that return true if the letters from str1 can be rearranged to
+match str2.
+
+Input: Two strings (a-z)
+Output: true if condition above met, false otherwise
+
+Clarify:
+
+- Only a-z English letters
+- str1 needs to have more letters than str2 for it to be true
+
+## Data
+
+Array of strings
+
+## Algorithm
+
+. Return false if str1 is smaller than str2
+
+. Init local variable selected_chars
+. Convert str1 and str2 to their array of chars
+. Loop for as many char that arr2 have
+  . Check for each letters of arr2 if it appears in arr1
+    . If yes, remove it from arr1 and add to selected_chars
+    . If no, return false
+. Return true
+
+=end
+
+def scramble(str1, str2)
+  arr1 = str1.chars
+  arr2 = str2.chars
+  selected_chars = Array.new
+
+  arr2.each do |char2|
+    if arr1.include?(char2)
+      selected_chars << char2
+      arr1.delete_at(arr1.index(char2))
+    else
+      return false
+    end
+  end
+
+  true
+end
+
+p scramble('javaass', 'jjss') == false
+p scramble('rkqodlw', 'world') == true
+p scramble('cedewaraaossoqqyt', 'codewars') == true
+p scramble('katas', 'steak') == false
+p scramble('scriptjava', 'javascript') == true
+p scramble('scriptingjava', 'javascript') == true
+```
+
+**Time:** 17:55
