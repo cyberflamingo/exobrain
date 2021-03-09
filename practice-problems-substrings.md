@@ -290,3 +290,87 @@ p substring_test('supercalifragilisticexpialidocious', 'SoundOfItIsAtrociou') ==
 ```
 
 **Time:** 23:21
+
+## Example 4
+
+```ruby
+=begin
+
+Find the length of the longest substring in the given string that is the same
+in reverse.
+
+As an example, if the input was "I like racecars that go fast", the substring
+(racecar) length would be 7.
+
+If the length of the input string is 0, return value must be 0.
+
+Example
+"a" -> 1
+"aab" -> 2
+"abcde" -> 1
+"zzbaabcd" -> 4
+"" -> 0
+
+# PEDAC
+
+## Problem
+
+Find the longest palindrome.
+
+Input: a string of length 0 or more
+Output: the length of the longest palindrome
+
+Clarify:
+
+- Could return string size if string size <= 1
+- could return string size if first char of string is the same as all the char
+- Can the input be a sentence with spaces? (No)
+
+## Data
+
+Arrays of substring
+
+## Algorithm
+
+. SUBSTRING_LIST
+  . Init palindrome_list to a new Array object
+  . Iterate from 0 to string size, passing in `first_char` as a param
+    . Iterate from `first_char` to string size passing in `last_char` as a param
+      . CHECK_PALINDROME
+        . Save to palindrome_list if current iteration is a palindrome
+        . Discard otherwise
+  . Return the size of the longest palindrome in palindrome_list
+
+. CHECK_PALINDROME
+  . Check if the string reversed is the same as the passed in string
+  . Return true or false
+
+=end
+
+def palindrome?(candidate)
+  candidate.reverse == candidate
+end
+
+def longest_palindrome(candidate)
+  palindrome_list = Array.new
+  string_size = candidate.size
+
+  0.upto(string_size - 1) do |first_char|
+    first_char.upto(string_size - 1) do |last_char|
+      palindrome_cand = candidate[first_char..last_char]
+      palindrome_list << palindrome_cand if palindrome?(palindrome_cand)
+    end
+  end
+
+  palindrome_list.min { |a, b| b.length <=> a.length }.length
+end
+
+p longest_palindrome("a") == 1
+p longest_palindrome("aa") == 2
+p longest_palindrome("baa") == 2
+p longest_palindrome("aab") == 2
+p longest_palindrome("baabcd") == 4
+p longest_palindrome("baablkj12345432133d") == 9
+```
+
+**Time:** 20:24
