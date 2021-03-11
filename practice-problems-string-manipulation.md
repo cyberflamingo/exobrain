@@ -254,3 +254,75 @@ p scramble('scriptingjava', 'javascript') == true
 ```
 
 **Time:** 17:55
+
+## Example 4
+
+```ruby
+=begin
+
+PROBLEM:
+
+Given a string, write a method change_me which returns the same string but with
+all the words in it that are palindromes uppercased.
+
+change_me("We will meet at noon") == "We will meet at NOON"
+change_me("No palindromes here") == "No palindromes here"
+change_me("") == ""
+change_me("I LOVE my mom and dad equally") == "I LOVE my MOM and DAD equally"
+
+# PEDAC
+
+## Problem
+
+Return the given string with palindromes in uppercase.
+
+Input: a string
+Output: a string with palindromes in uppercase
+
+Clarify:
+
+- Does it have to be the same string? (no)
+- Does case have an inpact on the string being a palindrome or not? (no)
+- Return empty string if empty string
+
+## Data
+
+Arrays of strings
+
+## Algorithm
+
+. Create an array which each word of the given string
+. Create a new result array
+. Iterate over the array
+  . For each word, check PALINDROME
+    . Uppcase the result and add to new array if it is
+    . Only add to new result array otherwise
+. Return joined array
+
+=end
+
+def palindrome?(word)
+  word.downcase.reverse == word.downcase
+end
+
+def change_me(string)
+  candidate_list = string.split
+
+  result = candidate_list.map do |word|
+    if palindrome?(word)
+      word.upcase
+    else
+      word
+    end
+  end
+
+  result.join(' ')
+end
+
+p change_me("We will meet at noon") == "We will meet at NOON"
+p change_me("No palindromes here") == "No palindromes here"
+p change_me("") == ""
+p change_me("I LOVE my mom and dad equally") == "I LOVE my MOM and DAD equally"
+```
+
+**Time**: 10:40
