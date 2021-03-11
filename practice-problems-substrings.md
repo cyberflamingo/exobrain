@@ -374,3 +374,83 @@ p longest_palindrome("baablkj12345432133d") == 9
 ```
 
 **Time:** 20:24
+
+## Example 5
+
+```ruby
+=begin
+
+PROBLEM:
+
+Given a string, write a method `palindrome_substrings` which returns
+all the substrings from a given string which are palindromes. Consider
+palindrome words case sensitive.
+
+Test cases:
+
+palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
+palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
+palindrome_substrings("palindrome") == []
+palindrome_substrings("") == []
+
+# PEDAC
+
+## Problem
+
+Returns substrings from a given string if they are palindromes (case sensitive)
+
+Input: a string a-z with different case
+Output: array of substring which are case sensitive palindrome
+
+Clarification:
+
+- Only a-z strings? (Yes)
+- Return empty array if none found
+- Return empty array if empty string given
+- Returned arrays' element are ordered in find order
+- Palindrome is 2 chars or more? (Yes)
+
+## Data
+
+Arrays of strings
+
+## Algorithm
+
+. SUBSTRINGS
+. Init pal_substr to a new Array object
+  . Iterate over the string from 1 upto string size -1 passing in start_char as
+    a parameter
+    . Iterate over string from start_char + 1 upto string size - 1
+      . Add string sliced with start/end_char to pal_substr if PALINDROME?
+      . Continue otherwise
+. Return pal_substr
+
+. PALINDROME?
+  . Return given string equal to given string reversed
+
+=end
+
+def palindrome?(candidate)
+  candidate.reverse == candidate
+end
+
+def palindrome_substrings(str)
+  pal_substr = Array.new
+
+  0.upto(str.size - 1) do |start_char|
+    (start_char + 1).upto(str.size - 1) do |end_char|
+      candidate = str[start_char..end_char]
+      pal_substr << candidate if palindrome?(candidate)
+    end
+  end
+
+  pal_substr
+end
+
+p palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
+p palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
+p palindrome_substrings("palindrome") == []
+p palindrome_substrings("") == []
+```
+
+**Time:** 16:26
