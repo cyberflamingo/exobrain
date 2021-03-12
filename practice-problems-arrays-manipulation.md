@@ -176,3 +176,96 @@ p find_even_index([-1, -2, -3, -4, -3, -2, -1]) == 3
 ```
 
 **Time:** 18:48
+
+## Example 3
+
+```ruby
+=begin
+
+Imagine a sequence of consecutive even integers, beginning with 2. The integers
+are grouped in rows, with the first row containing one integer, the second row
+two integers, the third row three integers, and so on. Given an integer
+representing the number of a particular row, return an integer representing the
+sum of all the integers in that row.
+
+# PEDAC
+
+## Problem
+
+Given a row number, return the sum of the sequence in that row.
+A sequence consist of n consecutive even number for each row n, starting at
+two.
+
+Input: integer representing the row
+Output: integer representing the sum of the sequence at the given row number
+
+Clarification:
+
+- Only positive number? (Yes)
+- Rows are 1 indexed? (Yes)
+
+## Data
+
+Arrays of arrays
+[
+  [2],
+  [4, 6],
+  [8, 10, 12],
+  [14, 16, 18, 20],
+]
+
+## Algorithm
+
+. CREATE_SEQUENCE
+  . Init local variable index to 1, to know current row number
+  . Init local variable current_num to 2, to know current number in array
+  . Init local variable sequence to new Array
+  . Loop
+    . Break condition: sequence array size is greater than given row_num number
+      of arrays
+    . Init local variable row to new Array
+    . Loop for index times
+      . Add current_num to row
+      . Increment current_num by 2
+    . Add row to sequence
+    . Increment index by 1
+  . Return sequence
+
+. SUM_ROW
+  . Save return value of CREATE_SEQUENCE to initialized local variable sequence
+  . Return sum of sequence at row_num
+=end
+
+def create_sequence(max_row)
+  index = 1
+  current_num = 2
+  sequence = Array.new
+
+  loop do
+    break if sequence.size > max_row
+    row = Array.new
+
+    index.times do
+      row << current_num
+      current_num += 2
+    end
+
+    sequence << row
+    index += 1
+  end
+
+  sequence
+end
+
+def sum_even_number_row(row_num)
+  sequence = create_sequence(row_num)
+
+  sequence[row_num - 1].sum
+end
+
+p sum_even_number_row(1) == 2
+p sum_even_number_row(2) == 10
+p sum_even_number_row(4) == 68
+```
+
+**Time:** 20:35
