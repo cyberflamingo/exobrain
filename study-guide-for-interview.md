@@ -10,8 +10,9 @@ Checklist of Topics to Review
 ### General Topics
 
 - [[[mutable-and-immutable-objects]]]
-- Operators: `&&`, `||` and `Comparable#between?`
-- `gets` and `chomp`
+- [[[logical-operators]]]
+- [[[ruby-comparable]]]
+- [[[ruby-gets-chomp]]]
 - `::new` class
 
 ### String
