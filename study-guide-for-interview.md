@@ -9,7 +9,7 @@ Checklist of Topics to Review
 
 ### General Topics
 
-- Mutable/immutable objects
+- [[[mutable-and-immutable-objects]]]
 - Operators: `&&`, `||` and `Comparable#between?`
 - `gets` and `chomp`
 - `::new` class
@@ -28,7 +28,7 @@ Checklist of Topics to Review
 - `Array#push`, `Array#shift`, and `Array#pop`, `Array#unshift`
 - `Array#center`
 - [[[mutation-in-arrays]]]
-- `inject`/`reduce`
+- [[[3f79b612]]]
 - `any`
 - `sort_by`
 - [[[practice-problems-arrays-manipulation]]]
