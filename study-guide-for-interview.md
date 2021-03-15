@@ -13,25 +13,24 @@ Checklist of Topics to Review
 - [[[logical-operators]]]
 - [[[ruby-comparable]]]
 - [[[ruby-gets-chomp]]]
-- `::new` class
+- [[[ruby-new-class]]]
 
 ### String
 
 - [[[ruby-substrings]]]
-- `String#casecmp`
-- `String#gsub`
-- `Kernel#format` method (favore over `sprintf`)
-- `String#delete` and `String#count`
+- [[[ruby-string-casecmp]]]
+- [[[ruby-string-gsub]]]
+- [[[ruby-kernel-format]]]
+- [[[ruby-string-delete-count]]]
+- [[[ruby-string-center]]]
 - [[[practice-problems-string-manipulation]]]
 
 ### Collections: Array and Hash
 
-- `Array#push`, `Array#shift`, and `Array#pop`, `Array#unshift`
-- `Array#center`
 - [[[mutation-in-arrays]]]
 - [[[3f79b612]]]
-- `any`
-- `sort_by`
+- [[[ruby-array-any]]]
+- [[[ruby-difference-sort-sort-by]]]
 - [[[practice-problems-arrays-manipulation]]]
 
 ### Loop
