@@ -35,13 +35,10 @@ Checklist of Topics to Review
 
 ### Loop
 
-- `while` loop
-- `until` loop
-- `for` loop (`for i in collection`)
-- Iteration flow (numerical breaking condition)
+- [[[while-until-for-loop]]]
 
 ### Other
 
-- Ruby switch statement `case` and one liner (`when..then`)
-- Ternary operator `condition ? true : false`
+- [[[ruby-case-one-liner]]]
+- [[[ruby-ternary-operator]]]
 - [[[maths-shortcut-tricks-code]]]
