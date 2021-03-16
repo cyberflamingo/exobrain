@@ -269,3 +269,92 @@ p sum_even_number_row(4) == 68
 ```
 
 **Time:** 20:35
+
+## Example 4
+
+```ruby
+=begin
+
+You are given an array that contains only integers (positive and negative).
+Your job is to sum only the numbers that are the same and consecutive. The
+result should be one array.
+
+You can assume there is never an empty array and there will always be an
+integer.
+
+# PEDAC
+
+## Problem
+
+Given an array of positive and negative numbers, sum the same consecutive
+number and return the new array.
+
+Input: An array of positive and negatives numbers with some behing the same and
+consecutive.
+Output: An new array of numbers, each different
+
+Clarification:
+
+- Positive and negative numbers
+- No empty array
+- Only integers
+- Array on the left will always be bigger than array on the right (except for
+  next point)
+- Return given array if each integer are different
+- Do I need to return same array? (No)
+
+## Data
+
+Arrays of integers
+
+## Algorithm
+
+. Init a local variable result to a new Array object
+. Init a local variabe outer_index to 0
+. Iterate over the given array
+  . Init local var inner_index to 1
+  . Init local var sum to current element
+    . Loop until next element is different from current element
+      . Add element at inner_index to sum
+      . Increment inner_index
+      . Break if next element different from current element
+  . Save sum to result array
+  . Increment outer_index by inner_index
+  . Break if outer_index is equal to array size
+. Return the result array
+
+=end
+
+def sum_consecutives(array)
+  result = []
+  outer_index = 0
+
+  loop do
+    inner_index = 1
+    sum = array[outer_index]
+
+    loop do
+      break if array[outer_index + inner_index].nil?
+
+      if array[outer_index] == array[outer_index + inner_index]
+        sum += array[outer_index + inner_index]
+        inner_index += 1
+      else
+        break
+      end
+    end
+
+    result << sum
+    outer_index += inner_index
+    break if outer_index > array.size
+  end
+
+  result.compact
+end
+
+p sum_consecutives([1, 4, 4, 4, 0, 4, 3, 3, 1, 1]) == [1, 12, 0, 4, 6, 2]
+p sum_consecutives([1, 1, 7, 7, 3]) == [2, 14, 3]
+p sum_consecutives([-5, -5, 7, 7, 12, 0]) == [-10, 14, 12, 0]
+```
+
+**Time: 33:58**
