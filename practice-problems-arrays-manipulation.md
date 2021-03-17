@@ -4,6 +4,8 @@ date: 2021-03-04T09:38
 
 # Practice Problems: Arrays Manipulation
 
+See also [[practice-problems-indexes-manipulation]].
+
 ## Example 1
 
 ```ruby

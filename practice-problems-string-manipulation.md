@@ -325,4 +325,59 @@ p change_me("") == ""
 p change_me("I LOVE my mom and dad equally") == "I LOVE my MOM and DAD equally"
 ```
 
-**Time**: 10:40
+**Time:** 10:40
+
+## Example 5
+
+```ruby
+=begin
+# Reverse a string, without using String#reverse
+
+# PEDAC
+
+## Problem
+
+Reverse string manually
+
+Input: a string
+Output: reversed string
+
+Clarify:
+
+- Case not changed
+- Emptry string returns empty? (Yes)
+- Shall returns the same string? (No)
+
+## Data
+
+Arrays
+
+## Algorithm
+
+. Init a new local var reversed to String object
+. Transform the string into array of its characters
+. Loop for array length
+  . Take the last characters and add it to reversed
+  . Continue until array is empty
+. Return reversed as a string
+
+=end
+
+def string_reverser(string)
+  reversed = ''
+
+  array = string.chars
+
+  loop do
+    reversed << array.pop
+    break if array.empty?
+  end
+
+  reversed
+end
+
+p string_reverser('hello') == 'olleh'
+p string_reverser('Launch School') == 'loohcS hcnuaL'
+```
+
+**Time:** 07:22
