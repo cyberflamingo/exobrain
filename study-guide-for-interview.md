@@ -42,4 +42,5 @@ Checklist of Topics to Review
 
 - [[[ruby-case-one-liner]]]
 - [[[ruby-ternary-operator]]]
+- [[[practice-problems-others]]]
 - [[[maths-shortcut-tricks-code]]]
