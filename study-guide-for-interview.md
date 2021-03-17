@@ -32,6 +32,7 @@ Checklist of Topics to Review
 - [[[ruby-array-any]]]
 - [[[ruby-difference-sort-sort-by]]]
 - [[[practice-problems-arrays-manipulation]]]
+- [[[practice-problems-hashes-manipulation]]]
 - [[[practice-problems-indexes-manipulation]]]
 
 ### Loop
