@@ -70,3 +70,75 @@ p fizzbuzz(1, 15) == '1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, ' \
                      'Fizz, 13, 14, FizzBuzz'
 ```
 **Time:** 09:08
+
+## Example 2
+
+```ruby
+=begin
+Write a method that takes two numbers. Return an array containing all primes
+between the two numbers (include the two given numbers in your answer if they
+are prime). Don't use Ruby's 'prime' class.
+
+# PEDAC
+
+## Problem
+
+Find all prime numbers between the two given numbers.
+
+Input: a min and max integer
+Output: every prime number between min and max (INCLUSIVE)
+
+Clarification:
+
+- Min/max are included
+- A prime number is a number that can only be found by multiplying it by
+  itself, i.e. is not a product in which both numbers are smaller than itself
+- Prime is a natural number greater than 1
+- A prime number can be found by trial division
+
+## Data
+
+Arrays of Integers
+
+## Algorithm
+
+. Init a local variable primes_num to a new Array object
+. Iterate from min (given number) up to max (given number)
+  . Check if current number can be divised by one number between 2 and itself
+    . If not divisable, add current number to to primes_num
+. Return primes_num
+
+=end
+
+def prime?(candidate)
+  limit = Integer.sqrt(candidate)
+
+  2.upto(limit) do |num|
+    if candidate % num == 0
+      return false
+    end
+  end
+end
+
+def find_primes(min, max)
+  primes_num = []
+  min = 2 if min < 2
+
+  min.upto(max) do |number|
+    if prime?(number)
+      primes_num << number
+    end
+  end
+
+  primes_num
+end
+
+p find_primes(3, 10) == [3, 5, 7]
+p find_primes(11, 20) == [11, 13, 17, 19]
+p find_primes(100, 101) == [101]
+p find_primes(1, 100) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
+                          43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+p find_primes(1, 2) == [2]
+```
+
+**Time:** 31:25

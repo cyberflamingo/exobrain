@@ -88,3 +88,64 @@ p search(query2) == [{ name: "Dell Inspiron", price: 300 },
 ```
 
 **Time:** 12:27
+
+## Example 2
+
+```ruby
+=begin
+
+Write a method that takes a string and returns a boolean indicating if this
+string has a balanced set of parentheses.
+
+# PEDAC
+
+## Problem
+
+Given a string, return true if it has set of balanced parentheses, false
+oterwise.
+
+Input: A string with one or more open and closed parentheses
+Output: A boolean indicating if open/close parentheses were balanced or not
+
+Clarify:
+
+- True when no parentheses? (Yes)
+- Only `(` and `)` counts? (Yes)
+- They must be in the right order
+- Can't possibly have more closing parentheses than opening parentheses
+
+## Data
+
+A Hash of parentheses and their count
+
+## Algorithm
+
+. Init a local variable parentheses_counter Hash to open/close parentheses key
+  and values 0
+. Iterate over the string
+  . If the current character is an opening/closing parentheses, increment its
+  count in parentheses_counter
+  . Return false if the Hash has more closing parentheses than opening
+. Return equality between opening and closing parentheses
+
+=end
+
+def balancer(string)
+  parentheses_counter = { '(' => 0,
+                          ')' => 0 }
+  string.chars.each do |char|
+    if parentheses_counter.key?(char)
+      parentheses_counter[char] += 1
+    end
+    return false if parentheses_counter[')'] > parentheses_counter['(']
+  end
+  parentheses_counter[')'] == parentheses_counter['(']
+end
+
+p balancer("(hi") == false
+p balancer("(hi)") == true
+p balancer("(()) hi") == true
+p balancer(")(") == false
+```
+
+**Time:** 16:33

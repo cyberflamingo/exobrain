@@ -360,3 +360,59 @@ p sum_consecutives([-5, -5, 7, 7, 12, 0]) == [-10, 14, 12, 0]
 ```
 
 **Time: 33:58**
+
+## Example 5
+
+```ruby
+=begin
+
+Write a method that takes an array of strings and returns an array of the same
+string values, except with the vowels removed.
+
+# PEDAC
+
+## Problem
+
+Return an array of given strings without their vowels.
+
+Input: An array of strings
+Output: An array of the same strings, without their vowels
+
+Clarification:
+
+- Same array? (no)
+- What are vowels in English? (a, i, u, e, o)
+- Case important? (yes)
+- Order important
+
+## Data
+
+Arrays of strings
+
+## Algorithm
+
+. Init a constant with each vowels of English
+. Loop over the given array
+  . For each string, look for each vowels and delete if they exists
+  . Return each string
+. Return the new array with the return value of the loop
+
+=end
+
+VOWELS = %w(a e i o u A E I O U)
+
+def remove_vowels(array)
+  array.map do |word|
+    VOWELS.each do |vowel|
+      word.delete!(vowel)
+    end
+
+    word
+  end
+end
+
+p remove_vowels(['green', 'yellow', 'black', 'white']) == ['grn', 'yllw',
+                                                           'blck', 'wht']
+```
+
+**Time:** 07:34
