@@ -416,3 +416,80 @@ p remove_vowels(['green', 'yellow', 'black', 'white']) == ['grn', 'yllw',
 ```
 
 **Time:** 07:34
+
+## Example 6
+
+```ruby
+=begin
+
+Write a method that will take an array of methods and only return those that
+are prime.
+
+# PEDAC
+
+## Problem
+
+Given an array of integers, return an array with the number from the given
+array that are prime.
+
+Input: array of integers
+Output: array of integers (prime)
+
+Clarification:
+
+- Prime is a number that cannot be composed from the product of numbers smaller
+  than itself
+- Create new array? (No, mutation)
+
+## Data
+
+Array
+
+## Algorithm
+
+. Loop over the array
+  . For each number, PRIME?
+    . Delete the number from the array if PRIME? returns false
+  . Break when iteration is equal or bigger than number of element in the array
+. Return the array
+
+. PRIME?
+. Iterate from 2 to square root of the given number
+  . Check if the remainder of given number as numerator and current number as
+    denominator is zero
+    . If true, return false
+. Return true
+
+=end
+
+def prime?(numerator)
+  return false if numerator < 2
+  limit = Integer.sqrt(numerator)
+
+  2.upto(limit) do |denominator|
+    return false if numerator % denominator == 0
+  end
+
+  true
+end
+
+def select_primes(candidates)
+  iterator = 0
+
+  loop do
+    unless prime?(candidates[iterator])
+      candidates.delete(candidates[iterator])
+      iterator -= 1
+    end
+    iterator += 1
+    break if candidates[iterator].nil?
+  end
+
+  candidates
+end
+
+p select_primes([1, 2, 3, 4]) == [2, 3]
+p select_primes([4, 6, 8, 10]) == []
+```
+
+**Time:** 18:41

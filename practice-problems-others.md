@@ -142,3 +142,239 @@ p find_primes(1, 2) == [2]
 ```
 
 **Time:** 31:25
+
+## Example 3
+
+```ruby
+=begin
+
+Write a method that will determine whether an integer is a prime. Do not use the
+Prime class.
+
+# PEDAC
+
+## Problem
+
+Given a number, return true if it is a prime number, false otherwise.
+
+Input: a number
+Output: a boolean (true if prime, false otherwise)
+
+Clarification:
+
+- Do not use Prime class
+- Prime is a number that cannot be created by multiplying natural number
+  smaller than itself
+
+## Data
+
+Integer
+
+## Algorithm
+
+. Iterate from 2 to the square root of given number
+  . For each number, find if it can divide given number
+    . If true, return false
+. Return true
+
+=end
+
+def prime?(num)
+  num_sqrt = Integer.sqrt(num)
+
+  2.upto(num_sqrt) do |denominator|
+    return false if num % denominator == 0
+  end
+
+  true
+end
+
+p prime?(3) == true
+p prime?(4) == false
+```
+
+**Time:** 05:58
+
+## Example 4
+
+```ruby
+=begin
+
+Write a method that will take an array of numbers and return the number of
+primes in the array.
+
+# PEDAC
+
+## Problem
+
+Given an array of numbers, count the number of prime it contains.
+
+Input: array of number
+Output: a integer, the number of prime in the given array
+
+Clarification:
+
+- Prime are numbers that cannot be found by multiplying a number between 2 and
+  itself
+- Array can have 2 same number? (Yes)
+
+## Data
+
+Arrays
+
+## Algorithm
+
+. COUNT
+. Iterate over the array
+  . Count the number of element that are prime by passing them to PRIME?
+. Return the count number
+
+. PRIME?
+. Return false if num is less than 2
+. Init the limit to the square root of the given number
+. Iterate from 2 to limit, passing in factor
+  . Return false if given number divided by factor remains zero
+. Return true
+
+=end
+
+def prime?(candidate)
+  return false if candidate < 2
+
+  limit = Integer.sqrt(candidate)
+
+  2.upto(limit) do |factor|
+    return false if candidate % factor == 0
+  end
+
+  true
+end
+
+def count_primes(numbers)
+  numbers.count do |number|
+    prime?(number)
+  end
+end
+
+p count_primes([1, 2, 3, 4]) == 2
+p count_primes([4, 6, 8, 10]) == 0
+```
+
+**Time:** 07:42
+
+## Example 5
+
+```ruby
+=begin
+
+Write a program that asks the user to enter an integer greater than zero, then
+asks if the user wants to determine the sum or product of all numbers between 1
+and the entered integer.
+
+# PEDAC
+
+## Problem
+
+Create a program that takes two user inputs: an integer (> 0) then an order
+(sum or product between 1 and the integer).
+
+Inputs: a positive integer
+        `sum` or `product`
+Output: The sum or product of all numbers between 1 and the positive integer
+
+Clarification:
+
+- Loop or exit if unwanted input? (loop)
+- Ask to retry at the end or not? (no)
+- sum is 1 + 2 + 3 + .. n
+- product is 1 * 2 * 3 * .. n
+- Format output? (yes, string)
+
+## Algorithm
+
+. ASK_INTEGER
+. Outputs a question that ask for an integer greater than zero
+. Save the input
+. Check if the input is desirable
+  . Redo if not desirable
+  . Otherwise go to ASK_OPERATION
+
+. ASK_OPERATION
+. Outputs a question that ask wether to sum or product
+. Save input
+. Check desirability of the input
+  . Redo if not desirable
+  . Otherwise save the return value of DO_SUM or DO_PRODUCT
+  . And go to OUTPUT_OPERATION
+
+. OUTPUT_OPERATION
+. Outputs the return value
+
+. DO_SUM
+. Iterate from 1 to input number and sum them
+
+. DO_PRODUCT
+. Iterate from 1 to input number and multiply them
+
+=end
+
+def ask_integer
+  input_integer = 0
+
+  puts "Please input a positive number:"
+
+  loop do
+    input_integer = gets.chomp.to_i
+
+    break if input_integer.positive?
+
+    puts "Sorry, your input must be an integer greater than zero."
+  end
+
+  input_integer
+end
+
+def ask_operation
+  possible_input = %w(sum product)
+  input_operation = nil
+
+  puts "Do you want to sum or product numbers between 1 and your number?"
+  puts "Please enter 'sum' or 'product'."
+
+  loop do
+    input_operation = gets.chomp
+
+    break if possible_input.include?(input_operation)
+
+    puts "Sorry, please enter 'sum' or 'product' without '."
+  end
+
+  input_operation
+end
+
+def do_operation(integer, operation)
+  result = 0
+
+  if operation == 'sum'
+    result = (1..integer).to_a.sum
+  elsif operation == 'product'
+    result = (1..integer).to_a.reduce(:*)
+  end
+
+  result
+end
+
+def output_operation(integer, operation, result)
+  puts "The result of #{operation} between 1 and #{integer} is #{result}!"
+end
+
+def sum_or_product
+  input_integer = ask_integer
+  input_operation = ask_operation
+
+  result = do_operation(input_integer, input_operation)
+  output_operation(input_integer, input_operation, result)
+end
+
+sum_or_product
+```
