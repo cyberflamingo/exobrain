@@ -493,3 +493,66 @@ p select_primes([4, 6, 8, 10]) == []
 ```
 
 **Time:** 18:41
+
+## Example 7
+
+```ruby
+=begin
+
+Write a method that combines two Arrays passed in as arguments and returns a new
+Array that contains all elements from both Array arguments, with the elements
+taken in alternation.
+
+You may assume that both input Arrays are non-empty and that they have the same
+number of elements.
+
+# PEDAC
+
+## Problem
+
+Combine two arrays, starting with the first, then the second, then the first
+etc alternatively.
+
+Input: Two arrays
+Output: The combinaison of both array
+
+Clarification:
+
+- Non-empty
+- Same number of element
+- Always start with the first array? (Yes)
+- Order matters (don't modify it)
+- New array
+
+## Data
+
+Array
+
+## Algorithm
+
+. Init a local variable interleave to a new empty Array
+. Create a loop
+  . Delete the first object of the first array and save it to interleave
+  . Delete the first object of the second array and save it to interleave
+  . Break if the first array is empty
+. Return interleave
+
+=end
+
+def interleave(array1, array2)
+  interleave = []
+
+  loop do
+    interleave << array1.shift
+    interleave << array2.shift
+
+    break if array1.empty?
+  end
+
+  p interleave
+end
+
+p interleave([1, 2, 3], ['a', 'b', 'c']) == [1, "a", 2, "b", 3, "c"]
+```
+
+**Time:** 09:10

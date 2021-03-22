@@ -454,3 +454,78 @@ p palindrome_substrings("") == []
 ```
 
 **Time:** 16:26
+
+## Example 6
+
+```ruby
+=begin
+
+Write a method that will return a substring based on specified indices.
+
+# PEDAC
+
+## Problem
+
+Find the substring based on the given indices (second and third parameters)
+
+Input: a string
+       an indice indicating the first character in the string
+       an indice indicating the last character in the string
+Output: substring from the string based on the two indices given
+
+Clarification:
+
+- String is zero indexed
+- Return empty string if indices are bigger than the string? (No)
+- Negative indice possible? (No)
+- Default indice are nil and nil? (Yes)
+
+## Data
+
+String
+
+## Algorithm
+
+. Return empty string if no indice provided
+. Init string_size to size of the given string
+. Check if first indice is bigger than string_size
+  . REDUCE it to a value between 0 and string_size if true
+. Return the character at the first indice index if second indice is nil
+. Check if second indice is bigger than string_size
+  . REDUCE it to a value between 0 and string_size if true
+. Return every string between first and second indice
+
+. REDUCE
+. Until value is smaller than string_size, substract string_size to given value
+. Return new value
+
+=end
+
+def reduce_indice(big_indice, max_size)
+  while big_indice > max_size
+    big_indice -= max_size
+  end
+
+  big_indice
+end
+
+def substring(string, ind_start=nil, ind_end=nil)
+  return '' if ind_start.nil?
+
+  string_size = string.size
+
+  ind_start = reduce_indice(ind_start, string_size) if ind_start >= string_size
+  return string[ind_start] if ind_end.nil?
+
+  ind_end = reduce_indice(ind_end, string_size) if ind_end > string_size
+
+  string[ind_start..ind_end]
+end
+
+p substring("honey", 0, 2) == "hon"
+p substring("honey", 1, 2) == "on"
+p substring("honey", 3, 9) == "ey"
+p substring("honey", 2)    == "n"
+```
+
+**Time:** 18:56
