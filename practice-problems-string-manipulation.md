@@ -381,3 +381,96 @@ p string_reverser('Launch School') == 'loohcS hcnuaL'
 ```
 
 **Time:** 07:22
+
+## Example 6
+
+```ruby
+=begin
+
+Write a method that converts an english phrase into a mathematical expression,
+step by step.
+
+# PEDAC
+
+## Problem
+
+Write a method that convert string to integer and do the calculation.
+
+Input: a string with two numbers and an operation, in English
+Output: an Integer, the result of the operation
+
+Clarification:
+
+- English phrase are words separated by spaces? (Yes)
+- Only one operation per string? (Yes)
+- Operations are 'plus', 'minus', 'multipy', 'divide' ? (Yes)
+- Take care of case
+
+## Data
+
+Arrays
+
+## Algorithm
+
+. Init a constant NUMBERS to a new Array of elements zero, one etc until nine
+. Init a constant OPERATIONS to a new Array of elements plus, minus etc
+
+. FIND_INTEGERS
+. Init a local variable integers to a new empty Array
+. Create an array of strings by separating by space
+. Iterate over the array
+  . Check if the current word is in NUMBERS
+    . Save the index of NUMBERS for current word in integers
+  . Repeat
+. DO_OPERATION, passing in integers and the sting array
+. Return return value of DO_OPERATION
+
+. DO_OPERATION
+. Iterate over the array
+  . Check if the current word is in OPERATIONS
+    . Do the correct operation accordingly
+    . Return result
+
+=end
+
+NUMBERS = %w(zero one two three four five six seven eight nine)
+OPERATIONS = %w(plus minus)
+
+def do_operation(integers, expression_list)
+  operation = ''
+
+  expression_list.each do |word|
+    if OPERATIONS.include?(word)
+      operation = word
+      break
+    end
+  end
+
+  if operation == 'plus'
+    integers.reduce(:+)
+  elsif operation == 'minus'
+    integers.reduce(:-)
+  end
+end
+
+def computer(expression)
+  integers = []
+  expression_list = expression.downcase.split(' ')
+
+  expression_list.each do |word|
+    if NUMBERS.include?(word)
+      integers << NUMBERS.index(word)
+    end
+  end
+
+  result = do_operation(integers, expression_list)
+
+  result
+end
+
+p computer("two plus two") == 4
+p computer('seven minus six') == 1
+p computer('zero plus eight') == 8
+```
+
+**Time:** 23:00

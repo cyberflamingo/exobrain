@@ -529,3 +529,74 @@ p substring("honey", 2)    == "n"
 ```
 
 **Time:** 18:56
+
+## Example 7
+
+```ruby
+=begin
+
+Write a method that finds all substrings in a string, no 1 letter words.
+
+# PEDAC
+
+## Problem
+
+Find every substrings of a string of more than 1 letter.
+
+Input: a string
+Output: an array of every substrings of 2+ letters
+
+Clarification:
+
+- Order matters
+- Case matters
+- Substrings is every group of 2 or more characters included in the given
+  string
+
+## Data
+
+Arrays
+
+## Algorithm
+
+. Init a local variable results to empty Arrat
+. Count from 0 up to string size - 2, passing in char_start as a parameter
+  . Call SUBSTRING_MAKER passign in the string and char_start
+  . Save the result to results
+. Return results
+
+. SUBSTRING_MAKER
+. Init a local variable substrings to empty Arrat
+. Count from char_start + 1 to string size, passing in char_end as a parameter
+  . Save the result of string slicing at index char_start and char_end
+. Return substrings
+
+=end
+
+def substring_maker(string, first_letter)
+  substrings = []
+
+  (first_letter + 1).upto(string.size - 1) do |last_letter|
+    substrings << string[first_letter..last_letter]
+  end
+
+  substrings
+end
+
+def substrings(string)
+  results = []
+
+  0.upto(string.size - 2) do |char_start|
+    results << substring_maker(string, char_start)
+  end
+
+  results.flatten
+end
+
+p substrings("band") == ['ba', 'ban', 'band', 'an', 'and', 'nd']
+p substrings("world") == ['wo', 'wor', 'worl', 'world', 'or',
+                          'orl', 'orld', 'rl', 'rld', 'ld']
+p substrings("ppop") == ['pp', 'ppo', 'ppop', 'po', 'pop', 'op']
+```
+
+**Time:** 15:05
