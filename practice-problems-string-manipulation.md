@@ -474,3 +474,56 @@ p computer('zero plus eight') == 8
 ```
 
 **Time:** 23:00
+
+## Example 7
+
+```ruby
+=begin
+
+Write a method that takes a single String argument and returns a new string
+that contains the original value of the argument with the first character of
+every word capitalized and all other letters lowercase. You may assume that
+words are any sequence of non-blank characters.
+
+# PEDAC
+
+## Problem
+
+Given a String, for every sequence of non-blank characters, capitalized their
+first letter if they start with a letter. (Return new String)
+
+- Input: a string of one or more words
+- Output: a new string with each word capitalized
+
+Clarification:
+
+- New String
+- Only first letter of word
+- Word is a sequence of non-blank characters
+- Every other letter must be lowercase
+
+## Data
+
+Array
+
+## Algorithm
+
+. Init a new local variable capitalized to an empty Array object
+. From the string, create an array of downcase "word" (separate by blank
+  characters)
+. Iterate over this array
+  . For each iteration, then upcase its first letter
+. Return the return value of the iteration as a string separated by whitespaces
+
+=end
+
+def word_cap(string)
+  string.downcase.split(' ').map(&:capitalize).join(' ')
+end
+
+p word_cap('four score and seven') == 'Four Score And Seven'
+p word_cap('the javaScript language') == 'The Javascript Language'
+p word_cap('this is a "quoted" word') == 'This Is A "quoted" Word'
+```
+
+**Time:** 12:35

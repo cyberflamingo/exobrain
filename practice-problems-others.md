@@ -380,3 +380,68 @@ sum_or_product
 ```
 
 **Time:** 29:10
+
+## Example 6
+
+```ruby
+=begin
+
+Write a method that returns the number of Friday the 13ths in the year given by
+an argument. You may assume that the year is greater than 1752 (when the United
+Kingdom adopted the modern Gregorian Calendar) and that it will remain in use
+for the foreseeable future.
+
+# PEDAC
+
+## Problem
+
+Return the number of Friday the 13th in a given year. (Gregorian Calendar)
+
+Input: an integer, representing a year (after 1752)
+Output: an integer, representing the number of F the 13ths for the given year
+
+Clarification:
+
+- After 1752 (Gregorian Calendar)
+- Between 0 and 12
+- Use Date lib
+
+## Data
+
+Array
+
+## Algorithm
+
+. Init a local variable month to integer 1
+. Init a local variable friday_13_list to empty array
+. Loop
+  . Using the given year, check if the 13 of the current month (iteration) for
+    this year, is a Friday
+    . Save results to friday_13_list if true
+  . Increment month by 1
+  . Break if month is 12 or more
+. Return the count size of friday_13_list
+
+=end
+require 'date'
+
+def friday_13th(year)
+  month = 1
+  friday_13_list = []
+
+  loop do
+    break if month > 12
+    friday_13_list << month if Date.new(year, month, 13).friday?
+
+    month += 1
+  end
+
+  friday_13_list.size
+end
+
+p friday_13th(2015) == 3
+p friday_13th(1986) == 1
+p friday_13th(2019) == 2
+```
+
+**Time:** 11:31
