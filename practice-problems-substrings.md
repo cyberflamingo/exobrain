@@ -105,6 +105,105 @@ p repeated_substring_pattern("abcabcabcabc") == true
 
 **Time:** 36:17
 
+### Alternative Solution
+
+The solution above does not work with a string of the same characters sucah as
+`'aaaaa'` because it returns false for string of odd size.
+
+```ruby
+=begin
+
+Given a non-empty string, check if it can be constructed by taking a substring
+of it and appending multiple copies of the substring together. You may assume
+the given string consists of lowercase English letters only.
+
+Example 1:
+
+ - Input "abab"
+ - Output: True
+ - Explanation: It's the substring 'ab' twice.
+
+Example 2:
+
+ - Input: "aba"
+ - Output: False
+
+# PEDAC
+
+## Problem
+
+Given a string, find if it contains repeatable substring.
+
+Input: non-empty string with repeatable substring or not
+Output: true or false, depending if it has repeatable substrings or not
+
+Clarification:
+
+- Non empty
+- Only English letter? (no)
+- Spaces? (No)
+- All same characters is always true
+- Odd characters (except all same) always false
+
+## Data
+
+Arrays of strings
+
+## Algorithm
+
+.  From the string create an array of x characters substrings
+  .  Init a local variable sliced_string to new Array object
+  .  Init a local variable substring_size to Integer 2
+  .  Loop form 2 to half string size
+    .  SLICE_STRING passing in `x` characters
+    .  Check if they are all the same
+
+.  SLICE_STRING
+  .  Slice from 0 to `x` chars
+  .  Add `x` to 0
+  .  Slice again until reaching string size
+
+=end
+
+def slice_on_n_characters(string, size)
+  equal_substrings = []
+  first_char_index = 0
+
+  loop do
+    equal_substrings << string.slice(first_char_index, size)
+    first_char_index += size
+    break if first_char_index >= string.size
+  end
+
+  equal_substrings
+end
+
+def repeated_substring_pattern(string)
+  return true if string.chars.all?(string[0])
+  return false if string.size.odd?
+
+  sliced_string = []
+  half_string_size = string.size / 2
+
+  2.upto(half_string_size) do |substring_size|
+    sliced_string = slice_on_n_characters(string, substring_size)
+
+    return true if sliced_string.all?(sliced_string[0])
+  end
+
+  false
+end
+
+p repeated_substring_pattern('abab') == true
+p repeated_substring_pattern('aba') == false
+p repeated_substring_pattern('aabaaba') == false
+p repeated_substring_pattern('abaababaab') == true
+p repeated_substring_pattern('abcabcabcabc') == true
+p repeated_substring_pattern('aaaaa') == true
+```
+
+**Time:** 31:52
+
 ## Example 2
 
 ```ruby
