@@ -527,3 +527,248 @@ p word_cap('this is a "quoted" word') == 'This Is A "quoted" Word'
 ```
 
 **Time:** 12:35
+
+## Example 8
+
+```ruby
+=begin
+
+Consider the word "abode". We can see that the letter a is in position 1 and b
+is in position 2. In the alphabet, a and b are also in positions 1 and 2.
+Notice also that d and e in abode occupy the positions they would occupy in the
+alphabet, which are positions 4 and 5.
+
+Given an array of words, return an array of the number of letters that occupy
+their positions in the alphabet for each word. For example,
+
+solve(["abode","ABc","xyzD"]) = [4, 3, 1]
+
+Input will consist of alphabet characters, both uppercase and lowercase. No
+spaces.
+
+# PEDAC
+
+## Problem
+
+Count the numbers of letters that are at their right place in the string and in
+the alphabet.
+
+Input: an array of strings with letters at their corresponding place in the
+       alphabet, or not
+Output: an array of numbers representing the number of letters in their right
+        place in the alphabet
+
+Clarification:
+
+-  Case does not matter
+-  Alphabet has 26 letters
+-  If the string is more than 26 letters, everything above can be omited? (Yes)
+-  Return 0 if none found
+-  Returned array and given array should be the same size
+
+## Data
+
+Arrays
+
+## Algorithm
+
+.  MAIN
+. Init ALPHABET whith every letter of the alphabet
+.  Init local variable results
+  .  Iterate over the given array passing in string
+    .  Call COUNT_LETTER_IN_ORDER passing in string (downcase) as an arg
+    .  Save return value to results
+.  Return results
+
+.  COUNT_LETTER_IN_ORDER
+.  Init local var counter
+  .  Iterate from 0 upto string size
+    .  Check if the current character of the string is equal to the character
+       at the same index in constant ALPHABET
+      .  Increment counter if true
+.  Return counter
+
+=end
+
+ALPHABET = ('a'..'z').to_a
+
+def count_letter_in_order(string)
+  counter = 0
+
+  0.upto(string.size) do |position|
+    if string[position] == ALPHABET[position]
+      counter += 1
+    end
+  end
+
+  counter
+end
+
+def solve(array)
+  results = []
+
+  array.each do |string|
+    results << count_letter_in_order(string.downcase)
+  end
+
+  results
+end
+
+p solve(["abode", "ABc", "xyzD"]) == [4, 3, 1]
+p solve(["abide", "ABc", "xyz"]) == [4, 3, 0]
+p solve(["IAMDEFANDJKL", "thedefgh", "xyzDEFghijabc"]) == [6, 5, 7]
+p solve(["encode", "abc", "xyzD", "ABmD"]) == [1, 3, 1, 3]
+```
+
+**Time:** 12:35
+
+## Example 9
+
+```ruby
+=begin
+
+Given a string of integers, return the number of odd-numbered substrings that
+can be formed.
+
+For example, in the case of "1341", they are 1, 1, 3, 13, 41, 341, 1341, a
+total of 7 numbers.
+
+# PEDAC
+
+## Problem
+
+Return the number of odd-numbered substrings that can be formed from a given
+string.
+
+Input: a string of a number
+Output: the number of substring from the given string that are odd
+
+Clarification:
+
+- Assume always a well formed string? (Yes)
+- Return 0 if nothing found? Yes
+- Return an integer (not string)
+- Substrings are part of the string, minimum 1 char
+
+## Data
+
+Arrays
+
+## Algorithm
+
+.  MAIN
+.  Init local variable substr_integer to return value of FIND_EVERY_SUBSTRING
+.  Call SELECT_ONLY_ODD passing in substr_integer to it
+.  Return the count of the return value of SELECT_ONLY_ODD
+
+.  FIND_EVERY_SUBSTRING
+.  Init local variable substr_int
+.  Iterate from 0 upto string size, passing in char_start as a param
+  .  Iterate from char_start upto string size, passing in char_end as a param
+    .  Slice string from char_start to char_end, convert to integer and save
+       the result to substr_int
+. Return substr_int
+
+.  SELECT_ONLY_ODD
+.  Iterate over the given integers array and select only odd numbers
+
+=end
+
+def find_every_substring(string)
+  substr_int = []
+
+  0.upto(string.size - 1) do |char_start|
+    char_start.upto(string.size - 1) do |char_end|
+      substr_int << string[char_start..char_end].to_i
+    end
+  end
+
+  substr_int
+end
+
+def select_only_odd(integers)
+  integers.select(&:odd?)
+end
+
+def solve(num_candidate)
+  substr_integer = find_every_substring(num_candidate)
+
+  select_only_odd(substr_integer).count
+end
+
+p solve("1341") == 7
+p solve("1357") == 10
+p solve("13471") == 12
+p solve("134721") == 13
+p solve("1347231") == 20
+p solve("13472315") == 28
+```
+
+**Time:** 18:02
+
+## Example 10
+
+```ruby
+=begin
+
+Complete the function that takes an array of words.
+
+You must concatenate the nth letter from each word to construct a new word
+which should be returned as a string, where n is the position of the word in
+the list.
+
+For example:
+
+["yoda", "best", "has"]  -->  "yes"
+  ^        ^        ^
+  n=0     n=1     n=2
+
+# PEDAC
+
+## Problem
+
+Given an array, return the character at the index of the string for each string
+and concatenate the result.
+
+Input: an array of valid string
+Output: the new word based on each character of each string of the array
+
+Clarification:
+
+-  Empty array return empty string
+-  Case matters
+-  Assume each strings has enough character
+-  Assume each array only contains strings
+
+## Data
+
+Arrays
+
+## Algorithm
+
+.  Init local variable new_string to local variable string
+.  Iterate through the array, passing in index and string as parameters
+  .  Save the character of string at index in new_string
+.  Return new_string
+
+=end
+
+def nth_char(array)
+  new_string = ''
+
+  array.each_with_index do |string, index|
+    new_string << string[index]
+  end
+
+  new_string
+end
+
+p nth_char(['yoda', 'best', 'has']) == 'yes'
+p nth_char([]) == ''
+p nth_char(['X-ray']) == 'X'
+p nth_char(['No', 'No']) == 'No'
+p nth_char(['Chad', 'Morocco', 'India', 'Algeria', 'Botswana',
+            'Bahamas', 'Ecuador', 'Micronesia']) == 'Codewars'
+```
+
+**Time:** 06:38

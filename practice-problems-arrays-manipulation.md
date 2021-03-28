@@ -556,3 +556,90 @@ p interleave([1, 2, 3], ['a', 'b', 'c']) == [1, "a", 2, "b", 3, "c"]
 ```
 
 **Time:** 09:10
+
+## Example 8
+
+```ruby
+=begin
+
+You are given array of integers, your task will be to count all pairs in that
+array and return their count.
+
+Notes:
+
+Array can be empty or contain only one value; in this case return 0
+
+If there are more pairs of a certain number, count each pair only once. E.g.:
+for [0, 0, 0, 0] the return value is 2 (= 2 pairs of 0s)
+
+Random tests: maximum array length is 1000, range of values in array is between
+0 and 1000
+
+Examples
+
+[1, 2, 5, 6, 5, 2]  -->  2
+  ...because there are 2 pairs: 2 and 5
+
+[1, 2, 2, 20, 6, 20, 2, 6, 2]  -->  4
+  ...because there are 4 pairs: 2, 20, 6 and 2 (again)
+
+# PEDAC
+
+## Problem
+
+Count the pairs in an array of integers and return the count
+
+Input: Array of integers with one or more duplicates
+Output: Integer representing the number of pair
+
+Clarification:
+
+- Pair is 2 same number
+- If there are more than 2 same numbers, count the pair (4 same num = 2 pairs)
+- Return 0 if the array is empty
+
+## Data
+
+Array
+
+## Algorithm
+
+.  Return 0 if array is empty
+.  Init a local variale pairs to 0
+.  Iterate over the array passing in num
+  .  Count the number of num in the array
+  .  If the count is more than 1
+    .  Increment pairs by half of the count
+  .  Delete the num from the array
+.  Return pairs
+
+=end
+
+def pairs(array)
+  return 0 if array.empty?
+
+  pairs = 0
+  candidates = array.dup
+
+  array.each do |num|
+    duplicates = candidates.count(num)
+
+    if duplicates > 1
+      pairs += duplicates / 2
+    end
+
+    candidates.delete(num)
+  end
+
+  pairs
+end
+
+p pairs([1, 2, 5, 6, 5, 2]) == 2
+p pairs([1, 2, 2, 20, 6, 20, 2, 6, 2]) == 4
+p pairs([0, 0, 0, 0, 0, 0, 0]) == 3
+p pairs([1000, 1000]) == 1
+p pairs([]) == 0
+p pairs([54]) == 0
+```
+
+**Time:** 12:49
