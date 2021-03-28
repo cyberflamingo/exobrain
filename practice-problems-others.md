@@ -445,3 +445,65 @@ p friday_13th(2019) == 2
 ```
 
 **Time:** 11:31
+
+## Example 7
+
+```ruby
+=begin
+
+A pangram is a sentence that contains every single letter of the alphabet at
+least once. For example, the sentence "The quick brown fox jumps over the lazy
+dog" is a pangram, because it uses the letters A-Z at least once (case is
+irrelevant).
+
+Given a string, detect whether or not it is a pangram. Return True if it is,
+False if not. Ignore numbers and punctuation.
+
+# PEDAC
+
+## Problem
+
+Return true or false, based on wether the given string is a pangram or not.
+
+Input: a string
+Output: true or false, if the given string is a pangram or not
+
+Clarification:
+
+-  Pangram must have every letter of the English alphabet (26)
+-  Case does not matter
+-  Save character can be repeated one or more time
+
+## Data
+
+Array
+
+## Algorithm
+
+.  Init a constant ALPHABET with every letter of the English alphabet
+.  Iterate over ALPHABET
+  .  For each letter, check if it is inside the given string
+    .  Return false if not
+.  Return true
+
+=end
+
+ALPHABET = ('a'..'z').to_a
+
+def pangram?(string)
+  string.downcase!
+
+  ALPHABET.each do |letter|
+    unless string.include?(letter)
+      return false
+    end
+  end
+
+  true
+end
+
+p pangram?("The quick brown fox jumps over the lazy dog.") == true
+p pangram?("This is not a pangram.") == false
+```
+
+**Time:** 04:49
