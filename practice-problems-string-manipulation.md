@@ -772,3 +772,63 @@ p nth_char(['Chad', 'Morocco', 'India', 'Algeria', 'Botswana',
 ```
 
 **Time:** 06:38
+
+## Example 11
+
+```ruby
+=begin
+
+Write a function that takes in a string of one or more words, and returns the
+same string, but with all five or more letter words reversed. Strings passed
+in will consist of only letters and spaces.
+Spaces will be included only when more than one word is present.
+
+Examples:
+
+spin_words( "Hey fellow warriors" ) => returns "Hey wollef sroirraw"
+
+# PEDAC
+
+## Problem
+
+Given a string, return it with every 5+ letters words inveresed.
+
+Input: a string (letters and spaces only, one or more word)
+Output: same string with 5+ letters words inversed
+
+Clarification:
+
+-  Same string? (no)
+-  Case matter
+-  No ponctuation
+-  one word possible
+
+## Data
+
+Arrays
+
+## Algorithm
+
+.  From the string, create an array of words (words being characters delimited
+   by spaces)
+.  Iterate over the array
+  .  Count the number of characters in the word
+    .  If 5 or more characters, return it spinned
+    .  Otherwise return the word
+.  Return the new array, joined by spaces
+
+=end
+
+def spin_words(sentence)
+  sentence.split.map do |word|
+    word.length >= 5 ? word.reverse : word
+  end.join(' ')
+end
+
+p spin_words('Hey fellow warriors') == 'Hey wollef sroirraw'
+p spin_words('This is a test') == 'This is a test'
+p spin_words('This is another test') == 'This is rehtona test'
+p spin_words('test') == 'test'
+```
+
+**Time:** 07:33

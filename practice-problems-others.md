@@ -507,3 +507,83 @@ p pangram?("This is not a pangram.") == false
 ```
 
 **Time:** 04:49
+
+## Example 8
+
+```ruby
+=begin
+
+Write Number in Expanded Form
+
+You will be given a number and you will need to return it as a string in
+Expanded Form.
+
+NOTE: All numbers will be whole numbers greater than 0.
+
+# PEDAC
+
+## Problem
+
+Given a number, return its expanded form as a string.
+
+Expanded form is a method for writing numbers that breaks the number down into
+digits.
+
+Input: an integer greater than 0
+Output: a string representing the expanded form of the given integer
+
+Clarification:
+
+-  Return 0 when given 0
+-  Return the number if given num <= 10
+-  If the expanded form contains 0, do not write it
+
+## Data
+
+Array
+
+## Algorithm
+
+.  Return num if num is smaller or equal to 10
+.  Init a local variable expanded_num
+.  Init a local variable size to the size of the string of the given integer -1
+.  Init a local variable digits to a new array of digits from the string of the
+.  Re-integerize every string in the array
+.  Init a local variable current_digit to 0
+   given integer
+.  Iterate trough size to 0 passing in power
+  .  Multiply the current digit of digits by the number by 10 ^ power
+  .  Save the result to expanded_num unless it's 0
+  .  Increment current_digit by 1
+.  Join the result with +
+
+=end
+
+def find_expanded_form(digits)
+  size = digits.size - 1
+  current_digit = 0
+  results = []
+
+  size.downto(0) do |power|
+    expanded = digits[current_digit] * (10**power)
+    results << expanded unless expanded == 0
+    current_digit += 1
+  end
+
+  results
+end
+
+def expanded_form(number)
+  return number if number <= 10
+
+  digits = number.to_s.split('').map(&:to_i)
+
+  find_expanded_form(digits).join(' + ')
+end
+
+p expanded_form(12) == '10 + 2'
+p expanded_form(42) == '40 + 2'
+p expanded_form(70304) == '70000 + 300 + 4'
+```
+
+**Time:** 25:17
