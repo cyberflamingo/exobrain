@@ -832,3 +832,79 @@ p spin_words('test') == 'test'
 ```
 
 **Time:** 07:33
+
+## Example 12
+
+```ruby
+=begin
+
+A string is considered to be in title case if each word in the string is either
+(a) capitalised (that is, only the first letter of the word is in upper case)
+or (b) considered to be an exception and put entirely into lower case unless it
+is the first word, which is always capitalised.
+
+Write a function that will convert a string into title case, given an optional
+list of exceptions (minor words). The list of minor words will be given as a
+string with each word separated by a space. Your function should ignore the
+case of the minor words string -- it should behave in the same way even if the
+case of the minor word string is changed.
+
+# PEDAC
+
+## Problem
+
+Given a string, return the same string in title case, following the optional
+list of exceptions.
+
+Input: a string to title case and a string of exceptions (optional)
+Output: the first string, with title case, minus the exceptions (if exists)
+
+Clarification:
+
+-  All case should be modified in the given string
+-  Exceptions are optional
+-  No punctuations? (yes)
+-  Same string? (no)
+-  First char always capitalized
+
+## Data
+
+Arrays of strings
+
+## Algorithm
+
+.  Downcase the optional exceptions string
+.  From the optional exceptions string, make an array of strings
+.  Downcase the whole given string
+.  Make an array of strings from the given string
+.  Iterate over the new array
+  .  Capitalize the first letter of each element unless it's in the exceptions
+     list
+.  Join the array with one space char
+.  Capitalize the new string and return
+
+=end
+
+def title_case(string, exceptions='')
+  exceptions_list = exceptions.downcase.split(' ')
+  strings_list = string.downcase.split(' ')
+
+  title = strings_list.map do |word|
+    if exceptions_list.include?(word)
+      word
+    else
+      word.capitalize
+    end
+  end
+
+  title[0][0] = title[0][0].capitalize
+
+  title.join(' ')
+end
+
+p title_case('a clash of KINGS', 'a an the of') == 'A Clash of Kings'
+p title_case('THE WIND IN THE WILLOWS', 'The In') == 'The Wind in the Willows'
+p title_case('the quick brown fox') == 'The Quick Brown Fox'
+```
+
+**Time:** 16:12

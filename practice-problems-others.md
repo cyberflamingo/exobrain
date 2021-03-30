@@ -587,3 +587,72 @@ p expanded_form(70304) == '70000 + 300 + 4'
 ```
 
 **Time:** 25:17
+
+## Example 9
+
+```ruby
+=begin
+
+Write a function, persistence, that takes in a positive parameter num and
+returns its multiplicative persistence, which is the number of times you must
+multiply the digits in num until you reach a single digit.
+
+For example:
+
+persistence(39) # returns 3, because 3*9=27, 2*7=14, 1*4=4
+                # and 4 has only one digit
+persistence(999) # returns 4, because 9*9*9=729, 7*2*9=126,
+                 # 1*2*6=12, and finally 1*2=2
+persistence(4) # returns 0, because 4 is already a one-digit number
+
+# PEDAC
+
+## Problem
+
+Given a number, return the number of times it takes to get to one digit by
+divising its digits.
+
+Input: an integer
+Output: an integer, te number of multiplication to do to get to on digit from
+        integer
+
+Clarification:
+
+-  Positive number
+-  Persistenec is the number of tiems to multiply to get to a single digit
+-  num < 10 returns 0
+
+## Data
+
+Arrays
+
+## Algorithm
+
+.  Init a local variable index to 0
+.  Until digits of `num` is less than 10, iterate
+  .  Takes the digits of the number and multiply them
+  .  Save the result to `num`
+  .  Increment index by 1
+  .  (Continue until condition is met)
+.  Return `num`
+
+=end
+
+def persistence(num)
+  index = 0
+
+  until num < 10
+    num = num.digits.reduce(:*)
+    index += 1
+  end
+
+  index
+end
+
+p persistence(39) == 3
+p persistence(4) == 0
+p persistence(25) == 2
+p persistence(999) == 4
+```
+
+**Time:** 09:09
