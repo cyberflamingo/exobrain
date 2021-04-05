@@ -80,3 +80,45 @@ alfred.speak('Bonjour')
 Both instance of the two classes `RedPanda` and `Human` have access to the
 `speak` instance method thanks to the mixin of `Speak` module with both
 classes.
+
+**Namespacing** is the action of organizing similar classes under a common
+module. Here, the module is used to group several similar or related classes.
+
+```ruby
+module Cutlery
+  class Knife
+    def cut(sound)
+      sound
+    end
+  end
+
+  class Spoon
+    def dip(sound)
+      sound
+    end
+  end
+end
+
+opinel = Cutlery::Knife.new
+fleur_absinthe = Cutlery::Spoon.new
+```
+
+Classes in module are called by appending the name of the class to the name of
+the module with two colons (`::`).
+
+**Container** is a name given to modules which _contains_ methods, themselves
+called module methods. This method is used to house method that seems out of
+place within the code.
+
+```ruby
+module WoodenDoll
+  class Kokeshi
+  end
+
+  def self.out_of_place_method(num)
+    num ** 2
+  end
+end
+
+value = WoodenDoll.out_of_place_method(4)
+```
