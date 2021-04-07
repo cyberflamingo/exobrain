@@ -104,7 +104,8 @@ fleur_absinthe = Cutlery::Spoon.new
 ```
 
 Classes in module are called by appending the name of the class to the name of
-the module with two colons (`::`).
+the module with two colons (`::`). This double colon is called a **scope
+resolution operator**.
 
 **Container** is a name given to modules which _contains_ methods, themselves
 called module methods. This method is used to house method that seems out of
@@ -122,3 +123,5 @@ end
 
 value = WoodenDoll.out_of_place_method(4)
 ```
+
+[[[method-access-control]]]
