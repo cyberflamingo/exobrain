@@ -48,6 +48,8 @@ for new purposes. From the Green _polymorphos_, _poly_ is a prefix which means
 Subclass lets programmer make smaller, more fine-grained behavior, derived from
 the superclass behaviors.
 
+See also [[[inheritance-vs-association]]].
+
 **Mixin** are the result of the mix of a module (in Ruby) with a class. After
 mixing with a module, the behaviors declared in that module are unavailable to
 the class and its objects.
