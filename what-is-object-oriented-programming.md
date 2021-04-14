@@ -125,3 +125,28 @@ value = WoodenDoll.out_of_place_method(4)
 ```
 
 [[[method-access-control]]]
+
+**Collaborator objects** are objects that are stored as state within another
+object. They are called _collaborators_ because they work in _collaboration_
+with the class they are associated with.
+
+```ruby
+class Bookshelf
+  attr_accessor :book
+end
+
+class Book
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+wood_bookshelf = Bookshelf.new
+war_of_the_worlds = Book.new('War of the Worlds')
+
+wood_bookshelf.book = war_of_the_worlds
+
+puts wood_bookshelf.book.name  # => War of the Worlds
+```
