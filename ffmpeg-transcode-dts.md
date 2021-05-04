@@ -2,7 +2,7 @@
 date: 2021-04-11T11:14
 ---
 
-# Transcode DTS with ffmpeg
+# Transcode DTS with FFmpeg
 
 Because of DTS licensing, several products cannot (legally) read DTS audio
 track. I am sure it's a great format but I often need a reliable way to listen
@@ -47,4 +47,4 @@ ffmpeg -i <input_video>                  \
 
 For more information see [here](https://trac.ffmpeg.org/wiki/Encode/FFV1).
 
-See also [[844cf815]]
+See also [[844cf815]].

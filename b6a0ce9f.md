@@ -9,12 +9,10 @@ works.
 
 Here is a bunch of notes of things I am working on.
 
-
 ## Programming Languages
 
 * [[[f6590254]]] The programming language I use to learn programming.
 * [[[1497d8aa]]]
-
 
 ## Programming Related
 
@@ -32,29 +30,30 @@ Here is a bunch of notes of things I am working on.
 * [[[pairwise-testing]]]
 * [[[what-is-object-oriented-programming]]]
 
-
 ## Operating Systems
 
 * [[[8cdbd18b]]]
-
 
 ## Git
 
 * [[[0775696d]]]
 * [[[99b0ff96]]]
 
-
 ## Other Softwares
 
 * [[[8eab8221]]]
-* [[[844cf815]]]
 * [[[f68c39f2]]]
 * [[[407380b2]]]
 * [[[13ac445b]]]
 * [[[fe0b435d]]]
 * [[[ea0ba5b1]]]
 * [[[email-with-plus]]]
+* [[torrent-client-settings]]#
 
+### FFmpeg
+
+* [[844cf815]]#
+* [[ffmpeg-transcode-dts]]#
 
 ## Other
 
