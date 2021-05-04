@@ -68,3 +68,19 @@ while(i < 100) {
   i *= 2;
 }
 ```
+
+### For-each Loop
+
+A shorthand of For loop can be found with For-each loop. In this case, the
+loop executes a statement once for each array member. The loop handles
+collection length and accessing each value.
+
+```java
+int[] values = { 10, 20, 15  }
+int sum = 0;
+
+for (int currentVal : values)
+  sum += currentVal;
+
+System.out.println(sum); // 45
+```
