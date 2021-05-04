@@ -152,3 +152,6 @@ wood_bookshelf.book = war_of_the_worlds
 
 puts wood_bookshelf.book.name  # => War of the Worlds
 ```
+
+See [[approach-to-oop]]# for an example of how to attack a program with OOP
+mindset.
