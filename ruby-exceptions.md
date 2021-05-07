@@ -57,6 +57,22 @@ end
 When no type of exception to rescue is specified behind the `rescue` clause,
 all `StandardError` exceptions will be rescued and handled by default.
 
+When a issue is raised between `begin` and `rescue`, Ruby stops the
+execution of the code and goes straight to the `rescue` block. In other
+words:
+
+```ruby
+begin
+  array.fetch(index) # The index is out of bonds
+  puts "This code won't execute if out of bonds"
+rescue IndexError
+  puts "Out of bonds!"
+end
+```
+
+In the code above, te `puts` method call behind the `array.fetch` line will
+not execute if `index` is out of bonds; Ruby goes straight to `rescue`.
+
 {.ui .warning .message}
 Do not rescue `Exception` as this will rescue _all_ exceptions.
 
