@@ -5,7 +5,12 @@ rescue TypeError
   # do something if TypeError is raised
 rescue ArgumentError
   # do something else if ArgumentError is raised
-end</code></pre><div class="ui info message"><p>When no type of exception to rescue is specified behind the <code>rescue</code> clause, all <code>StandardError</code> exceptions will be rescued and handled by default.</p></div><div class="ui warning message"><p>Do not rescue <code>Exception</code> as this will rescue <em>all</em> exceptions.</p></div><p>It is also possible to specify multiple exception on the same line in order to take the same action for more than one type of exception:</p><pre><code class="ruby language-ruby">begin
+end</code></pre><div class="ui info message"><p>When no type of exception to rescue is specified behind the <code>rescue</code> clause, all <code>StandardError</code> exceptions will be rescued and handled by default.</p></div><p>When a issue is raised between <code>begin</code> and <code>rescue</code>, Ruby stops the execution of the code and goes straight to the <code>rescue</code> block. In other words:</p><pre><code class="ruby language-ruby">begin
+  array.fetch(index) # The index is out of bonds
+  puts &quot;This code won&#39;t execute if out of bonds&quot;
+rescue IndexError
+  puts &quot;Out of bonds!&quot;
+end</code></pre><p>In the code above, te <code>puts</code> method call behind the <code>array.fetch</code> line will not execute if <code>index</code> is out of bonds; Ruby goes straight to <code>rescue</code>.</p><div class="ui warning message"><p>Do not rescue <code>Exception</code> as this will rescue <em>all</em> exceptions.</p></div><p>It is also possible to specify multiple exception on the same line in order to take the same action for more than one type of exception:</p><pre><code class="ruby language-ruby">begin
   # do something dangerous here
 rescue ZeroDivisionError, TypeError
   # do something if ZeroDivisionError or TypeError are raised
