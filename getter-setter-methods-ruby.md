@@ -1,17 +1,12 @@
-. Fortunately, Ruby has a built-in
-
-ay to automatically---. Fortunatel
- create _getter_ and _setter_ methods, using the **attr_accessor**
-method., Ruby has a built-in way to automatically create _getter_
-and _setter_ methods, using the **attr_accessor** method.
+---
 date: 2021-05-06T14:12
 ---
 
 # Getter/Setter Methods in Ruby
 
 In Ruby and most programming language, it is not possible to call instance
-variable directly. To access objects' attributes, one need to use _getters_
-and _setters_.
+variable directly. To access objects' attributes, one need to use _getter_
+and _setter_ methods.
 
 Getters and setters are instance methods that let you retreive and modify
 instance variables.
@@ -32,35 +27,16 @@ class Obake
 
   def speak
     puts "けけけけ"
-. Fortunately, Ruby has a built-in
-
-  attr_accessor :name
-
-ay to automatically---. Fortunatel
- create _getter_ and _setter_ methods, using the **attr_accessor**
-method., Ruby has a built-in way to automatically create _getter_
-and _setter_ methods, using the **attr_accessor** method.
-
-Getters and setters are instance methods that let you retreive and modify
-instance variables.
-
-```ruby
-class Obake
-  def initialize(name)
-    @name = name
   end
-
-  de get_name
-  en
 end
 
 ghost = Obake.new('Casper')
-puts ghost.get_name  # => Casper
+puts ghost.get_name    # => Casper
 ghost.set_name = 'Arthur'
-puts ghost.get_name  # => Arthur
+puts ghost.get_name    # => Arthur
 ```
 
-In most programming language, `get_*` and `set_` is used as the method
+In most programming language, `get_*` and `set_*` is used as the method
 name. In Ruby, by convention we use the variable name itself. Let's rewrite
 the code above with Ruby's convention:
 
@@ -84,9 +60,9 @@ class Obake
 end
 
 ghost = Obake.new('Casper')
-puts ghost.name  # => Casper
+puts ghost.name        # => Casper
 ghost.name = 'Arthur'
-puts ghost.get_name  # => Arthur
+puts ghost.get_name    # => Arthur
 ```
 
 ## Attributes Accessor
@@ -112,9 +88,9 @@ class Obake
 end
 
 ghost = Obake.new('Casper')
-puts ghost.name  # => Casper
+puts ghost.name        # => Casper
 ghost.name = 'Arthur'
-puts ghost.get_name  # => Arthur
+puts ghost.get_name    # => Arthur
 ```
 
 There are three `attr_` methods:
@@ -122,6 +98,9 @@ There are three `attr_` methods:
 - `attr_accessor` read & write
 - `attr_reader` read only
 - `attr_writer` write only
+
+Instance variables are written like symboles with a `:`. Multiple variables
+can be written separated by comma: `attr_reader :name, :age`.
 
 ## Setter Methods
 
