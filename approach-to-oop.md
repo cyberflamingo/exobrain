@@ -4,7 +4,7 @@ date: 2021-04-18T11:52
 
 # Approach to OOP
 
-There are may approach to Object Oriented Programming. Here is one.
+There are many approach to Object Oriented Programming. Here is one.
 
 1. Write a textual description of the problem to solve
 2. Exract major _nouns_ and _verbs_ from the description
@@ -61,12 +61,12 @@ puts player1.player_info # Super redundant
 puts player2.player_info # Super redundant
 ```
 
-Also, pick consistent naming convention, easy to remember and give a good idea
-of what the method does.
+Also, pick a consistent naming convention which is easy to remember and
+give a good idea of what the method does.
 
 ---
 
-Finally, remember that quote from programmers that have been doing it for
+Finally, remember this quote from programmers that have been doing it for
 years:
 
 > Premature optimization is the root of all evil.

@@ -4,20 +4,20 @@ date: 2021-03-31T08:56
 
 # What is Object Oriented Programming
 
-**Object Oriented Programming** or **OOP* is a programming paradigm created to
+**Object Oriented Programming** or **OOP** is a programming paradigm created to
 deal with the growing complexity of larger software systems.
 
 OOP sections some area of the code to make the whole code interacts with only
-small chuncks of code. This make it easier to deal than chunking big blob of
-dependency that just waits to throw errors.
+small chunks of code. This make it easier to deal than chunking big blob of
+dependencies that just wait to throw errors.
 
 ## Objets
 
 OOP has **Object** in its name. Let's define it.
 
-First, objects are created from classes. Classes are like molds. What comes out
-of the mold in an object. Classes define the basic outliens of what the object
-should be made of and what it should be able to do.
+First, objects are created from **classes**. Classes are like molds. What
+comes out of the mold in an **object**. Classes define the basic outlines
+of what the object should be made of and what it should be able to do.
 
 Defining a class in Ruby is pretty similar to defining a method:
 
@@ -28,10 +28,10 @@ end
 rosa = RedPanda.new
 ```
 
-We created and _instance_ of `RedPanda` class and stored it in the local
-variable `rosa`. Creating a new object or instance from a class is called
-**instantiation**: we have _instantiated_ an object called `rosa` form the
-class `RedPanda`.
+After defining the `RedPanda` class, we created an _instance_ of it and
+stored the result in the local variable `rosa`. Creating a new object or
+instance from a class is called **instantiation**: we have _instantiated_
+an object called `rosa` from the class `RedPanda`.
 
 ## Common Terminology
 
@@ -40,19 +40,25 @@ the rest of the code base.
 
 **Polymorphism** is the ability for different types of data to respond to a
 common interface. It's what gives us the flexibility in using pre-written code
-for new purposes. From the Green _polymorphos_, _poly_ is a prefix which means
+for new purposes. From the Greek _polymorphos_, _poly_ is a prefix which means
 "many" and _morph_ means "form".
 
-**Inheritance** is where a class inherits the behaviors of another class called
+**Inheritance** is when a class inherits the behaviors of another class called
 **superclass**. The class that inherits behaviors is called **subclass**.
-Subclass lets programmer make smaller, more fine-grained behavior, derived from
-the superclass behaviors.
+Subclass lets programmer makes smaller, more fine-grained behavior,
+derived from the superclass behaviors.
 
-See also [[[inheritance-vs-association]]].
+{.ui .message .info}
+In Ruby, a class can only directly sub-class from one super class. This is
+called a _single inheritance_.
 
-**Mixin** are the result of the mix of a module (in Ruby) with a class. After
-mixing with a module, the behaviors declared in that module are unavailable to
-the class and its objects.
+See also [[inheritance-vs-association]]#.
+
+**Mixins** are the result of the mix of a module (in Ruby) with a class. After
+mixing with a module, the behaviors declared in that module are available to
+the class and its objects. Where other programming languages allow classes
+to directly inherit from multiple class (_multiple inheritance_), Ruby has
+_mixing in_ behaviors.
 
 **Modules** are collection of behaviors that are usable in other classes via
 **mixins**. A module is _mixed in_ to a class unsing the `include` method
@@ -82,6 +88,9 @@ alfred.speak('Bonjour')
 Both instance of the two classes `RedPanda` and `Human` have access to the
 `speak` instance method thanks to the mixin of `Speak` module with both
 classes.
+
+Generally, a module is used when there is a _-able_ relationthip:
+tow*able* (for truck), screw*able* (for bracket) etc.
 
 **Namespacing** is the action of organizing similar classes under a common
 module. Here, the module is used to group several similar or related classes.

@@ -8,12 +8,12 @@ Method access control is the concept of using _access modifiers_ to change the
 visibility of methods in a class. In Ruby by default, method are public unless
 specified otherwise.
 
-Ruby have the `public`, `private`, and `protected` access modifiers.
+Ruby has the `public`, `private`, and `protected` access modifiers.
 
 To make methods work inside the class but not available to the rest of the
 program, one can use the `private` access modifier.
 
-There is also an in-between access modifier:
+`protected` is an in-between access modifier:
 
 -  From _inside_ the class `protected` methods are accessible like `public`
 methods
@@ -21,14 +21,14 @@ methods
 
 ## Access Modifiers and Getters/Setters
 
-Getters and setters (in Ruby, the built-in `attr_*` methods) behing methods,
+Getters and setters (in Ruby, the built-in `attr_*` methods) being methods,
 their visibility can be changed just like other methods.
 
-It can become confusing because of Ruby's syntactical sugar. Using for example
-`attr_accessor :name` accessor methods provides us with `name` and `name=`
-getter/setter instance methods, and `@name` instance variables. The setter
-instance method, particularly, is easily confused with a local variable
-initialization or reassignement.
+It easily becomes confusing because of Ruby's syntactical sugar. Using for
+example `attr_accessor :name` accessor methods provides us with `name` and
+`name=` getter/setter instance methods, and `@name` instance variables. The
+setter instance method, particularly, is easily confused with a local
+variable initialization or reassignement.
 
 Let's see two examples using `private` and `protected`.
 
