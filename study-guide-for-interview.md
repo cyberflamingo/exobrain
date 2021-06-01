@@ -4,8 +4,7 @@ date: 2021-02-24T09:12
 
 # Study Guide for Interview
 
-Checklist of Topics to Review
------------------------------
+## RB109
 
 ### General Topics
 
@@ -45,3 +44,19 @@ Checklist of Topics to Review
 - [[[ruby-ternary-operator]]]
 - [[[practice-problems-others]]]
 - [[[maths-shortcut-tricks-code]]]
+
+## RB129
+
+### Specific Topics of Interest
+
+- Object Oriented Design
+- [[polymorphism]]#
+  - With Duck Typing
+- States and Behaviors
+  - Attributes vs States
+- Collaborator Objects
+- Monkey Patching
+- Scope of instance variable, class variable and constant
+  - Lexical Scope (modules an constants)
+- Method Lookup Path
+- Modules (namespacing, mixins)
