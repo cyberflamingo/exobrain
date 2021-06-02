@@ -51,7 +51,7 @@ date: 2021-02-24T09:12
 
 - Object Oriented Design
 - [[polymorphism]]#
-  - With Duck Typing
+  - [[duck-typing]]
 - States and Behaviors
   - Attributes vs States
 - Collaborator Objects

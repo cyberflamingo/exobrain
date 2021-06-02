@@ -13,6 +13,11 @@ the types of objects interacting ; it only cares about the objects' _public
 interfaces_. As long as this public interface exists, the implementation of
 the object or even its type is irrelevent.
 
+{.ui .message .info}
+Note that polymorphism needs _intent_ to be polymorphic. Otherwise they are
+just two objects which have a behavior of the same name (not a common
+behavior).
+
 ## Achieve Polymorphism in Ruby
 
 There are three ways to achieve polymorphism in Ruby.
@@ -194,4 +199,4 @@ end
 
 ### Polymorphism through Duck Typing
 
-This section needs more work.
+See [[duck-typing]]#.
