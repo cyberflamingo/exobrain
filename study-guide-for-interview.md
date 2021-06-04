@@ -52,8 +52,8 @@ date: 2021-02-24T09:12
 - Object Oriented Design
 - [[polymorphism]]#
   - [[duck-typing]]
-- States and Behaviors
-  - Attributes vs States
+- [[classes-and-objects]]#
+  - [[attributes-vs-states]]#
 - Collaborator Objects
 - Monkey Patching
 - Scope of instance variable, class variable and constant
