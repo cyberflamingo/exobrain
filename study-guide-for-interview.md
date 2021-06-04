@@ -54,7 +54,7 @@ date: 2021-02-24T09:12
   - [[duck-typing]]
 - [[classes-and-objects]]#
   - [[attributes-vs-state]]#
-- Collaborator Objects
+- [[collaborator-objects]]#
 - Monkey Patching
 - Scope of instance variable, class variable and constant
   - Lexical Scope (modules an constants)
