@@ -53,7 +53,7 @@ date: 2021-02-24T09:12
 - [[polymorphism]]#
   - [[duck-typing]]
 - [[classes-and-objects]]#
-  - [[attributes-vs-states]]#
+  - [[attributes-vs-state]]#
 - Collaborator Objects
 - Monkey Patching
 - Scope of instance variable, class variable and constant
