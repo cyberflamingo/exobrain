@@ -22,7 +22,7 @@ Attributes of an object are tracked by its **states** while **behaviors**
 are what objects are capable of doing.
 
 This is done by the mean of _instance variables_ and _instance methods_.
-The former keep tack of state and the later keep track of behavior for
+The former keep track of state and the later keep track of behavior for
 objects.
 
 ```ruby
