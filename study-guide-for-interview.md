@@ -56,7 +56,6 @@ date: 2021-02-24T09:12
   - [[attributes-vs-state]]#
 - [[collaborator-objects]]#
 - Monkey Patching
-- Scope of instance variable, class variable and constant
-  - Lexical Scope (modules an constants)
+- [[variable-scope-oop]]#
 - Method Lookup Path
 - Modules (namespacing, mixins)
