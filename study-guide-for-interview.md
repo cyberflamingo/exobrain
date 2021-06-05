@@ -55,7 +55,6 @@ date: 2021-02-24T09:12
 - [[classes-and-objects]]#
   - [[attributes-vs-state]]#
 - [[collaborator-objects]]#
-- Monkey Patching
 - [[variable-scope-oop]]#
-- Method Lookup Path
+- [[method-lookup-path]]#
 - Modules (namespacing, mixins)
