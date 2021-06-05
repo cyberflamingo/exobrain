@@ -49,7 +49,7 @@ date: 2021-02-24T09:12
 
 ### Specific Topics of Interest
 
-- Object Oriented Design
+- [[what-is-object-oriented-programming]]#
 - [[polymorphism]]#
   - [[duck-typing]]
 - [[classes-and-objects]]#
@@ -57,4 +57,4 @@ date: 2021-02-24T09:12
 - [[collaborator-objects]]#
 - [[variable-scope-oop]]#
 - [[method-lookup-path]]#
-- Modules (namespacing, mixins)
+- [[modules]]#

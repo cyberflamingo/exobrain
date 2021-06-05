@@ -62,7 +62,7 @@ _mixing in_ behaviors.
 
 **Modules** are collection of behaviors that are usable in other classes via
 **mixins**. A module is _mixed in_ to a class unsing the `include` method
-invocation.
+invocation. See also [[modules]]#.
 
 ```ruby
 module Speak
