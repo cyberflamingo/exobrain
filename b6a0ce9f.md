@@ -29,6 +29,7 @@ Here is a bunch of notes of things I am working on.
 * [[[tabbing-bracing-style]]]
 * [[[pairwise-testing]]]
 * [[[what-is-object-oriented-programming]]]
+* [[closure]]#
 
 ## Operating Systems
 
