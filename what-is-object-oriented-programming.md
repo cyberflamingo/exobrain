@@ -36,7 +36,7 @@ an object called `rosa` from the class `RedPanda`.
 ## Common Terminology
 
 **Encapsulation** is hiding piece of functionality and making it unavailable to
-the rest of the code base.
+the rest of the code base. See [[encapsulation]]#.
 
 **Polymorphism** is the ability for different types of data to respond to a
 common interface. It's what gives us the flexibility in using pre-written code
