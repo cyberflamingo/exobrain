@@ -30,6 +30,7 @@ Here is a bunch of notes of things I am working on.
 * [[[pairwise-testing]]]
 * [[[what-is-object-oriented-programming]]]
 * [[closure]]#
+* [[seat-approach]]#
 
 ## Operating Systems
 
