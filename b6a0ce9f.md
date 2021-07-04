@@ -31,6 +31,7 @@ Here is a bunch of notes of things I am working on.
 * [[[what-is-object-oriented-programming]]]
 * [[closure]]#
 * [[seat-approach]]#
+* [[heredoc]]#
 
 ## Operating Systems
 
