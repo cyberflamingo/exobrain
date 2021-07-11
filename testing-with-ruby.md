@@ -96,6 +96,8 @@ To perform or run actions before or after each test, Minitest provides both
 `setup` and `teardown` methods. Each class that defines a test suite can
 have those two methods.
 
+See also the #[[seat-approach]].
+
 `setup` is often used to perform setup and requirements before each test.
 `teardown` is called for any required cleanup. This is often use to
 connect/disconnect to a database, for example.
