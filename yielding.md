@@ -18,7 +18,7 @@ p echo_with_yield("Hello!") { puts "World" }
 #    "Hello!"
 ```
 
-The `yield` keyword executes the block (which is way words order are
+The `yield` keyword executes the block (which is why words order above are
 inversed).
 
 ## Conditional Block
