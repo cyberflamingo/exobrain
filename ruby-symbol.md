@@ -11,21 +11,22 @@ the action:
 [1, 2, 3, 4].map { |num| num.to_s }
 ```
 
-Or we can pass a Proc and Symbol `&:to_s` as an argument to the method instead
-of a block:
+Or we can pass `&:to_s` as an argument to the method instead of a block,
+which is fundamentally the same thing:
 
 ```ruby
 [1, 2, 3, 4].map(&:to_s)
 ```
 
-We can see `&` which turns a Proc into a block (#[[ruby-proc-and-scope]])
-and `:to_s` which is a Symbol.
+We can see `&` in front of an object. This tells Ruby to try to convert
+said object into a block. However it's expecting a Proc object therefore if
+it's not a Proc object, Ruby will call `#to_proc` on the object.
 
 What is happening here is:
 
 - Ruby convert the object after `&` to a Proc with `#to_proc` if it is not
   one already. (An error is thrown if the object cannot be converted)
-- `&` turns the `Proc` into a block.
+- If successful, `&` turns the `Proc` into a block.
 
 The code bellow illustrates illustrates what is happening step by step:
 
