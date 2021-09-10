@@ -20,6 +20,8 @@ The high-level protocols named above rely on physical infrastructure in
 order to function. They are _dependant_ of the limitations of such
 infrastructure, such as network **bandwidth** and **latency**.
 
+See [[physical-network]].
+
 ### Rules
 
 Protocols are a locical sets of rules designed and engineered as they are.
@@ -69,6 +71,9 @@ communicate (rules may apply). This forms the network.
 
 This is common in office environment and home network.
 
+In a home, the central machine is generally a **router** which also assume
+the role of a simple switch.
+
 #### Inter-Network Communication
 
 Each LAN network is confined to its _local_ environment and geographic
@@ -81,3 +86,10 @@ network.
 The Internet is an extrapolation of this principle: between each
 sub-networks are systems of routers that direct the network traffic. This
 is a simplification but still a good mental model to start with.
+
+The router then connect to a a **Wide Area Network** or WAN which is likely
+a router provided by the **Internet Service Provider** or ISP. The ISP's
+routers themselve connect to the **backbone** of the Internet.
+
+The hops from one computer to the backbone and then to the intended server
+can be traced using the `traceroute` command.
