@@ -90,3 +90,7 @@ take care of some of the network and communication-related tasks.
 Most language follow the [Berkley
 sockets](https://en.wikipedia.org/wiki/Berkeley_sockets) API model for
 their implementation.
+
+## Protocol
+
+- [[transmission-control-protocol]]#
