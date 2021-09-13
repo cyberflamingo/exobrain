@@ -32,7 +32,7 @@ The layers are:
 - Layer 7: Application
 - Layer 6: Presentation
 - Layer 5: Session
-- Layer 4: Transport
+- Layer 4: [[transport-layer]]#
 - Layer 3: [[internet-network-layer]]#
 - Layer 2: [[link-data-link-layer]]#
 - Layer 1: [[physical-network]]#
@@ -45,7 +45,7 @@ communications within each layer (local network, between networks, etc).
 The layers are:
 
 - Layer 4: Application
-- Layer 3: Transport
+- Layer 3: [[transport-layer]]#
 - Layer 2: [[internet-network-layer]]#
 - Layer 1: [[link-data-link-layer]]#
 
