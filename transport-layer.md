@@ -9,11 +9,14 @@ other.
 
 Important concept to grasp are:
 
-- Multiplexing
-- Demultiplexing
-- How ports works with IP addresses
-- Network reliability and its engineering
+- Multiplexing, demultiplexing, and the use of network ports
+- How ports works with IP addresses (conceptualy, a network sockets)
+- Socket object (at implementation level)
+- Network (un)reliability and its engineering
+- Connection-oriented and connectionless protocol
 - Difference and trade-offs of TCP and UDP
+- Three-way-handshake (SYN, SYN ACK, ACK)
+- Congestion avoidance in TCP
 
 Internet Protocol and its system of addressing intend to provide
 communication between _hosts_ (devices). Hosts can be on the same or a

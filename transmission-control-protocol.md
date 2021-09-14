@@ -78,3 +78,8 @@ during the connection.
 {.ui .message .info}
 There is also a `FIN` flag used in the **Four-way Handshake**. It signals
 the termination of the connection.
+
+See also [Two Generals'
+Problem](https://en.wikipedia.org/wiki/Two_Generals'_Problem) and this
+[YouTube video](https://youtu.be/IP-rGJKSZ3s) for more an easy
+explaination.
