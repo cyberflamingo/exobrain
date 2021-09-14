@@ -27,10 +27,13 @@ encapsulate data from the Internet/Network layer above.
 The Link/Data Link layer is the lowest layer at which encapsulation takes
 place.
 
-On the phisical layer, the data is a stream of bits without logical
+On the physical layer, the data is a stream of bits without logical
 structure. An Ethernet Frame adds this missing structure to this binary
 data. The structure defines which bits are _data payload_ and which are
 _metadata_ (header or trailer/footer).
+
+{.ui .message .info}
+The purpose of the Layer 2 header is to get the data from hop to hop.
 
 Ethernet-compliant device can identify the different parts of a frame
 because each "fields" of data have a specific lengths in bytes, and appear

@@ -20,7 +20,6 @@ A model is just that: a model. They are useful to grasp how the system work
 as a whole and permit to focus on some area of a system, however no model
 will ever perfectly represent a real-world implementation.
 
-
 ## OSI model
 
 The OSI model divides the layers according to their provided functions:
@@ -36,6 +35,10 @@ The layers are:
 - Layer 3: [[internet-network-layer]]#
 - Layer 2: [[link-data-link-layer]]#
 - Layer 1: [[physical-network]]#
+
+
+For a great overview of how packets move through a network at different
+layer, check this [YouTube video](https://youtu.be/rYodcvhh7b8).
 
 ## Internet Protocol Suite
 

@@ -53,3 +53,9 @@ domains. The switch keeps a list of MAC addresses on each side of a given
 network and only passes information if necessary.
 
 This approach is also basically how the Internet works (at a high level).
+
+## MAC Address Table
+
+A MAC address table is a mapping of a **Swhitchports** to MAC addresses. As
+traffic flow through a switch, it will identify what devices are connected
+to each port by their MAC addresses and record it in its MAC address table.
