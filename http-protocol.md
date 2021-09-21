@@ -61,7 +61,7 @@ webpage addresses.
 Let's analyze the following URL and its components:
 `https://www.eff.org:443/updates?type=case`
 
-- `https`: the **scheme**. Written before a colon and thwo forward slashes
+- `https`: the **scheme**. Written before a colon and two forward slashes
 (`://`). It tells the web client which protocol to use to access the
 resource. Often referred to as the _protocol_ which is not totally wrong,
 but the correct term as an URL component is _scheme_.
@@ -69,7 +69,7 @@ but the correct term as an URL component is _scheme_.
 the _domain_, although this exemple uses a domain and a subdomain.
 - `:443`: the **port**. Can be omitted if it's one of the default one (`80`
 for HTTP and `443` for HTTPS, like in this case)
-- `/updates`: the **path**. Shows which ressource within the host is being
+- `/updates`: the **path**. Shows which resource within the host is being
 requested. Optional to make a complete HTTP request.
 - `?type=case`: the **query string** made up of **query parameters**. Used
 to send data to the server. Also optional.
@@ -78,7 +78,7 @@ to send data to the server. Also optional.
 When accessing the URL above, we are redirected to
 `https://www.eff.org/cases`. This has nothing to do with how URL works;
 it's simply the result of what the framework for this particular website
-decides to sends back.
+decides to send back.
 
 Unless something else is specified, port `80` will be assumed for every
 HTTP requests and port `443` will be assumed for every HTTPS request.
@@ -156,7 +156,7 @@ those resources (a pure HTTP tool like `curl` will not).
 `GET` are great to retreive or ask for information from a server, but to
 send or submit data we often use `POST`.
 
-`POST` is often used to sedn information through a form. Though most `POST`
+`POST` is often used to send information through a form. Though most `POST`
 request could be done with `GET`, it is not wise to use the later with
 sensitive information as it will reveal the information in the query
 parameter. `POST` can also send bigger files, which `GET` cannot because of
