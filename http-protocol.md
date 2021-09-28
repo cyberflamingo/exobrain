@@ -30,6 +30,9 @@ state. If a request break, no cleanup is done; this make HTTP resilient,
 distributed and hard to control, but also difficult to build stateful
 application upon.
 
+See [[stateful-web-app]]# for a way to make sateteful web applications out
+of HTTP.
+
 ## Difference Between URI and URL
 
 A web page address such as
