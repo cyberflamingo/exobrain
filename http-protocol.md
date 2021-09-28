@@ -36,9 +36,9 @@ of HTTP.
 ## Difference Between URI and URL
 
 A web page address such as
-`https://www.eff.org/pages/surveillance-self-defense` is knowns as a
+`https://www.eff.org/pages/surveillance-self-defense` is known as a
 **U**niform **R**esource **L**ocator, or **URL**. It's like a physical
-address but for visiting webpage.
+address but for visiting web page.
 
 A **U**niform **R**esource **I**dentifier, or **URI**, on the other hand
 specifies how resources are located. URL is the most frequently used part
@@ -57,7 +57,7 @@ The terms are [not interchangeable](https://stackoverflow.com/a/1984225)
 but according to a [W3C
 Note](https://www.w3.org/TR/uri-clarification/#contemporary) we should use
 URI when speaking about **scheme** and URL when speaking precisely about
-webpage addresses.
+web page addresses.
 
 ## URL Components
 
@@ -69,7 +69,7 @@ Let's analyze the following URL and its components:
 resource. Often referred to as the _protocol_ which is not totally wrong,
 but the correct term as an URL component is _scheme_.
 - `www.eff.org`: the **host**. Where the resources is at. Different from
-the _domain_, although this exemple uses a domain and a subdomain.
+the _domain_, although this example uses a domain and a subdomain.
 - `:443`: the **port**. Can be omitted if it's one of the default one (`80`
 for HTTP and `443` for HTTPS, like in this case)
 - `/updates`: the **path**. Shows which resource within the host is being
@@ -156,7 +156,7 @@ those resources (a pure HTTP tool like `curl` will not).
 
 ### POST Requests
 
-`GET` are great to retreive or ask for information from a server, but to
+`GET` are great to retrieve or ask for information from a server, but to
 send or submit data we often use `POST`.
 
 `POST` is often used to send information through a form. Though most `POST`
