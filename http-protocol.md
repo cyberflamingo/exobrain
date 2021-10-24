@@ -164,3 +164,7 @@ request could be done with `GET`, it is not wise to use the later with
 sensitive information as it will reveal the information in the query
 parameter. `POST` can also send bigger files, which `GET` cannot because of
 the size limitation of its requests.
+
+## Security
+
+See [[http-security]]#.
