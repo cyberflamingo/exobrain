@@ -59,6 +59,9 @@ Note](https://www.w3.org/TR/uri-clarification/#contemporary) we should use
 URI when speaking about **scheme** and URL when speaking precisely about
 web page addresses.
 
+See also [this video](https://www.youtube.com/watch?v=if0pzXWZOfY) for more
+information and examples.
+
 ## URL Components
 
 Let's analyze the following URL and its components:
