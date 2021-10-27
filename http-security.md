@@ -1,4 +1,4 @@
----
+  ---
 date: 2021-10-24T14:57
 ---
 
@@ -20,10 +20,37 @@ HTTPS uses a cryptographic protocol called TLS for Transport Layer
 Security. Earlier versions used SSL (Secure Sockets Layer) and some people
 still refer to TLS as SSL. TLS is the correct term though.
 
+The most recent version of TLS is TLS 1.3.
+
+### Transport Layer Security Protocol
+
+TLS provides three important security services:
+
+- **Encryption**: encode messages so that only authorized people can decode
+them
+- **Authentication**: verify the identity of a party in a message exchange
+- **Integrity**: detect whether the message has been altered/interfered
+with
+
+### TLS Handshake
+
+TLS Handshake process is used to:
+
+- Agree on which version of TLS to use between the client and server in
+establishing a secure connection
+- Agree on the algorithms to be included in the cipher suite
+- Exchange the symmetric keys that will be used for message encryption
+
+One should be aware that this overhead as an impact on performance: it adds
+up to two round-trip of latency in addition to the TCP Handshake.
+
+A more detailed explanation of the TLS Handshake can be seen here:
+[[tls-handshake]]#.
+
 ## Same-Origin Policy
 
 Same-origin policy restrict and unrestrict interaction base on the
-**origin** of the interaction. It is an important policy to guard agains
+**origin** of the interaction. It is an important policy to guard against
 session hijacking.
 
 The _origin_ consists of three elements of the URL:
@@ -37,7 +64,7 @@ resources are being accessed programmatically using APIs. Linking,
 redirects and form submissions to different origins are typically allowed.
 
 Same-origin policy is a great layer of security but may cause problem for
-developpers with a legitimate need for cross-origin requests. This problem
+developers with a legitimate need for cross-origin requests. This problem
 can be dealt with user *CORS** for **C**ross-**O**rigin **R**essource
 **S**haring.
 
@@ -46,9 +73,9 @@ origins.
 
 ## Session Hijacking
 
-Session hijacking is when an attackger gets a hold of someone else's
+Session hijacking is when an attacker gets a hold of someone else's
 session id. In this case, the attacker can access the website as the
-victime, without having to get hold of username and password, and without
+victim, without having to get hold of username and password, and without
 the user's knowing.
 
 Some countermeasures includes:
