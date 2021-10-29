@@ -1,10 +1,10 @@
-  ---
+---
 date: 2021-10-24T14:57
 ---
 
 # HTTP Security
 
-## Secure HTTP(HTTPS)
+## Secure HTTP (HTTPS)
 
 Requests and responses between client and server are sent as strings. This
 mean someone on the same network, using _packet sniffing_ techniques could
@@ -30,7 +30,7 @@ TLS provides three important security services:
 them
 - **Authentication**: verify the identity of a party in a message exchange
 - **Integrity**: detect whether the message has been altered/interfered
-with
+with (see [[message-authentication-code]]#)
 
 ### TLS Handshake
 
