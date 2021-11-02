@@ -12,7 +12,8 @@ high-level picture of how the different parts work together goes a long
 way.
 
 We should have a general mental models that is good enough to understand
-higher levels of abtraction protocols, such as **TCP** and **HTTP**.
+higher levels of abtraction protocols, such as
+[[transmission-control-protocol]]# and [[http-protocol]]#.
 
 ### Physical Network
 
