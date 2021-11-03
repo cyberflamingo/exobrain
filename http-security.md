@@ -26,7 +26,8 @@ The most recent version of TLS is TLS 1.3.
 
 TLS provides three important security services:
 
-- **Encryption**: encode messages so that only authorized people can decode
+- [[tls-encryption]]#: encode messages so that only authorized people can
+decode
 them
 - **Authentication**: verify the identity of a party in a message exchange
 - **Integrity**: detect whether the message has been altered/interfered
@@ -49,7 +50,7 @@ A more detailed explanation of the TLS Handshake can be seen here:
 
 ## Same-Origin Policy
 
-Same-origin policy restrict and unrestrict interaction base on the
+Same-origin policy restrict and un-restrict interaction base on the
 **origin** of the interaction. It is an important policy to guard against
 session hijacking.
 
