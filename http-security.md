@@ -29,7 +29,8 @@ TLS provides three important security services:
 - [[tls-encryption]]#: encode messages so that only authorized people can
 decode
 them
-- **Authentication**: verify the identity of a party in a message exchange
+- [[tls-authentication]]#: verify the identity of a party in a message
+exchange
 - **Integrity**: detect whether the message has been altered/interfered
 with (see [[message-authentication-code]]#)
 
