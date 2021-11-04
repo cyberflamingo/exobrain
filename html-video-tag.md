@@ -13,4 +13,8 @@ text will be displayed if the browser is unable to load the video.
 ```html
 <video src="myVideo.mp4" width="320" height="240" controls>
   Video not supported
-</video>```
+</video>
+```
+
+The `controls` attribute tells the browser to include basic video controls
+(pause, play, skip).
