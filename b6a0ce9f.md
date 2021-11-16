@@ -33,6 +33,7 @@ Here is a bunch of notes of things I am working on.
 * [[closure]]#
 * [[seat-approach]]#
 * [[heredoc]]#
+* [[firefox-developer-tools]]#
 
 ## Operating Systems
 
