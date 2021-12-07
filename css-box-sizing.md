@@ -5,9 +5,9 @@ date: 2021-12-01T21:41
 CSS Box Sizing
 ==============
 
-Today's browsers use $$width + padding + border$$ to calculate the
-actual width and height of their #[[css-box-model]]. However, this box
-model is modifiable using CSS's `box-sizing`.
+Today's browsers use `width` $+$ `padding` $+$ `border` to calculate the
+actual width and height of their \#\[\[css-box-model\]\]. However, this
+box model is modifiable using CSS's `box-sizing`.
 
 `box-sizing` has three possible values:
 
