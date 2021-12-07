@@ -2,8 +2,8 @@
 date: 2021-12-06T09:44
 ---
 
-Margins and Padding
-===================
+CSS Margins and Padding
+=======================
 
 Padding lies inside the border while margins lie outside it (even if the
 border is a zero-width one).
