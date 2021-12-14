@@ -5,6 +5,13 @@ date: 2021-12-14T08:31
 Threat Modeling
 ===============
 
+Threat modeling is a process to find threats (vulnerabilities) early on
+in order to rank and mitigate them. It is a proactive approach to
+security and gives team members a better understanding and knowledge of
+the application. The process should fit *into* the organization, and not
+the other way around. In other words, the *who* and *when* depends on
+the organization.
+
 4 W's of threat modeling:
 
 -   What is Threat Modeling
