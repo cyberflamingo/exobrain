@@ -20,13 +20,14 @@ the organization.
 -   When to Treat Model
 
 What is Threat Modeling?
-========================
+------------------------
 
 Threat modeling needs two important components:
 
 -   **Systematic Approach**: using a model to have a repeatable
     **process**. Threat modeling *is* a process to tackle security in a
     repeatable and consistent fashion during the development life cycle.
+    See [[threat-modeling-approach]]#
 -   **Looking at Attacks**: actively looking at what and how something
     can be abused. You are looking for *abuse cases* in order to find
     vulnerabilities.
