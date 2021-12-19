@@ -54,6 +54,7 @@ Here is a bunch of notes of things I am working on.
 * [[[ea0ba5b1]]]
 * [[[email-with-plus]]]
 * [[torrent-client-settings]]#
+* [[oauth-openid-connect]]#
 
 ### FFmpeg
 
