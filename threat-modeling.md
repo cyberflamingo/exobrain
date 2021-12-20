@@ -86,3 +86,14 @@ As said above, the earlier, the cheaper. Therefore the correct answer is
 
 In an agile environment, the threat modeling should ideally be done
 during each sprint.
+
+Examples of Threat Models that Go Wrong
+---------------------------------------
+
+In practice a big one is the human factor: assuming that the user will
+use a strong password and not click on random link are not good
+assumptions.
+
+Another good think to remember is that threat model changes over time
+and keep up with the technological advancement (like crypotographic key
+size).
