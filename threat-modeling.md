@@ -97,3 +97,8 @@ assumptions.
 Another good think to remember is that threat model changes over time
 and keep up with the technological advancement (like crypotographic key
 size).
+
+Methodology
+-----------
+
+See [[threat-modeling-methodology]]#.
