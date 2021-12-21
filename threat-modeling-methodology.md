@@ -1,18 +1,17 @@
-------------------------------------------------------------------------
-
+---
 date: 2021-12-15T09:27
-----------------------
+---
 
 Threat Modeling Methodology
 ===========================
 
-{.ui .memo .info} Some of the methodologies below are Risk
-Analysis/Threat Analysis methodology. Still it's good to know about them
-from a threat modeling perspective.
+{.ui .memo .info}
+Some of the methodologies below are Risk Analysis/Threat Analysis
+methodology. Still it's good to know about them from a threat modeling
+perspective.
 
 All the modeling methodologies below are *asset* or
-*application*-centric methodologies (see
-\#\[\[threat-modeling-approach\]\]).
+*application*-centric methodologies (see #[[threat-modeling-approach]]).
 
 Methodology depends heavily on the team, the organization and the set
 goals. As a general rules of thumb, though, for an *asset-centric*
