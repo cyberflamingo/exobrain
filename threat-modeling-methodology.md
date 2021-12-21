@@ -26,7 +26,7 @@ another, the generic process is almost always the same:
 -   Set scope
 -   Analyze target
 -   Identify threats
--   Rate theats
+-   Rate threats
 
 PASTA
 -----
