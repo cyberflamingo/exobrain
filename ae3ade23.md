@@ -13,3 +13,8 @@ date: 2020-09-15T07:34
 * [[[gpg-unsafe-permissions]]]
 * [[[what-is-malware]]]
 * [[threat-modeling]]#
+
+### Governance, Risk and Compliance (GRC)
+
+-   [[it-governance]]#
+-   [[iso-iec-27001]]#
