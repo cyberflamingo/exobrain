@@ -12,6 +12,7 @@ Portals
 -   [[html-label-input-tag]]#
 -   [[html-datalist-tag]]#
 -   [[html-reset-type]]#
+-   [[description-list-form]]#
 -   [[css-attribute-selectors]]#
 -   [[css-box-model]]#
 -   [[css-box-sizing]]#
