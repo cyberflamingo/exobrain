@@ -38,8 +38,9 @@ Here is a bunch of notes of things I am working on.
 Database
 --------
 
+-   [[sql]]#
 -   [[relational-database-management-system]]#
--   [[postgresql]]#
+    -   [[postgresql]]#
 
 ## Operating Systems
 
