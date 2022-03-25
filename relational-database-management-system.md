@@ -13,8 +13,7 @@ using a conventional or standardized syntax.
 Examples of RDBMS includes [SQLite](https://www.sqlite.org/index.html),
 [Microsoft SQL
 Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads),
-[PostgreSQL](https://www.postgresql.org/) and
-[MySQL](https://www.mysql.com/).
+[[postgresql]]# and [MySQL](https://www.mysql.com/).
 
 Every RDBMS varies in complexity and robustest, however they all have
 the same underlying language in common: Structured Query Language (SQL).
