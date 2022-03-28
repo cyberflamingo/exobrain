@@ -13,6 +13,7 @@ date: 2020-09-15T07:34
 * [[[gpg-unsafe-permissions]]]
 * [[[what-is-malware]]]
 * [[threat-modeling]]#
+-   [[what-is-opsec]]#
 
 ### Governance, Risk and Compliance (GRC)
 
