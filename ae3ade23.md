@@ -16,5 +16,14 @@ date: 2020-09-15T07:34
 
 ### Governance, Risk and Compliance (GRC)
 
+-   Information Security Management System
 -   [[it-governance]]#
--   [[iso-iec-27001]]#
+-   [[iso-iec-27001]]#: Information Security Management
+-   [[pci-standards]]#: Payment Card Industry Data Security
+    Standard
+-   NIST CSF: Security Framework
+-   NIST 800-53: Security and Privacy Controls for Information Systems
+    and Organizations
+-   ENISA Framework: ISMS framework
+-   ISF: Information Security Framework
+-   CIS 20: Critical Security Controls
