@@ -46,3 +46,15 @@ In the `psql` console prompt, one can issue two types of commands:
     (and terminating in a semi-colon)
 
 [Source](https://launchschool.com/books/sql/read/interacting_with_postgresql)
+
+Common PSQL Meta-Commands
+-------------------------
+
+-   `\connect database_name` (or `\c database_name`) to connect to the
+    database called `database_name`
+-   `\list` (or `\l`) to display all databases
+-   `\quit` (or `\q`) to exit PostgreSQL session
+-   `\edit` (or `\e`) to call an editor that let's you edit and rerun
+    the previous command
+-   `\dt` to display a list of all the existing tables
+-   `\d foo` to describe the table `foo`
