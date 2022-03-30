@@ -127,7 +127,7 @@ Often used constraints include:
 ### Alter a Table
 
 One can modify a table using the `ALTER TABLE` statement. The syntax is
-as follow:
+as follows:
 
 ``` sql
 ALTER TABLE
@@ -242,6 +242,53 @@ DROP TABLE bar;
 This action is irreversible.
 
 [Source](https://launchschool.com/books/sql/read/alter_table)
+
+Data
+----
+
+### Insertion Statement Syntax
+
+The most basic insertion statement is as follows:
+
+``` sql
+INSERT INTO
+  table_name (column1_name, column2_name,...)
+VALUES
+  (data_for_column1, data_for_column2,...);
+```
+
+Three piedes of information are to be provided:
+
+1.  The table name
+2.  The columns' names
+3.  The values to be stored in each columns
+
+Will columns' names can be omitted under certain conditions, it's
+generally best to write both the column and its data to avoid error down
+the road.
+
+A successful insertion will produce the following result (meaning is in
+comment):
+
+``` txt
+INSERT 0 1
+--     |  \
+--    oid  |
+--       count
+```
+
+To insert several data sequentially in one command, you can separate
+each row with a comma `,`:
+
+``` sql
+INSERT INTO
+  table_name (column1_name, column2_name,...)
+VALUES
+  (data_for_column1, data_for_column2,...),
+  (data_for_column1, data_for_column2,...);
+```
+
+[Source](https://launchschool.com/books/sql/read/add_data)
 
 [^1]: [PostgreSQL Don't Do
     This](https://wiki.postgresql.org/wiki/Don%27t_Do_This#Don.27t_use_serial)
