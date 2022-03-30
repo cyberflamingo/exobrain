@@ -171,8 +171,7 @@ can have several constraints in a column.
 ALTER TABLE
   bar
 ADD
-  CONSTRAINT
-  [constraint_name]
+  [CONSTRAINT constraint_name]
   constraint_clause;
 ```
 
