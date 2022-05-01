@@ -257,7 +257,7 @@ VALUES
   (data_for_column1, data_for_column2,...);
 ```
 
-Three piedes of information are to be provided:
+Three pieces of information are to be provided:
 
 1.  The table name
 2.  The columns' names
@@ -289,6 +289,100 @@ VALUES
 ```
 
 [Source](https://launchschool.com/books/sql/read/add_data)
+
+Select Query Syntax
+-------------------
+
+The basic syntax is as follow:
+
+``` sql
+SELECT
+  column_name,
+  ...
+FROM
+  table_name
+WHERE
+  condition
+[ORDER BY
+  column_name [ASC]];
+```
+
+{.ui .info .message}
+RDBMS treats everything that is not a keyword (`SELECT`, `FROM` etc) as
+an identifiers. Case does not matter, therefore `SELECT` and `select`
+are treated the same. Generally it is best to avoid using reserved
+keywords as identifiers, like `year`. However, if it 's not possible,
+using double quote `"year"` lets the RDBMS knows the statement should be
+treated specifically as an identifier rather than a keyword.
+
+### Comparison Operators
+
+List of often used operators:
+
+| Operator     | Description              |
+|--------------|--------------------------|
+| `<`          | less than                |
+| `>`          | greater than             |
+| `<=`         | less than or equal to    |
+| `>=`         | greater than or equal to |
+| `=`          | equal                    |
+| `<>` or `!=` | not equal                |
+
+There are also *comparison predicates* that have a special syntax:
+
+| Comparison Predicates  | Description            |
+|------------------------|------------------------|
+| `BETWEEN`              | between two values     |
+| `NOT BETWEEN`          | not between two values |
+| `IS DISTINCT FROM`     | is distinct from       |
+| `IS NOT DISTINCT FROM` | is not distinct from   |
+| `IS NULL`              | is null                |
+| `IS NOT NULL`          | is not null            |
+
+`NULL` is a special value in SQL. Although it is a value, it cannot be
+used for selection like `WHERE column_name = NULL`. Instead, we use
+`WHERE column_name IS NULL`.
+
+### Logical Operators
+
+There are three:
+
+1.  `AND`
+2.  `OR`
+3.  `NOT`
+
+There use with `WHERE` clause are pretty self-explanatory, for example
+with `OR`:
+
+``` sql
+SELECT
+  column_name
+FROM
+  table_name
+WHERE
+  condition
+  OR other_condition;
+```
+
+### String Matching Operators
+
+String or pattern matching allows to conditionally search fro string
+patterns. We use `LIKE` (case-sensitive) and `ILIKE` (case-insensitive):
+
+``` sql
+SELECT
+  column_name
+FROM
+  table_name
+WHERE
+  condition LIKE '%foo';
+```
+
+Percentage `%` is the wildcard character for *any number* of characters.
+For one character, we can use underscore `_` instead.
+
+There is also a `SIMILAR TO` that works like `LIKE` but for regular
+expression pattern.
 
 [^1]: [PostgreSQL Don't Do
     This](https://wiki.postgresql.org/wiki/Don%27t_Do_This#Don.27t_use_serial)
