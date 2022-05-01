@@ -35,6 +35,7 @@ Here is a bunch of notes of things I am working on.
 * [[heredoc]]#
 * [[firefox-developer-tools]]#
 * [[dates-to-test]]#
+* [[tmux-keystroke-idioms]]#
 
 Database
 --------
