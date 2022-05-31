@@ -384,5 +384,59 @@ For one character, we can use underscore `_` instead.
 There is also a `SIMILAR TO` that works like `LIKE` but for regular
 expression pattern.
 
+`LIMIT` and `OFFSET`
+--------------------
+
+`SELECT` statements are great to return all kind of results. However
+when there are a lot of results to display, it is generally better to
+separate the data by "pages". This is called "pagination".
+
+For example, to limit the selection to 1 user, we can use the following
+statement:
+
+``` sql
+SELECT
+  *
+FROM
+  users
+LIMIT
+  1;
+```
+
+This statement limits the selection to the first row of the table. If we
+wanted to skip the first result and only return the second row, we can
+use `OFFSET`:
+
+``` sql
+SELECT
+  *
+FROM
+  users
+LIMIT
+  1 OFFSET 1;
+```
+
+This would return the second row, and only the second row
+
+`DISTINCT`
+----------
+
+When joining multiple table, one thing that can often happens is data
+duplication. The `DISTINCT` qualifier helps up remediate to this
+problem.
+
+``` sql
+SELECT
+  DISTINCT full_name
+FROM
+  users;
+```
+
+SQL Functions
+-------------
+
+Functions performs operation on fields or data and return the result, or
+perform a transformations.
+
 [^1]: [PostgreSQL Don't Do
     This](https://wiki.postgresql.org/wiki/Don%27t_Do_This#Don.27t_use_serial)
