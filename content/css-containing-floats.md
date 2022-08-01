@@ -43,16 +43,16 @@ them.
     width: 30%;
   }
 </style>
-<div id="container">
-  <div id="cols">
-    <div id="primary">
+<span id="container">
+  <span id="cols">
+    <span id="primary">
       <h1>Main Content</h1>
-    </div>
-    <div id="secondary">
+    </span>
+    <span id="secondary">
       <h3>Sidebar Content</h3>
-    </div>
-  </div>
-</div>
+    </span>
+  </span>
+</span>
 ```
 
 There are two main ways to palliate to this problem, both with advantages
@@ -72,16 +72,16 @@ floats.
     overflow: hidden;
   }
 </style>
-<div id="container">
-  <div class="overflow" id="cols">
-    <div id="primary">
+<span id="container">
+  <span class="overflow" id="cols">
+    <span id="primary">
       <h1>Main Content</h1>
-    </div>
-    <div id="secondary">
+    </span>
+    <span id="secondary">
       <h3>Sidebar Content</h3>
-    </div>
-  </div>
-</div>
+    </span>
+  </span>
+</span>
 ```
 
 Clearfix
@@ -100,16 +100,16 @@ as well as the `clear` property.
     content: "";
   }
 </style>
-<div id="container">
-  <div class="clearfix" id="cols">
-    <div id="primary">
+<span id="container">
+  <span class="clearfix" id="cols">
+    <span id="primary">
       <h1>Main Content</h1>
-    </div>
-    <div id="secondary">
+    </span>
+    <span id="secondary">
       <h3>Sidebar Content</h3>
-    </div>
-  </div>
-</div>
+    </span>
+  </span>
+</span>
 ```
 
 A clearfix uses the `::after` pseudo-element with the following
