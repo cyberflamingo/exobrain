@@ -27,7 +27,7 @@ enough to publish yet.
 Writing in English, will still not my native language, is relativly easier
 (although I am sure there are a lot of mistakes in my writing).
 
-On this [Zettelkasten]([[[d6cf318e]]]) inspired wiki, notes are in whatever language I was using
+On this [[d6cf318e|Zettelkasten]] inspired wiki, notes are in whatever language I was using
 at the moment, or more precisely, whatever language was the source of my
 findings at the time of taking notes.
 
