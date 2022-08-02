@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!-- TODO: Main navigation links (Home, index, tags, ...) --><!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>
+    Method Access Control – エキソブレイン
+  </title>
+  
+    
+      <meta property='og:description' content='Method access control is the concept of using access modifiers to change the visibility of methods in a class. In Ruby by default, method are public unless specified otherwise.' />
+      <meta property='og:site_name' content='エキソブレイン' />
+      <meta property='og:image' content />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='Method Access Control' />
+    
+    
+      <base href='/' />
+      <link href='favicon.svg' rel='icon' />
+    
+    <meta name='generator' content='Emanote' />
+
+  
+  <link href='tailwind.css?instanceId=477738bc-660b-4fc2-9920-bef6171c9353' rel='stylesheet' type='text/css' />
+
+  <!-- Heist error element -->
+  <style>
+    strong.error {
+      color: lightcoral;
+      font-size: 90%;
+      font-family: monospace;
+    }
+  </style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
+  @font-face {
+    font-family: 'MavenPro';
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
+    font-display: swap;
+  }
+
+  body {
+    font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
+  }
+
+  a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
+    font-variation-settings: 'wght'500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header,
+  .header-font {
+    font-family: 'MavenPro', sans-serif;
+  }
+</style>
+
+  
+    <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+  
+</head>
+
+<!-- DoNotFormat -->
+
+
+
+<!-- DoNotFormat -->
+
+<body class='bg-gray-400 overflow-y-scroll'>
+  
+    <div class='container mx-auto max-w-prose'>
+      <div class='mt-2 md:mt-4'>
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
+          
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network'>
+      network
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      computing
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href=''>
+      外付け脳 (exobrain)
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+        <div class='md:shadow-2xl md:mb-8'>
+          <div class='flex-1 w-full overflow-x-auto bg-white'>
+            <main class='px-4 py-4'>
+              <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Method Access Control
+  </a>
+</h1>
+              <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  
+    <p class='mb-3'>
+      Method access control is the concept of using <em>access modifiers</em> to change the visibility of methods in a class. In Ruby by default, method are public unless specified otherwise.
+    </p>
+  
+    <p class='mb-3'>
+      Ruby has the <code class='py-0.5 px-0.5 bg-gray-100'>public</code>, <code class='py-0.5 px-0.5 bg-gray-100'>private</code>, and <code class='py-0.5 px-0.5 bg-gray-100'>protected</code> access modifiers.
+    </p>
+  
+    <p class='mb-3'>
+      To make methods work inside the class but not available to the rest of the program, one can use the <code class='py-0.5 px-0.5 bg-gray-100'>private</code> access modifier.
+    </p>
+  
+    <p class='mb-3'>
+      <code class='py-0.5 px-0.5 bg-gray-100'>protected</code> is an in-between access modifier:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          From <em>inside</em> the class <code class='py-0.5 px-0.5 bg-gray-100'>protected</code> methods are accessible like <code class='py-0.5 px-0.5 bg-gray-100'>public</code> methods
+        </li>
+      
+        <li>
+          From <em>outside</em> the class <code class='py-0.5 px-0.5 bg-gray-100'>protected</code> methods act like <code class='py-0.5 px-0.5 bg-gray-100'>private</code> methods
+        </li>
+      
+    </ul>
+  <h2 id='access-modifiers-and-getterssetters' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Access Modifiers and Getters/Setters</h2>
+    <p class='mb-3'>
+      Getters and setters (in Ruby, the built-in <code class='py-0.5 px-0.5 bg-gray-100'>attr_*</code> methods) being methods, their visibility can be changed just like other methods.
+    </p>
+  
+    <p class='mb-3'>
+      It easily becomes confusing because of Ruby’s syntactical sugar. Using for example <code class='py-0.5 px-0.5 bg-gray-100'>attr_accessor :name</code> accessor methods provides us with <code class='py-0.5 px-0.5 bg-gray-100'>name</code> and <code class='py-0.5 px-0.5 bg-gray-100'>name=</code> getter/setter instance methods, and <code class='py-0.5 px-0.5 bg-gray-100'>@name</code> instance variables. The setter instance method, particularly, is easily confused with a local variable initialization or reassignement.
+    </p>
+  
+    <p class='mb-3'>
+      Let’s see two examples using <code class='py-0.5 px-0.5 bg-gray-100'>private</code> and <code class='py-0.5 px-0.5 bg-gray-100'>protected</code>.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>class Account
+  def initialize(name, balance=100)
+    @name = name
+    @balance = balance
+  end
+
+  attr_reader :name
+
+  def display_balance(pin_number)
+    if pin_number == pin
+      puts "Balance: $#{balance}."
+    else
+      pin_error
+    end
+  end
+
+  def withdraw(pin_number, amount)
+    if pin_number == pin
+      self.balance -= amount  # We need `self` here
+      puts "Withdrew #{amount}. New balance: $#{balance}."
+    else
+      pin_error
+    end
+  end
+
+  private
+
+  attr_accessor :balance
+
+  def pin
+    @pin = 1234
+  end
+
+  def pin_error
+    "Access denied: incorrect PIN."
+  end
+end
+
+checking_account = Account.new('Dave', 1_000_000)
+checking_account.display_balance(1234)
+checking_account.withdraw(1234, 3_000)</code></pre></div>
+    <p class='mb-3'>
+      On the example above, we use <code class='py-0.5 px-0.5 bg-gray-100'>self</code> with <code class='py-0.5 px-0.5 bg-gray-100'>balance=</code>, otherwise Ruby would interprete <code class='py-0.5 px-0.5 bg-gray-100'>balance</code> as a new local variable (and return an error because <code class='py-0.5 px-0.5 bg-gray-100'>balance = balance - amount</code> is intepreted as <code class='py-0.5 px-0.5 bg-gray-100'>balance = nil - amount</code>).
+    </p>
+  
+    <p class='mb-3'>
+      Here, <code class='py-0.5 px-0.5 bg-gray-100'>balance</code> and <code class='py-0.5 px-0.5 bg-gray-100'>balance=</code> accessor methods are accessible inside the instance but cannot be called outside of it, i.e., <code class='py-0.5 px-0.5 bg-gray-100'>checking_account.balance</code> is not permitted.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>class Student
+  def initialize(n, g)
+    @name = n
+    @grade = g
+  end
+
+  def better_grade_than?(other_student)
+    grade &gt; other_student.grade  # =&gt; Note this line
+  end
+
+  protected
+
+  attr_reader :grade
+end
+
+joe = Student.new('Joe', 18)
+bob = Student.new('Bob', 16)
+
+puts 'Well done!' if joe.better_grade_than?(bob)</code></pre></div>
+    <p class='mb-3'>
+      Here, <code class='py-0.5 px-0.5 bg-gray-100'>grade</code> is accessible inside the instance but not outside. Would we use <code class='py-0.5 px-0.5 bg-gray-100'>private</code> instead, accessor method <code class='py-0.5 px-0.5 bg-gray-100'>grade</code> (getter for instance <code class='py-0.5 px-0.5 bg-gray-100'>joe</code>) would have been accessible, but the other accessor method <code class='py-0.5 px-0.5 bg-gray-100'>grade</code> (getter for instance <code class='py-0.5 px-0.5 bg-gray-100'>bob</code>) would not, because we try to access it from outside.
+    </p>
+  
+    <p class='mb-3'>
+      Ruby would have raise an easy to misinterpret error message:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='irb language-irb'>irb:8:in `better_grade_than?': private method `grade' called for #&lt;Student:0x0000557a533462c8 @name="Bob", @grade=16&gt; (NoMethodError)</code></pre></div>
+    <p class='mb-3'>
+      Note <code class='py-0.5 px-0.5 bg-gray-100'>@name="Bob"</code>, this is the important part to know whether <code class='py-0.5 px-0.5 bg-gray-100'>private method ``grade'</code> concerns the method on the left or on the right.
+    </p>
+  
+  <div class='flex items-center justify-center mt-2'>
+  
+    
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/network/method-access-control.md'>
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
+        </svg>
+      </a>
+    
+  
+</div>
+</article>
+              <div class='flex flex-col lg:flex-row lg:space-x-2'>
+                
+                
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/what-is-object-oriented-programming'>
+            What is Object Oriented Programming
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><p>[<a href='computing/network/method-access-control' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Method Access Control</a>]</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+              </div>
+              
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+              <!-- What goes in this file will at the very end of the main div -->
+            </main>
+          </div>
+        </div>
+        <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  
+  <div>
+    <a href='' title='Go to Home page'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/all' title='View Index'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+      <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
+  </div>
+</footer>
+      </div>
+    </div>
+  
+</body>
+
+</html>

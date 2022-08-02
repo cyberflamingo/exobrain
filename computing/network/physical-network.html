@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!-- TODO: Main navigation links (Home, index, tags, ...) --><!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>
+    Physical Network – エキソブレイン
+  </title>
+  
+    
+      <meta property='og:description' content='In ([[networking-models]],[]), we learnt that the OSI model defines the physical layer as the bottommost layer of its model. This layer deals with the transfer of bits (binary data) converted into signals. The signal depends on the transformation medium used: electrical signals, light signals, radio waves etc.' />
+      <meta property='og:site_name' content='エキソブレイン' />
+      <meta property='og:image' content />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='Physical Network' />
+    
+    
+      <base href='/' />
+      <link href='favicon.svg' rel='icon' />
+    
+    <meta name='generator' content='Emanote' />
+
+  
+  <link href='tailwind.css?instanceId=477738bc-660b-4fc2-9920-bef6171c9353' rel='stylesheet' type='text/css' />
+
+  <!-- Heist error element -->
+  <style>
+    strong.error {
+      color: lightcoral;
+      font-size: 90%;
+      font-family: monospace;
+    }
+  </style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
+  @font-face {
+    font-family: 'MavenPro';
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
+    font-display: swap;
+  }
+
+  body {
+    font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
+  }
+
+  a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
+    font-variation-settings: 'wght'500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header,
+  .header-font {
+    font-family: 'MavenPro', sans-serif;
+  }
+</style>
+
+  
+    <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+  
+</head>
+
+<!-- DoNotFormat -->
+
+
+
+<!-- DoNotFormat -->
+
+<body class='bg-gray-400 overflow-y-scroll'>
+  
+    <div class='container mx-auto max-w-prose'>
+      <div class='mt-2 md:mt-4'>
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
+          
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network/networking-models'>
+      Networking Models
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/d88c4570'>
+      Network
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      computing
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href=''>
+      外付け脳 (exobrain)
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network'>
+      network
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+        <div class='md:shadow-2xl md:mb-8'>
+          <div class='flex-1 w-full overflow-x-auto bg-white'>
+            <main class='px-4 py-4'>
+              <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Physical Network
+  </a>
+</h1>
+              <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  
+    <p class='mb-3'>
+      In <a href='computing/network/networking-models' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkTag'>Networking Models</a>, we learnt that the OSI model defines the physical layer as the bottommost layer of its model. This layer deals with the transfer of bits (binary data) converted into signals. The signal depends on the transformation medium used: electrical signals, light signals, radio waves etc.
+    </p>
+  
+    <p class='mb-3'>
+      Information is made of <strong>bits</strong> which can be defined as a pair of opposites: on or off, or, in reality, 1 and 0. A bits has two possible states, which is why we call a bit <em>binary code</em>.
+    </p>
+  
+    <p class='mb-3'>
+      Bits are like the atoms of information.
+    </p>
+  
+    <p class='mb-3'>
+      They are physically send by electricity, light and radio wave.
+    </p>
+  
+    <p class='mb-3'>
+      Now, to send a bit via electricity is pretty straightforward. However, to differenciate between one 0 and more than one 0 consecutive, we need to use a clock. The time per bits is agreed upon and that lets the machine counts how many zero or how many one between the agreed upon laps of time.
+    </p>
+  
+    <p class='mb-3'>
+      This is basically what is going on inside an Ethernet wire. An Ethernet wire is cheap but signal loss happens over just a few meters.
+    </p>
+  
+    <p class='mb-3'>
+      Something way faster is the light. We can send bits as light beam (light/no light binary) using fiber optic cable.
+    </p>
+  
+    <p class='mb-3'>
+      A fiber optic cable is a thread of glass engineered to reflect light. The bean of light bounces up and down the length of the cable until its destination. Depending on the bounce angle we can send multiple bits simultaneously, at the speed of light.
+    </p>
+  
+    <p class='mb-3'>
+      Wireless machine uses radio signal to send bits from one place to another. The machine translates the ones and zeroes into radio wave of different frequencies and the receiving machine reverse the process.
+    </p>
+  <h2 id='bandwidth' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Bandwidth</h2>
+    <p class='mb-3'>
+      Bandwidth is the <em>amount</em> (maximum transmission capacity) of a device. It is measured by <strong>bit rate</strong> which is the number of bits that we can send over a given period of time, usually measured in seconds.
+    </p>
+  
+    <p class='mb-3'>
+      Increasing bandwidth doesn’t always result in a improvement of the network’s performance.
+    </p>
+  
+    <p class='mb-3'>
+      The bandwidth varies across the network. The core network is generally much buffier than the part of the “last-mile” (see below).
+    </p>
+  
+    <p class='mb-3'>
+      When a bandwidth changes from high to low at a certain point, we call this point a <em>bandwidth bottleneck</em>.
+    </p>
+  
+    <p class='mb-3'>
+      When dealing with a large amounts of data, low bandwidth is an issue. However most of the time latency is the biggest factor vis-a-vis of the performance of a networked application.
+    </p>
+  <h2 id='latency' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Latency</h2>
+    <p class='mb-3'>
+      Latency is the <em>time</em> it takes for a bit to travel from the source to the requesting device. We can think of it as a “delay”.
+    </p>
+  <h3 id='types-of-delay' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Types of Delay</h3>
+    <p class='mb-3'>
+      The total latency between two points is the sum of all the following delays:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <strong>Propagation delay:</strong> the amount of time it takes for a message to travel from sender to receiver. Ratio between distance and speed.
+        </li>
+      
+        <li>
+          <strong>Transmission delay:</strong> the amount of time it takes to add the data onto the link (between all the network devices, when using more than one network, which is typically the case on Internet). Can be checked with <code class='py-0.5 px-0.5 bg-gray-100'>traceroute</code>.
+        </li>
+      
+        <li>
+          <strong>Processing delay:</strong> the amount of time necessary for our data to being processed in various ways.
+        </li>
+      
+        <li>
+          <strong>Queuing delay:</strong> the amout of time the data is <em>queued</em> or <em>buffered</em> when there is more data than the device can handle.
+        </li>
+      
+    </ul>
+  <h3 id='other-vocabulary' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Other Vocabulary</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <strong>Last-mile latency:</strong> generally the slowest link on the path. This is often the delays between the ISP’s network and the home network and is were most of the delays happen.
+        </li>
+      
+        <li>
+          <strong>Round-Trip Time (RTT):</strong> the amount of time for a signal to be sent + teh length of time for an acknowledgment/response to be received.
+        </li>
+      
+    </ul>
+  <h2 id='network-devices' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Network Devices</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <strong>Network Interface Card (NIC):</strong> a hardware component that understand the Ethernet protocol and translate (the job of an <em>interface</em>) it for the computer. On the other way, it translates the computer instructions into Ethernet protocol readable format.
+        </li>
+      
+        <li>
+          <strong>Network HUB:</strong> a hub is a hardware component that replicates the messages it receives and forwards it back to all of the devices connected to it, without distinction.
+        </li>
+      
+        <li>
+          <strong>Switches:</strong> similar to the hub, but unlike it, it reads the destination address (the <a href='computing/network/mac-addresses' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>MAC Addresses</a>) in order to send the received messages <em>only</em> to the device for which it was intended.
+        </li>
+      
+    </ul>
+  
+  <div class='flex items-center justify-center mt-2'>
+  
+    
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/network/physical-network.md'>
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
+        </svg>
+      </a>
+    
+  
+</div>
+</article>
+              <div class='flex flex-col lg:flex-row lg:space-x-2'>
+                
+                
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/3c3ba5a9'>
+            Study Guide for Test
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><a href='computing/network/physical-network' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Physical Network</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/network/networking-models'>
+            Networking Models
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div>Layer 1: <a href='computing/network/physical-network' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Physical Network</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/network/networking-foundations'>
+            Networking Foundations
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><p>See <a href='computing/network/physical-network' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Physical Network</a>.</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/network/link-data-link-layer'>
+            Link/Data Link Layer
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><strong>Interframe Gap (IFG):</strong> Like the Preamble/SFD, this is not part of the frame. This is a brief pause between each frame transmission to let the receiver prepare for the next frame. The length varies according to the capability of the Ethernet connection but it contributes to the delay (latency, see <a href='computing/network/physical-network' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Physical Network</a>)</div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+              </div>
+              
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+              <!-- What goes in this file will at the very end of the main div -->
+            </main>
+          </div>
+        </div>
+        <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  
+  <div>
+    <a href='' title='Go to Home page'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/all' title='View Index'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+      <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
+  </div>
+</footer>
+      </div>
+    </div>
+  
+</body>
+
+</html>

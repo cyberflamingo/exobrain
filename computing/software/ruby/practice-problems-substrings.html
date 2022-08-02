@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<!-- TODO: Main navigation links (Home, index, tags, ...) --><!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>
+    Practice Problems: Substrings Manipulation – エキソブレイン
+  </title>
+  
+    
+      <meta property='og:description' content='Time: 36:17' />
+      <meta property='og:site_name' content='エキソブレイン' />
+      <meta property='og:image' content />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='Practice Problems: Substrings Manipulation' />
+    
+    
+      <base href='/' />
+      <link href='favicon.svg' rel='icon' />
+    
+    <meta name='generator' content='Emanote' />
+
+  
+  <link href='tailwind.css?instanceId=477738bc-660b-4fc2-9920-bef6171c9353' rel='stylesheet' type='text/css' />
+
+  <!-- Heist error element -->
+  <style>
+    strong.error {
+      color: lightcoral;
+      font-size: 90%;
+      font-family: monospace;
+    }
+  </style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
+  @font-face {
+    font-family: 'MavenPro';
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
+    font-display: swap;
+  }
+
+  body {
+    font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
+  }
+
+  a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
+    font-variation-settings: 'wght'500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header,
+  .header-font {
+    font-family: 'MavenPro', sans-serif;
+  }
+</style>
+
+  
+    <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+  
+</head>
+
+<!-- DoNotFormat -->
+
+
+
+<!-- DoNotFormat -->
+
+<body class='bg-gray-400 overflow-y-scroll'>
+  
+    <div class='container mx-auto max-w-prose'>
+      <div class='mt-2 md:mt-4'>
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
+          
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/software/ruby'>
+      ruby
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/software'>
+      software
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      computing
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href=''>
+      外付け脳 (exobrain)
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+        <div class='md:shadow-2xl md:mb-8'>
+          <div class='flex-1 w-full overflow-x-auto bg-white'>
+            <main class='px-4 py-4'>
+              <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Practice Problems: Substrings Manipulation
+  </a>
+</h1>
+              <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  <h2 id='example-1' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 1</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Given a non-empty string, check if it can be constructed by taking a substring
+of it and appending multiple copies of the substring together. You may assume
+the given string consists of lowercase English letters only.
+
+# PEDAC
+
+## Problem
+
+Input: a string of two or more English letters, in sequence or not
+Output: a Boolean, true if the given string was in sequence, false otherwise
+
+Clarifying:
+
+- String size cannot be odd
+- Sequence is 2+ characters size
+
+## Examples
+
+Example 1:
+  - Input: "abab"
+  - Output: true
+  Explanation: It's the substring "ab" twice
+
+Example 2:
+  - Input: "aba"
+  - Output: false
+
+## Data
+Arrays
+
+## Algorithm
+
+. Init `string_size` to return value of string size
+. Return if `string_size` is odd
+. Init `is_pattern` to false
+
+. Find Substring of `char_size` chars
+  . Iterate over the string with `upto` called on 1, passing in
+    `string_size / 2`
+  . Init `substring_candidate` to the return value of the string sliced from 0
+    to `char_size`
+  . Find if it's repeated substring (see below)
+  . Break early if `is_pattern` returns true
+
+. Slice the given `string` in `char_size` chars and check if they are all the
+  same and save the return value inside `is_pattern`
+  . Init `substring_array` to new Array
+  . Init `string_candidate` to value pointed by `string`
+  . Init `iterator` to 1
+  . Loop until `iterator` equals `string` size / `substring_size`
+    . Slice `string_candidate` of `char_size` and save the return value in
+      `substring_array`
+  . Check that `string_array[0]` is equal to all value in `string_array`
+    . Return true if true
+  . Return false
+
+. Return `is_pattern`
+
+=end
+
+def repeated_substring?(string, substring_size)
+  substring_array = Array.new
+  string_candidate = string
+  iterator = 1
+
+  until iterator == string.size / substring_size
+    substring_array &lt;&lt; string_candidate[0..substring_size]
+    iterator += 1
+  end
+
+  substring_array.all?(substring_array[0])
+end
+
+def repeated_substring_pattern(string)
+  string_size = string.size
+  return false if string_size.odd?
+
+  is_pattern = false
+
+  1.upto(string_size / 2) do |char_size|
+    is_pattern = repeated_substring?(string, char_size)
+    break if is_pattern == true
+  end
+
+  is_pattern
+end
+
+p repeated_substring_pattern("abab") == true
+p repeated_substring_pattern("aba") == false
+p repeated_substring_pattern("aabaaba") == false
+p repeated_substring_pattern("abaababaab") == true
+p repeated_substring_pattern("abcabcabcabc") == true</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 36:17
+    </p>
+  <h3 id='alternative-solution' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Alternative Solution</h3>
+    <p class='mb-3'>
+      The solution above does not work with a string of the same characters sucah as <code class='py-0.5 px-0.5 bg-gray-100'>'aaaaa'</code> because it returns false for string of odd size.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Given a non-empty string, check if it can be constructed by taking a substring
+of it and appending multiple copies of the substring together. You may assume
+the given string consists of lowercase English letters only.
+
+Example 1:
+
+ - Input "abab"
+ - Output: True
+ - Explanation: It's the substring 'ab' twice.
+
+Example 2:
+
+ - Input: "aba"
+ - Output: False
+
+# PEDAC
+
+## Problem
+
+Given a string, find if it contains repeatable substring.
+
+Input: non-empty string with repeatable substring or not
+Output: true or false, depending if it has repeatable substrings or not
+
+Clarification:
+
+- Non empty
+- Only English letter? (no)
+- Spaces? (No)
+- All same characters is always true
+- Odd characters (except all same) always false
+
+## Data
+
+Arrays of strings
+
+## Algorithm
+
+.  From the string create an array of x characters substrings
+  .  Init a local variable sliced_string to new Array object
+  .  Init a local variable substring_size to Integer 2
+  .  Loop form 2 to half string size
+    .  SLICE_STRING passing in `x` characters
+    .  Check if they are all the same
+
+.  SLICE_STRING
+  .  Slice from 0 to `x` chars
+  .  Add `x` to 0
+  .  Slice again until reaching string size
+
+=end
+
+def slice_on_n_characters(string, size)
+  equal_substrings = []
+  first_char_index = 0
+
+  loop do
+    equal_substrings &lt;&lt; string.slice(first_char_index, size)
+    first_char_index += size
+    break if first_char_index &gt;= string.size
+  end
+
+  equal_substrings
+end
+
+def repeated_substring_pattern(string)
+  return true if string.chars.all?(string[0])
+  return false if string.size.odd?
+
+  sliced_string = []
+  half_string_size = string.size / 2
+
+  2.upto(half_string_size) do |substring_size|
+    sliced_string = slice_on_n_characters(string, substring_size)
+
+    return true if sliced_string.all?(sliced_string[0])
+  end
+
+  false
+end
+
+p repeated_substring_pattern('abab') == true
+p repeated_substring_pattern('aba') == false
+p repeated_substring_pattern('aabaaba') == false
+p repeated_substring_pattern('abaababaab') == true
+p repeated_substring_pattern('abcabcabcabc') == true
+p repeated_substring_pattern('aaaaa') == true</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 31:52
+    </p>
+  <h2 id='example-2' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 2</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Write a method to find the longest common prefix string amongst an array of
+strings.
+
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+- Input: ["flower", "flow", "flight"]
+- Output: "f1"
+
+Example 2:
+
+- Input: ["dog", "racecar", "car"]
+- Output: ""
+
+Explanation: there is no common prefix among the input strings.
+
+Note:
+
+All given inputs are in lowecase letters a-z.
+
+# PEDAC
+
+## Problem
+
+Input: an array of strings (english lowercase letters)
+Output: Common prefix between strings or empty string if none found
+
+Clarify:
+
+- Prefix therefore first letter matters
+- Same string in array: return string itself
+- Size matter (not that much)
+
+## Examples
+
+See above
+
+## Data
+Arrays
+
+## Algorithm
+
+. Return "" if first letters of each string is different
+. Return first string if each string are the same
+
+. CREATE SUBSTRING
+  . Iterate from first char of first string of array until string size
+    . Save the resulting substring in a local variable
+
+. CHECK PREFIX
+  . Check if resulting substring is same substring in each string of array
+    . Continue if true
+    . Return current substring - last character otherwise
+
+=end
+def same_prefix(array, substring, substring_size)
+  substring_array = array.select do |str|
+    str[0...substring_size] == substring
+  end
+
+  substring_array.size == array.size
+end
+
+def common_prefix(array)
+  return array[0] if array.all?(array[0])
+
+  substring = String.new
+
+  0.upto(array[0].size) do |char|
+    substring = array[0][0...char]
+
+    if same_prefix(array, substring, char)
+      next
+    else
+      return substring[0...-1]
+    end
+  end
+
+  ''
+end
+
+p common_prefix(["flower", "flow", "flight"]) == "fl"
+p common_prefix(["dog", "racecar", "car"]) == ""
+p common_prefix(["interspecies", "interstellar", "interstate"]) == "inters"
+p common_prefix(["throne", "dungeon"]) == ""
+p common_prefix(["throne", "throne"]) == "throne"</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 23:13
+    </p>
+  <h2 id='example-3' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 3</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Given 2 strings, your job is to find out if there is a substring that appears
+in both strings. You will return true if you find a substring that appears in
+both strings, or false if you do not.
+
+We only care about substrings that are longer than one letter long.
+
+# PEDAC
+
+## Problem
+
+Find if two strings have common substring.
+
+Input: Two strings
+Output: true if common substring, false otherwise
+
+Clarify:
+
+- String of +1 chars size
+- Empty string always return false
+- Case is irrelevent
+
+## Data
+
+Arrays of string and substrings
+
+## Algorithm
+
+. Return false if one of the string is 1 or less character long
+. Return true if both string are the same string (dowcase)
+
+. Downcase both given string
+. SUBSTRING_STRING_1
+  . Iterate from 0 upto string size - 1, passign in start_char as a param
+    . Iterate from start_char upto string size - start_char - 1
+      . Slice string and save result to a local variable substring_1
+. SUBSTRING_STRING_2
+  . Do the same thing
+
+. COMPARE
+  . Add substring_2 to substring_1 and save to all_substring
+  . Delete substring that appears more than one
+  . Compare the result with all_substring and return
+
+=end
+def every_substring(candidate)
+  str_size = candidate.size
+  substring_list = Array.new
+
+  0.upto(str_size - 1) do |start_char|
+    (start_char + 1).upto(str_size - 1) do |end_char|
+      substring_list &lt;&lt; candidate[start_char..end_char]
+    end
+  end
+
+  substring_list
+end
+
+def substring_test(str1, str2)
+  return false if str1.size &lt; 2 || str2.size &lt; 2
+  str1.downcase!
+  str2.downcase!
+  return true if str1 == str2
+
+  substr1 = every_substring(str1).uniq
+  substr2 = every_substring(str2).uniq
+
+  all_substr = substr1 + substr2
+
+  all_substr.uniq != all_substr
+end
+
+p substring_test('Something', 'Fun') == false
+p substring_test('Something', 'Home') == true
+p substring_test('Something', 'Fun') == false
+p substring_test('Something', '') == false
+p substring_test('', 'Something') == false
+p substring_test('BANANA', 'banana') == true
+p substring_test('test', 'lllt') == false
+p substring_test('', '') == false
+p substring_test('1234567', '541265') == true
+p substring_test('supercalifragilisticexpialidocious', 'SoundOfItIsAtrociou') == true</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 23:21
+    </p>
+  <h2 id='example-4' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 4</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Find the length of the longest substring in the given string that is the same
+in reverse.
+
+As an example, if the input was "I like racecars that go fast", the substring
+(racecar) length would be 7.
+
+If the length of the input string is 0, return value must be 0.
+
+Example
+"a" -&gt; 1
+"aab" -&gt; 2
+"abcde" -&gt; 1
+"zzbaabcd" -&gt; 4
+"" -&gt; 0
+
+# PEDAC
+
+## Problem
+
+Find the longest palindrome.
+
+Input: a string of length 0 or more
+Output: the length of the longest palindrome
+
+Clarify:
+
+- Could return string size if string size &lt;= 1
+- could return string size if first char of string is the same as all the char
+- Can the input be a sentence with spaces? (No)
+
+## Data
+
+Arrays of substring
+
+## Algorithm
+
+. SUBSTRING_LIST
+  . Init palindrome_list to a new Array object
+  . Iterate from 0 to string size, passing in `first_char` as a param
+    . Iterate from `first_char` to string size passing in `last_char` as a param
+      . CHECK_PALINDROME
+        . Save to palindrome_list if current iteration is a palindrome
+        . Discard otherwise
+  . Return the size of the longest palindrome in palindrome_list
+
+. CHECK_PALINDROME
+  . Check if the string reversed is the same as the passed in string
+  . Return true or false
+
+=end
+
+def palindrome?(candidate)
+  candidate.reverse == candidate
+end
+
+def longest_palindrome(candidate)
+  palindrome_list = Array.new
+  string_size = candidate.size
+
+  0.upto(string_size - 1) do |first_char|
+    first_char.upto(string_size - 1) do |last_char|
+      palindrome_cand = candidate[first_char..last_char]
+      palindrome_list &lt;&lt; palindrome_cand if palindrome?(palindrome_cand)
+    end
+  end
+
+  palindrome_list.min { |a, b| b.length &lt;=&gt; a.length }.length
+end
+
+p longest_palindrome("a") == 1
+p longest_palindrome("aa") == 2
+p longest_palindrome("baa") == 2
+p longest_palindrome("aab") == 2
+p longest_palindrome("baabcd") == 4
+p longest_palindrome("baablkj12345432133d") == 9</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 20:24
+    </p>
+  <h2 id='example-5' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 5</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+PROBLEM:
+
+Given a string, write a method `palindrome_substrings` which returns
+all the substrings from a given string which are palindromes. Consider
+palindrome words case sensitive.
+
+Test cases:
+
+palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
+palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
+palindrome_substrings("palindrome") == []
+palindrome_substrings("") == []
+
+# PEDAC
+
+## Problem
+
+Returns substrings from a given string if they are palindromes (case sensitive)
+
+Input: a string a-z with different case
+Output: array of substring which are case sensitive palindrome
+
+Clarification:
+
+- Only a-z strings? (Yes)
+- Return empty array if none found
+- Return empty array if empty string given
+- Returned arrays' element are ordered in find order
+- Palindrome is 2 chars or more? (Yes)
+
+## Data
+
+Arrays of strings
+
+## Algorithm
+
+. SUBSTRINGS
+. Init pal_substr to a new Array object
+  . Iterate over the string from 1 upto string size -1 passing in start_char as
+    a parameter
+    . Iterate over string from start_char + 1 upto string size - 1
+      . Add string sliced with start/end_char to pal_substr if PALINDROME?
+      . Continue otherwise
+. Return pal_substr
+
+. PALINDROME?
+  . Return given string equal to given string reversed
+
+=end
+
+def palindrome?(candidate)
+  candidate.reverse == candidate
+end
+
+def palindrome_substrings(str)
+  pal_substr = Array.new
+
+  0.upto(str.size - 1) do |start_char|
+    (start_char + 1).upto(str.size - 1) do |end_char|
+      candidate = str[start_char..end_char]
+      pal_substr &lt;&lt; candidate if palindrome?(candidate)
+    end
+  end
+
+  pal_substr
+end
+
+p palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
+p palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
+p palindrome_substrings("palindrome") == []
+p palindrome_substrings("") == []</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 16:26
+    </p>
+  <h2 id='example-6' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 6</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Write a method that will return a substring based on specified indices.
+
+# PEDAC
+
+## Problem
+
+Find the substring based on the given indices (second and third parameters)
+
+Input: a string
+       an indice indicating the first character in the string
+       an indice indicating the last character in the string
+Output: substring from the string based on the two indices given
+
+Clarification:
+
+- String is zero indexed
+- Return empty string if indices are bigger than the string? (No)
+- Negative indice possible? (No)
+- Default indice are nil and nil? (Yes)
+
+## Data
+
+String
+
+## Algorithm
+
+. Return empty string if no indice provided
+. Init string_size to size of the given string
+. Check if first indice is bigger than string_size
+  . REDUCE it to a value between 0 and string_size if true
+. Return the character at the first indice index if second indice is nil
+. Check if second indice is bigger than string_size
+  . REDUCE it to a value between 0 and string_size if true
+. Return every string between first and second indice
+
+. REDUCE
+. Until value is smaller than string_size, substract string_size to given value
+. Return new value
+
+=end
+
+def reduce_indice(big_indice, max_size)
+  while big_indice &gt; max_size
+    big_indice -= max_size
+  end
+
+  big_indice
+end
+
+def substring(string, ind_start=nil, ind_end=nil)
+  return '' if ind_start.nil?
+
+  string_size = string.size
+
+  ind_start = reduce_indice(ind_start, string_size) if ind_start &gt;= string_size
+  return string[ind_start] if ind_end.nil?
+
+  ind_end = reduce_indice(ind_end, string_size) if ind_end &gt; string_size
+
+  string[ind_start..ind_end]
+end
+
+p substring("honey", 0, 2) == "hon"
+p substring("honey", 1, 2) == "on"
+p substring("honey", 3, 9) == "ey"
+p substring("honey", 2)    == "n"</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 18:56
+    </p>
+  <h2 id='example-7' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 7</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Write a method that finds all substrings in a string, no 1 letter words.
+
+# PEDAC
+
+## Problem
+
+Find every substrings of a string of more than 1 letter.
+
+Input: a string
+Output: an array of every substrings of 2+ letters
+
+Clarification:
+
+- Order matters
+- Case matters
+- Substrings is every group of 2 or more characters included in the given
+  string
+
+## Data
+
+Arrays
+
+## Algorithm
+
+. Init a local variable results to empty Arrat
+. Count from 0 up to string size - 2, passing in char_start as a parameter
+  . Call SUBSTRING_MAKER passign in the string and char_start
+  . Save the result to results
+. Return results
+
+. SUBSTRING_MAKER
+. Init a local variable substrings to empty Arrat
+. Count from char_start + 1 to string size, passing in char_end as a parameter
+  . Save the result of string slicing at index char_start and char_end
+. Return substrings
+
+=end
+
+def substring_maker(string, first_letter)
+  substrings = []
+
+  (first_letter + 1).upto(string.size - 1) do |last_letter|
+    substrings &lt;&lt; string[first_letter..last_letter]
+  end
+
+  substrings
+end
+
+def substrings(string)
+  results = []
+
+  0.upto(string.size - 2) do |char_start|
+    results &lt;&lt; substring_maker(string, char_start)
+  end
+
+  results.flatten
+end
+
+p substrings("band") == ['ba', 'ban', 'band', 'an', 'and', 'nd']
+p substrings("world") == ['wo', 'wor', 'worl', 'world', 'or',
+                          'orl', 'orld', 'rl', 'rld', 'ld']
+p substrings("ppop") == ['pp', 'ppo', 'ppop', 'po', 'pop', 'op']</code></pre></div>
+    <p class='mb-3'>
+      <strong>Time:</strong> 15:05
+    </p>
+  
+  <div class='flex items-center justify-center mt-2'>
+  
+    
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/practice-problems-substrings.md'>
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
+        </svg>
+      </a>
+    
+  
+</div>
+</article>
+              <div class='flex flex-col lg:flex-row lg:space-x-2'>
+                
+                
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/ruby-substrings'>
+            Substrings in Ruby
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div>[<a href='computing/software/ruby/practice-problems-substrings' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Practice Problems: Substrings Manipulation</a>]</div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+              </div>
+              
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+              <!-- What goes in this file will at the very end of the main div -->
+            </main>
+          </div>
+        </div>
+        <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  
+  <div>
+    <a href='' title='Go to Home page'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/all' title='View Index'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+      <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
+  </div>
+</footer>
+      </div>
+    </div>
+  
+</body>
+
+</html>

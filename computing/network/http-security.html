@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!-- TODO: Main navigation links (Home, index, tags, ...) --><!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>
+    HTTP Security – エキソブレイン
+  </title>
+  
+    
+      <meta property='og:description' content='Requests and responses between client and server are sent as strings. This mean someone on the same network, using packet sniffing techniques could read the messages sent back and forth. By copying the session id, someone could craft a request and pose as someone else without having to know the account’s username and password.' />
+      <meta property='og:site_name' content='エキソブレイン' />
+      <meta property='og:image' content />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='HTTP Security' />
+    
+    
+      <base href='/' />
+      <link href='favicon.svg' rel='icon' />
+    
+    <meta name='generator' content='Emanote' />
+
+  
+  <link href='tailwind.css?instanceId=477738bc-660b-4fc2-9920-bef6171c9353' rel='stylesheet' type='text/css' />
+
+  <!-- Heist error element -->
+  <style>
+    strong.error {
+      color: lightcoral;
+      font-size: 90%;
+      font-family: monospace;
+    }
+  </style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
+  @font-face {
+    font-family: 'MavenPro';
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
+    font-display: swap;
+  }
+
+  body {
+    font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
+  }
+
+  a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
+    font-variation-settings: 'wght'500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header,
+  .header-font {
+    font-family: 'MavenPro', sans-serif;
+  }
+</style>
+
+  
+    <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+  
+</head>
+
+<!-- DoNotFormat -->
+
+
+
+<!-- DoNotFormat -->
+
+<body class='bg-gray-400 overflow-y-scroll'>
+  
+    <div class='container mx-auto max-w-prose'>
+      <div class='mt-2 md:mt-4'>
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
+          
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network/http-protocol'>
+      HyperText Transfer Protocol (HTTP)
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network/application-layer'>
+      Application Layer
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network/networking-models'>
+      Networking Models
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/d88c4570'>
+      Network
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      computing
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href=''>
+      外付け脳 (exobrain)
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network'>
+      network
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/network/networking-foundations'>
+      Networking Foundations
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+        <div class='md:shadow-2xl md:mb-8'>
+          <div class='flex-1 w-full overflow-x-auto bg-white'>
+            <main class='px-4 py-4'>
+              <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    HTTP Security
+  </a>
+</h1>
+              <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  <h2 id='secure-http-https' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Secure HTTP (HTTPS)</h2>
+    <p class='mb-3'>
+      Requests and responses between client and server are sent as strings. This mean someone on the same network, using <em>packet sniffing</em> techniques could read the messages sent back and forth. By copying the session id, someone could craft a request and pose as someone else without having to know the account’s username and password.
+    </p>
+  
+    <p class='mb-3'>
+      With HTTPS, every request/response is encrypted before reaching the network. <em>Packet sniffing</em> is still possible but the messages being encrypted, it is rendered useless.
+    </p>
+  
+    <p class='mb-3'>
+      HTTPS uses a cryptographic protocol called TLS for Transport Layer Security. Earlier versions used SSL (Secure Sockets Layer) and some people still refer to TLS as SSL. TLS is the correct term though.
+    </p>
+  
+    <p class='mb-3'>
+      The most recent version of TLS is TLS 1.3.
+    </p>
+  <h3 id='transport-layer-security-protocol' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Transport Layer Security Protocol</h3>
+    <p class='mb-3'>
+      TLS provides three important security services:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='computing/network/tls-encryption' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>TLS Encryption</a>: encode messages so that only authorized people can decode them
+        </li>
+      
+        <li>
+          <a href='computing/network/tls-authentication' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>TLS Authentication</a>: verify the identity of a party in a message exchange
+        </li>
+      
+        <li>
+          <strong>Integrity</strong>: detect whether the message has been altered/interfered with (see <a href='computing/network/message-authentication-code' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Message Authentication Code (MAC)</a>)
+        </li>
+      
+    </ul>
+  <h3 id='tls-handshake' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>TLS Handshake</h3>
+    <p class='mb-3'>
+      TLS Handshake process is used to:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Agree on which version of TLS to use between the client and server in establishing a secure connection
+        </li>
+      
+        <li>
+          Agree on the algorithms to be included in the cipher suite
+        </li>
+      
+        <li>
+          Exchange the symmetric keys that will be used for message encryption
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      One should be aware that this overhead as an impact on performance: it adds up to two round-trip of latency in addition to the TCP Handshake.
+    </p>
+  
+    <p class='mb-3'>
+      A more detailed explanation of the TLS Handshake can be seen here: <a href='computing/network/tls-handshake' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>TLS Handshake</a>.
+    </p>
+  <h2 id='same-origin-policy' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Same-Origin Policy</h2>
+    <p class='mb-3'>
+      Same-origin policy restrict and un-restrict interaction base on the <strong>origin</strong> of the interaction. It is an important policy to guard against session hijacking.
+    </p>
+  
+    <p class='mb-3'>
+      The <em>origin</em> consists of three elements of the URL:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          The <strong>scheme</strong> (http, https…)
+        </li>
+      
+        <li>
+          The <strong>hostname</strong>
+        </li>
+      
+        <li>
+          The <strong>port</strong>
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Same-origin policy typically restricts cross-origin requests where resources are being accessed programmatically using APIs. Linking, redirects and form submissions to different origins are typically allowed.
+    </p>
+  
+    <p class='mb-3'>
+      Same-origin policy is a great layer of security but may cause problem for developers with a legitimate need for cross-origin requests. This problem can be dealt with user <em>CORS</em>* for <strong>C</strong>ross-<strong>O</strong>rigin <strong>R</strong>essource <strong>S</strong>haring.
+    </p>
+  
+    <p class='mb-3'>
+      CORS works by adding a new HTTP header of a list of allowed specified origins.
+    </p>
+  <h2 id='session-hijacking' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Session Hijacking</h2>
+    <p class='mb-3'>
+      Session hijacking is when an attacker gets a hold of someone else’s session id. In this case, the attacker can access the website as the victim, without having to get hold of username and password, and without the user’s knowing.
+    </p>
+  
+    <p class='mb-3'>
+      Some countermeasures includes:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Resetting sessions by issuing a new session id and invalidating the previous one. Often used when a user access sensitive part of a website (credit card, account information etc.)
+        </li>
+      
+        <li>
+          Setting an expiration time on sessions: arbitrary time after which the session is forced to reset
+        </li>
+      
+        <li>
+          HTTPS to reduce the chance of someone stealing a session id
+        </li>
+      
+    </ul>
+  <h2 id='cross-site-scripting-xss' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Cross-Site Scripting (XSS)</h2>
+    <p class='mb-3'>
+      An attack in which a user-generated HTML or JavaScript input is executed as is by the website. In other word: the browser will <em>interpret</em> the given code and <em>execute</em> it.
+    </p>
+  
+    <p class='mb-3'>
+      Using maliciously crafted JavaScript, an attacker could inject code that reads the session id of the user or inject a malicious form that sends the information back to the attacker.
+    </p>
+  
+    <p class='mb-3'>
+      Some countermeasures includes:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Always <strong>sanitize</strong> user inputs and disallow HTML/JavaScript and prefer safer format like Markdown.
+        </li>
+      
+        <li>
+          Escape user inputs when displaying it so that the browser does not interpret it
+        </li>
+      
+    </ul>
+  <div class='ui memo info'>
+    <p class='mb-3'>
+      Escaping a character means replacing it with a combination of ASCII characters. This lets the client (browser) knows to display the characters as is instead of processing it. See <a href='https://entitycode.com/#math-content' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>HTML entities</a>
+    </p>
+  </div>
+  <div class='flex items-center justify-center mt-2'>
+  
+    
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/network/http-security.md'>
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
+        </svg>
+      </a>
+    
+  
+</div>
+</article>
+              <div class='flex flex-col lg:flex-row lg:space-x-2'>
+                
+                
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/3c3ba5a9'>
+            Study Guide for Test
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><a href='computing/network/http-security' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>HTTP Security</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/network/http-protocol'>
+            HyperText Transfer Protocol (HTTP)
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><p>See <a href='computing/network/http-security' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>HTTP Security</a>.</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+              </div>
+              
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+              <!-- What goes in this file will at the very end of the main div -->
+            </main>
+          </div>
+        </div>
+        <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  
+  <div>
+    <a href='' title='Go to Home page'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/all' title='View Index'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+      <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
+  </div>
+</footer>
+      </div>
+    </div>
+  
+</body>
+
+</html>

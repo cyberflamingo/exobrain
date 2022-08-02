@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!-- TODO: Main navigation links (Home, index, tags, ...) --><!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>
+    Ruby’s format Method – エキソブレイン
+  </title>
+  
+    
+      <meta property='og:description' content='To format a String in Ruby we can use the Kernel#format or Kernel#sprintf method. They work by returning a copy of the String passed in, with its format sequence replaced by the additional arguments passed to it. This is easier with an example:' />
+      <meta property='og:site_name' content='エキソブレイン' />
+      <meta property='og:image' content />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='Ruby’s format Method' />
+    
+    
+      <base href='/' />
+      <link href='favicon.svg' rel='icon' />
+    
+    <meta name='generator' content='Emanote' />
+
+  
+  <link href='tailwind.css?instanceId=477738bc-660b-4fc2-9920-bef6171c9353' rel='stylesheet' type='text/css' />
+
+  <!-- Heist error element -->
+  <style>
+    strong.error {
+      color: lightcoral;
+      font-size: 90%;
+      font-family: monospace;
+    }
+  </style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
+  @font-face {
+    font-family: 'MavenPro';
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
+    font-display: swap;
+  }
+
+  body {
+    font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
+  }
+
+  a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
+    font-variation-settings: 'wght'500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header,
+  .header-font {
+    font-family: 'MavenPro', sans-serif;
+  }
+</style>
+
+  
+    <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+  
+</head>
+
+<!-- DoNotFormat -->
+
+
+
+<!-- DoNotFormat -->
+
+<body class='bg-gray-400 overflow-y-scroll'>
+  
+    <div class='container mx-auto max-w-prose'>
+      <div class='mt-2 md:mt-4'>
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
+          
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/software/ruby'>
+      ruby
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/software'>
+      software
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      computing
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href=''>
+      外付け脳 (exobrain)
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+        <div class='md:shadow-2xl md:mb-8'>
+          <div class='flex-1 w-full overflow-x-auto bg-white'>
+            <main class='px-4 py-4'>
+              <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Ruby’s format Method
+  </a>
+</h1>
+              <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  
+    <p class='mb-3'>
+      To format a String in Ruby we can use the <code class='py-0.5 px-0.5 bg-gray-100'>Kernel#format</code> or <code class='py-0.5 px-0.5 bg-gray-100'>Kernel#sprintf</code> method. They work by returning a copy of the String passed in, with its <em>format sequence</em> replaced by the additional arguments passed to it. This is easier with an example:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>sprintf('%d %d', 20, 10)  # =&gt; "20 10"</code></pre></div>
+    <p class='mb-3'>
+      The first argument passed in method <code class='py-0.5 px-0.5 bg-gray-100'>sprintf</code> is a String object containing two <em>format sequences</em>.
+    </p>
+  
+    <p class='mb-3'>
+      A format sequence is a parcent sign followed by flags, width and precision indicators, then terminated with a field type character.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>%[flags][width][.precision]type</code></pre></div>
+    <p class='mb-3'>
+      In the example above, the <code class='py-0.5 px-0.5 bg-gray-100'>d</code> in <code class='py-0.5 px-0.5 bg-gray-100'>%d</code> is the <em>field type</em> character. It converts the passed argument as a decimal number.
+    </p>
+  
+    <p class='mb-3'>
+      The <code class='py-0.5 px-0.5 bg-gray-100'>[width]</code> controls the size of the returned String object, while <code class='py-0.5 px-0.5 bg-gray-100'>[.precision]</code> mainly specify the number of digits after the decimal points.
+    </p>
+  
+    <p class='mb-3'>
+      A common use for <code class='py-0.5 px-0.5 bg-gray-100'>format</code> or <code class='py-0.5 px-0.5 bg-gray-100'>sprintf</code> is to format the result of Float objects.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>format('%f', 1.0/3.0)    # =&gt; "0.333333"
+format('%.2f', 1.0/3.0)  # =&gt; "0.33"</code></pre></div>
+    <p class='mb-3'>
+      Note the use of the dot <code class='py-0.5 px-0.5 bg-gray-100'>.</code> before the precision number.
+    </p>
+  <h2 id='string-method' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>String<span class='font-bold bg-gray-100 py-0.5 px-2 rounded-lg emanote:inline-tag:%' title='Tag' data-tag='%'><a href='-/tags/%25' title='Tag' class='text-violet-600 mavenLinkBold hover:underline'>#%</a></span> Method</h2>
+    <p class='mb-3'>
+      <a href='https://github.com/rubocop/ruby-style-guide#sprintf' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Rubocop</a> advises against using the <code class='py-0.5 px-0.5 bg-gray-100'>String#%</code> method:
+    </p>
+  
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
+    <p class='mb-3'>
+      Prefer the use of <code class='py-0.5 px-0.5 bg-gray-100'>sprintf</code> and its alias <code class='py-0.5 px-0.5 bg-gray-100'>format</code> over the fairly cryptic <code class='py-0.5 px-0.5 bg-gray-100'>String#%</code> method.
+    </p>
+  
+    </blockquote>
+  
+    <p class='mb-3'>
+      The documentation does not give any reason why. <code class='py-0.5 px-0.5 bg-gray-100'>Kernel#sprintf</code> and <code class='py-0.5 px-0.5 bg-gray-100'>String#%</code> basically do the same thing. However, <code class='py-0.5 px-0.5 bg-gray-100'>String#%</code> is an instance method of the String class, while the former is a command.
+    </p>
+  
+    <p class='mb-3'>
+      <a href='https://batsov.com/articles/2013/06/27/the-elements-of-style-in-ruby-number-2-favor-sprintf-format-over-string-number-percent/' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>On his blog</a>, Rubocop’s author gives several answer:
+    </p>
+  
+    <p class='mb-3'>
+      One reason to prefer the Kernel methods over the String method is the inconsistencies of the <code class='py-0.5 px-0.5 bg-gray-100'>%</code> method which takes either a single element or an array of elements. Another reason is its cryptic meaning: <code class='py-0.5 px-0.5 bg-gray-100'>%</code> can either be a modulo or the <code class='py-0.5 px-0.5 bg-gray-100'>String#%</code> method, which, without context is hard to parse:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>a % b</code></pre></div>
+    <p class='mb-3'>
+      Even with hardcoded values, the repetition of the <code class='py-0.5 px-0.5 bg-gray-100'>%</code> symbol is difficult to parse:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>'%d %d' % [20, 10]  # =&gt; "20 10"</code></pre></div>
+  <div class='flex items-center justify-center mt-2'>
+  
+    
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/ruby-kernel-format.md'>
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
+        </svg>
+      </a>
+    
+  
+</div>
+</article>
+              <div class='flex flex-col lg:flex-row lg:space-x-2'>
+                
+                
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-for-interview'>
+            Study Guide for Interview
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div>[<a href='computing/software/ruby/ruby-kernel-format' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Ruby’s format Method</a>]</div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+              </div>
+              
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
+      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/%'>
+        <!-- DoNotFormat -->
+        #%
+        <!-- DoNotFormat -->
+      </a>
+    
+  </section>
+
+              <!-- What goes in this file will at the very end of the main div -->
+            </main>
+          </div>
+        </div>
+        <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  
+  <div>
+    <a href='' title='Go to Home page'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/all' title='View Index'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+      <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-6 h-6 hover:text-violet-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-violet-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
+  </div>
+</footer>
+      </div>
+    </div>
+  
+</body>
+
+</html>
