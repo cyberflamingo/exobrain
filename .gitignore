@@ -1,2 +1,6 @@
 .direnv
 /result
+
+# Output directories
+output.docker
+output
