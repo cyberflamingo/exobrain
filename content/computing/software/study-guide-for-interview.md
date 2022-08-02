@@ -8,42 +8,42 @@ date: 2021-02-24T09:12
 
 ### General Topics
 
-- [[[mutable-and-immutable-objects]]]
-- [[[logical-operators]]]
-- [[[ruby-comparable]]]
-- [[[ruby-gets-chomp]]]
-- [[[ruby-new-class]]]
+- [[mutable-and-immutable-objects]]#
+- [[logical-operators]]#
+- [[ruby-comparable]]#
+- [[ruby-gets-chomp]]#
+- [[ruby-new-class]]#
 
 ### String
 
-- [[[ruby-substrings]]]
-- [[[ruby-string-casecmp]]]
-- [[[ruby-string-gsub]]]
-- [[[ruby-kernel-format]]]
-- [[[ruby-string-delete-count]]]
-- [[[ruby-string-center]]]
-- [[[practice-problems-string-manipulation]]]
+- [[ruby-substrings]]#
+- [[ruby-string-casecmp]]#
+- [[ruby-string-gsub]]#
+- [[ruby-kernel-format]]#
+- [[ruby-string-delete-count]]#
+- [[ruby-string-center]]#
+- [[practice-problems-string-manipulation]]#
 
 ### Collections: Array and Hash
 
-- [[[mutation-in-arrays]]]
-- [[[3f79b612]]]
-- [[[ruby-array-any]]]
-- [[[ruby-difference-sort-sort-by]]]
-- [[[practice-problems-arrays-manipulation]]]
-- [[[practice-problems-hashes-manipulation]]]
-- [[[practice-problems-indexes-manipulation]]]
+- [[mutation-in-arrays]]#
+- [[3f79b612]]#
+- [[ruby-array-any]]#
+- [[ruby-difference-sort-sort-by]]#
+- [[practice-problems-arrays-manipulation]]#
+- [[practice-problems-hashes-manipulation]]#
+- [[practice-problems-indexes-manipulation]]#
 
 ### Loop
 
-- [[[while-until-for-loop]]]
+- [[while-until-for-loop]]#
 
 ### Other
 
-- [[[ruby-case-one-liner]]]
-- [[[ruby-ternary-operator]]]
-- [[[practice-problems-others]]]
-- [[[maths-shortcut-tricks-code]]]
+- [[ruby-case-one-liner]]#
+- [[ruby-ternary-operator]]#
+- [[practice-problems-others]]#
+- [[maths-shortcut-tricks-code]]#
 
 ## RB129
 

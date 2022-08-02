@@ -63,7 +63,7 @@ Kakoune は何よりも選択を重視しているテキストエディタ。
 
 よくあるキーストロークを参照するためにまとめた。
 
-[[[kakoune-keystroke-idioms]]]
+[[kakoune-keystroke-idioms]]#
 
 
 [^1]: 日本語の場合は残念ながら単語を認識しない

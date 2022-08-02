@@ -8,7 +8,7 @@ Variables shadowing is what happen when two local variables share the same name.
 
 The variable in the inner scope _shadows_ the variable with the same name in
 the outer scope, making the latter inaccessible in the inner scope, although
-it should be (see [[[f1956036]]]).
+it should be (see [[f1956036]]#).
 
 ```ruby
 var = 'moon'

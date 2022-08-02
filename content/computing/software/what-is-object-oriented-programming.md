@@ -135,7 +135,7 @@ end
 value = WoodenDoll.out_of_place_method(4)
 ```
 
-[[[method-access-control]]]
+[[method-access-control]]#
 
 **Collaborator objects** are objects that are stored as state within another
 object. They are called _collaborators_ because they work in _collaboration_
