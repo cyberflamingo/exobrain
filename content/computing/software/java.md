@@ -11,4 +11,4 @@ date: 2020-09-15T15:19
 * [[loops-in-java]]#
 * [[methods-in-java]]#
 * [[string-equality-java]]#
-* [[691ffc63]]#
+* [[string-length-getbytes-java]]#

@@ -20,13 +20,13 @@ We will go into more details about the modifier `static` later. For now
 it's just a way to compile our code.
 
 Variables in Java are scoped to the method they where declared. See also
-[[f1956036]]#.
+[[local-variable-scope]]#.
 
 ## Parameter Passing
 
 In Java, parameters are passed _by value_. In other words, they receives a
 copy of the original value, and what happens in the method does not affect
-the original object. See also [[946b1445]]#.
+the original object. See also [[pass-by-reference-pass-by-value]]#.
 
 ```java
 int myVal = 5;

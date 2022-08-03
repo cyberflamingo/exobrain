@@ -11,22 +11,22 @@ Here is a bunch of notes of things I am working on.
 
 ## Programming Languages
 
-* [[f6590254]]# The programming language I use to learn programming.
-* [[1497d8aa]]#
+* [[ruby]]# The programming language I use to learn programming.
+* [[java]]#
 * [[html-css]]#
 
 ## Programming Related
 
-* [[bed2654e]]#
-* [[c7120da0]]#
-* [[946b1445]]#
-* [[264185bd]]#
-* [[42c38ab4]]#
-* [[c01d3d0c]]#
-* [[bd5bd8cc]]#
-* [[51940c9b]]#
-* [[a69bdaa3]]#
-* [[b877d36f]]#
+* [[regular-expressions]]#
+* [[control-character]]#
+* [[pass-by-reference-pass-by-value]]#
+* [[evaluate-block]]#
+* [[shallow-copy]]#
+* [[vim-keystrokes]]#
+* [[kakoune-how-to]]#
+* [[divisions-integer]]#
+* [[variables-as-pointers]]#
+* [[recursive-methods]]#
 * [[tabbing-bracing-style]]#
 * [[pairwise-testing]]#
 * [[what-is-object-oriented-programming]]#
@@ -46,21 +46,21 @@ Database
 
 ## Operating Systems
 
-* [[8cdbd18b]]#
+* [[linux]]#
 
 ## Git
 
-* [[0775696d]]#
-* [[99b0ff96]]#
+* [[fork-repository-upstream]]#
+* [[fix-bag-merge-git]]#
 
 ## Other Softwares
 
-* [[8eab8221]]#
-* [[f68c39f2]]#
-* [[407380b2]]#
-* [[13ac445b]]#
-* [[fe0b435d]]#
-* [[ea0ba5b1]]#
+* [[nut-openwrt]]#
+* [[cd-dvd-iso]]#
+* [[rsync-backup]]#
+* [[svg-optimization]]#
+* [[heroku]]#
+* [[download-music-youtube-dl]]#
 * [[email-with-plus]]#
 * [[torrent-client-settings]]#
 * [[oauth-openid-connect]]#
@@ -68,10 +68,10 @@ Database
 
 ### FFmpeg
 
-* [[844cf815]]#
+* [[flac-compression-levels-ffmpeg]]#
 * [[ffmpeg-transcode-dts]]#
 
 ## Other
 
-* [[9fb1418f]]#
+* [[leaning-toothpick-syndrome]]#
 * [[cap-theorem]]#

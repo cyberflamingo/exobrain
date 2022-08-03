@@ -4,7 +4,7 @@ date: 2020-09-20T15:20
 
 # Deciding Whether Part of a Code is a Block or Not
 
-In [[f6590254]], variable scope is defined by a _block_ (see [[f1956036]]).
+In [[ruby]], variable scope is defined by a _block_ (see [[local-variable-scope]]).
 A block is usually delimited by curly brace `{}` or `do/end` pair.
 
 However this is not always the case:

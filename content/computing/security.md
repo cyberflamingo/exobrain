@@ -9,9 +9,9 @@ Portals
 -------
 
 -   [[what-is-security]]#
--   [[f4c1815d]]#
--   [[5f2d11c2]]#
--   [[5b2d9fd2]]#
+-   [[secure-ssh-key-generation]]#
+-   [[plain-text-password-eicar]]#
+-   [[osint-introduction]]#
 -   [[gpg-unsafe-permissions]]#
 -   [[what-is-malware]]#
 -   [[threat-modeling]]#

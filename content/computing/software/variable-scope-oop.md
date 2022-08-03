@@ -4,7 +4,7 @@ date: 2021-06-04T10:11
 
 # Variable Scope in Object Oriented Programming
 
-The rule of variable scope if different than that of [[f1956036]] although
+The rule of variable scope if different than that of [[local-variable-scope]] although
 it shares some similarity. First we need to distinguish scope of _instance_
 and _class_ (and _constants_).
 

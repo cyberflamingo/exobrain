@@ -8,24 +8,24 @@ date: 2020-09-15T23:20
 
 ### Specific Topics of Interest
 
-- [[f1956036]]#
-- [[4a654e16]]#
-- [[21b49381]]#
-- [[a69bdaa3]]#
-- [[74753ef3]]#
-- [[27745945]]#
-- [[87067883]]#
+- [[local-variable-scope]]#
+- [[ruby-pass-by-reference-of-the-value]]#
+- [[working-collections]]#
+- [[variables-as-pointers]]#
+- [[puts-return]]#
+- [[false-nil-truthiness]]#
+- [[method-definition-method-invocation]]#
 - [[implicit-return-value]]#
 
 ### Other Topics to Know
 
-- [[5525b974]]#
+- [[ruby-syntactical-sugar-pitfalls]]#
 - [[variable-shadowing]]#
 
 ### Precision of Language
 
 - [[use-precise-vocabulary]]#
-- [[264185bd]]# with precision
+- [[evaluate-block]]# with precision
 
 ### Practices Exercices
 
@@ -33,7 +33,7 @@ date: 2020-09-15T23:20
 
 ### Study Techniques
 
-- [[df32158f]]#
+- [[recall-technique]]#
 
 ## RB129
 

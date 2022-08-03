@@ -20,4 +20,4 @@ Moreover, it is said most people can't even tell the difference between several 
 
 Maybe for some. A high-end amplifier is not just sound quality, it is also design, longevity, craftsmanship etc.
 
-If the factors above are not of concern, the \$600-\$700 price range (see [[87e5275b]]) seems to be a sweet spot for amplifiers.
+If the factors above are not of concern, the \$600-\$700 price range (see [[cheap-audio-system]]) seems to be a sweet spot for amplifiers.

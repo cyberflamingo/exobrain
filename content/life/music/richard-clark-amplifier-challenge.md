@@ -14,4 +14,4 @@ The test has been taken by thousands of people but as of this writting, nobody c
 
 Although I believe amplifier are not only sound quality (design and robustness of build are important factors as well), paying extra thousands for "better sound quality" should not be a decision factor. There are some good $600 amplifiers[^1] out there.
 
-[^1]: [[87e5275b]]
+[^1]: [[cheap-audio-system]]

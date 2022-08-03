@@ -52,4 +52,4 @@ puts b  # => undefined local variable or method `b'
 Source: [Variable Scope, Introduction to Programming with Ruby](https://launchschool.com/books/ruby/read/variables#variablescope)
 
 
-[^1]: Not all `do/end` pairs imply a block: [[aeb4fea2]]#
+[^1]: Not all `do/end` pairs imply a block: [[part-of-code-block-or-not]]#

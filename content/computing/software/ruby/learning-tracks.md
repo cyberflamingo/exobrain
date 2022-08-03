@@ -5,5 +5,5 @@ date: 2020-09-15T23:19
 # Learning Tracks
 
 * Programming Foundations (link missing)
-* [[3c3ba5a9]]#
+* [[study-guide-test]]#
 * [[study-guide-for-interview]]#

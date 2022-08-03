@@ -1,0 +1,36 @@
+---
+date: 2020-08-02
+---
+
+# Ruby
+
+I started learning Ruby in 2020 with [Launch
+School](https://launchschool.com/).
+
+## Portals
+
+* [[learning-tracks]]#
+* [[split-string-into-characters]]#
+* [[ruby-pass-by-reference-of-the-value]]#
+* [[inject-reduce-method]]#
+* [[debugging-with-pry]]#
+* [[rubocop]]#
+* [[ruby-splat-operator]]#
+* [[ruby-parallel-assignment]]#
+* [[ruby-case-statement-without-comparison-value]]#
+* [[calling-zip-with-block]]#
+* [[search-replace-ruby]]#
+* [[return-last-n-digits-ruby]]#
+* [[infinity-in-ruby]]#
+* [[difference-loop-each-ruby]]#
+* [[generating-list-substrings]]#
+* [[type-of-variables]]#
+* [[ruby-exceptions]]#
+* [[getter-setter-methods-ruby]]#
+* [[blocks-in-ruby]]#
+* [[ruby-proc-and-scope]]#
+* [[ruby-symbol]]#
+* [[testing-with-ruby]]#
+* [[heredoc-ruby]]#
+* [[ruby-static-method]]#
+* [[rbenv-versions-gems]]#

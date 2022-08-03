@@ -13,7 +13,7 @@ passed to methods.
 The former treats the passed objects as "references" to the original object,
 while the later treats them as "values" (new copies of the original).
 
-See also: [[a69bdaa3]]
+See also: [[variables-as-pointers]]
 
 ## Pass by Reference
 

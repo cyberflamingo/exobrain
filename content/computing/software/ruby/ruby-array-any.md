@@ -6,7 +6,7 @@ date: 2021-03-15T16:54
 
 The `Array#any?` extends the `Enumerable#any?` method. This method passes each
 element of the collection it is called upon (here, an Array) to a block or a
-pattern and return `true` if one of the block returns a truthy ([[f097fac0]])
+pattern and return `true` if one of the block returns a truthy ([[difference-between-boolean-values-truthy-falsey]])
 or if the pattern is equal to at least one of the element.
 
 If no block or pattern is provided, an implicit `{ |obj| obj| }` block is

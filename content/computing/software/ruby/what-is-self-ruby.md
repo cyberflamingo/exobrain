@@ -35,7 +35,7 @@ We know we need _setter_ methods (provided by `attr_accessor`) to modify
 the `@name` and `@age` instance variables. However, in the `change_info`
 method we are not calling those two _setter_ methods. Instead, we are
 initializing new local variable `name` and `age`. As thoses are scoped to
-the method scope (see also [[f1956036]]), they cease to exist when the
+the method scope (see also [[local-variable-scope]]), they cease to exist when the
 method returns.
 
 What we really want to do is reassign the instance variables using

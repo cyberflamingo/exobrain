@@ -6,19 +6,19 @@ tags: [home]
 
 Welcome to my exobrain, where I upload and share notes for everyone to see.
 
-This exobrain uses [[9fc4b649]] which lets me easily write down things I
+This exobrain uses [[zettelkasten-principles]] which lets me easily write down things I
 want to remember and make association between notes and thoughts.
 
 I also have [a blog](https://www.cyberflamingo.net/) where I write more
 lengthy post about security and privacy, in Japanese (see also
-[[a35e6aea]]).
+[[what-language-should-i-write-in]]).
 
 [[d6cf318e]]#
 
 ## Portals
 
-* [[cecb6a47]]#
-* [[6ff2fd98]]#
+* [[computing]]#
+* [[life]]#
 
 ## Credits
 

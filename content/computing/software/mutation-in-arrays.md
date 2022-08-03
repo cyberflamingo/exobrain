@@ -4,7 +4,7 @@ date: 2021-02-25T21:20
 
 # Mutation in Arrays
 
-To understand mutation in arrays, first we need to review [[a69bdaa3]] and
+To understand mutation in arrays, first we need to review [[variables-as-pointers]] and
 especially the **Mutability** section.
 
 When applied to Arrays (or collections), mutability can have be the source of
@@ -66,7 +66,7 @@ puts "The #{fancy_bird} is pink!" # => The  is pink!
 ```
 
 While the code above is silly, it gets more confusing when introducing methods
-to the mix because of [[4a654e16]].
+to the mix because of [[ruby-pass-by-reference-of-the-value]].
 
 For example, given the following methods' implementation, will the returned
 object be the same object as the one passed in as an argument or a different

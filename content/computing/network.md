@@ -12,5 +12,5 @@ date: 2020-08-02
 
 ## Other
 
-* [[df968547]]#
-* [[e4bf8a82]]#
+* [[vdsl]]#
+* [[ethernet-cable-category-pitfalls]]#

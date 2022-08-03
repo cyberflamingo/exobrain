@@ -6,7 +6,7 @@ date: 2021-04-04T14:40
 
 ## Local Variables
 
-See [[a69bdaa3]] and [[f1956036]].
+See [[variables-as-pointers]] and [[local-variable-scope]].
 
 ## Instance Variables
 

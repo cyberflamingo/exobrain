@@ -12,16 +12,16 @@ it back for quite some years now.
 
 ## Portals
 
-* [[3d78cf32]]#
-* [[09d600b7]]#
-* [[6adb9c93]]#
+* [[privacy]]#
+* [[music]]#
+* [[japan]]#
 
 
 ### Other Thoughts and Memos
 
-* [[ad670f09]]#
-* [[e9bffdd2]]#
-* [[62934270]]#
-* [[fa17af06]]#
-* [[f5d63c80]]#
+* [[quotes]]#
+* [[lifestyle-business]]#
+* [[just-world-fallacy]]#
+* [[convert-decimal-degrees]]#
+* [[wikipedia-matters]]#
 * [[oneill-cylinder]]#

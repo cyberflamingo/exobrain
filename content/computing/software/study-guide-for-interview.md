@@ -27,7 +27,7 @@ date: 2021-02-24T09:12
 ### Collections: Array and Hash
 
 - [[mutation-in-arrays]]#
-- [[3f79b612]]#
+- [[inject-reduce-method]]#
 - [[ruby-array-any]]#
 - [[ruby-difference-sort-sort-by]]#
 - [[practice-problems-arrays-manipulation]]#

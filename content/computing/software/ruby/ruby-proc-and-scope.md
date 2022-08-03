@@ -35,7 +35,7 @@ The code above leads us to an interesting topic called...
 
 ## Variable Scope of Blocks
 
-We know from [[f1956036]] that variable initialized _outside_ a method
+We know from [[local-variable-scope]] that variable initialized _outside_ a method
 definition aren't accessible _inside_ the method. But the code above
 clearly knows about the `animal` local variable.
 

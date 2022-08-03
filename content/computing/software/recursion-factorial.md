@@ -4,7 +4,7 @@ date: 2020-08-30T17:35
 
 # Understanding Recursion (Factorial)
 
-Fibonacci sequence is often used to explain recursion (see [[3ee77799]]) but
+Fibonacci sequence is often used to explain recursion (see [[recursion-fibonacci]]) but
 recursion may actually be easier to understand.
 
 ## Recursion
