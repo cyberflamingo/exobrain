@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Classes and Objects – エキソブレイン
+    Method Definition and Method Invocation – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='In Ruby, (almost) everything is an object. It is possible to make your own object by defining their class.' />
+      <meta property='og:description' content='Method definition is the action of creating a method using the def keyword:' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Classes and Objects' />
+      <meta property='og:title' content='Method Definition and Method Invocation' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,39 +97,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-for-interview'>
-      Study Guide for Interview
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/learning-tracks'>
-      Learning Tracks
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software'>
       Software
     </a>
@@ -167,29 +134,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
-          
-            <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-test'>
-      Study Guide for Test
-    </a>
-  </div>
-
-  
-</li>
           
         </ul>
       
@@ -201,54 +145,84 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Classes and Objects
+    Method Definition and Method Invocation
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
+  <h2 id='method-definition' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Method Definition</h2>
+    <p class='mb-3'>
+      Method definition is the action of creating a method using the <code class='py-0.5 px-0.5 bg-gray-100'>def</code> keyword:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def greeting      # Line 1 - 3: method definition
+  puts 'Bonjour'
+end</code></pre></div>
+    <p class='mb-3'>
+      The notion of “outer” or “inner” scope doesn’t translate within a method definition: parameters <em>must</em> be passed to the method definition (see Method Invocation below).
+    </p>
+  <h2 id='method-invocation' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Method Invocation</h2>
+    <p class='mb-3'>
+      Method invocation is the act of calling a method we defined previously, or an existing method form the Ruby Core API or Core Library, somewhere in our code.
+    </p>
   
     <p class='mb-3'>
-      In Ruby, (almost) everything is an object. It is possible to make your own object by defining their class.
+      A method can be invoked as is or by passing one or several argument.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>class MyClass
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def greeting(name)        # Method defined with one parameter
+  puts "Bonjour #{name}"
 end
 
-my_class = MyClass.new</code></pre></div>
+greeting('Petit Prince')  # Method invocation with one argument</code></pre></div>
     <p class='mb-3'>
-      Objects’ <strong>attributes</strong> and <strong>behaviors</strong> are defined in classes. In other words, classes are the basic <em>outlines</em> of what an object should be <strong>made of</strong> and what it should be <strong>able to do</strong>.
+      Important note while we are here:
+    </p>
+  <div class='ui info message'>
+    <p class='mb-3'>
+      Methods are defined with <strong>parameters</strong> but they are invoked with <strong>arguments</strong>. (cf., <a href='computing/software/parameter-argument' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Parameter vs Argument</a>)
+    </p>
+  </div>
+    <p class='mb-3'>
+      The example above is invoking a method we previously defined. We could also invoke an already existing Ruby method:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>[1, 2, 3].each { |n| puts n }
+# 1
+# 2
+# 3</code></pre></div>
+    <p class='mb-3'>
+      The method above is called with a block. That <code class='py-0.5 px-0.5 bg-gray-100'>do..end</code> (or <code class='py-0.5 px-0.5 bg-gray-100'>{..}</code>) block following the method invocation is actually an argument being passed into the method, like the <code class='py-0.5 px-0.5 bg-gray-100'>'Petit Prince'</code> string above.
     </p>
   
     <p class='mb-3'>
-      Attributes of an object are tracked by its <strong>states</strong> while <strong>behaviors</strong> are what objects are capable of doing.
+      Technically every method can be called with a block but the method needs to be constructed in a certain way to be able to execute the block. See <a href='computing/software/ruby/method-with-block-at-invocation' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Method with Block at Invocation</a>
     </p>
   
     <p class='mb-3'>
-      This is done by the mean of <em>instance variables</em> and <em>instance methods</em>. The former keep track of state and the later keep track of behavior for objects.
+      The important point regarding block is: a block is <em>part</em> of the method invocation and method invocation is actually the way to define a block! (cf., <a href='computing/software/ruby/part-of-code-block-or-not' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Deciding Whether Part of a Code is a Block or Not</a>)
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>class Creature
-  def initialize(name)
-    @name = name
-  end
+  
+    <p class='mb-3'>
+      When a block is passed to a method that use the return value of said block, we can do more than just executing what is inside the block.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>a = 'Baguette'
 
-  def say_name
-    puts "My name is #{@name}!"
-  end
-end
-
-monster = Creature.new('Granork')
-monster.say_name  # =&gt; My name is Granork</code></pre></div>
+[1, 2, 3].map { |n| a }
+# =&gt; ["Baguette", "Baguette", "Baguette"</code></pre></div>
     <p class='mb-3'>
-      In the example above, the state of the object <code class='py-0.5 px-0.5 bg-gray-100'>monster</code>, i.e. its name, is saved in the instance variable <code class='py-0.5 px-0.5 bg-gray-100'>@name</code>. Its behavior, here the ability to say its name, is rendered possible by the <code class='py-0.5 px-0.5 bg-gray-100'>say_name</code> instance method.
+      We replaced <code class='py-0.5 px-0.5 bg-gray-100'>Array#each</code> with <code class='py-0.5 px-0.5 bg-gray-100'>Array#map</code> which uses the return value of the block to perform a transformation. Interestingly, <code class='py-0.5 px-0.5 bg-gray-100'>#map</code> does not have access to variable <code class='py-0.5 px-0.5 bg-gray-100'>a</code> <em>but</em> the block delimited by <code class='py-0.5 px-0.5 bg-gray-100'>{..}</code> <em>can</em>. As the block returns <code class='py-0.5 px-0.5 bg-gray-100'>a</code> to <code class='py-0.5 px-0.5 bg-gray-100'>#map</code>, the later can now use the value of <code class='py-0.5 px-0.5 bg-gray-100'>a</code>!
     </p>
-  
+  <h2 id='method-and-scopes' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Method and Scopes</h2>
     <p class='mb-3'>
-      See also <a href='computing/software/instance-methods-vs-class-methods' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Instance Methods vs. Class Methods</a>.
+      Method definition <strong>sets</strong> a scope for local variable while method invocation <strong>uses</strong> the scope set by method definition.
+    </p>
+  <h3 id='blocks-inside-method-definition' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Blocks Inside Method Definition</h3>
+    <p class='mb-3'>
+      The rules of <a href='computing/software/local-variable-scope' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Local Variable Scope</a> for block inside a method definition <strong>do</strong> translate.
     </p>
   
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/classes-and-objects.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/method-definition-method-invocation.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -265,14 +239,14 @@ monster.say_name  # =&gt; My name is Granork</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-test'>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-test'>
             Study Guide for Test
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/classes-and-objects' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Classes and Objects</a></div>
+      <div><a href='computing/software/method-definition-method-invocation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Method Definition and Method Invocation</a></div>
     </div>
   
 </div>
@@ -280,29 +254,14 @@ monster.say_name  # =&gt; My name is Granork</code></pre></div>
         </li>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-for-interview'>
-            Study Guide for Interview
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
+            Software
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/classes-and-objects' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Classes and Objects</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/attributes-vs-state'>
-            Attributes vs State
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>In <a href='computing/software/classes-and-objects' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkTag'>Classes and Objects</a> we wrote that an object’s <strong>attributes</strong> and <strong>behaviors</strong> are defined in classes and that attributes of an object are tracked by its <strong>states</strong>, while <strong>behaviors</strong> are what objects are capable of doing.</p></div>
+      <div><a href='computing/software/method-definition-method-invocation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Method Definition and Method Invocation</a></div>
     </div>
   
 </div>
@@ -340,7 +299,7 @@ monster.say_name  # =&gt; My name is Granork</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

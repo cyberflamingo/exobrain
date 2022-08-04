@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Difference Between Boolean Values and Truthy/Falsey – エキソブレイン
+    Tail Recursion – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='What are considered falsey values is different in various programming language.' />
+      <meta property='og:description' content='A recursive function is said to be tail recursive when the recursive call is the last thing executed by the function.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Difference Between Boolean Values and Truthy/Falsey' />
+      <meta property='og:title' content='Tail Recursion' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,41 +97,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/false-nil-truthiness'>
-      false vs nil and the Idea of “Truthiness”
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-test'>
-      Study Guide for Test
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/learning-tracks'>
-      Learning Tracks
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
+    <a href='computing/software/recursive-methods'>
+      Recursive Methods
     </a>
   </div>
 
@@ -182,18 +149,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -205,36 +160,52 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Difference Between Boolean Values and Truthy/Falsey
+    Tail Recursion
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      What are considered falsey values is different in various programming language.
+      A recursive function is said to be <em>tail recursive</em> when the recursive call is the last thing executed by the function.
     </p>
   
     <p class='mb-3'>
-      In Ruby, falsey values are <code class='py-0.5 px-0.5 bg-gray-100'>false</code> and <code class='py-0.5 px-0.5 bg-gray-100'>nil</code>.
+      This is in contrast with classic recursion where each and every function call must be executed to completion in order to get the correct value.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def fibonacci(n, tail1=1, tail2=1)
+  if n == 1
+    tail1
+  elsif n == 2
+    tail2
+  else
+    fibonacci(n - 1, tail2, tail2 + tail1)
+  end
+end</code></pre></div>
+    <p class='mb-3'>
+      This solution is much faster than a non-tail recursion.
     </p>
   
     <p class='mb-3'>
-      In JavaScript, there are more that two: <code class='py-0.5 px-0.5 bg-gray-100'>false</code>, <code class='py-0.5 px-0.5 bg-gray-100'>0</code>, <code class='py-0.5 px-0.5 bg-gray-100'>-0</code>, <code class='py-0.5 px-0.5 bg-gray-100'>0n</code>, <code class='py-0.5 px-0.5 bg-gray-100'>""</code>, <code class='py-0.5 px-0.5 bg-gray-100'>null</code>, <code class='py-0.5 px-0.5 bg-gray-100'>undefined</code>, and <code class='py-0.5 px-0.5 bg-gray-100'>NaN</code>.
+      Sources:
     </p>
   
-    <p class='mb-3'>
-      On the other hand, language like Java (so-called “strongly typed” language) don’t have truthy and falsey. <code class='py-0.5 px-0.5 bg-gray-100'>true</code> evaluates to true, <code class='py-0.5 px-0.5 bg-gray-100'>false</code> evaluates to false and everything else used in a Boolean context will cause the compiler or interpreter to yell at you.
-    </p>
-  
-    <p class='mb-3'>
-      This is why the distinction between Boolean values and truthy/falsey is important: there is nothing inherent that makes <code class='py-0.5 px-0.5 bg-gray-100'>nil</code> or <code class='py-0.5 px-0.5 bg-gray-100'>0</code> a falsey. It’s a design choice by the programming language creators and maintainers (although it would be surprising if a language considered 42 a falsey).
-    </p>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://tutorialspoint.dev/algorithm/mathematical-algorithms/tail-recursion-fibonacci' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Tail Recursion for Fibonacci - TutorialsPoint.dev</a>
+        </li>
+      
+        <li>
+          <a href='https://www.programmerinterview.com/recursion/tail-recursion/' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Tail Recursion - Programmer and Software Interview Questions and Answers</a>
+        </li>
+      
+    </ul>
   
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/difference-between-boolean-values-truthy-falsey.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/tail-recursion.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -251,14 +222,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/false-nil-truthiness'>
-            false vs nil and the Idea of “Truthiness”
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/recursion-fibonacci'>
+            Understanding Recursion (Fibonacci Sequence)
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>As the result of the comparison being done is often the same whether you use a Boolean or truthiness, the distinction between the two may seems overzealous at first, but there are good reasons to distinguish them (<a href='computing/software/ruby/difference-between-boolean-values-truthy-falsey' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Difference Between Boolean Values and Truthy/Falsey</a>).</p></div>
+      <div><p>See also <a href='computing/software/tail-recursion' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Tail Recursion</a>.</p></div>
     </div>
   
 </div>
@@ -266,14 +237,14 @@
         </li>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/ruby-array-any'>
-            Ruby’s any? Method
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/recursive-methods'>
+            Recursive Methods
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>The <code>Array#any?</code> extends the <code>Enumerable#any?</code> method. This method passes each element of the collection it is called upon (here, an Array) to a block or a pattern and return <code>true</code> if one of the block returns a truthy (<a href='computing/software/ruby/difference-between-boolean-values-truthy-falsey' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Difference Between Boolean Values and Truthy/Falsey</a>) or if the pattern is equal to at least one of the element.</p></div>
+      <div><a href='computing/software/tail-recursion' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Tail Recursion</a></div>
     </div>
   
 </div>
@@ -311,7 +282,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

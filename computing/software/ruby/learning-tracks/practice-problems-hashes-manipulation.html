@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Recall Technique – エキソブレイン
+    Practice Problems: Arrays Manipulation – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='The recall technique consists of, after participating in a class or studying a document, to try and recall as many things as possible from it.' />
+      <meta property='og:description' content='Time: 12:27' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Recall Technique' />
+      <meta property='og:title' content='Practice Problems: Arrays Manipulation' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,17 +97,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-test'>
-      Study Guide for Test
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software/ruby/learning-tracks'>
       Learning Tracks
     </a>
@@ -175,10 +164,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -190,73 +175,154 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Recall Technique
+    Practice Problems: Arrays Manipulation
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
+  <h2 id='example-1' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 1</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+# Implement the `search` method.
+
+# PEDAC
+
+## Problem
+
+Given a query containing a minimum and maximum price, and a requested computer
+brand, return a list of possible purchases.
+
+Input: a search query with a min and max price, and a computer brand
+Output: a list of purchase candidates
+
+Clarify:
+
+- Min/max are inclusive
+- Search query for name is not exact (only brand name, no case)
+- Name always starts with brand name? (Yes)
+
+## Data
+
+Hashes
+
+## Algorithm
+
+. Init a local var branded_products to new Hash
+. Iterate over PRODUCTS and select each element where the name is equal to the
+  query, save result to branded_products
+. Iterate over branded_products and select elements for which price is between
+  min and max
+. Return the result
+
+=end
+
+PRODUCTS = [
+  { name: "Thinkpad x210", price: 220 },
+  { name: "Thinkpad x230", price: 250 },
+  { name: "Thinkpad x250", price: 979 },
+  { name: "Thinkpad x230", price: 300 },
+  { name: "Thinkpad x230", price: 330 },
+  { name: "Thinkpad x230", price: 350 },
+  { name: "Thinkpad x240", price: 700 },
+  { name: "Macbook Leopard", price: 300 },
+  { name: "Macbook Air", price: 700 },
+  { name: "Macbook Pro", price: 600 },
+  { name: "Macbook", price: 1449 },
+  { name: "Dell Latitude", price: 200 },
+  { name: "Dell Latitude", price: 650 },
+  { name: "Dell Inspiron", price: 300 },
+  { name: "Dell Inspiron", price: 450 }
+]
+
+query = {
+  price_min: 240,
+  price_max: 280,
+  q: "thinkpad"
+}
+
+query2 = {
+  price_min: 300,
+  price_max: 450,
+  q: 'dell'
+}
+
+def search(query)
+  branded_products = PRODUCTS.select do |model|
+    model[:name].downcase.start_with?(query[:q])
+  end
+
+  branded_products.select do |model|
+    model[:price].between?(query[:price_min], query[:price_max])
+  end
+end
+
+p search(query) == [{ name: "Thinkpad x230", price: 250 }]
+p search(query2) == [{ name: "Dell Inspiron", price: 300 },
+                     { name: "Dell Inspiron", price: 450 }]</code></pre></div>
     <p class='mb-3'>
-      The recall technique consists of, after participating in a class or studying a document, to try and recall as many things as possible from it.
+      <strong>Time:</strong> 12:27
     </p>
-  
+  <h2 id='example-2' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 2</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+
+Write a method that takes a string and returns a boolean indicating if this
+string has a balanced set of parentheses.
+
+# PEDAC
+
+## Problem
+
+Given a string, return true if it has set of balanced parentheses, false
+oterwise.
+
+Input: A string with one or more open and closed parentheses
+Output: A boolean indicating if open/close parentheses were balanced or not
+
+Clarify:
+
+- True when no parentheses? (Yes)
+- Only `(` and `)` counts? (Yes)
+- They must be in the right order
+- Can't possibly have more closing parentheses than opening parentheses
+
+## Data
+
+A Hash of parentheses and their count
+
+## Algorithm
+
+. Init a local variable parentheses_counter Hash to open/close parentheses key
+  and values 0
+. Iterate over the string
+  . If the current character is an opening/closing parentheses, increment its
+  count in parentheses_counter
+  . Return false if the Hash has more closing parentheses than opening
+. Return equality between opening and closing parentheses
+
+=end
+
+def balancer(string)
+  parentheses_counter = { '(' =&gt; 0,
+                          ')' =&gt; 0 }
+  string.chars.each do |char|
+    if parentheses_counter.key?(char)
+      parentheses_counter[char] += 1
+    end
+    return false if parentheses_counter[')'] &gt; parentheses_counter['(']
+  end
+  parentheses_counter[')'] == parentheses_counter['(']
+end
+
+p balancer("(hi") == false
+p balancer("(hi)") == true
+p balancer("(()) hi") == true
+p balancer(")(") == false</code></pre></div>
     <p class='mb-3'>
-      Actively trying to recall a concept instead of glancing at notes is more effective and helps fixing the concept in the long term memory.
+      <strong>Time:</strong> 16:33
     </p>
-  
-    <p class='mb-3'>
-      I’ve learned the technique from Dr. Barbara Oakley at her <a href='https://www.coursera.org/learn/learning-how-to-learn/' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Learning How to Learn course</a>.
-    </p>
-  
-    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
-      
-    <p class='mb-3'>
-      An ability to recall—to generate the ideas from inside yourself—is one of the key indicators of good learning.
-    </p>
-  <div xmlhtmlRaw><footer class="">—Barbara Oakley, PhD, PE, <cite><a href="https://www.math.toronto.edu/nhoell/10rules-of-studying.pdf">10 Rules of Good Studying (PDF)</a></cite>, 2014</footer>
-</div>
-    </blockquote>
-  <h2 id='how-to-use-recall' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>How to Use Recall</h2><div class='ui info message'>
-    <p class='mb-3'>
-      This Zettel was actually written using this technique.
-    </p>
-  </div>
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
-      
-        <li>
-          Actively listen to the course and/or read the materiel you want to remember
-        </li>
-      
-        <li>
-          You may take note at this stage (especially if the course is not recorded)
-        </li>
-      
-        <li>
-          After the course, take a sheet of paper and a pencil and try to remember and write down the main ideas WITHOUT reviewing your notes.
-        </li>
-      
-        <li>
-          Reread the document you just produced and see if you can add more information and try to connect together the differnt things you remembered.
-        </li>
-      
-        <li>
-          When you feel you cannot add more thoughts, review your note materials and see which points you got right and which were not fully understood.
-        </li>
-      
-        <li>
-          You know have a list of every point you didn’t fully grasp! But don’t neglect the point you remembered well; memory is all about repetition!
-        </li>
-      
-        <li>
-          Try recalling the main ideas in different situation: when cooking or in a different room from where you originally learned it.
-        </li>
-      
-    </ul>
   
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/recall-technique.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/learning-tracks/practice-problems-hashes-manipulation.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -273,14 +339,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-test'>
-            Study Guide for Test
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-for-interview'>
+            Study Guide for Interview
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='recall-technique' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Recall Technique</a></div>
+      <div><a href='computing/software/ruby/learning-tracks/practice-problems-hashes-manipulation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Practice Problems: Arrays Manipulation</a></div>
     </div>
   
 </div>
@@ -318,7 +384,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

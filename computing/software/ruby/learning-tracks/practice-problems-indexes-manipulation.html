@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Method Definition and Method Invocation – エキソブレイン
+    Practice Problems: Indexes Manipulation – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Method definition is the action of creating a method using the def keyword:' />
+      <meta property='og:description' content='See also ([[practice-problems-arrays-manipulation]],[]).' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Method Definition and Method Invocation' />
+      <meta property='og:title' content='Practice Problems: Indexes Manipulation' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,17 +97,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-test'>
-      Study Guide for Test
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software/ruby/learning-tracks'>
       Learning Tracks
     </a>
@@ -175,10 +164,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -190,84 +175,97 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Method Definition and Method Invocation
+    Practice Problems: Indexes Manipulation
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <h2 id='method-definition' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Method Definition</h2>
-    <p class='mb-3'>
-      Method definition is the action of creating a method using the <code class='py-0.5 px-0.5 bg-gray-100'>def</code> keyword:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def greeting      # Line 1 - 3: method definition
-  puts 'Bonjour'
-end</code></pre></div>
-    <p class='mb-3'>
-      The notion of “outer” or “inner” scope doesn’t translate within a method definition: parameters <em>must</em> be passed to the method definition (see Method Invocation below).
-    </p>
-  <h2 id='method-invocation' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Method Invocation</h2>
-    <p class='mb-3'>
-      Method invocation is the act of calling a method we defined previously, or an existing method form the Ruby Core API or Core Library, somewhere in our code.
-    </p>
   
     <p class='mb-3'>
-      A method can be invoked as is or by passing one or several argument.
+      See also <a href='computing/software/ruby/learning-tracks/practice-problems-arrays-manipulation' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Practice Problems: Arrays Manipulation</a>.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def greeting(name)        # Method defined with one parameter
-  puts "Bonjour #{name}"
+  <h2 id='example-1' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 1</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
+Select the element out of the array if its index is a fibonacci number.
+
+# PEDAC
+
+## Problem
+
+Given an array of elements (whatever element), return on array of the element
+for witch their index are fibonacci number.
+
+Intput: an array of elements
+Output: an array of elements for witch their index are fibonacci numbers
+
+Clarify:
+
+- Fibonacci numbers are fib(0) = 0, fib(1) = 1, fib(n) = fib(n-1) + fib(n-2)
+- Working with indexes so element can be whatever object which can be in an
+  array
+
+## Data
+
+Arrays of element
+
+## Algorithm
+
+. Init local var array_size to size of given array
+. Init fib_sequence and save return value of FIBONACCI_SEQUENCE for each number
+  from 0 to array_size
+. For each number from 0 to array_size, check if it appears in fib_sequence,
+  save the element to fib_elements if true
+. Return fib_elements
+
+FIBONACCI_SEQUENCE
+. Call fibonacci on each number from 0 to array size and save each result
+
+FIBONACCI
+. Return 0 if num is negative
+. Return number if number is less than 2
+. Fibonacci num - 1 + Fibonacci num - 2
+
 end
 
-greeting('Petit Prince')  # Method invocation with one argument</code></pre></div>
-    <p class='mb-3'>
-      Important note while we are here:
-    </p>
-  <div class='ui info message'>
-    <p class='mb-3'>
-      Methods are defined with <strong>parameters</strong> but they are invoked with <strong>arguments</strong>. (cf., <a href='computing/software/ruby/parameter-argument' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Parameter vs Argument</a>)
-    </p>
-  </div>
-    <p class='mb-3'>
-      The example above is invoking a method we previously defined. We could also invoke an already existing Ruby method:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>[1, 2, 3].each { |n| puts n }
-# 1
-# 2
-# 3</code></pre></div>
-    <p class='mb-3'>
-      The method above is called with a block. That <code class='py-0.5 px-0.5 bg-gray-100'>do..end</code> (or <code class='py-0.5 px-0.5 bg-gray-100'>{..}</code>) block following the method invocation is actually an argument being passed into the method, like the <code class='py-0.5 px-0.5 bg-gray-100'>'Petit Prince'</code> string above.
-    </p>
-  
-    <p class='mb-3'>
-      Technically every method can be called with a block but the method needs to be constructed in a certain way to be able to execute the block. See <a href='computing/software/ruby/method-with-block-at-invocation' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Method with Block at Invocation</a>
-    </p>
-  
-    <p class='mb-3'>
-      The important point regarding block is: a block is <em>part</em> of the method invocation and method invocation is actually the way to define a block! (cf., <a href='computing/software/ruby/part-of-code-block-or-not' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Deciding Whether Part of a Code is a Block or Not</a>)
-    </p>
-  
-    <p class='mb-3'>
-      When a block is passed to a method that use the return value of said block, we can do more than just executing what is inside the block.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>a = 'Baguette'
+=end
 
-[1, 2, 3].map { |n| a }
-# =&gt; ["Baguette", "Baguette", "Baguette"</code></pre></div>
+def fibonacci(num)
+  return 0 if num.negative?
+  return num if num &lt; 2
+
+  fibonacci(num - 1) + fibonacci(num - 2)
+end
+
+def fib_sequence(max)
+  (0..max).to_a.map do |num|
+    fibonacci(num)
+  end
+end
+
+def fib_index_select(array)
+  array_size = array.size
+  fib_indexes = fib_sequence(array_size)
+  fib_elements = []
+
+  0.upto(array_size - 1) do |array_index|
+    if fib_indexes.include?(array_index)
+      fib_elements &lt;&lt; array[array_index]
+    end
+  end
+
+  fib_elements
+end
+
+p fib_index_select([1, 2, 3, 4, 5, 6]) == [1, 2, 3, 4, 6]
+p fib_index_select(('a'..'z').to_a) == ["a", "b", "c", "d", "f", "i", "n", "v"]
+</code></pre></div>
     <p class='mb-3'>
-      We replaced <code class='py-0.5 px-0.5 bg-gray-100'>Array#each</code> with <code class='py-0.5 px-0.5 bg-gray-100'>Array#map</code> which uses the return value of the block to perform a transformation. Interestingly, <code class='py-0.5 px-0.5 bg-gray-100'>#map</code> does not have access to variable <code class='py-0.5 px-0.5 bg-gray-100'>a</code> <em>but</em> the block delimited by <code class='py-0.5 px-0.5 bg-gray-100'>{..}</code> <em>can</em>. As the block returns <code class='py-0.5 px-0.5 bg-gray-100'>a</code> to <code class='py-0.5 px-0.5 bg-gray-100'>#map</code>, the later can now use the value of <code class='py-0.5 px-0.5 bg-gray-100'>a</code>!
-    </p>
-  <h2 id='method-and-scopes' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Method and Scopes</h2>
-    <p class='mb-3'>
-      Method definition <strong>sets</strong> a scope for local variable while method invocation <strong>uses</strong> the scope set by method definition.
-    </p>
-  <h3 id='blocks-inside-method-definition' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Blocks Inside Method Definition</h3>
-    <p class='mb-3'>
-      The rules of <a href='computing/software/ruby/local-variable-scope' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Local Variable Scope</a> for block inside a method definition <strong>do</strong> translate.
+      <strong>Time:</strong> 47:52
     </p>
   
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/method-definition-method-invocation.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/learning-tracks/practice-problems-indexes-manipulation.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -284,14 +282,29 @@ greeting('Petit Prince')  # Method invocation with one argument</code></pre></di
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-test'>
-            Study Guide for Test
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-for-interview'>
+            Study Guide for Interview
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/method-definition-method-invocation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Method Definition and Method Invocation</a></div>
+      <div><a href='computing/software/ruby/learning-tracks/practice-problems-indexes-manipulation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Practice Problems: Indexes Manipulation</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/practice-problems-arrays-manipulation'>
+            Practice Problems: Arrays Manipulation
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><p>See also <a href='computing/software/ruby/learning-tracks/practice-problems-indexes-manipulation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Practice Problems: Indexes Manipulation</a>.</p></div>
     </div>
   
 </div>
@@ -329,7 +342,7 @@ greeting('Petit Prince')  # Method invocation with one argument</code></pre></di
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

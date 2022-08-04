@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Parameter vs Argument – エキソブレイン
+    Fake Operators and Equality – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Those two terms are often used interchangeably but we want to be precise when describing concepts like how parameters work and how argument are passed.' />
+      <meta property='og:description' content='In Ruby, most operators are actually methods:' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Parameter vs Argument' />
+      <meta property='og:title' content='Fake Operators and Equality' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,39 +97,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/method-definition-method-invocation'>
-      Method Definition and Method Invocation
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-test'>
-      Study Guide for Test
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/learning-tracks'>
-      Learning Tracks
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software/ruby'>
       Ruby
     </a>
@@ -182,18 +149,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -205,63 +160,184 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Parameter vs Argument
+    Fake Operators and Equality
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Those two terms are often used interchangeably but we want to be precise when describing concepts like how parameters work and how argument are passed.
+      In Ruby, most operators are actually methods:
     </p>
-  
-    <p class='mb-3'>
-      A <strong>parameter</strong> is the variable used during the <strong>method definition</strong>.
-    </p>
-  
-    <p class='mb-3'>
-      An <strong>argument</strong> is the actual value of this variable that gets passed to the method during <strong>method invocation</strong>.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def my_method(my_parameter)
-  # Do stuff
-end
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>1 + 3
+# is actually...
+1.+(3)
 
-my_argument = "I'm an argument!"
-my_method(my_argument)</code></pre></div><h2 id='mnemonic-tips' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Mnemonic Tips</h2>
+4 == 4
+# is actually...
+4.==(4)</code></pre></div>
     <p class='mb-3'>
-      Glanned by yours truly around the Cyberspace:
+      This is true for the operators bellow:
     </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <strong>A</strong>rgument are <strong>A</strong>ctual.
-        </li>
-      
-        <li>
-          You <em>define</em> parameters and you <em>make</em> arguments.
+  <div xmlhtmlRaw><table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Operators</th>
+      <th>Description</th>
+     </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Operators">`[]`, `[]=`</td>
+      <td data-label="Description">Collection element getter/setter</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`**`</td>
+      <td data-label="Description">Exponential operator</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`!`, `~`, `+`, `-`</td>
+      <td data-label="Description">Not, complement, unary plus and minus</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`*`, `/`, `%`</td>
+      <td data-label="Description">Multiply, divide, and modulo</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`+`, `-`</td>
+      <td data-label="Description">Plus, minus</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`>>`, `<<`</td>
+      <td data-label="Description">Right and left shift</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`&`</td>
+      <td data-label="Description">Bitwise "and"</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`^`, `|`</td>
+      <td data-label="Description">Bitwise exclusive and inclusive "or" </td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`<=`, `<`, `>`, `>=`</td>
+      <td data-label="Description">Less than/equal to, etc</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`<=>`, `==`, `===`, `!=`, `=~`, `!~`</td>
+      <td data-label="Description">Equality and pattern matching</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <p class='mb-3'>
+      Operators that are, in fact, methods, can be defined in custom classes
     <!-- DoNotFormat -->
     <!-- We use JavaScript because anchor links won't work if there is a <base> tag;
          see https://stackoverflow.com/a/34765348 
     -->
     <sup class='px-0.5'><a class='text-violet-600 hover:underline' href='javascript:;' onclick="document.location.hash='#fn1';">1</a></sup>
     <!-- DoNotFormat -->
+   to change their default behaviors. For example we could compare two <code class='py-0.5 px-0.5 bg-gray-100'>Person</code> classes by their age. To do that, we could use the <em>greater than</em> operator (<code class='py-0.5 px-0.5 bg-gray-100'>&gt;</code>) between two instances:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>class Person
+  def initialize(age)
+    @age = age
+  end
+
+  def &gt;(other_person)
+    age &gt; other_person.age
+  end
+
+  def ==(other_person)
+    age == other_person.age
+  end
+
+  protected
+
+  attr_reader :age
+end
+
+arthur = Person.new(44)
+tommy  = Person.new(43)
+
+arthur &gt; tommy  # =&gt; true
+arthur == tommy # =&gt; false</code></pre></div>
+    <p class='mb-3'>
+      (Note the use of <code class='py-0.5 px-0.5 bg-gray-100'>protected</code> which is perfect for this use case.)
+    </p>
   
-        </li>
-      
-        <li>
-          <em>You can think of the <strong>p</strong>arameter as a <strong>p</strong>arking space and the <strong>a</strong>rgument as an <strong>a</strong>utomobile. Just as different automobiles can park in a parking space at different times, the calling code can pass a different argument to the same parameter every time that it calls the procedure.</em>
-    <!-- DoNotFormat -->
-    <!-- We use JavaScript because anchor links won't work if there is a <base> tag;
-         see https://stackoverflow.com/a/34765348 
-    -->
-    <sup class='px-0.5'><a class='text-violet-600 hover:underline' href='javascript:;' onclick="document.location.hash='#fn2';">2</a></sup>
-    <!-- DoNotFormat -->
+    <p class='mb-3'>
+      Now, defining <code class='py-0.5 px-0.5 bg-gray-100'>==</code> method gives us <code class='py-0.5 px-0.5 bg-gray-100'>!=</code>. This is not true for <code class='py-0.5 px-0.5 bg-gray-100'>&gt;</code> though.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>arthur != tommy # =&gt; true
+arthur &lt; tommy  # =&gt; NoMethodError (undefined method `&lt;' for...</code></pre></div>
+    <p class='mb-3'>
+      If we know we are going to use a lot of comparison, we can include the <code class='py-0.5 px-0.5 bg-gray-100'>Comparable</code> module to our class and define <code class='py-0.5 px-0.5 bg-gray-100'>&lt;=&gt;</code>. By doing this, we are effectively defining all comparison methods.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>class Person
+  include Comparable
+
+  def initialize(age)
+    @age = age
+  end
+
+  def &lt;=&gt;(other_person)
+    age &lt;=&gt; other_person.age
+  end
+
+  protected
+
+  attr_reader :age
+end
+
+arthur = Person.new(44)
+tommy  = Person.new(43)
+
+arthur &gt; tommy  # =&gt; true
+arthur &lt; tommy  # =&gt; false
+arthur == tommy # =&gt; false</code></pre></div>
+    <hr class='mb-3' />
   
-        </li>
-      
-    </ul>
-  
+    <p class='mb-3'>
+      For the sake of completeness, let’s add that there are also operators which are not methods (and thus, can’t be defined):
+    </p>
+  <div xmlhtmlRaw><table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Operators</th>
+      <th>Description</th>
+     </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Operators">`.`, `::`</td>
+      <td data-label="Description">Method/constant resolution operators</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`&&`</td>
+      <td data-label="Description">Logical "and"</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`||`</td>
+      <td data-label="Description">Logical "or"</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`..`, `...`</td>
+      <td data-label="Description">Inclusive range, exclusive range</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`?` `:`</td>
+      <td data-label="Description">Ternary if-then-else</td>
+    </tr>
+    <tr>
+      <td data-label="Operators">`=`, `%=`, `/=`, `-=`, `+=`, `|=`, `&=`,
+        `>>=`, `<<=`, `*=`, `&&=`, `||=`, `**=`, `{`</td>
+      <td data-label="Description">Assignment/shortcuts, block delimiter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
     <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
       <header class='font-semibold'>Footnotes</header>
       
@@ -270,16 +346,7 @@ my_method(my_argument)</code></pre></div><h2 id='mnemonic-tips' class='inline-bl
             1.
           </header>
           <div class='inline-block mb-2 ml-4'>
-            <a href='https://stackoverflow.com/a/156787' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>What’s the difference between an argument and a parameter?</a>
-          </div>
-        </div>
-      
-        <div id='fn2'>
-          <header class='italic'>
-            2.
-          </header>
-          <div class='inline-block mb-2 ml-4'>
-            <a href='https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/procedures/differences-between-parameters-and-arguments' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Differences Between Parameters and Arguments (Visual Basic)</a>
+            They can also be re-defined for default class. This is called Monkey Patching and is very dangerous, and thus, should be avoided for the time being.
           </div>
         </div>
       
@@ -288,7 +355,7 @@ my_method(my_argument)</code></pre></div><h2 id='mnemonic-tips' class='inline-bl
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/parameter-argument.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/fake-operators-equality.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -305,14 +372,29 @@ my_method(my_argument)</code></pre></div><h2 id='mnemonic-tips' class='inline-bl
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/method-definition-method-invocation'>
-            Method Definition and Method Invocation
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-test'>
+            Study Guide for Test
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>Methods are defined with <strong>parameters</strong> but they are invoked with <strong>arguments</strong>. (cf., <a href='computing/software/ruby/parameter-argument' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Parameter vs Argument</a>)</p></div>
+      <div><a href='computing/software/ruby/fake-operators-equality' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Fake Operators and Equality</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby'>
+            Ruby
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><a href='computing/software/ruby/fake-operators-equality' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Fake Operators and Equality</a></div>
     </div>
   
 </div>
@@ -350,7 +432,7 @@ my_method(my_argument)</code></pre></div><h2 id='mnemonic-tips' class='inline-bl
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

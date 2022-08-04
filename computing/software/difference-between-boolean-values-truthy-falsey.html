@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Modules – エキソブレイン
+    Difference Between Boolean Values and Truthy/Falsey – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Modules is a way to achieve ([[polymorphism]],[]) is Ruby. A module is a collection of behaviors that can be included in another class via mixins.' />
+      <meta property='og:description' content='What are considered falsey values is different in various programming language.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Modules' />
+      <meta property='og:title' content='Difference Between Boolean Values and Truthy/Falsey' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,39 +97,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-for-interview'>
-      Study Guide for Interview
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/learning-tracks'>
-      Learning Tracks
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software'>
       Software
     </a>
@@ -167,50 +134,12 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
           
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/what-is-object-oriented-programming'>
-      What is Object Oriented Programming
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-test'>
-      Study Guide for Test
-    </a>
-  </div>
-
-  
-</li>
-      
-    </ul>
-  
-</li>
-          
-            <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/polymorphism'>
-      Polymorphism
+    <a href='computing/software/false-nil-truthiness'>
+      false vs nil and the Idea of “Truthiness”
     </a>
   </div>
 
@@ -227,97 +156,36 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Modules
+    Difference Between Boolean Values and Truthy/Falsey
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Modules is a way to achieve <a href='computing/software/polymorphism' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkTag'>Polymorphism</a> is Ruby. A module is a collection of behaviors that can be <em>included</em> in another class via <strong>mixins</strong>.
+      What are considered falsey values is different in various programming language.
     </p>
   
     <p class='mb-3'>
-      Modules are usefull because Ruby is a <strong>single inheritance</strong> language: a class can only inherits from one superclass. This limitation makes it difficult to design accurately a problem. Modules let the programmer <em>mix in</em> behaviors to achieve what would be otherwise impossible with a single inheritance. A class can sub-class from only one parent (superclass) but it can mix in as many modules as it likes.
+      In Ruby, falsey values are <code class='py-0.5 px-0.5 bg-gray-100'>false</code> and <code class='py-0.5 px-0.5 bg-gray-100'>nil</code>.
     </p>
   
     <p class='mb-3'>
-      Module cannot be instantiated (no object can be created from a module). They are only used for mixins and namespacing.
-    </p>
-  <h2 id='mixins' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Mixins</h2>
-    <p class='mb-3'>
-      Mixins comes from “mixed in”: a module is <em>mixed in</em> (mixin) to a class using the <code class='py-0.5 px-0.5 bg-gray-100'>include</code> method invocation.
+      In JavaScript, there are more that two: <code class='py-0.5 px-0.5 bg-gray-100'>false</code>, <code class='py-0.5 px-0.5 bg-gray-100'>0</code>, <code class='py-0.5 px-0.5 bg-gray-100'>-0</code>, <code class='py-0.5 px-0.5 bg-gray-100'>0n</code>, <code class='py-0.5 px-0.5 bg-gray-100'>""</code>, <code class='py-0.5 px-0.5 bg-gray-100'>null</code>, <code class='py-0.5 px-0.5 bg-gray-100'>undefined</code>, and <code class='py-0.5 px-0.5 bg-gray-100'>NaN</code>.
     </p>
   
     <p class='mb-3'>
-      As Ruby’s class can only inherits from one superclass, one can use module and mixins to group common behaviors to create a more flexible design.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>module Speakable
-  def speak(sound)
-    puts sound
-  end
-end
-
-class Flamingo
-  include Speakable
-end
-
-johnny = Flamingo.new
-johnny.speak('Gwa gwa!') # =&gt; Gwa gwa!</code></pre></div><div class='ui message info'>
-    <p class='mb-3'>
-      By convention, Rubyist use the “-<em>able</em>” suffix on a verb to describes the behavior that the module is modeling. This is however not enforced.
-    </p>
-  </div>
-    <p class='mb-3'>
-      See <a href='computing/software/method-lookup-path' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Method Lookup Path</a> for how Ruby lookup methods of module mixed in to a class.
-    </p>
-  <h2 id='namespacing' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Namespacing</h2>
-    <p class='mb-3'>
-      Namespacing means grouping similar classes under a common module. Using namespacing has two advantages:
+      On the other hand, language like Java (so-called “strongly typed” language) don’t have truthy and falsey. <code class='py-0.5 px-0.5 bg-gray-100'>true</code> evaluates to true, <code class='py-0.5 px-0.5 bg-gray-100'>false</code> evaluates to false and everything else used in a Boolean context will cause the compiler or interpreter to yell at you.
     </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
-      
-        <li>
-          Better organize and recognize related classes in our code
-        </li>
-      
-        <li>
-          Reduce the likelihood of our custom classes to collide with classes of the same name in the codebase (specially true when using a lot of gems)
-        </li>
-      
-    </ul>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>module Mammal
-  class Dog
-  end
-
-  class Cat
-  end
-end
-
-olive = Mammal::Dog.new
-felix = Mammal::Cat.new</code></pre></div>
     <p class='mb-3'>
-      Classes in a module are called using two colons: <code class='py-0.5 px-0.5 bg-gray-100'>::</code>.
+      This is why the distinction between Boolean values and truthy/falsey is important: there is nothing inherent that makes <code class='py-0.5 px-0.5 bg-gray-100'>nil</code> or <code class='py-0.5 px-0.5 bg-gray-100'>0</code> a falsey. It’s a design choice by the programming language creators and maintainers (although it would be surprising if a language considered 42 a falsey).
     </p>
-  <h2 id='container-for-methods' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Container (for methods)</h2>
-    <p class='mb-3'>
-      Using modules as a <strong>container</strong> for methods (called <strong>module methods</strong>) let us define methods that quite don’t match any class and/or module in our codebase.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>module Speakable
-  # Other methods
-
-  def self.out_of_place_method(num)
-    num**2
-  end
-end
-
-result = Speakable.out_of_place_method(4) # Preferred way to call the method
-result = Speakable::out_of_place_method(4)</code></pre></div>
+  
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/modules.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/difference-between-boolean-values-truthy-falsey.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -334,14 +202,14 @@ result = Speakable::out_of_place_method(4)</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/what-is-object-oriented-programming'>
-            What is Object Oriented Programming
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/false-nil-truthiness'>
+            false vs nil and the Idea of “Truthiness”
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p><strong>Modules</strong> are collection of behaviors that are usable in other classes via <strong>mixins</strong>. A module is <em>mixed in</em> to a class unsing the <code>include</code> method invocation. See also <a href='computing/software/modules' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Modules</a>.</p></div>
+      <div><p>As the result of the comparison being done is often the same whether you use a Boolean or truthiness, the distinction between the two may seems overzealous at first, but there are good reasons to distinguish them (<a href='computing/software/difference-between-boolean-values-truthy-falsey' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Difference Between Boolean Values and Truthy/Falsey</a>).</p></div>
     </div>
   
 </div>
@@ -349,14 +217,29 @@ result = Speakable::out_of_place_method(4)</code></pre></div>
         </li>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-for-interview'>
-            Study Guide for Interview
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
+            Software
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/modules' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Modules</a></div>
+      <div><a href='computing/software/difference-between-boolean-values-truthy-falsey' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Difference Between Boolean Values and Truthy/Falsey</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/ruby-array-any'>
+            Ruby’s any? Method
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><p>The <code>Array#any?</code> extends the <code>Enumerable#any?</code> method. This method passes each element of the collection it is called upon (here, an Array) to a block or a pattern and return <code>true</code> if one of the block returns a truthy (<a href='computing/software/difference-between-boolean-values-truthy-falsey' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Difference Between Boolean Values and Truthy/Falsey</a>) or if the pattern is equal to at least one of the element.</p></div>
     </div>
   
 </div>
@@ -394,7 +277,7 @@ result = Speakable::out_of_place_method(4)</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

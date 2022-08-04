@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Practice Problems: Indexes Manipulation – エキソブレイン
+    while, until and for Loop – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='See also ([[practice-problems-arrays-manipulation]],[]).' />
+      <meta property='og:description' content='In Ruby, while is a keyword. It takes a condition argument and executes the code inside the delimiter while the condition is true.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Practice Problems: Indexes Manipulation' />
+      <meta property='og:title' content='while, until and for Loop' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,28 +97,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-for-interview'>
-      Study Guide for Interview
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/learning-tracks'>
-      Learning Tracks
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software/ruby'>
       Ruby
     </a>
@@ -171,14 +149,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -190,97 +160,44 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Practice Problems: Indexes Manipulation
+    while, until and for Loop
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
+  <h2 id='while-loop' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>while Loop</h2>
     <p class='mb-3'>
-      See also <a href='computing/software/ruby/practice-problems-arrays-manipulation' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Practice Problems: Arrays Manipulation</a>.
-    </p>
-  <h2 id='example-1' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 1</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>=begin
-Select the element out of the array if its index is a fibonacci number.
-
-# PEDAC
-
-## Problem
-
-Given an array of elements (whatever element), return on array of the element
-for witch their index are fibonacci number.
-
-Intput: an array of elements
-Output: an array of elements for witch their index are fibonacci numbers
-
-Clarify:
-
-- Fibonacci numbers are fib(0) = 0, fib(1) = 1, fib(n) = fib(n-1) + fib(n-2)
-- Working with indexes so element can be whatever object which can be in an
-  array
-
-## Data
-
-Arrays of element
-
-## Algorithm
-
-. Init local var array_size to size of given array
-. Init fib_sequence and save return value of FIBONACCI_SEQUENCE for each number
-  from 0 to array_size
-. For each number from 0 to array_size, check if it appears in fib_sequence,
-  save the element to fib_elements if true
-. Return fib_elements
-
-FIBONACCI_SEQUENCE
-. Call fibonacci on each number from 0 to array size and save each result
-
-FIBONACCI
-. Return 0 if num is negative
-. Return number if number is less than 2
-. Fibonacci num - 1 + Fibonacci num - 2
-
-end
-
-=end
-
-def fibonacci(num)
-  return 0 if num.negative?
-  return num if num &lt; 2
-
-  fibonacci(num - 1) + fibonacci(num - 2)
-end
-
-def fib_sequence(max)
-  (0..max).to_a.map do |num|
-    fibonacci(num)
-  end
-end
-
-def fib_index_select(array)
-  array_size = array.size
-  fib_indexes = fib_sequence(array_size)
-  fib_elements = []
-
-  0.upto(array_size - 1) do |array_index|
-    if fib_indexes.include?(array_index)
-      fib_elements &lt;&lt; array[array_index]
-    end
-  end
-
-  fib_elements
-end
-
-p fib_index_select([1, 2, 3, 4, 5, 6]) == [1, 2, 3, 4, 6]
-p fib_index_select(('a'..'z').to_a) == ["a", "b", "c", "d", "f", "i", "n", "v"]
-</code></pre></div>
-    <p class='mb-3'>
-      <strong>Time:</strong> 47:52
+      In Ruby, <code class='py-0.5 px-0.5 bg-gray-100'>while</code> is a <a href='https://ruby-doc.org/docs/keywords/1.9/' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>keyword</a>. It takes a condition argument and executes the code inside the delimiter <em>while</em> the condition is true.
     </p>
   
+    <p class='mb-3'>
+      Like method, <code class='py-0.5 px-0.5 bg-gray-100'>while</code> returns the last expression evaluated in its code. If <code class='py-0.5 px-0.5 bg-gray-100'>while</code> is not executed (the condition is <code class='py-0.5 px-0.5 bg-gray-100'>false</code> at the beginning), it evaluates to <code class='py-0.5 px-0.5 bg-gray-100'>nil</code>.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>i = 0
+
+while i &lt; 5
+  i += 1
+  p i
+end</code></pre></div><h2 id='until-loop' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>until Loop</h2>
+    <p class='mb-3'>
+      The <code class='py-0.5 px-0.5 bg-gray-100'>until</code> loop is the inverse of <code class='py-0.5 px-0.5 bg-gray-100'>while</code>: it takes a condition argument and executes the code inside the delimiter <em>while</em> the condition is false (<em>until</em> the condition is true).
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>i = 10
+
+until i &lt; 5
+  i -= 1
+  p i
+end</code></pre></div><h2 id='for-loop' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>for Loop</h2>
+    <p class='mb-3'>
+      One of the most used loop in programming, but in the Ruby world <code class='py-0.5 px-0.5 bg-gray-100'>for</code> is generally considered less idiomatic than the <code class='py-0.5 px-0.5 bg-gray-100'>each</code> method.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>for num in [1, 2, 3, 4, 5] do
+  puts num * 10
+end</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/practice-problems-indexes-manipulation.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/while-until-for-loop.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -297,14 +214,14 @@ p fib_index_select(('a'..'z').to_a) == ["a", "b", "c", "d", "f", "i", "n", "v"]
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-for-interview'>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-for-interview'>
             Study Guide for Interview
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/practice-problems-indexes-manipulation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Practice Problems: Indexes Manipulation</a></div>
+      <div><a href='computing/software/ruby/while-until-for-loop' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>while, until and for Loop</a></div>
     </div>
   
 </div>
@@ -312,14 +229,14 @@ p fib_index_select(('a'..'z').to_a) == ["a", "b", "c", "d", "f", "i", "n", "v"]
         </li>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/practice-problems-arrays-manipulation'>
-            Practice Problems: Arrays Manipulation
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby'>
+            Ruby
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>See also <a href='computing/software/ruby/practice-problems-indexes-manipulation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Practice Problems: Indexes Manipulation</a>.</p></div>
+      <div><a href='computing/software/ruby/while-until-for-loop' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>while, until and for Loop</a></div>
     </div>
   
 </div>
@@ -357,7 +274,7 @@ p fib_index_select(('a'..'z').to_a) == ["a", "b", "c", "d", "f", "i", "n", "v"]
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

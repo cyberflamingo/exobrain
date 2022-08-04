@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    regex – エキソブレイン
+    Regular Expressions – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Regular Expressions (regex) are patterns that we can use to search for information of interest in a set of stringsIntroduction to Regular Expressions by Launch School.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='regex' />
+      <meta property='og:title' content='Regular Expressions' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -145,83 +145,93 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    regex
+    Regular Expressions
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <nav>
-  <div class='mb-8'>
-    <header class='pb-2 mb-2 font-semibold text-gray-600'>
-      Pages matching path './*'
-    </header>
-    
-      <div class='flex flex-wrap my-2'>
-        
-          <span class='mr-2 text-right text-gray-600'>
-          </span>
-        
-        <a class='flex-1 text-violet-600 mavenLinkBold border-l-2 pl-2 hover:underline' href='computing/software/regex/regex-quantifiers'>
-          Regex Quantifiers
-        </a>
-      </div>
-    
-      <div class='flex flex-wrap my-2'>
-        
-          <span class='mr-2 text-right text-gray-600'>
-          </span>
-        
-        <a class='flex-1 text-violet-600 mavenLinkBold border-l-2 pl-2 hover:underline' href='computing/software/regex/regex-anchors'>
-          Regex Anchors
-        </a>
-      </div>
-    
-      <div class='flex flex-wrap my-2'>
-        
-          <span class='mr-2 text-right text-gray-600'>
-          </span>
-        
-        <a class='flex-1 text-violet-600 mavenLinkBold border-l-2 pl-2 hover:underline' href='computing/software/regex/basic-regex'>
-          Basic Regex
-        </a>
-      </div>
-    
-      <div class='flex flex-wrap my-2'>
-        
-          <span class='mr-2 text-right text-gray-600'>
-          </span>
-        
-        <a class='flex-1 text-violet-600 mavenLinkBold border-l-2 pl-2 hover:underline' href='computing/software/regex/regex-miscellaneous'>
-          Regex Miscellaneous
-        </a>
-      </div>
-    
-      <div class='flex flex-wrap my-2'>
-        
-          <span class='mr-2 text-right text-gray-600'>
-          </span>
-        
-        <a class='flex-1 text-violet-600 mavenLinkBold border-l-2 pl-2 hover:underline' href='computing/software/regex/regex-options'>
-          Regex Options
-        </a>
-      </div>
-    
-      <div class='flex flex-wrap my-2'>
-        
-          <span class='mr-2 text-right text-gray-600'>
-          </span>
-        
-        <a class='flex-1 text-violet-600 mavenLinkBold border-l-2 pl-2 hover:underline' href='computing/software/regex/regex-shortcuts'>
-          Regex Shortcuts
-        </a>
-      </div>
-    
-  </div>
-</nav><div class='text-gray-400 border-t-2 inline-block pt-0.5'>
+  
     <p class='mb-3'>
-      Note: To override the auto-generated content here, create a file named one of: <span class='font-mono text-sm'>computing/software/regex.md, computing/software/regex.org</span>
+      Regular Expressions (regex) are <strong>patterns</strong> that we can use to search for information of interest in a set of strings
+    <!-- DoNotFormat -->
+    <!-- We use JavaScript because anchor links won't work if there is a <base> tag;
+         see https://stackoverflow.com/a/34765348 
+    -->
+    <sup class='px-0.5'><a class='text-violet-600 hover:underline' href='javascript:;' onclick="document.location.hash='#fn1';">1</a></sup>
+    <!-- DoNotFormat -->
+  .
     </p>
-  </div>
+  
+    <p class='mb-3'>
+      This zettel is specific about Ruby and Jacascript regex. When it is not specified, it uses Ruby’s version of regex.
+    </p>
+  <h2 id='regex-documentation' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Regex Documentation</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://ruby-doc.org/core-2.7.0/Regexp.html' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Ruby Doc</a>
+        </li>
+      
+        <li>
+          <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>MDN web docs (Javascript)</a>
+        </li>
+      
+    </ul>
+  <h2 id='online-regex-editor' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Online regex editor</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://rubular.com/' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Rubular (Ruby)</a>
+        </li>
+      
+        <li>
+          <a href='https://scriptular.com/' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Scriptular (Javascript)</a>
+        </li>
+      
+    </ul>
+  <h2 id='portals' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Portals</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='computing/software/regex/basic-regex' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Basic Regex</a>
+        </li>
+      
+        <li>
+          <a href='computing/software/regex/regex-options' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Regex Options</a>
+        </li>
+      
+        <li>
+          <a href='computing/software/regex/regex-shortcuts' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Regex Shortcuts</a>
+        </li>
+      
+        <li>
+          <a href='computing/software/regex/regex-anchors' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Regex Anchors</a>
+        </li>
+      
+        <li>
+          <a href='computing/software/regex/regex-quantifiers' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Regex Quantifiers</a>
+        </li>
+      
+        <li>
+          <a href='computing/software/regex/regex-miscellaneous' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Regex Miscellaneous</a>
+        </li>
+      
+    </ul>
+  
+    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
+      <header class='font-semibold'>Footnotes</header>
+      
+        <div id='fn1'>
+          <header class='italic'>
+            1.
+          </header>
+          <div class='inline-block mb-2 ml-4'>
+            <a href='https://launchschool.com/books/regex/read/introduction' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Introduction to Regular Expressions by Launch School</a>
+          </div>
+        </div>
+      
+    </div>
+  
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -237,9 +247,40 @@
               <div class='flex flex-col lg:flex-row lg:space-x-2'>
                 
                 
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
+            Software
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><a href='computing/software/regex' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Regular Expressions</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
               </div>
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
+      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/programming/regex'>
+        <!-- DoNotFormat -->
+        #programming/regex
+        <!-- DoNotFormat -->
+      </a>
     
   </section>
 
@@ -265,7 +306,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

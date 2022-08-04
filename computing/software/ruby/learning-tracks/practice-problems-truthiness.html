@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Tail Recursion – エキソブレイン
+    Practice Problems: Truthiness – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='A recursive function is said to be tail recursive when the recursive call is the last thing executed by the function.' />
+      <meta property='og:description' content='Answer:' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Tail Recursion' />
+      <meta property='og:title' content='Practice Problems: Truthiness' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,8 +97,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/recursive-methods'>
-      Recursive Methods
+    <a href='computing/software/written-assessment'>
+      Written Assessments
     </a>
   </div>
 
@@ -153,11 +153,26 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
+    <a href='computing/software/ruby/learning-tracks'>
+      Learning Tracks
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
     <a href='computing/software/ruby'>
       Ruby
     </a>
   </div>
 
+  
+</li>
+      
+    </ul>
   
 </li>
           
@@ -171,52 +186,90 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Tail Recursion
+    Practice Problems: Truthiness
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
+  <h2 id='example-1' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 1</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+new_array = arr.select do |n|
+  n + 1
+end
+
+p new_array</code></pre></div>
     <p class='mb-3'>
-      A recursive function is said to be <em>tail recursive</em> when the recursive call is the last thing executed by the function.
+      <strong>Answer:</strong>
     </p>
   
     <p class='mb-3'>
-      This is in contrast with classic recursion where each and every function call must be executed to completion in order to get the correct value.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def fibonacci(n, tail1=1, tail2=1)
-  if n == 1
-    tail1
-  elsif n == 2
-    tail2
-  else
-    fibonacci(n - 1, tail2, tail2 + tail1)
-  end
-end</code></pre></div>
-    <p class='mb-3'>
-      This solution is much faster than a non-tail recursion.
+      On <code class='py-0.5 px-0.5 bg-gray-100'>line 6</code>, we are calling the method <code class='py-0.5 px-0.5 bg-gray-100'>p</code> passing in local variable <code class='py-0.5 px-0.5 bg-gray-100'>new_array</code> to it as an argument. This method output and return the array object pointed by the variable, namely <code class='py-0.5 px-0.5 bg-gray-100'>[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]</code>.
     </p>
   
     <p class='mb-3'>
-      Sources:
+      One <code class='py-0.5 px-0.5 bg-gray-100'>line 1</code>, we are initializing the local variable <code class='py-0.5 px-0.5 bg-gray-100'>arr</code> to the array object with element 1 to 10: <code class='py-0.5 px-0.5 bg-gray-100'>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>.
     </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <a href='https://tutorialspoint.dev/algorithm/mathematical-algorithms/tail-recursion-fibonacci' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Tail Recursion for Fibonacci - TutorialsPoint.dev</a>
-        </li>
-      
-        <li>
-          <a href='https://www.programmerinterview.com/recursion/tail-recursion/' class='text-violet-600 hover:underline' target='_blank' rel='noopener'>Tail Recursion - Programmer and Software Interview Questions and Answers</a>
-        </li>
-      
-    </ul>
+    <p class='mb-3'>
+      On <code class='py-0.5 px-0.5 bg-gray-100'>line 3</code>, we are intializing <code class='py-0.5 px-0.5 bg-gray-100'>new_array</code> with the result of the method <code class='py-0.5 px-0.5 bg-gray-100'>select</code>.
+    </p>
+  
+    <p class='mb-3'>
+      On <code class='py-0.5 px-0.5 bg-gray-100'>line 3-5</code>, the method <code class='py-0.5 px-0.5 bg-gray-100'>select</code> is called on the local variable <code class='py-0.5 px-0.5 bg-gray-100'>arr</code> passing in the <code class='py-0.5 px-0.5 bg-gray-100'>do..end</code> block as an argument.
+    </p>
+  
+    <p class='mb-3'>
+      The method <code class='py-0.5 px-0.5 bg-gray-100'>select</code> iterates over each element in the array and passes it to the block as the parameter <code class='py-0.5 px-0.5 bg-gray-100'>n</code>.
+    </p>
+  
+    <p class='mb-3'>
+      On <code class='py-0.5 px-0.5 bg-gray-100'>line 4</code>, <code class='py-0.5 px-0.5 bg-gray-100'>1</code> is added to <code class='py-0.5 px-0.5 bg-gray-100'>n</code>. As it’s the last line of the block, the result is returned.
+    </p>
+  
+    <p class='mb-3'>
+      The method <code class='py-0.5 px-0.5 bg-gray-100'>select</code> considers if the returned value of the block evaluates to <code class='py-0.5 px-0.5 bg-gray-100'>true</code> or not. If it is, the method add the value to a new array.
+    </p>
+  
+    <p class='mb-3'>
+      This problem demonstrates the concept of truthiness. In Ruby, everything except <code class='py-0.5 px-0.5 bg-gray-100'>false</code> and <code class='py-0.5 px-0.5 bg-gray-100'>nil</code> evaluates to <code class='py-0.5 px-0.5 bg-gray-100'>true</code>. In the case above, the block never returns <code class='py-0.5 px-0.5 bg-gray-100'>false</code> or <code class='py-0.5 px-0.5 bg-gray-100'>nil</code>, therefore each value returned by the block are evaluated to <code class='py-0.5 px-0.5 bg-gray-100'>true</code> and therefore all returned to the new array created by <code class='py-0.5 px-0.5 bg-gray-100'>select</code>. This new array is used as the array object used in the initialization of <code class='py-0.5 px-0.5 bg-gray-100'>new_array</code>.
+    </p>
+  <h2 id='example-2' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 2</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>arr = [1, 2, 3].any? do |num|
+  "hi"
+end
+
+p arr</code></pre></div>
+    <p class='mb-3'>
+      <strong>Answer:</strong>
+    </p>
+  
+    <p class='mb-3'>
+      This code outputs <code class='py-0.5 px-0.5 bg-gray-100'>true</code> and return <code class='py-0.5 px-0.5 bg-gray-100'>true</code>.
+    </p>
+  
+    <p class='mb-3'>
+      On <code class='py-0.5 px-0.5 bg-gray-100'>line 5</code> we are calling the method <code class='py-0.5 px-0.5 bg-gray-100'>p</code> passing in the local variable <code class='py-0.5 px-0.5 bg-gray-100'>arr</code>.
+    </p>
+  
+    <p class='mb-3'>
+      The local variable <code class='py-0.5 px-0.5 bg-gray-100'>arr</code> is defined on <code class='py-0.5 px-0.5 bg-gray-100'>line 1</code>. It is defined with the return value of the method call <code class='py-0.5 px-0.5 bg-gray-100'>any?</code> on object array <code class='py-0.5 px-0.5 bg-gray-100'>[1, 2, 3]</code> passing in a <code class='py-0.5 px-0.5 bg-gray-100'>do..end</code> block.
+    </p>
+  
+    <p class='mb-3'>
+      The method <code class='py-0.5 px-0.5 bg-gray-100'>any?</code> return <code class='py-0.5 px-0.5 bg-gray-100'>true</code> when at least one block passed to it returns <code class='py-0.5 px-0.5 bg-gray-100'>true</code>. Here, it return <code class='py-0.5 px-0.5 bg-gray-100'>true</code> because on <code class='py-0.5 px-0.5 bg-gray-100'>line 1-3</code>, the <code class='py-0.5 px-0.5 bg-gray-100'>do..end</code> block return the local string <code class='py-0.5 px-0.5 bg-gray-100'>"hi"</code> which always evaluates to true.
+    </p>
+  
+    <p class='mb-3'>
+      This problem demonstrates how the method <code class='py-0.5 px-0.5 bg-gray-100'>any?</code> works, as well as truthiness in Ruby.
+    </p>
+  
+    <p class='mb-3'>
+      <strong>Time</strong>: 07:53
+    </p>
   
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/tail-recursion.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/learning-tracks/practice-problems-truthiness.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -233,29 +286,14 @@ end</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/recursion-fibonacci'>
-            Understanding Recursion (Fibonacci Sequence)
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/written-assessment'>
+            Written Assessments
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>See also <a href='computing/software/ruby/tail-recursion' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Tail Recursion</a>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/recursive-methods'>
-            Recursive Methods
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/tail-recursion' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Tail Recursion</a></div>
+      <div><a href='computing/software/ruby/learning-tracks/practice-problems-truthiness' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Practice Problems: Truthiness</a></div>
     </div>
   
 </div>
@@ -293,7 +331,7 @@ end</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Method Lookup Path – エキソブレイン
+    Implicit Return Value of Method Invocations and Blocks – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='In order to know where to look for a method, Ruby uses a defined lookup path. This lookup path is, in order:' />
+      <meta property='og:description' content='Methods in Ruby implicitly returns their last line unless it’s preceeded by an explicit return.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Method Lookup Path' />
+      <meta property='og:title' content='Implicit Return Value of Method Invocations and Blocks' />
     
     
       <base href='/' />
@@ -25,7 +25,7 @@
     <meta name='generator' content='Emanote' />
 
   
-  <link href='tailwind.css?instanceId=042c92ba-bcce-4d18-b37e-892975278323' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=42ac17e4-abb7-46cd-ae44-4ce804272508' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style>
@@ -97,39 +97,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/modules'>
-      Modules
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-for-interview'>
-      Study Guide for Interview
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/learning-tracks'>
-      Learning Tracks
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software/ruby'>
       Ruby
     </a>
@@ -182,55 +149,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
-      
-    </ul>
-  
-</li>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/what-is-object-oriented-programming'>
-      What is Object Oriented Programming
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/study-guide-test'>
-      Study Guide for Test
-    </a>
-  </div>
-
-  
-</li>
-      
-    </ul>
-  
-</li>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/polymorphism'>
-      Polymorphism
-    </a>
-  </div>
-
-  
-</li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -242,102 +160,86 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Method Lookup Path
+    Implicit Return Value of Method Invocations and Blocks
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      In order to know where to look for a method, Ruby uses a defined lookup path. This lookup path is, in order:
+      Methods in Ruby implicitly returns their last line unless it’s preceeded by an explicit <code class='py-0.5 px-0.5 bg-gray-100'>return</code>.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def random_method(str)
+  str = 'new value'
+end
+
+new_str = random_method('first value')
+puts '---------'
+puts new_str</code></pre></div>
+    <p class='mb-3'>
+      On the example above, <code class='py-0.5 px-0.5 bg-gray-100'>str = 'new value'</code> is implicitly returned.
     </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
-      
-        <li>
-          Inside the class
-        </li>
-      
-        <li>
-          Inside the <em>last</em> included module (then the one before, etc)
-        </li>
-      
-        <li>
-          In the superclass (if inheriting)
-        </li>
-      
-        <li>
-          In the superclass’ modules (if included, starting with the last)
-        </li>
-      
-        <li>
-          In the <code class='py-0.5 px-0.5 bg-gray-100'>Object</code> class
-        </li>
-      
-        <li>
-          In the <code class='py-0.5 px-0.5 bg-gray-100'>Kernel</code> class
-        </li>
-      
-        <li>
-          In the <code class='py-0.5 px-0.5 bg-gray-100'>BasicObject</code> class
-        </li>
-      
-    </ul>
+    <p class='mb-3'>
+      This method would actually anger Rubocop because we are assigning a string to a variable which will be returned anyway. We could (and should) directly return the string.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>2:3: W: Lint/UselessAssignment: Useless assignment to variable - str. (https://github.com/bbatsov/ruby-style-guide#underscore-unused-vars)
+  str = 'new value'
+  ^^^</code></pre></div>
+    <p class='mb-3'>
+      The implicit return value is important because if not well understood it can be the cause of a lot of problems down the road. Let’s say for example we want to output our new value:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def random_method(str)
+  str = 'new value'
+  puts str
+end
+
+new_str = random_method('first value')
+puts '---------'
+puts new_str</code></pre></div>
+    <p class='mb-3'>
+      One would think the code above outputs <code class='py-0.5 px-0.5 bg-gray-100'>new_value</code> two times. But it doesn’t because the method <code class='py-0.5 px-0.5 bg-gray-100'>random_method</code>’s last line is <code class='py-0.5 px-0.5 bg-gray-100'>puts str</code>. The method <code class='py-0.5 px-0.5 bg-gray-100'>#puts</code> always returns <code class='py-0.5 px-0.5 bg-gray-100'>nil</code>, which is what <code class='py-0.5 px-0.5 bg-gray-100'>random_ method</code> returns as well.
+    </p>
   
     <p class='mb-3'>
-      The method lookup path can be checked with the <code class='py-0.5 px-0.5 bg-gray-100'>ancestors</code> class method:
+      It is possible to explicitly return a value using the <code class='py-0.5 px-0.5 bg-gray-100'>return</code> keyword.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>module Moving
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def random_method(str)
+  return 'new value'
+  str = 'newiest value'
 end
 
-module Sleeping
-end
-
-module Swim
-end
-
-module Fly
-end
-
-class Animal
-  include Moving
-  include Sleeping
-end
-
-class Flamingo &lt; Animal
-  include Swim
-  include Fly
-
-  def speak
-    puts 'Fancy cry!'
-  end
-end
-
-my_flamingo = Flamingo.new
-my_flamingo.speak # =&gt; Fancy cry!
-
-puts Flamingo.ancestors
-# =&gt; Flamingo
-#    Fly
-#    Swim
-#    Animal
-#    Sleeping
-#    Moving
-#    Object
-#    Kernel
-#    BasicObject</code></pre></div>
+new_str = random_method('first value')
+puts '---------'
+puts new_str</code></pre></div>
     <p class='mb-3'>
-      The important thing to note is the order in which we include modules is important. Last module is looked at <em>first</em>. The same thing happens for each superclass until reaching <code class='py-0.5 px-0.5 bg-gray-100'>BasicObject</code>.
+      Here, <code class='py-0.5 px-0.5 bg-gray-100'>'new value'</code> is returned and the code after is not executed. It’s aid to b <em>unreachable</em>.
     </p>
   <div class='ui info message'>
     <p class='mb-3'>
-      Every class in Ruby inherits from the <code class='py-0.5 px-0.5 bg-gray-100'>Object</code> class, which itself inherits from <code class='py-0.5 px-0.5 bg-gray-100'>Kernel</code>, which itself inherits form <code class='py-0.5 px-0.5 bg-gray-100'>BasicObject</code>.
+      The rule of implicit return also apply to blocks.
     </p>
   </div>
+    <p class='mb-3'>
+      This is most well illustrated by the <a href='computing/software/collection-methods' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>`#select` method</a>:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>(1..10).to_a.select do |num|
+  num.odd?
+end
+# =&gt; [1, 3, 5, 7, 9]
+
+(1..10).to_a.select do |num|
+  puts num.odd?
+end
+# =&gt; []</code></pre></div>
+    <p class='mb-3'>
+      Blocks also implicitely return the last statement (and the only one here). <code class='py-0.5 px-0.5 bg-gray-100'>#select</code> check the return result of each block and add it to a new array if the result evaluates to <code class='py-0.5 px-0.5 bg-gray-100'>true</code>. For the second range, the <code class='py-0.5 px-0.5 bg-gray-100'>#puts</code> method always return <code class='py-0.5 px-0.5 bg-gray-100'>nil</code> which evaluates to <code class='py-0.5 px-0.5 bg-gray-100'>false</code>, which is why the new array is empty.
+    </p>
+  
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/method-lookup-path.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='https://github.com/cyberflamingo/exobrain/edit/master/content/computing/software/ruby/implicit-return-value.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -354,14 +256,14 @@ puts Flamingo.ancestors
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/study-guide-for-interview'>
-            Study Guide for Interview
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-test'>
+            Study Guide for Test
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/method-lookup-path' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Method Lookup Path</a></div>
+      <div><a href='computing/software/ruby/implicit-return-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Implicit Return Value of Method Invocations and Blocks</a></div>
     </div>
   
 </div>
@@ -369,14 +271,14 @@ puts Flamingo.ancestors
         </li>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/modules'>
-            Modules
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby'>
+            Ruby
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>See <a href='computing/software/method-lookup-path' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Method Lookup Path</a> for how Ruby lookup methods of module mixed in to a class.</p></div>
+      <div><a href='computing/software/ruby/implicit-return-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Implicit Return Value of Method Invocations and Blocks</a></div>
     </div>
   
 </div>
@@ -414,7 +316,7 @@ puts Flamingo.ancestors
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.19.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.21.0'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>
