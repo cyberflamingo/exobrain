@@ -17,25 +17,40 @@ Here is a bunch of notes of things I am working on.
 
 ## Programming Related
 
-* [[regular-expressions]]#
+* [[regex]]#
 * [[control-character]]#
 * [[pass-by-reference-pass-by-value]]#
 * [[evaluate-block]]#
 * [[shallow-copy]]#
 * [[vim-keystrokes]]#
+* [[working-collections]]#
 * [[kakoune-how-to]]#
 * [[divisions-integer]]#
+* [[local-variable-scope]]#
+* [[difference-between-boolean-values-truthy-falsey]]#
 * [[variables-as-pointers]]#
 * [[recursive-methods]]#
 * [[tabbing-bracing-style]]#
-* [[pairwise-testing]]#
 * [[what-is-object-oriented-programming]]#
+* [[pairwise-testing]]#
+* [[instance-methods-vs-class-methods]]#
+* [[duck-typing]]#
+* [[attributes-vs-state]]#
+* [[collaborator-objects]]#
 * [[closure]]#
 * [[seat-approach]]#
 * [[heredoc]]#
 * [[firefox-developer-tools]]#
 * [[dates-to-test]]#
 * [[tmux-keystroke-idioms]]#
+* [[software-architecture]]#
+* [[logical-operators]]#
+* [[method-definition-method-invocation]]#
+* [[mutable-and-immutable-objects]]#
+* [[mutation-in-arrays]]#
+* [[parameter-argument]]#
+* [[variable-scope-oop]]#
+* [[variable-shadowing]]#
 
 Database
 --------

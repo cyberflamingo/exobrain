@@ -67,8 +67,7 @@ b _unreachable_.
 {.ui .info .message}
 The rule of implicit return also apply to blocks.
 
-This is most well illustrated by the [`#select`
-method](collection-methods.md#select):
+This is most well illustrated by the [[collection-methods#select|`#select` method]]:
 
 ```ruby
 (1..10).to_a.select do |num|

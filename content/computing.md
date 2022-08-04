@@ -11,4 +11,3 @@ date: 2020-08-02
 * [[software]]#
 * [[network]]#
 * [[security]]#
-* [[software-architecture]]#
