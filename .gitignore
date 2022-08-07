@@ -4,3 +4,6 @@
 # Output directories
 output.docker
 output
+
+# zk
+.zk/notebook.db
