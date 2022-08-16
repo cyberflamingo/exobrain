@@ -9,13 +9,13 @@
 
 # Language used when writing notes.
 # This is used to generate slugs or with date formats.
-#language = "en"
+language = "en"
 
 # The default title used for new note, if no `--title` flag is provided.
-default-title = "Untitled"
+default-title = "FIXME Untitled"
 
 # Template used to generate a note's filename, without extension.
-filename = "{{title}}"
+filename = "{{slug title}}"
 
 # The file extension used for the notes.
 extension = "md"
@@ -52,7 +52,7 @@ ignore = [
 # new notes. They are accessible in templates with {{extra.<key>}}
 [extra]
 
-#key = "value"
+author = "CyberFlamingo"
 
 
 # GROUP OVERRIDES
@@ -89,7 +89,7 @@ link-format = "[[{{filename}}]]"
 #link-encode-path = true
 # Indicates whether a link's path file extension will be removed.
 # Defaults to true.
-#link-drop-extension = true
+link-drop-extension = true
 
 # Enable support for #hashtags.
 hashtags = true
@@ -105,7 +105,7 @@ multiword-tags = false
 
 # Default editor used to open notes. When not set, the EDITOR or VISUAL
 # environment variables are used.
-#editor = "vim"
+#editor = "kak"
 
 # Pager used to scroll through long output. If you want to disable paging
 # altogether, set it to an empty string "".
@@ -170,7 +170,7 @@ dead-link = "error"
 # Here are a few aliases to get you started.
 
 # Shortcut to a command.
-#ls = "zk list $@"
+ls = "zk list $@"
 
 # Default flags for an existing command.
 #list = "zk list --quiet $@"
@@ -196,4 +196,7 @@ dead-link = "error"
 #hist = "zk list --format path --delimiter0 --quiet $@ | xargs -t -0 git log --patch --"
 
 # Edit this configuration file.
-#conf = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
+conf = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
+
+# Create new neuron-like zettel
+neuron = 'zk new "$ZK_NOTEBOOK_DIR/content" --title $@'
