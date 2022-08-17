@@ -1,24 +1,42 @@
+---
 # For documentation and available settings, see
 # https://github.com/srid/emanote/blob/master/default/index.yaml
 
-page:
-  siteTitle: エキソブレイン
-
 template:
-  theme: violet
-
-  # You can add your own variables here, like editBaseUrl.
-  # See after-note.tpl to see where editBaseUrl gets used.
-  editBaseUrl: https://github.com/cyberflamingo/exobrain/edit/master/content
-
   # Uncomment this to get neuron-style pages
   name: /templates/layouts/note
   # layout:
   #   note:
   #     containerClass: container mx-auto max-w-screen-lg
-
-  sidebar:
-    collapsed: false
-
+  # List of available colors:
+  # https://v2.tailwindcss.com/docs/customizing-colors#default-color-palette
+  theme: violet
+  # Value of the <base> tag.
+  baseUrl: /
+  # Change this to 'pretty' if you want URLs without the '.html' suffix.
   # If you are hosting on GitLab Pages, you may want to remove this.
   urlStrategy: pretty
+  sidebar:
+    # Whether this node in the sidebar tree should remain collapsed by default
+    # (unless a route in it is active)
+    collapsed: false
+
+# Put page-specific metadata here. Override them in Markdown frontmatter or
+# per-folder YAML as necessary.
+page:
+  siteTitle: エキソブレイン
+  siteName: zettel
+
+  # Put anything that should go in <head> of these routes here:
+  # You can reference other metadata keys using <snippet var=".." />
+  # Or use the JS behaviour library below.
+  headHtml: |
+    <snippet var="js.highlightjs" />
+
+  # You can add your own variables here, like editBaseUrl.
+  # See after-note.tpl to see where editBaseUrl gets used.
+  editBaseUrl: https://github.com/cyberflamingo/exobrain/edit/main/content
+
+emanote:
+  # Automatically treat folder notes as a folgezettel parent of its contents
+  folder-folgezettel: true
