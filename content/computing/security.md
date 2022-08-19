@@ -30,3 +30,15 @@ Portals
 -   ENISA Framework: ISMS framework
 -   ISF: Information Security Framework
 -   CIS 20: Critical Security Controls
+
+### Ethical Hacking
+
+#### Fundamentals
+
+-   [[cyber-kill-chain-methodology]]#
+-   [[ttps-tactics-techniques-and-procedures]]#
+-   [[ioc-indicators-of-compromise]]#
+
+#### Reconnaissance/Footprinting
+
+-   [[what-is-reconnaissance-footprinting]]#
