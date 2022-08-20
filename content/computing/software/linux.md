@@ -21,3 +21,4 @@ I am not extremly pedantic on the name. I use it quite liberally.
 * [[end-of-file-character]]#
 * [[wine-network-permissions]]#
 * [[inotify-max-user-watches]]#
+* [[clear-log-the-proper-way]]#
