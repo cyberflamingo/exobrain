@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Variable Shadowing – エキソブレイン
+    Clear log the proper way – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Variables shadowing is what happen when two local variables share the same name.' />
+      <meta property='og:description' content='The other day I was using Apparmor’s aa-audit on my Firefox profile and long story short I ended up with a massive 10GB syslog file.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Variable Shadowing' />
+      <meta property='og:title' content='Clear log the proper way' />
     
     
       <base href='/' />
@@ -105,6 +105,17 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
+    <a href='computing/software/linux'>
+      Linux
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
     <a href='computing/software'>
       Software
     </a>
@@ -142,6 +153,10 @@
     </ul>
   
 </li>
+      
+    </ul>
+  
+</li>
           
         </ul>
       
@@ -153,38 +168,32 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Variable Shadowing
+    Clear log the proper way
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Variables shadowing is what happen when two local variables share the same name.
+      The other day I was using Apparmor’s <code class='py-0.5 px-0.5 bg-gray-100'>aa-audit</code> on my Firefox profile and long story short I ended up with a massive 10GB <code class='py-0.5 px-0.5 bg-gray-100'>syslog</code> file.
     </p>
   
     <p class='mb-3'>
-      The variable in the inner scope <em>shadows</em> the variable with the same name in the outer scope, making the latter inaccessible in the inner scope, although it should be (see <a href='computing/software/local-variable-scope' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Local Variable Scope</a>).
+      While the “right way” to clear log is actually to rotate it, having 10GB of almost the same audit log is not helpful. Instead, I used the <code class='py-0.5 px-0.5 bg-gray-100'>truncate</code> command:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>var = 'moon'
-
-10.times do |var|
-  puts "To the #{var}!"
-end</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>truncate /var/log/syslog --size=500MB</code></pre></div>
     <p class='mb-3'>
-      In the example above, we cannot print <code class='py-0.5 px-0.5 bg-gray-100'>"To the moon!"</code> because the variable lazily named <code class='py-0.5 px-0.5 bg-gray-100'>var</code> in the inner scope (the <code class='py-0.5 px-0.5 bg-gray-100'>do..end</code> block) is shadowing the variable in the outer scope. In other word <strong>we cannot access the outer <code class='py-0.5 px-0.5 bg-gray-100'>var</code> because we have an inner variable with the same name</strong>.
+      500MB is still massive but I prefer to keep some log left, just in case.
     </p>
   
     <p class='mb-3'>
-      Running Rubocop on this code can hint us on a possible bug:
+      The advantage of this method is it doesn’t delete the log file but zeros out its content instead, which prevent permission and missing log files errors which often cause daemons and some tools to freak out.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>3:14: W: Lint/ShadowingOuterLocalVariable: Shadowing outer local variable - var.
-10.times do |var|
-             ^^^</code></pre></div>
+  
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/variable-shadowing.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/linux/clear-log-the-proper-way.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -201,29 +210,14 @@ end</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-test'>
-            Study Guide for Test
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/linux'>
+            Linux
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/variable-shadowing' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Variable Shadowing</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
-            Software
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/variable-shadowing' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Variable Shadowing</a></div>
+      <div><a href='computing/software/linux/clear-log-the-proper-way' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Clear log the proper way</a></div>
     </div>
   
 </div>
@@ -242,7 +236,7 @@ end</code></pre></div>
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2021-01-11T15:36
+      2022-08-20
     </time>
   
 </div>
