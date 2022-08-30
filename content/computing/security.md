@@ -32,6 +32,10 @@ Portals
 -   ISF: Information Security Framework
 -   CIS 20: Critical Security Controls
 
+### Vulnerabilities
+
+-   [[idor-insecure-direct-object-references]]#
+
 ### Ethical Hacking
 
 #### Fundamentals
