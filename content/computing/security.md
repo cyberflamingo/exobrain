@@ -16,6 +16,7 @@ Portals
 -   [[what-is-malware]]#
 -   [[threat-modeling]]#
 -   [[what-is-opsec]]#
+-   [[difference-between-penetration-tester-and-red-teamer]]#
 
 ### Governance, Risk and Compliance (GRC)
 
