@@ -11,7 +11,7 @@ Target Machines
 :::{.highlight-block}
 [HeiDoc.net
 Tool](https://heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool)
-can be used to easily download Windows ISO instead of goign through the
+can be used to easily download Windows ISO instead of going through the
 download pages.
 :::
 
@@ -30,3 +30,6 @@ Attack Machine
 --------------
 
 -   [Kali Linux](https://www.kali.org/get-kali/)
+
+With the ISO downloaded, we can create our
+[[pentest-home-lab-environment-with-qemu-kvm]]#.
