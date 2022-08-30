@@ -43,3 +43,7 @@ Portals
 #### Reconnaissance/Footprinting
 
 -   [[what-is-reconnaissance-footprinting]]#
+
+#### Enumeration/Scanning
+
+-   [[scanning-networks]]#
