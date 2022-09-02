@@ -43,6 +43,7 @@ Portals
 -   [[cyber-kill-chain-methodology]]#
 -   [[ttps-tactics-techniques-and-procedures]]#
 -   [[ioc-indicators-of-compromise]]#
+-   [[pentest-methodology-quick-example]]#
 
 #### Reconnaissance/Footprinting
 
