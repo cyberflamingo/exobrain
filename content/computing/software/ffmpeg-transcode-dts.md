@@ -16,7 +16,7 @@ not so bad lossy choice.
 ```sh
 ffmpeg -i <input_video> \
     -acodec ac3         \
-    -vcopy  copy        \
+    -vcodec  copy        \
     <output_video>
 ```
 
@@ -26,7 +26,7 @@ compression level, the resulting file is often huge).
 ```sh
 ffmpeg -i <input_video>                \
     -acodec flac -compression_level 10 \
-    -vcopy  copy                       \
+    -vcodec  copy                       \
     <output_video>
 ```
 
