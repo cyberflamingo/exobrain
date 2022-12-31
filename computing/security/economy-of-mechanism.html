@@ -1,18 +1,22 @@
+<!DOCTYPE html>
+<!-- TODO: Main navigation links (Home, index, tags, ...) --><!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
 <html lang='en'>
 
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    #nut - Tag Index – エキソブレイン
+    Economy of Mechanism – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Welcome to my exobrain, where I upload and share notes for everyone to see.' />
+      <meta property='og:description' content='Behind those somewhat convoluted words, economy of mechanism simply means that the more complex a system is, the more likely security vulnerabilities will be present, and the more likely it will be missed during a review.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='#nut - Tag Index' />
+      <meta property='og:title' content='Economy of Mechanism' />
     
     
       <base href='/' />
@@ -127,7 +131,9 @@
 </style>
 
 
-  <head-main></head-main>
+  
+    <link rel='stylesheet' href='_emanote-static/inverted-tree.css' />
+  
   <link rel='stylesheet' href='_emanote-static/stork/flat.css' />
 <!-- Custom Stork-search styling for Emanote -->
 <style>
@@ -202,62 +208,220 @@
 
 <body class='bg-gray-400 overflow-y-scroll'>
   
-    <div class='container mx-auto '>
-      <main class='flex-col items-center justify-center mx-2'>
-        <h1 class='pb-2 mt-2 mb-2 text-6xl text-center'>
-          #nut - Tag Index
-        </h1>
-        <div class='pb-2 mx-auto my-4 lg:max-w-screen-md '>
+    <div class='container mx-auto max-w-prose'>
+      <div class='mt-2 md:mt-4'>
+        <!-- DoNotFormat -->
+<!-- DoNotFormat -->
+
+<nav id='uptree' class='flipped tree' style='transform-origin: 50%;'>
+  <ul class='root'>
+    <li>
+      
+        <ul>
           
-    <div class='bg-gray-200 pb-2'>
-      <nav id='tagcrumbs' class='w-full pl-2 bg-gray-100'>
-        <div class='flex items-center justify-left'>
-          <div class='w-full px-2 py-2 '>
-            <ul class='flex flex-wrap text-lg'>
-              
-                
-                  <li class='inline-flex items-center'>
-                    <a class='px-1 font-mono font-semibold text-violet-600 ' href='-/tags'>
-                      /
-                    </a>
-                    <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 '>
-                      <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
-                    </svg>
-                  </li>
-                
-              
-              <li class='inline-flex items-center text-black'>
-                <a class='px-1 font-mono'>
-                  nut
-                </a>
-              </li>
-            </ul>
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security'>
+      Security
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      Computing
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href=''>
+      外付け脳 (exobrain)
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+          
+        </ul>
+      
+    </li>
+  </ul>
+</nav>
+
+        <div class='relative md:shadow-2xl md:mb-8'>
+
+          <div class='absolute -top-6 right-1 md:right-0 flex flex-row items-center justify-center'>
+            <a title='Search (Ctrl+K)' class='cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+              <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-violet-700' f
+ fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+</svg>
+            </a>
+          </div>
+          <div class='flex-1 w-full overflow-x-auto bg-white'>
+            <main class='px-4 py-4'>
+              <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Economy of Mechanism
+  </a>
+</h1>
+              <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  
+    <p class='mb-3'>
+      Behind those somewhat convoluted words, economy of mechanism simply means that the more complex a system is, the more likely security vulnerabilities will be present, <em>and</em> the more likely it will be missed during a review.
+    </p>
+  
+    <p class='mb-3'>
+      This is because the time to review and find vulnerabilities increases (sometimes exponentially) the more mechanisms, or the more code there is.
+    </p>
+  
+    <p class='mb-3'>
+      According to Bishop
+    <sup class='px-0.5'>
+      <a class='text-violet-600 hover:underline' href='computing/security/economy-of-mechanism#fn1'>
+        1
+      </a>
+    </sup>
+   in Chapter 13, “Design Principles,” in “Principle of Economy of Mechanism” from pages 344-345:
+    </p>
+  
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
+    <p class='mb-3'>
+      This principle simplifies the design and implementation of security mechanisms.
+    </p>
+  
+    <p class='mb-3'>
+      Definition 13-3. The principle of economy of mechanism states that security mechanisms should be as simple as possible.
+    </p>
+  
+    <p class='mb-3'>
+      If a design and implementation are simple, fewer possibilities exist for errors. The checking and testing process is less complex, because fewer components and cases need to be tested. Complex mechanisms often make assumptions about the system and environment in which they run. If these assumptions are incorrect, security problems may result.
+    </p>
+  
+    <p class='mb-3'>
+      Interfaces to other modules are particularly suspect, because modules often make implicit assumptions about input or output parameters or the current system state; should any of these assumptions be wrong, the module’s actions may produce unexpected, and erroneous, results. Interaction with external entities, such as other programs, systems, or humans, amplified this problem.
+    </p>
+  
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
+    <p class='mb-3'>
+      <strong>Example 1</strong>
+    </p>
+  
+    <p class='mb-3'>
+      The ident protocol sends the user name associated with a process that has a TCP connection to a remote host. A mechanism on host A that allows access based on the results of an ident protocol result makes the assumption that the originating host is trustworthy. If host B decides to attack host A, it can connect and then send any identity it chooses in response to the ident request. This is an example of a mechanism making an incorrect assumption about the environment (specifically that host B can be trusted).
+    </p>
+  
+    </blockquote>
+  
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
+    <p class='mb-3'>
+      <strong>Example 2</strong>
+    </p>
+  
+    <p class='mb-3'>
+      The finger protocol transmits information about a user or system. Many client implementations assume that the server’s response is well-formed. However, if an attacker were to create a server that generated an infinite stream of characters, and a finger client were to connect to it, the client would print all the characters. As a result, log files and disks could be filled up, resulting in a denial of service attack on the querying host. this is an example of incorrect assumptions about the input to the client.
+    </p>
+  
+    </blockquote>
+  
+    </blockquote>
+  
+    <p class='mb-3'>
+      <a href='https://www.cisa.gov/uscert/bsi/articles/knowledge/principles/economy-of-mechanism' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Source</a>
+    </p>
+  
+    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
+      <header class='font-semibold'>Footnotes</header>
+      
+        <div id='fn1'>
+          <header class='italic'>
+            1.
+          </header>
+          <div class='inline-block mb-2 ml-4'>
+            Bishop, Matt. <em>Computer Security: Art and Science</em>. Boston, MA: Addison-Wesley, 2003.
           </div>
         </div>
-      </nav>
-      <div class='flex flex-col pl-2 my-4 ml-2 space-y-2'>
-        
-        
-          
-            <div>
-              <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-                </path>
-              </svg>
-
-              <!-- TODO: DRY -->
-              <a class='text-violet-600 hover:underline truncate' href='computing/software/nut-openwrt'>
-                NUT on OpenWrt
-              </a>
-            </div>
-          
-        
-      </div>
+      
     </div>
   
+
+  <div class='flex items-center justify-center mt-2'>
+  
+    
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/economy-of-mechanism.md'>
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
+        </svg>
+      </a>
+    
+  
+</div>
+</article>
+              <div class='flex flex-col lg:flex-row lg:space-x-2'>
+                
+                
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security'>
+            Security
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
+      <div><a href='computing/security/economy-of-mechanism' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Economy of Mechanism</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+              </div>
+              
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+              <div class='flex items-center justify-end pb-3'>
+  
+    <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
+      2022-12-31
+    </time>
+  
+</div>
+
+            </main>
+          </div>
         </div>
-      </main>
-      <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+        <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
   
   <div>
     <a href='' title='Go to Home page'>
@@ -295,6 +459,7 @@
     </a>
   </div>
 </footer>
+      </div>
     </div>
   
   <div id='stork-search-container' class='hidden fixed w-screen h-screen inset-0 backdrop-filter backdrop-blur-sm'>
