@@ -17,6 +17,7 @@ Portals
 -   [[threat-modeling]]#
 -   [[what-is-opsec]]#
 -   [[difference-between-penetration-tester-and-red-teamer]]#
+-   [[the-confused-deputy-problem]]#
 
 ### Governance, Risk and Compliance (GRC)
 
