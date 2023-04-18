@@ -19,6 +19,7 @@ Portals
 -   [[difference-between-penetration-tester-and-red-teamer]]#
 -   [[the-confused-deputy-problem]]#
 -   [[economy-of-mechanism]]#
+-   [[android]]#
 
 ### Governance, Risk and Compliance (GRC)
 
