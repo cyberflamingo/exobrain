@@ -1,5 +1,5 @@
 ---
-date: {{date now}}
+date: {{format-date now "%FT%T%z"}}
 ---
 
 # {{title}}
