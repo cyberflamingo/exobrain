@@ -80,6 +80,7 @@ Database
 * [[torrent-client-settings]]#
 * [[oauth-openid-connect]]#
 * [[containers-primer]]#
+* [[reset-synology-dsm-firewall]]#
 
 ### FFmpeg
 
