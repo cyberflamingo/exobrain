@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Method with Block at Invocation – エキソブレイン
+    Datetime, Time Zone Formatting, ISO and RFC – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Local variable passed to a method as an argument is pretty straightforward: we pass the variable and it is either used or not inside the method.' />
+      <meta property='og:description' content='It’s a well known fact that date and time are an absolute pain in software engineering.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Method with Block at Invocation' />
+      <meta property='og:title' content='Datetime, Time Zone Formatting, ISO and RFC' />
     
     
       <base href='/' />
@@ -257,17 +257,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/method-definition-method-invocation'>
-      Method Definition and Method Invocation
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software'>
       Software
     </a>
@@ -305,21 +294,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
-          
-            <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
-    </a>
-  </div>
-
-  
-</li>
           
         </ul>
       
@@ -341,35 +315,122 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Method with Block at Invocation
+    Datetime, Time Zone Formatting, ISO and RFC
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Local variable passed to a method as an argument is pretty straightforward: we pass the variable and it is either used or not inside the method.
+      It’s a well known fact that date and time are an absolute pain in software engineering.
     </p>
   
     <p class='mb-3'>
-      Block at invocation is a bit different: every method can use a block as an argument but in order to be executed, the method needs to be constructed with <code class='py-0.5 px-0.5 bg-gray-100'>yield</code>.
+      Instead of reinventing the wheel, following the convention is probably the safest way there. For Date and Time on the Internet, that would probably be the <a href='https://www.ietf.org/rfc/rfc3339.txt' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>RFC 3339</a>.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>def some_method
-  yield
-  puts 'un mouton !'
-end
-
-some_method do
-  puts 'Dessine-moi...'
-end
-
-# =&gt; Dessine-moi...
-#    un mouton !</code></pre></div>
+  
+    <p class='mb-3'>
+      This RFC defines (quote):
+    </p>
+  
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
+    <p class='mb-3'>
+      […] a date and time format for use in Internet protocols that is a profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+    </p>
+  
+    </blockquote>
+  
+    <p class='mb-3'>
+      The datetime format in ISO 8601 is represented as follows (the <code class='py-0.5 px-0.5 bg-gray-100'>date</code> command has a nice formatting flag for that):
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>❯ date --iso-8601=seconds
+2023-04-29T10:55:38+09:00</code></pre></div>
+    <p class='mb-3'>
+      Alright, then how does RFC 3339 format it (once again, useful <code class='py-0.5 px-0.5 bg-gray-100'>date</code> flag)?
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>❯ date --rfc-3339=seconds
+2023-04-29 10:55:38+09:00</code></pre></div>
+    <p class='mb-3'>
+      The only difference is the presence or absence of “T” between the two format. This is actually defined in <em>5.6. Internet Date/Time Format</em>:
+    </p>
+  
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'> NOTE: ISO 8601 defines date and time separated by "T".
+ Applications using this syntax may choose, for the sake of
+ readability, to specify a full-date and full-time separated by
+ (say) a space character.</code></pre></div>
+    </blockquote>
+  
+    <p class='mb-3'>
+      The important and often misunderstood-and-leading-to-problem bit is about <strong>time zone</strong>
+    </p>
+  <h2 id='time-zone-in-datetime-format' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Time Zone in DateTime Format</h2>
+    <p class='mb-3'>
+      Let’s take the example from the RFC: <code class='py-0.5 px-0.5 bg-gray-100'>1996-12-20 00:39:57Z</code>.
+    </p>
+  
+    <p class='mb-3'>
+      A developer uninformed about the concept of time zone in datetime format may assume that this date is 39 minutes and 57 seconds at midnight of December 20th, 1996 in their timezone (JST for me).
+    </p>
+  
+    <p class='mb-3'>
+      <strong>Wrong.</strong> “Z” here stands for Zulu timezone (nautical time zone, GMT). It is the same as UTC+0. The equivalent in JST would be: <code class='py-0.5 px-0.5 bg-gray-100'>1996-12-20 09:39:57</code>.
+    </p>
+  
+    <p class='mb-3'>
+      There is, however, a problem with this notation: we are loosing the information about timezone. The proper notation would be: <code class='py-0.5 px-0.5 bg-gray-100'>1996-12-20 09:39:57+09:00</code>.
+    </p>
+  
+    <p class='mb-3'>
+      In security especially, but in all of software engineering in general, this is important because without correct handling of time zones, and because requests can come from all over the world, it becomes hard to parse log correctly and to try to understand, for example, how to attribute an attack correctly and understand its different steps.
+    </p>
+  <h2 id='takeaways' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Takeaways</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          If you are storing a date, it should be in UTC+0 (<code class='py-0.5 px-0.5 bg-gray-100'>Z</code>), always: <code class='py-0.5 px-0.5 bg-gray-100'>1996-12-20 00:39:57Z</code>
+        </li>
+      
+        <li>
+          If the date is shown to the user, it should be converted to their timezone: <code class='py-0.5 px-0.5 bg-gray-100'>1996-12-20 09:39:57+09:00</code>
+    <sup class='px-0.5'>
+      <a class='text-violet-600 hover:underline' href='computing/software/datetime-timezone-formatting-iso-and-rfc#fn1'>
+        1
+      </a>
+    </sup>
+  
+        </li>
+      
+        <li>
+          Use <code class='py-0.5 px-0.5 bg-gray-100'>T</code> between date and time if you want to, or if your app need to follow ISO 8601.
+        </li>
+      
+    </ul>
+  <div class='p-2 mb-3 rounded shadow bg-gray-100 w-full float-none md:float-right md:w-1/2 md:clear-both'>
+    <p class='mb-3'>
+      The date an time on these notes are not following the advice above, and are saved on current timezone time. There may be a way to make that a bit better but it may not be worth the effort for me.
+    </p>
+  </div>
+    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
+      <header class='font-semibold'>Footnotes</header>
+      
+        <div id='fn1'>
+          <header class='italic'>
+            1.
+          </header>
+          <div class='inline-block mb-2 ml-4'>
+            It is probably best to do the conversion client-side so as to make sure to not get confused about current datetime during flow execution
+          </div>
+        </div>
+      
+    </div>
+  
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/ruby/method-with-block-at-invocation.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/datetime-timezone-formatting-iso-and-rfc.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -381,43 +442,6 @@ end
               <div class='flex flex-col lg:flex-row lg:space-x-2'>
                 
                 
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby'>
-            Ruby
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/method-with-block-at-invocation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Method with Block at Invocation</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/method-definition-method-invocation'>
-            Method Definition and Method Invocation
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>Technically every method can be called with a block but the method needs to be constructed in a certain way to be able to execute the block. See <a href='computing/software/ruby/method-with-block-at-invocation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Method with Block at Invocation</a></p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
               </div>
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
@@ -427,7 +451,7 @@ end
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-09-25T08:40
+      2023-04-29T10:46:22+0900
     </time>
   
 </div>
