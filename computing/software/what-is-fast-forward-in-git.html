@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Use Description List to Mark Up Forms in HTML – エキソブレイン
+    What is fast-forward in git – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Instead of wrapping labels and inputs inside div element and styling them, we can instead use a description list (dl, dt & dd). It may seem strange, however it makes sense in regard of the semantic meaning behind a description list: the terms are labels, and they identify controls for the user. Thus, you can wrap form controls in description list elements.' />
+      <meta property='og:description' content='Fast-forward is one interesting thing that git can do. When you are at a particular commit, and you merge some other branch in where that other branch has the current commit as a predecessor, it’s not necessary to create any new snapshots or do any other fancy stuff.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Use Description List to Mark Up Forms in HTML' />
+      <meta property='og:title' content='What is fast-forward in git' />
     
     
       <base href='/' />
@@ -257,17 +257,6 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/html-css'>
-      HTML/CSS
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
     <a href='computing/software'>
       Software
     </a>
@@ -305,10 +294,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -330,44 +315,33 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Use Description List to Mark Up Forms in HTML
+    What is fast-forward in git
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Instead of wrapping <code class='py-0.5 px-0.5 bg-gray-100'>label</code>s and <code class='py-0.5 px-0.5 bg-gray-100'>input</code>s inside <code class='py-0.5 px-0.5 bg-gray-100'>div</code> element and styling them, we can instead use a <strong>description list</strong> (<code class='py-0.5 px-0.5 bg-gray-100'>dl</code>, <code class='py-0.5 px-0.5 bg-gray-100'>dt</code> & <code class='py-0.5 px-0.5 bg-gray-100'>dd</code>). It may seem strange, however it makes sense in regard of the semantic meaning behind a description list: the terms are labels, and they identify controls for the user. Thus, you can wrap form controls in description list elements.
+      Fast-forward is one interesting thing that git can do. When you are at a particular commit, and you merge some other branch in where that other branch has the current commit as a predecessor, it’s not necessary to create any new snapshots or do any other fancy stuff.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='html language-html'>&lt;form action="#"&gt;
-  &lt;fieldset&gt;
-    &lt;dl&gt;
-      &lt;dt&gt;&lt;label for="text_field"&gt;Input Field&lt;/label&gt;&lt;/dt&gt;
-      &lt;dd&gt;&lt;input id="text_field" name="text_field" type=
-      "text"&gt;&lt;/dd&gt;
-      &lt;dt&gt;&lt;label for="another_field"&gt;Another Field&lt;/label&gt;&lt;/dt&gt;
-      &lt;dd&gt;&lt;input id="another_field" name="another_field" type=
-      "text"&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-  &lt;/fieldset&gt;
-&lt;/form&gt;</code></pre></div><div xmlhtmlRaw><form action="#">
-  <fieldset>
-    <dl>
-      <dt><label for="text_field">Input Field</label></dt>
-      <dd><input id="text_field" name="text_field" type=
-      "text"></dd>
-      <dt><label for="another_field">Another Field</label></dt>
-      <dd><input id="another_field" name="another_field" type=
-      "text"></dd>
-    </dl>
-  </fieldset>
-</form>
-</div>
+  
+    <p class='mb-3'>
+      Basically, the previous pointer to the commit can be moved to point to the new commit, to incorporate the new commit.
+    </p>
+  
+    <p class='mb-3'>
+      If looking at <code class='py-0.5 px-0.5 bg-gray-100'>git log</code> again, <code class='py-0.5 px-0.5 bg-gray-100'>main</code> is pointing to the same places wherever the new commit was pointing.
+    </p>
+  
+    <p class='mb-3'>
+      <code class='py-0.5 px-0.5 bg-gray-100'>git log --all --graph --decorate --oneline</code>
+    </p>
+  
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/html-css/description-list-form.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/what-is-fast-forward-in-git.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -384,14 +358,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/html-css'>
-            HTML/CSS
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
+            Software
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/html-css/description-list-form' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Use Description List to Mark Up Forms in HTML</a></div>
+      <div><a href='computing/software/what-is-fast-forward-in-git' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>What is fast-forward in git</a></div>
     </div>
   
 </div>
@@ -410,7 +384,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2022-01-26T09:24
+      2023-06-04T11:58:23+0900
     </time>
   
 </div>

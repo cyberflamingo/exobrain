@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Use Description List to Mark Up Forms in HTML – エキソブレイン
+    Install Kali NetHunter on Pixel 3a – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Instead of wrapping labels and inputs inside div element and styling them, we can instead use a description list (dl, dt & dd). It may seem strange, however it makes sense in regard of the semantic meaning behind a description list: the terms are labels, and they identify controls for the user. Thus, you can wrap form controls in description list elements.' />
+      <meta property='og:description' content='This is an old guide I used for myself. It is most probably out of date but it’s a good start to install Kali on a Pixel phone that is not supported natively (when this was written).' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Use Description List to Mark Up Forms in HTML' />
+      <meta property='og:title' content='Install Kali NetHunter on Pixel 3a' />
     
     
       <base href='/' />
@@ -257,19 +257,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/html-css'>
-      HTML/CSS
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software'>
-      Software
+    <a href='computing/security'>
+      Security
     </a>
   </div>
 
@@ -305,10 +294,6 @@
     </ul>
   
 </li>
-      
-    </ul>
-  
-</li>
           
         </ul>
       
@@ -330,44 +315,73 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Use Description List to Mark Up Forms in HTML
+    Install Kali NetHunter on Pixel 3a
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Instead of wrapping <code class='py-0.5 px-0.5 bg-gray-100'>label</code>s and <code class='py-0.5 px-0.5 bg-gray-100'>input</code>s inside <code class='py-0.5 px-0.5 bg-gray-100'>div</code> element and styling them, we can instead use a <strong>description list</strong> (<code class='py-0.5 px-0.5 bg-gray-100'>dl</code>, <code class='py-0.5 px-0.5 bg-gray-100'>dt</code> & <code class='py-0.5 px-0.5 bg-gray-100'>dd</code>). It may seem strange, however it makes sense in regard of the semantic meaning behind a description list: the terms are labels, and they identify controls for the user. Thus, you can wrap form controls in description list elements.
+      This is an old guide I used for myself. It is most probably out of date but it’s a good start to install Kali on a Pixel phone that is not supported natively (when this was written).
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='html language-html'>&lt;form action="#"&gt;
-  &lt;fieldset&gt;
-    &lt;dl&gt;
-      &lt;dt&gt;&lt;label for="text_field"&gt;Input Field&lt;/label&gt;&lt;/dt&gt;
-      &lt;dd&gt;&lt;input id="text_field" name="text_field" type=
-      "text"&gt;&lt;/dd&gt;
-      &lt;dt&gt;&lt;label for="another_field"&gt;Another Field&lt;/label&gt;&lt;/dt&gt;
-      &lt;dd&gt;&lt;input id="another_field" name="another_field" type=
-      "text"&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-  &lt;/fieldset&gt;
-&lt;/form&gt;</code></pre></div><div xmlhtmlRaw><form action="#">
-  <fieldset>
-    <dl>
-      <dt><label for="text_field">Input Field</label></dt>
-      <dd><input id="text_field" name="text_field" type=
-      "text"></dd>
-      <dt><label for="another_field">Another Field</label></dt>
-      <dd><input id="another_field" name="another_field" type=
-      "text"></dd>
-    </dl>
-  </fieldset>
-</form>
-</div>
+  
+    <p class='mb-3'>
+      At some point I want to be able to deliver a Kernel to install Kali NetHunter. But I will have to learn more on Android first.
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          Decide on top of which ROM you want to install it and install it. <a href='https://wiki.lineageos.org/devices/sargo/install' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>LineageOS</a> is a good start.
+        </li>
+      
+        <li>
+          Follow <a href='https://www.kali.org/docs/nethunter/installing-nethunter/' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>installing instruction</a>
+        </li>
+      
+        <li>
+          Install <a href='https://twrp.me/google/googlepixel3a.html' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>twrp</a>
+        </li>
+      
+        <li>
+          Install <a href='https://topjohnwu.github.io/Magisk/install.html' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Magisk</a>
+        </li>
+      
+        <li>
+          Install <a href='https://forum.xda-developers.com/t/kernel-kali-nethunter-kernel-pixel-3a-and-3a-xl-sargo-bonito-kernel.4319283/' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>NetHunter</a> with twrp
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Need both <code class='py-0.5 px-0.5 bg-gray-100'>KaliNethunter-v8.2(22).zip</code> AND <code class='py-0.5 px-0.5 bg-gray-100'>Mad-Kali-MaxHunter-P3A-S</code> (in this order)
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Download nethunter app
+        </li>
+      
+        <li>
+          Give root to Nethunter app with Magisk
+        </li>
+      
+        <li>
+          Add permissions to Nethunter because of <a href='https://gitlab.com/kalilinux/nethunter/apps/kali-nethunter-app/-/issues/306#note_917245006' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>this bug</a>
+        </li>
+      
+        <li>
+          Launch Nethunter app and follow instruction to install Kali chroot
+        </li>
+      
+    </ul>
+  
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/html-css/description-list-form.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/install-kali-nethunter-on-pixel-3a.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -384,14 +398,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/html-css'>
-            HTML/CSS
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security'>
+            Security
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/html-css/description-list-form' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Use Description List to Mark Up Forms in HTML</a></div>
+      <div><a href='computing/security/install-kali-nethunter-on-pixel-3a' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Install Kali NetHunter on Pixel 3a</a></div>
     </div>
   
 </div>
@@ -410,7 +424,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2022-01-26T09:24
+      2023-06-04T11:51:32+0900
     </time>
   
 </div>

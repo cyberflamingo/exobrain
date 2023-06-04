@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Use Description List to Mark Up Forms in HTML – エキソブレイン
+    Threat Modeling for Personal Usage – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Instead of wrapping labels and inputs inside div element and styling them, we can instead use a description list (dl, dt & dd). It may seem strange, however it makes sense in regard of the semantic meaning behind a description list: the terms are labels, and they identify controls for the user. Thus, you can wrap form controls in description list elements.' />
+      <meta property='og:description' content='[[threat-modeling]] is often an activity done in a company to protect assets and businesses. However, it can also be done for Personal Usage. People in the privacy community tries to be security and privacy extremists and often ends up burned out or making OpSec mistake (see [[what-is-opsec]]).' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Use Description List to Mark Up Forms in HTML' />
+      <meta property='og:title' content='Threat Modeling for Personal Usage' />
     
     
       <base href='/' />
@@ -257,8 +257,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/html-css'>
-      HTML/CSS
+    <a href='computing/security/threat-modeling'>
+      Threat Modeling
     </a>
   </div>
 
@@ -268,8 +268,8 @@
         <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software'>
-      Software
+    <a href='computing/security'>
+      Security
     </a>
   </div>
 
@@ -306,6 +306,17 @@
   
 </li>
       
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/what-is-security'>
+      What is Security?
+    </a>
+  </div>
+
+  
+</li>
+      
     </ul>
   
 </li>
@@ -330,44 +341,93 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Use Description List to Mark Up Forms in HTML
+    Threat Modeling for Personal Usage
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Instead of wrapping <code class='py-0.5 px-0.5 bg-gray-100'>label</code>s and <code class='py-0.5 px-0.5 bg-gray-100'>input</code>s inside <code class='py-0.5 px-0.5 bg-gray-100'>div</code> element and styling them, we can instead use a <strong>description list</strong> (<code class='py-0.5 px-0.5 bg-gray-100'>dl</code>, <code class='py-0.5 px-0.5 bg-gray-100'>dt</code> & <code class='py-0.5 px-0.5 bg-gray-100'>dd</code>). It may seem strange, however it makes sense in regard of the semantic meaning behind a description list: the terms are labels, and they identify controls for the user. Thus, you can wrap form controls in description list elements.
+      <a href='computing/security/threat-modeling' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Threat Modeling</a> is often an activity done in a company to protect assets and businesses. However, it can also be done for Personal Usage. People in the “privacy” community tries to be security and privacy extremists and often ends up burned out or making OpSec mistake (see <a href='computing/security/what-is-opsec' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>What is OPSEC?</a>).
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='html language-html'>&lt;form action="#"&gt;
-  &lt;fieldset&gt;
-    &lt;dl&gt;
-      &lt;dt&gt;&lt;label for="text_field"&gt;Input Field&lt;/label&gt;&lt;/dt&gt;
-      &lt;dd&gt;&lt;input id="text_field" name="text_field" type=
-      "text"&gt;&lt;/dd&gt;
-      &lt;dt&gt;&lt;label for="another_field"&gt;Another Field&lt;/label&gt;&lt;/dt&gt;
-      &lt;dd&gt;&lt;input id="another_field" name="another_field" type=
-      "text"&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-  &lt;/fieldset&gt;
-&lt;/form&gt;</code></pre></div><div xmlhtmlRaw><form action="#">
-  <fieldset>
-    <dl>
-      <dt><label for="text_field">Input Field</label></dt>
-      <dd><input id="text_field" name="text_field" type=
-      "text"></dd>
-      <dt><label for="another_field">Another Field</label></dt>
-      <dd><input id="another_field" name="another_field" type=
-      "text"></dd>
-    </dl>
-  </fieldset>
-</form>
-</div>
+  
+    <p class='mb-3'>
+      Trying to protect oneself from everything every time is almost guarantee to fail (except maybe with a great dose of luck).
+    </p>
+  
+    <p class='mb-3'>
+      Better to know what we are protecting oneself against and <strong>threat modeling</strong> to know what we want to protect and against who or what.
+    </p>
+  <h2 id='threat-modeling-assessment' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Threat Modeling Assessment</h2>
+    <p class='mb-3'>
+      Five common questions to start improving one security:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          What do you want to protect?
+        </li>
+      
+        <li>
+          Who do you want to protect it from?
+        </li>
+      
+        <li>
+          How likely is it that you will need to protect it?
+        </li>
+      
+        <li>
+          How bad are the consequences if you fail?
+        </li>
+      
+        <li>
+          How much trouble are you willing to go through in order to try to prevent those?
+        </li>
+      
+    </ul>
+  <h2 id='1-what-do-you-want-to-protect' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>1. What do you want to protect?</h2>
+    <p class='mb-3'>
+      Generally data. Emails, credentials, pictures and videos, credit cards information, text messages but also meta data (when, where and how said where generated).
+    </p>
+  
+    <p class='mb-3'>
+      Moreover it can be a concept like impersonation, one activities or behavior.
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>List of Data</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Location of Data</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>User Access</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Protection Against Unauthorized Access</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td></tr></tbody></table><h2 id='2-who-do-you-want-to-protect-it-from' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>2. Who do you want to protect it from?</h2>
+    <p class='mb-3'>
+      Who might want to target you or your information?
+    </p>
+  
+    <p class='mb-3'>
+      Those people or entities are called adversaries. They can be anyone from family member to government, hackers, your boss or an ex-partner.
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>List of Adversaries</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Information They May Be After</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td></tr></tbody></table><h2 id='3-how-likely-is-it-that-you-will-need-to-protect-it' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>3. How likely is it that you will need to protect it?</h2>
+    <p class='mb-3'>
+      We need to assess risk to rightly allocate resources. If the risk of something happening is low, it may be a waist to spend too much time thinking about it or protecting data.
+    </p>
+  
+    <p class='mb-3'>
+      Risk, though, is different than capability. The capability of something to materialize can be high but the risk of happening may be low.
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>List of Adversaries</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Risk of Attack</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Capability</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td></tr></tbody></table><h2 id='4-how-bad-are-the-consequences-if-you-fail' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>4. How bad are the consequences if you fail?</h2>
+    <p class='mb-3'>
+      We need to separate what they can do and what is the consequences of their wrongdoing. A hacker reading your message may pose a problem but may still be of less consequence than a state actor in a repressive regime.
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>List of Adversaries</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>What They May Do With Your Data</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td></tr></tbody></table><h2 id='5-how-much-trouble-are-you-willing-to-go-through-in-order-to-try-to-prevent-those' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>5. How much trouble are you willing to go through in order to try to prevent those?</h2>
+    <p class='mb-3'>
+      This question cannot be answered without assessment in question three. Here, the goal is to debate if combating the threat is worth it or not. Answering this question is very personnel and varies depending of one’s situation.
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>List of Adversaries</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Threats to Combat or Not (and Reasons)</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</td></tr></tbody></table>
+    <p class='mb-3'>
+      More info here: <a href='https://www.eff.org/document/surveillance-self-defense-threat-modeling' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Surveillance Self Defense: Threat Modeling | Electronic Frontier Foundation</a> and <a href='https://www.wired.com/2017/12/digital-security-guide/' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>here</a>
+    </p>
+  
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/html-css/description-list-form.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/threat-modeling/threat-modeling-for-personal-usage.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -379,28 +439,6 @@
               <div class='flex flex-col lg:flex-row lg:space-x-2'>
                 
                 
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/html-css'>
-            HTML/CSS
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/html-css/description-list-form' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Use Description List to Mark Up Forms in HTML</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
               </div>
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
@@ -410,7 +448,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2022-01-26T09:24
+      2023-06-04T11:10:09+0900
     </time>
   
 </div>
