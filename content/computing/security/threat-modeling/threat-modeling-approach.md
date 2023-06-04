@@ -80,7 +80,7 @@ you start with what you are actually working on: the application.
 1.  Draw a diagram of the application, for example a Data Flow Diagram
     (or DFD)
 2.  List threats for each element using a classification model such as
-    -   **STRIDE** (often used)
+    -   **STRIDE** (often used, see [[stride-per-element-per-interaction-methodology]]#)
     -   **OWASP Top 10**
 3.  Rank threats using classification model above.
 

@@ -85,7 +85,7 @@ Steps:
 
 1.  Identify assets: what you are trying to protect
 2.  Create architecture overview: document architecture of app,
-    including subsystems, dataflow, trust boundaries
+    including subsystems, dataflow, [[trust-boundary-and-entry-point]]#
 3.  Decompose application: find configurations and vulnerabilities
 4.  Identify the threats: using the vulnerabilities found in the
     previous step. With a threat actor in mind, one can…

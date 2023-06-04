@@ -101,4 +101,5 @@ size).
 Methodology
 -----------
 
-See [[threat-modeling-methodology]]#.
+- [[threat-modeling-methodology]]#
+- [[threat-mitigation]]#
