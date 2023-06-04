@@ -20,6 +20,7 @@ Portals
 -   [[the-confused-deputy-problem]]#
 -   [[economy-of-mechanism]]#
 -   [[android]]#
+-   [[install-kali-nethunter-on-pixel-3a]]#
 
 ### Governance, Risk and Compliance (GRC)
 
