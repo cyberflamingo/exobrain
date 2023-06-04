@@ -7,6 +7,13 @@ tags:
 Keystroke Idioms in Kakoune
 ===========================
 
+Note: the following notation are often used in modal editors (example
+for `Ctrl` + `v`):
+
+-   `^V`
+-   `Ctrl-V`
+-   `C-V`
+
 | English                                 | Kakoune                |
 |-----------------------------------------|------------------------|
 | Delete Word                             | `wd`                   |
