@@ -33,7 +33,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=5da82163-134e-4f99-a8e6-70829b05074c' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=dbdfaaa8-19f4-4ab0-8958-14259880fc5c' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -332,7 +332,7 @@
     <p class='mb-3'>
       SQL is a <em>declarative</em> language: in a SQL statement you describe <strong>what</strong> needs to be done, but not <strong>how</strong> to do it; the later, as well as the execution, is handled by the <a href='computing/software/relational-database-management-system' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Relational DataBase Management System</a>.
     </p>
-  <h2 id='sql-sub-languages' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>SQL Sub-Languages</h2>
+  <h2 id='sql-sub-languages' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>SQL Sub-Languages</h2>
     <p class='mb-3'>
       One can think of SQL as three separate sub-languages which their specificities:
     </p>
@@ -356,7 +356,7 @@
     <p class='mb-3'>
       <a href='https://launchschool.com/books/sql/read/interacting_with_postgresql' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Source</a>
     </p>
-  <h2 id='data-vs-schema' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data vs Schema</h2>
+  <h2 id='data-vs-schema' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data vs Schema</h2>
     <p class='mb-3'>
       A RDBMS such as <a href='computing/software/postgresql' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>PostgreSQL</a> knows how to interpret the syntax of an SQL statement thanks to the role that data and schema plays in a database.
     </p>
@@ -376,7 +376,7 @@
     <p class='mb-3'>
       <a href='https://launchschool.com/books/sql/read/basics_tutorial' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Source</a>
     </p>
-  <h2 id='convention' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Convention</h2>
+  <h2 id='convention' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Convention</h2>
     <p class='mb-3'>
       SQL is case-insensitive, meaning it doesn’t care if its statement is written in lowercase or uppercase. This is not true for data, though.
     </p>
@@ -388,7 +388,7 @@
     <p class='mb-3'>
       Database names shall be self-descriptive, no abbreviation nor acronym, and names shall be written in snake_case.
     </p>
-  <h2 id='sql-tables' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>SQL Tables</h2>
+  <h2 id='sql-tables' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>SQL Tables</h2>
     <p class='mb-3'>
       Tables, sometimes called <em>relations</em> and the relationships between those are what provide structure to our data. Data are saved in the columns of our table.
     </p>
@@ -515,7 +515,7 @@ ADD
     <p class='mb-3'>
       <a href='https://launchschool.com/books/sql/read/alter_table' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Source</a>
     </p>
-  <h2 id='data' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data</h2><h3 id='insertion-statement-syntax' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Insertion Statement Syntax</h3>
+  <h2 id='data' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data</h2><h3 id='insertion-statement-syntax' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Insertion Statement Syntax</h3>
     <p class='mb-3'>
       The most basic insertion statement is as follows:
     </p>
@@ -565,7 +565,7 @@ VALUES
     <p class='mb-3'>
       <a href='https://launchschool.com/books/sql/read/add_data' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Source</a>
     </p>
-  <h2 id='select-query-syntax' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Select Query Syntax</h2>
+  <h2 id='select-query-syntax' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Select Query Syntax</h2>
     <p class='mb-3'>
       The basic syntax is as follow:
     </p>
@@ -640,7 +640,7 @@ WHERE
     <p class='mb-3'>
       There is also a <code class='py-0.5 px-0.5 bg-gray-100'>SIMILAR TO</code> that works like <code class='py-0.5 px-0.5 bg-gray-100'>LIKE</code> but for regular expression pattern.
     </p>
-  <h2 id='limit-and-offset' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'><code class='py-0.5 px-0.5 bg-gray-100'>LIMIT</code> and <code class='py-0.5 px-0.5 bg-gray-100'>OFFSET</code></h2>
+  <h2 id='limit-and-offset' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'><code class='py-0.5 px-0.5 bg-gray-100'>LIMIT</code> and <code class='py-0.5 px-0.5 bg-gray-100'>OFFSET</code></h2>
     <p class='mb-3'>
       <code class='py-0.5 px-0.5 bg-gray-100'>SELECT</code> statements are great to return all kind of results. However when there are a lot of results to display, it is generally better to separate the data by “pages”. This is called “pagination”.
     </p>
@@ -666,14 +666,14 @@ LIMIT
     <p class='mb-3'>
       This would return the second row, and only the second row
     </p>
-  <h2 id='distinct' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'><code class='py-0.5 px-0.5 bg-gray-100'>DISTINCT</code></h2>
+  <h2 id='distinct' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'><code class='py-0.5 px-0.5 bg-gray-100'>DISTINCT</code></h2>
     <p class='mb-3'>
       When joining multiple table, one thing that can often happens is data duplication. The <code class='py-0.5 px-0.5 bg-gray-100'>DISTINCT</code> qualifier helps up remediate to this problem.
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='sql language-sql'>SELECT
   DISTINCT full_name
 FROM
-  users;</code></pre></div><h2 id='sql-functions' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>SQL Functions</h2>
+  users;</code></pre></div><h2 id='sql-functions' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>SQL Functions</h2>
     <p class='mb-3'>
       Functions performs operation on fields or data and return the result, or perform a transformations.
     </p>
@@ -765,7 +765,7 @@ FROM
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.0.3.5'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.0.3.7'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

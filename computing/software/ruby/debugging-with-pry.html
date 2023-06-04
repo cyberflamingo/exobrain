@@ -33,7 +33,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=5da82163-134e-4f99-a8e6-70829b05074c' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=dbdfaaa8-19f4-4ab0-8958-14259880fc5c' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -335,7 +335,7 @@
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <h2 id='quick-definition' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Quick Definition</h2>
+  <h2 id='quick-definition' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Quick Definition</h2>
     <p class='mb-3'>
       Bugs = human errors in code
     </p>
@@ -343,7 +343,7 @@
     <p class='mb-3'>
       Debugging is the process of identifying and fixing those errors.
     </p>
-  <h2 id='debugging-steps' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Debugging Steps</h2>
+  <h2 id='debugging-steps' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Debugging Steps</h2>
     <p class='mb-3'>
       Essentially can be resumed in three steps:
     </p>
@@ -416,7 +416,7 @@ end</code></pre></div>
     <p class='mb-3'>
       We could probably use a combination of <code class='py-0.5 px-0.5 bg-gray-100'>puts</code> to check results at each steps and debug our code, but let’s try with <code class='py-0.5 px-0.5 bg-gray-100'>pry</code> instead (see <a href='#debugging-with-pry-1' class='text-violet-600 mavenLinkBold hover:underline'>Debugging with Pry</a>).
     </p>
-  <h2 id='what-is-pry' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>What is Pry?</h2>
+  <h2 id='what-is-pry' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>What is Pry?</h2>
     <p class='mb-3'>
       Pry is a Ruby gem which can be installed with <code class='py-0.5 px-0.5 bg-gray-100'>gem install pry</code>.
     </p>
@@ -448,7 +448,7 @@ end</code></pre></div>
     <p class='mb-3'>
       IRB is also a REPL. Pry is like an advanced IRB for debugging.
     </p>
-  </div><h2 id='using-pry' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Using Pry</h2>
+  </div><h2 id='using-pry' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Using Pry</h2>
     <p class='mb-3'>
       Pry lets you move around different contexts and see which methods you can call on the current context.
     </p>
@@ -484,7 +484,7 @@ locals: _  __  _dir_  _ex_  _file_  _in_  _out_  pry_instance</code></pre></div>
     <p class='mb-3'>
       It is also possible to show the doc for a particular method with <code class='py-0.5 px-0.5 bg-gray-100'>show-doc</code> and the name of the method.
     </p>
-  <h2 id='invoking-pry-at-runtime' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Invoking Pry at Runtime</h2>
+  <h2 id='invoking-pry-at-runtime' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Invoking Pry at Runtime</h2>
     <p class='mb-3'>
       First of all, we need to add <code class='py-0.5 px-0.5 bg-gray-100'>require 'pry'</code> at the top of our file.
     </p>
@@ -517,7 +517,7 @@ arr = [1, 2, 3].map do |n|
   binding.pry # returns nil
 end
 
-p arr # [nil, nil, nil]</code></pre></div><h2 id='debugging-with-pry-1' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Debugging with Pry</h2>
+p arr # [nil, nil, nil]</code></pre></div><h2 id='debugging-with-pry-1' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Debugging with Pry</h2>
     <p class='mb-3'>
       Let’s add <code class='py-0.5 px-0.5 bg-gray-100'>require 'pry'</code> and <code class='py-0.5 px-0.5 bg-gray-100'>binding.pry</code> to our bugged code:
     </p>
@@ -561,7 +561,7 @@ end</code></pre></div>
     <p class='mb-3'>
       To solve this bug we can either convert <code class='py-0.5 px-0.5 bg-gray-100'>user_input</code> to an integer or replace integers with strings in the comparison statements.
     </p>
-  <h2 id='stepping-through-code-with-pry-byebug' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Stepping through Code with pry-byebug</h2>
+  <h2 id='stepping-through-code-with-pry-byebug' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Stepping through Code with pry-byebug</h2>
     <p class='mb-3'>
       <code class='py-0.5 px-0.5 bg-gray-100'>pry-byebug</code> extends <code class='py-0.5 px-0.5 bg-gray-100'>pry</code> with additional commands such as:
     </p>
@@ -589,7 +589,7 @@ end</code></pre></div>
     <p class='mb-3'>
       Just as with <code class='py-0.5 px-0.5 bg-gray-100'>pry</code>, we need to add <code class='py-0.5 px-0.5 bg-gray-100'>require "pry-byebug"</code> at the top of our code.
     </p>
-  <h2 id='cheatsheets' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Cheatsheets</h2><div xmlhtmlRaw><table class="ui celled table">
+  <h2 id='cheatsheets' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Cheatsheets</h2><div xmlhtmlRaw><table class="ui celled table">
   <thead>
     <tr>
       <th>Command</th>
@@ -729,7 +729,7 @@ end</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.0.3.5'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.0.3.7'>
       <img class='w-6 h-6 hover:text-violet-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>
