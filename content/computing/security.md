@@ -56,3 +56,4 @@ Portals
 #### Enumeration/Scanning
 
 -   [[scanning-networks]]#
+-   [[information-gathering-with-sqlmap]]#
