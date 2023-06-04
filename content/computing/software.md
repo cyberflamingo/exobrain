@@ -81,6 +81,7 @@ Database
 * [[oauth-openid-connect]]#
 * [[containers-primer]]#
 * [[reset-synology-dsm-firewall]]#
+* [[cloning-pages-with-wget]]#
 
 ### FFmpeg
 
