@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Pass by Reference vs Pass by Value – エキソブレイン
+    Linux Process Substitution – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='The terms Pass by Reference and Pass by Value are two object passing strategiesObject passing strategies are strict evaluation strategies. Another evalution strategy is lazy evaluation. used to explain what a programming language do when objects are passed to methods.' />
+      <meta property='og:description' content='Another common pattern is wanting to get the output of a command as a variable. This can be done with command substitution.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Pass by Reference vs Pass by Value' />
+      <meta property='og:title' content='Linux Process Substitution' />
     
     
       <base href='/' />
@@ -257,6 +257,17 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
+    <a href='computing/software/linux'>
+      Linux
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
     <a href='computing/software'>
       Software
     </a>
@@ -294,54 +305,6 @@
     </ul>
   
 </li>
-          
-            <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/java/methods-in-java'>
-      Methods in Java
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/java'>
-      Java
-    </a>
-  </div>
-
-  
-</li>
-      
-    </ul>
-  
-</li>
-          
-            <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/puts-return'>
-      puts vs return
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
-    </a>
-  </div>
-
-  
-</li>
       
     </ul>
   
@@ -367,57 +330,34 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Pass by Reference vs Pass by Value
+    Linux Process Substitution
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      The terms <strong>Pass by Reference</strong> and <strong>Pass by Value</strong> are two <em>object passing strategies</em>
-    <sup class='px-0.5'>
-      <a class='text-violet-600 hover:underline' href='computing/software/pass-by-reference-pass-by-value#fn1'>
-        1
-      </a>
-    </sup>
-   used to explain what a programming language do when objects are passed to methods.
+      Another common pattern is wanting to get the output of a command as a variable. This can be done with <em>command substitution</em>.
     </p>
   
     <p class='mb-3'>
-      The former treats the passed objects as “references” to the original object, while the later treats them as “values” (new copies of the original).
+      Whenever you place <code class='py-0.5 px-0.5 bg-gray-100'>$( CMD )</code> it will execute <code class='py-0.5 px-0.5 bg-gray-100'>CMD</code>, get the output of the command and substitute it in place. For example, if you do <code class='py-0.5 px-0.5 bg-gray-100'>for file in $(ls)</code>, the shell will first call <code class='py-0.5 px-0.5 bg-gray-100'>ls</code> and then iterate over those values.
     </p>
   
     <p class='mb-3'>
-      See also: <a href='computing/software/variables-as-pointers' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Variables as Pointers</a>
+      A lesser known similar feature is <em>process substitution</em>, <code class='py-0.5 px-0.5 bg-gray-100'>&lt;( CMD )</code> will execute <code class='py-0.5 px-0.5 bg-gray-100'>CMD</code> and place the output in a temporary file and substitute the <code class='py-0.5 px-0.5 bg-gray-100'>&lt;()</code> with that file’s name. This is useful when commands expect values to be passed by file instead of by STDIN. For example, <code class='py-0.5 px-0.5 bg-gray-100'>diff &lt;(ls foo) &lt;(ls bar)</code> will show differences between files in directories <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100'>bar</code>.
     </p>
-  <h2 id='pass-by-reference' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pass by Reference</h2>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'># Show differences between files in foo and bar
+diff &lt;(ls foo) &lt;(ls bar)</code></pre></div>
     <p class='mb-3'>
-      When you “pass by reference”, the method has a <em>reference</em>, in other word a pointer to the location of the passed object. In that case, modifying the object inside the method actually modify the original, referenced object.
+      <a href='https://missing.csail.mit.edu/2020/shell-tools/' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Source</a>
     </p>
-  <h2 id='pass-by-value' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pass by Value</h2>
-    <p class='mb-3'>
-      When you “pass by value”, the method only has a <em>copy</em> of the original object. In other word, the original object is not affected by what happens to the object within the method.
-    </p>
-  
-    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
-      <header class='font-semibold'>Footnotes</header>
-      
-        <div id='fn1'>
-          <header class='italic'>
-            1.
-          </header>
-          <div class='inline-block mb-2 ml-4'>
-            Object passing strategies are <em>strict</em> <a href='https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Evaluation_Strategies' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>evaluation strategies</a>. Another evalution strategy is <em>lazy</em> evaluation.
-          </div>
-        </div>
-      
-    </div>
   
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/pass-by-reference-pass-by-value.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/linux/linux-process-substitution.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -429,92 +369,16 @@
               <div class='flex flex-col lg:flex-row lg:space-x-2'>
                 
                 
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/puts-return'>
-            puts vs return
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div>Difference between <a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pass by Reference vs Pass by Value</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
-            Software
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pass by Reference vs Pass by Value</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/ruby-pass-by-reference-of-the-value'>
-            Ruby’s Pass by Reference of the Value
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>As seen in <a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Pass by Reference vs Pass by Value</a>, there are mainly two ways of dealing with objects passed into methods: <strong>Pass by Reference</strong> and <strong>Pass by Value</strong>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/java/methods-in-java'>
-            Methods in Java
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>In Java, parameters are passed <em>by value</em>. In other words, they receives a copy of the original value, and what happens in the method does not affect the original object. See also <a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pass by Reference vs Pass by Value</a>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
               </div>
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
-    
-      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
-        Perhaps Emanote should inject tagMetas with urls.
-      -->
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/programming'>
-        <!-- DoNotFormat -->
-        #programming
-        <!-- DoNotFormat -->
-      </a>
     
   </section>
 
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-08-07
+      2023-06-04T17:34:51+0900
     </time>
   
 </div>

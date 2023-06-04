@@ -12,7 +12,7 @@
   </title>
   
     
-      <meta property='og:description' content='Sources:' />
+      <meta property='og:description' content='Note: the following notation are often used in modal editors (example for Ctrl + v):' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
@@ -33,7 +33,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=9f11a51f-6864-4cef-9f15-53283d643190' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=93f6c91f-a7f1-46cf-a588-32842561146b' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -335,6 +335,26 @@
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
+  
+    <p class='mb-3'>
+      Note: the following notation are often used in modal editors (example for <code class='py-0.5 px-0.5 bg-gray-100'>Ctrl</code> + <code class='py-0.5 px-0.5 bg-gray-100'>v</code>):
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <code class='py-0.5 px-0.5 bg-gray-100'>^V</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-0.5 bg-gray-100'>Ctrl-V</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-0.5 bg-gray-100'>C-V</code>
+        </li>
+      
+    </ul>
   <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>English</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Kakoune</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Delete Word</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>wd</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Delete up to Whitespace</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>&lt;a-w&gt;d</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Delete Inner Word</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>&lt;a-i&gt;wd</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Delete Back 4 Words</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>BBBBd</code> or <code class='py-0.5 px-0.5 bg-gray-100'>4Bd</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Change to End of word</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>ec</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Yank a sentence</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>&lt;a-a&gt;sy</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Change To next occurrence of <code class='py-0.5 px-0.5 bg-gray-100'>x</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>txc</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Select next occurrence of <code class='py-0.5 px-0.5 bg-gray-100'>x</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>tx</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Indent 3 lines down</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>xXX&gt;</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Unindent within braces</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>&lt;a-i&gt;}&lt;</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Replace all occurrence</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>%s</code> word to replace</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Multiple selections</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>Shift + c</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Search pattern set to current selection</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>*</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Replace selected text with yanked text</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>R</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Start/stop macro recording</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>Q</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Split selected text on line ends</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>&lt;a-s&gt;</code> (<code class='py-0.5 px-0.5 bg-gray-100'>Alt</code> + <code class='py-0.5 px-0.5 bg-gray-100'>s</code>)</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Keep selections not matching</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>&lt;a-K&gt;</code> (<code class='py-0.5 px-0.5 bg-gray-100'>Alt</code> + <code class='py-0.5 px-0.5 bg-gray-100'>K</code>)</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Convert selection to upper case</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>~</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Easily align text (<code class='py-0.5 px-0.5 bg-gray-100'>=</code> from all buffer)</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>%s=&lt;ret&gt;&</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Select block of similar indentation</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>&lt;a-i&gt;i</code> (<code class='py-0.5 px-0.5 bg-gray-100'>Alt</code> + <code class='py-0.5 px-0.5 bg-gray-100'>i</code>)</td></tr></tbody></table>
     <p class='mb-3'>
       Sources:

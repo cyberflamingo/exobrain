@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Pass by Reference vs Pass by Value – エキソブレイン
+    Information Gathering with sqlmap – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='The terms Pass by Reference and Pass by Value are two object passing strategiesObject passing strategies are strict evaluation strategies. Another evalution strategy is lazy evaluation. used to explain what a programming language do when objects are passed to methods.' />
+      <meta property='og:description' content='Step 0: Test injection by hand first.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Pass by Reference vs Pass by Value' />
+      <meta property='og:title' content='Information Gathering with sqlmap' />
     
     
       <base href='/' />
@@ -257,8 +257,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software'>
-      Software
+    <a href='computing/security'>
+      Security
     </a>
   </div>
 
@@ -295,58 +295,6 @@
   
 </li>
           
-            <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/java/methods-in-java'>
-      Methods in Java
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/java'>
-      Java
-    </a>
-  </div>
-
-  
-</li>
-      
-    </ul>
-  
-</li>
-          
-            <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby/puts-return'>
-      puts vs return
-    </a>
-  </div>
-
-  
-    <ul>
-      
-        <li>
-
-  <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
-    </a>
-  </div>
-
-  
-</li>
-      
-    </ul>
-  
-</li>
-          
         </ul>
       
     </li>
@@ -367,57 +315,57 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Pass by Reference vs Pass by Value
+    Information Gathering with sqlmap
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      The terms <strong>Pass by Reference</strong> and <strong>Pass by Value</strong> are two <em>object passing strategies</em>
-    <sup class='px-0.5'>
-      <a class='text-violet-600 hover:underline' href='computing/software/pass-by-reference-pass-by-value#fn1'>
-        1
-      </a>
-    </sup>
-   used to explain what a programming language do when objects are passed to methods.
+      <strong>Step 0:</strong> Test injection by hand first.
     </p>
   
     <p class='mb-3'>
-      The former treats the passed objects as “references” to the original object, while the later treats them as “values” (new copies of the original).
+      This is good practice to horn someone own skill.
     </p>
   
     <p class='mb-3'>
-      See also: <a href='computing/software/variables-as-pointers' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Variables as Pointers</a>
-    </p>
-  <h2 id='pass-by-reference' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pass by Reference</h2>
-    <p class='mb-3'>
-      When you “pass by reference”, the method has a <em>reference</em>, in other word a pointer to the location of the passed object. In that case, modifying the object inside the method actually modify the original, referenced object.
-    </p>
-  <h2 id='pass-by-value' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pass by Value</h2>
-    <p class='mb-3'>
-      When you “pass by value”, the method only has a <em>copy</em> of the original object. In other word, the original object is not affected by what happens to the object within the method.
+      Plus, <code class='py-0.5 px-0.5 bg-gray-100'>sqlmap</code> is just a tool and could use a very inefficient exploitation strategy if going fully automatic without prior manual testing. In addition, <code class='py-0.5 px-0.5 bg-gray-100'>sqlmap</code> is a dangerous tool that could crash the remote service if not used correctly.
     </p>
   
-    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
-      <header class='font-semibold'>Footnotes</header>
-      
-        <div id='fn1'>
-          <header class='italic'>
-            1.
-          </header>
-          <div class='inline-block mb-2 ml-4'>
-            Object passing strategies are <em>strict</em> <a href='https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Evaluation_Strategies' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>evaluation strategies</a>. Another evalution strategy is <em>lazy</em> evaluation.
-          </div>
-        </div>
-      
-    </div>
-  
+    <p class='mb-3'>
+      <strong>Step 1:</strong> Extract the database banner
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>sqlmap -u &lt;target&gt; --banner &lt;other_options&gt;</code></pre></div>
+    <p class='mb-3'>
+      <strong>Step 2:</strong> List users of the database
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>sqlmap -u &lt;target&gt; --users &lt;other_options&gt;</code></pre></div>
+    <p class='mb-3'>
+      <strong>Step 3:</strong> Check if database user is administrator
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>sqlmap -u &lt;target&gt; --is-dba &lt;other_options&gt;</code></pre></div>
+    <p class='mb-3'>
+      <strong>Step 4:</strong> List available databases
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>sqlmap -u &lt;target&gt; --dbs &lt;other_options&gt;</code></pre></div>
+    <p class='mb-3'>
+      <strong>Step 5:</strong> List tables of selected database
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>sqlmap -u &lt;target&gt; -D &lt;database&gt; --tables &lt;other_options&gt;</code></pre></div>
+    <p class='mb-3'>
+      <strong>Step 6:</strong> List columns of one or more tables
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>sqlmap -u &lt;target&gt; -D &lt;database&gt; -T &lt;table,table&gt; --columns &lt;other_options&gt;</code></pre></div>
+    <p class='mb-3'>
+      <strong>Step 7:</strong> Dump columns
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>sqlmap -u &lt;target&gt; -D &lt;database&gt; -T &lt;table&gt; -C &lt;column,column&gt; --dump &lt;other_options&gt;</code></pre></div>
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/pass-by-reference-pass-by-value.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/information-gathering-with-sqlmap.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -434,59 +382,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/puts-return'>
-            puts vs return
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security'>
+            Security
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div>Difference between <a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pass by Reference vs Pass by Value</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
-            Software
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pass by Reference vs Pass by Value</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/ruby-pass-by-reference-of-the-value'>
-            Ruby’s Pass by Reference of the Value
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>As seen in <a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Pass by Reference vs Pass by Value</a>, there are mainly two ways of dealing with objects passed into methods: <strong>Pass by Reference</strong> and <strong>Pass by Value</strong>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/java/methods-in-java'>
-            Methods in Java
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>In Java, parameters are passed <em>by value</em>. In other words, they receives a copy of the original value, and what happens in the method does not affect the original object. See also <a href='computing/software/pass-by-reference-pass-by-value' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pass by Reference vs Pass by Value</a>.</p></div>
+      <div><a href='computing/security/information-gathering-with-sqlmap' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Information Gathering with sqlmap</a></div>
     </div>
   
 </div>
@@ -500,21 +403,12 @@
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
-      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
-        Perhaps Emanote should inject tagMetas with urls.
-      -->
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/programming'>
-        <!-- DoNotFormat -->
-        #programming
-        <!-- DoNotFormat -->
-      </a>
-    
   </section>
 
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-08-07
+      2023-06-04T18:10:11+0900
     </time>
   
 </div>
