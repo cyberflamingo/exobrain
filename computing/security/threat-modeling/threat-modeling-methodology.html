@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Threat Model Approach – エキソブレイン
+    Threat Modeling Methodology – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='The goal is to be able to general a list of threats.' />
+      <meta property='og:description' content='Some of the methodologies below are Risk Analysis/Threat Analysis methodology. Still it’s good to know about them from a threat modeling perspective.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Threat Model Approach' />
+      <meta property='og:title' content='Threat Modeling Methodology' />
     
     
       <base href='/' />
@@ -33,7 +33,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=dbdfaaa8-19f4-4ab0-8958-14259880fc5c' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=20b0da7f-6a90-430a-8162-350287ff26d3' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -321,6 +321,17 @@
   
 </li>
           
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/threat-modeling/threat-modeling-approach'>
+      Threat Model Approach
+    </a>
+  </div>
+
+  
+</li>
+          
         </ul>
       
     </li>
@@ -341,160 +352,104 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Threat Model Approach
+    Threat Modeling Methodology
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
+  <div class='ui memo info'>
     <p class='mb-3'>
-      The goal is to be able to general a list of threats.
+      Some of the methodologies below are Risk Analysis/Threat Analysis methodology. Still it’s good to know about them from a threat modeling perspective.
+    </p>
+  </div>
+    <p class='mb-3'>
+      All the modeling methodologies below are <em>asset</em> or <em>application</em>-centric methodologies (see <a href='computing/security/threat-modeling/threat-modeling-approach' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkTag'>Threat Model Approach</a>).
     </p>
   
     <p class='mb-3'>
-      At a high level, the main advantages and disadvantages of the three approaches are as follows:
+      Methodology depends heavily on the team, the organization and the set goals. As a general rules of thumb, though, for an <em>asset-centric</em> modeling, <strong>PASTA</strong> is a good fit (business integration). For an <em>application-centric</em> modeling, the <strong>Microsoft Threat Modeling</strong> is a good fit.
+    </p>
+  
+    <p class='mb-3'>
+      While the number of steps differ from one threat model methodology to another, the generic process is almost always the same:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Set scope
+        </li>
+      
+        <li>
+          Analyze target
+        </li>
+      
+        <li>
+          Identify threats
+        </li>
+      
+        <li>
+          Rate threats
+        </li>
+      
+    </ul>
+  <h2 id='pasta' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>PASTA</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <strong>P</strong>rocess for <strong>A</strong>ttack <strong>S</strong>imulation and <strong>T</strong>hreat <strong>A</strong>nalysis.
+        </li>
+      
+        <li>
+          Approach: asset-centric
+        </li>
+      
+        <li>
+          Methodology: Threat analysis and threat modeling (which means one needs the input of threat intelligence and to evaluate the threat continuously)
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      PASTA is good for medium to large size companies, mature companies and companies that have lot of security knowledge.
+    </p>
+  
+    <p class='mb-3'>
+      It needs executive sponsorship and is an iterative, maturing process. It’s geared towards management.
+    </p>
+  
+    <p class='mb-3'>
+      7 steps:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
-          Asset-centric approach (good for quantifying risk to upper management)
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <span class='math inline'>\(+\)</span> Quantifying risk for management
+          Define Business Objectives
         </li>
       
         <li>
-          <span class='math inline'>\(-\)</span> Translation from assets to threats (difficult)
-        </li>
-      
-    </ul>
-  
+          Define Technical Scope: identify which components are in scope
         </li>
       
         <li>
-          Attacker-centric approach (good for penetration testers)
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <span class='math inline'>\(+\)</span> Makes threats modeling tangible
+          Decompose Application: dataflow diagram (DFD)
         </li>
       
         <li>
-          <span class='math inline'>\(-\)</span> Specialized knowledge necessary (red team)
-        </li>
-      
-    </ul>
-  
+          Analyze Threats: input from sources (threat intelligence)
         </li>
       
         <li>
-          Application-centric approach (good for developer team)
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <span class='math inline'>\(+\)</span> Most effective for application developers
+          Identify Vulnerabilities: assert viability of vulnerabilities and rank them using a scoring system
         </li>
       
         <li>
-          <span class='math inline'>\(-\)</span> Developers may have blind spots about their application
-        </li>
-      
-    </ul>
-  
-        </li>
-      
-    </ul>
-  
-    <p class='mb-3'>
-      A team chooses an approach based on their skill set.
-    </p>
-  <h2 id='asset-centric-approach' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Asset-centric Approach</h2>
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
-      
-        <li>
-          Create a list of assets
+          Enumerate Attacks: attack tress, attacks that are mapped to vulnerabilities
         </li>
       
         <li>
-          Draw assets, components and data flows
-        </li>
-      
-        <li>
-          For each element, check for threats
-        </li>
-      
-    </ul>
-  
-    <p class='mb-3'>
-      Advantages of this approach:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Centered around assets
-        </li>
-      
-        <li>
-          Focused towards business impact
-        </li>
-      
-        <li>
-          Well suited for risk assessments
-        </li>
-      
-    </ul>
-  
-    <p class='mb-3'>
-      Disadvantages are:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Not centered around the application
-        </li>
-      
-        <li>
-          Mapping assets to threats is difficult
-        </li>
-      
-    </ul>
-  
-    <p class='mb-3'>
-      An example of a risk-centric threat modeling approach is <strong>PASTA</strong>: <strong>P</strong>rocess for <strong>A</strong>ttack <strong>S</strong>imulation and <strong>T</strong>hreat <strong>A</strong>nalysis.
-    </p>
-  
-    <p class='mb-3'>
-      Another one is <strong>TRIKE</strong>.
-    </p>
-  <h2 id='attacker-centric-approach' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Attacker-centric Approach</h2>
-    <p class='mb-3'>
-      Also known as <em>security</em> centric.
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
-      
-        <li>
-          Create a list of <strong>threat actors</strong>: each of them are to be matched with the following:
-        </li>
-      
-        <li>
-          <strong>Motives</strong>: why would they threaten you.
-        </li>
-      
-        <li>
-          <strong>Financial and technical means</strong>: what impact they potentially have
-        </li>
-      
-        <li>
-          <strong>Opportunity</strong>: how can the threat actor actually perform its attack.
-        </li>
-      
-        <li>
-          From the last point we can create a <strong>list of threats</strong>
+          Perform Impact Analysis: analyzes the residual risks, or whether the risks are acceptable for the company.
         </li>
       
     </ul>
@@ -506,11 +461,15 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Makes threats and attacks more visible
+          Great for business integration
         </li>
       
         <li>
-          Movie-plot-threats brainstorming is fun
+          Mature, well described processes
+        </li>
+      
+        <li>
+          Tooling available
         </li>
       
     </ul>
@@ -522,43 +481,147 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Easy to miss technical threats
+          Specialized input necessary
         </li>
       
         <li>
-          Unrealistic threats
+          Time consuming
         </li>
       
         <li>
-          Biased results (depends on who brainstorm it)
+          Each step generates lot of output
         </li>
       
         <li>
-          Attacker “thinking” required (like a penetration tester)
+          Lot of intermediate models
+        </li>
+      
+        <li>
+          Dependent on dynamic input
         </li>
       
     </ul>
-  <h2 id='application-centric-approach' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Application-centric Approach</h2>
+  <h2 id='microsoft-threat-modeling' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Microsoft Threat Modeling</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Not to be confused with STRIDE (threat classification system)
+        </li>
+      
+        <li>
+          Approach: application-centric
+        </li>
+      
+    </ul>
+  
     <p class='mb-3'>
-      Instead of thinking about risks or attacks first, this approach makes you start with what you are actually working on: the application.
+      The Microsoft Threat Modeling framework is a simple and lightweight developer-driven framework which focuses on technical risks. It is easy to understand even to non initiate and it’s practical (uses plain English). It is best used in the development life-cycle.
+    </p>
+  
+    <p class='mb-3'>
+      Steps:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
-          Draw a diagram of the application, for example a Data Flow Diagram (or DFD)
+          Identify assets: what you are trying to protect
         </li>
       
         <li>
-          List threats for each element using a classification model such as
+          Create architecture overview: document architecture of app, including subsystems, dataflow, <a href='computing/security/threat-modeling/trust-boundary-and-entry-point' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Trust Boundary and Entry Point</a>
+        </li>
+      
+        <li>
+          Decompose application: find configurations and vulnerabilities
+        </li>
+      
+        <li>
+          Identify the threats: using the vulnerabilities found in the previous step. With a threat actor in mind, one can…
+        </li>
+      
+        <li>
+          Document the threats
+        </li>
+      
+        <li>
+          Rate the threats: using a scoring like DREAD, CVSS or OWASP risk rating methodology to prioritize the threats
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      The output is a document listings threats as well as diagrams of the application.
+    </p>
+  
+    <p class='mb-3'>
+      Advantages:
+    </p>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <strong>STRIDE</strong> (often used)
+          Easy to pick up
         </li>
       
         <li>
-          <strong>OWASP Top 10</strong>
+          Easy to use in software Development life cycle
+        </li>
+      
+        <li>
+          Flexible
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Disadvantages
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          More practical than academic (not rigid)
+        </li>
+      
+        <li>
+          STRIDE methodology is redundant
+        </li>
+      
+        <li>
+          Does not factor risk for the business. it revolves around the application
+        </li>
+      
+    </ul>
+  <h2 id='octave' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>OCTAVE</h2>
+    <p class='mb-3'>
+      Not a pure threat modeling methodology but a <em>risk analysis framework</em>.
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <strong>O</strong>perationnaly <strong>C</strong>ritical <strong>T</strong>hreat, <strong>A</strong>sset and <strong>V</strong>ulnerability <strong>E</strong>valuation
+        </li>
+      
+        <li>
+          Evaluate organization rather than applications
+        </li>
+      
+        <li>
+          Geared towards big company
+        </li>
+      
+        <li>
+          Different versions:
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          OCTAVE-S for smaller company
+        </li>
+      
+        <li>
+          OCTAVE Allegro focus primarily on information assets
         </li>
       
     </ul>
@@ -566,7 +629,147 @@
         </li>
       
         <li>
-          Rank threats using classification model above.
+          “Asset-centric approach” (in “ because not a pure threat modeling methodology )
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Steps:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          Establish drivers (measure risks)
+        </li>
+      
+        <li>
+          Profile assets: what is in scope
+        </li>
+      
+        <li>
+          Identify threats
+        </li>
+      
+        <li>
+          Identify and mitigate risks: mitigate risk in contrast to pure threat modeling methodology
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      OCTAVE focuses on organizational risks rather than technicals risks. It is flexible and self-directed.
+    </p>
+  
+    <p class='mb-3'>
+      Advantages:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Improve risk-aware corporate culture
+        </li>
+      
+        <li>
+          In depth
+        </li>
+      
+        <li>
+          Flexible
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Disadvantages
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Complex
+        </li>
+      
+        <li>
+          Lot of paperwork
+        </li>
+      
+        <li>
+          Require investments
+        </li>
+      
+    </ul>
+  <h2 id='trike' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Trike</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Methodology as well as a <a href='https://www.octotrike.org/' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>tool</a>.
+        </li>
+      
+        <li>
+          High level of automation are possible: threats are automatised, not brainstorming involved
+        </li>
+      
+        <li>
+          Asset-centric approach
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Focus on defensive side, on how to protect assets.
+    </p>
+  
+    <p class='mb-3'>
+      Steps :
+    </p>
+  
+    <p class='mb-3'>
+      Roughly two phases: System analysis phase (first step) and security analysis phase (the rest of the steps).
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          Model system: Systems analysis phase. Systems and their security goals are described here.
+        </li>
+      
+        <li>
+          Identify threats
+        </li>
+      
+        <li>
+          Investigate threats
+        </li>
+      
+        <li>
+          Identify mitigations
+        </li>
+      
+        <li>
+          Investigate mitigations
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Outputs three models:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Requirements model
+        </li>
+      
+        <li>
+          Implementation Model
+        </li>
+      
+        <li>
+          Risk model
         </li>
       
     </ul>
@@ -578,11 +781,15 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Common understanding of the application
+          Automatically generates threats
         </li>
       
         <li>
-          Spread of knowledge
+          Consistent results
+        </li>
+      
+        <li>
+          Built-in tool
         </li>
       
     </ul>
@@ -594,15 +801,79 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Good documentation is necessary
+          Does not scale well
         </li>
       
         <li>
-          Difficult to see “own” vulnerabilities
+          Not maintained anymore (or so it seems)
+        </li>
+      
+    </ul>
+  <h2 id='vast' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>VAST</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <strong>V</strong>isual <strong>A</strong>gile <strong>S</strong>imple <strong>T</strong>hreat <strong>M</strong>odeling
         </li>
       
         <li>
-          Threats may sound abstract
+          Two threat model types:
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Application threat model
+        </li>
+      
+        <li>
+          Operational threat model
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Process flow diagram (instead of data flow diagram)
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      VAST is targeted towards agile companies and is very scalable.
+    </p>
+  
+    <p class='mb-3'>
+      Advantages:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Flexible
+        </li>
+      
+        <li>
+          Scalable
+        </li>
+      
+        <li>
+          Process flow diagrams might be easier than data flow diagram
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Disadvantages:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Not open
+        </li>
+      
+        <li>
+          No free documentation or guidance
         </li>
       
     </ul>
@@ -611,7 +882,7 @@
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/threat-modeling-approach.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/threat-modeling/threat-modeling-methodology.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -628,21 +899,6 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/threat-modeling-methodology'>
-            Threat Modeling Methodology
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>All the modeling methodologies below are <em>asset</em> or <em>application</em>-centric methodologies (see <a href='computing/security/threat-modeling-approach' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkTag'>Threat Model Approach</a>).</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
           <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/threat-modeling'>
             Threat Modeling
           </a>
@@ -650,7 +906,7 @@
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><strong>Systematic Approach</strong>: using a model to have a repeatable <strong>process</strong>. Threat modeling <em>is</em> a process to tackle security in a repeatable and consistent fashion during the development life cycle. See <a href='computing/security/threat-modeling-approach' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Threat Model Approach</a></div>
+      <div><a href='computing/security/threat-modeling/threat-modeling-methodology' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Threat Modeling Methodology</a></div>
     </div>
   
 </div>
@@ -669,7 +925,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2021-12-14T23:37
+      2021-12-15T09:27
     </time>
   
 </div>
