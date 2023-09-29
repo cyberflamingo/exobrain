@@ -22,6 +22,10 @@ Portals
 -   [[android]]#
 -   [[install-kali-nethunter-on-pixel-3a]]#
 
+### Secure Software Development LifeCycle
+
+- [[core-security-principles]]#
+
 ### Governance, Risk and Compliance (GRC)
 
 -   Information Security Management System
