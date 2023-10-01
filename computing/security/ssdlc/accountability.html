@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    puts vs return – エキソブレイン
+    Accountability – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Let’s use a simple code snippet to explain the difference between puts and return.' />
+      <meta property='og:description' content='Sometimes called “auditing”, accountability deals with “what did the user do when they were on the system?”, and we have the ability to associate all activity on a system with the entities that were involved.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='puts vs return' />
+      <meta property='og:title' content='Accountability' />
     
     
       <base href='/' />
@@ -258,8 +258,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
+    <a href='computing/security/ssdlc/access-control-requirements'>
+      Access Control Requirements
     </a>
   </div>
 
@@ -269,8 +269,19 @@
         <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software'>
-      Software
+    <a href='computing/security/ssdlc/core-security-principles'>
+      Core Security Principles
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security'>
+      Security
     </a>
   </div>
 
@@ -307,6 +318,21 @@
   
 </li>
       
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc'>
+      ssdlc
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
     </ul>
   
 </li>
@@ -331,72 +357,73 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    puts vs return
+    Accountability
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Let’s use a simple code snippet to explain the difference between <code class='py-0.5 px-0.5 bg-gray-100'>puts</code> and <code class='py-0.5 px-0.5 bg-gray-100'>return</code>.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>list = [1, 2, 3]
-
-def mutate(array)
-  array.pop
-end
-
-p "Before mutate method: #{list}" # "Before mutate method: [1, 2, 3]"
-p mutate(list)                    # 3
-p "After mutate method: #{list}"  # "After mutate method: [1, 2]"</code></pre></div>
-    <p class='mb-3'>
-      The result should not be surprising if we know the following:
+      Sometimes called “auditing”, accountability deals with “what did the user do when they were on the system?”, and we have the ability to associate all activity on a system with the entities that were involved.
     </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Ruby methods <em>always</em> return the evaluated result of the last line that is executed (i.e., we could have written <code class='py-0.5 px-0.5 bg-gray-100'>return array.pop</code> in our method)
-        </li>
-      
-        <li>
-          Difference between <a href='computing/software/pass-by-reference-pass-by-value' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Pass by Reference vs Pass by Value</a>
-        </li>
-      
-    </ul>
+    <p class='mb-3'>
+      This requires unique identifiers (sharing the same user ID, or account, makes auditing difficult).
+    </p>
   
     <p class='mb-3'>
-      Now let’s modify our code a little bit and include the Kernel method <code class='py-0.5 px-0.5 bg-gray-100'>puts</code>:
+      This is often needed for compliance and legal reasons.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>list = [1, 2, 3]
-
-def mutate(array)
-  puts array.pop                  # 3
-end
-
-p "Before mutate method: #{list}" # "Before mutate method: [1, 2, 3]"
-p mutate(list)                    # nil
-p "After mutate method: #{list}"  # "After mutate method: [1, 2]"</code></pre></div>
+  
     <p class='mb-3'>
-      The order of the comments above is a bit confusing ; the results come up this way:
+      This establishes <strong>accountability</strong> for <em>transactions</em> (who access the sensitive data, who made the changes?) and <em>administrative functions</em> (who started a job or initiated a process?).
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>"Before mutate method: [1, 2, 3]"
-3
-nil
-"After mutate method: [1, 2]"</code></pre></div>
+  
     <p class='mb-3'>
-      What is surprising the first time we encounter it is the <code class='py-0.5 px-0.5 bg-gray-100'>nil</code> result on the penultimate line, although the result inside the method <code class='py-0.5 px-0.5 bg-gray-100'>mutate</code> is <code class='py-0.5 px-0.5 bg-gray-100'>3</code>. This is because the Kernel method <code class='py-0.5 px-0.5 bg-gray-100'>puts</code> output what is passed to it but returns <code class='py-0.5 px-0.5 bg-gray-100'>nil</code>.
+      For accountability to work, we need to have sources we can trust, i.e. we have to prove the source and integrity of transactions on a system.
     </p>
-  <div class='ui info message'>
+  
     <p class='mb-3'>
-      Good to know: the method <code class='py-0.5 px-0.5 bg-gray-100'>p</code> output what is passed to it but also returns the result. <code class='py-0.5 px-0.5 bg-gray-100'>p array.pop</code> would have output <code class='py-0.5 px-0.5 bg-gray-100'>3</code> and returned <code class='py-0.5 px-0.5 bg-gray-100'>3</code> here.
+      This means logs may need to be duplicated and saved in a separated place and we need to be able to check they were not altered or destroyed somehow.
     </p>
-  </div>
+  
+    <p class='mb-3'>
+      We also want to check for <em>transmission errors</em>. For example we want to make sure when a person does a transaction, it will not be processed twice, and the person be charged two times. Same with interuption in communication, we want to make sure we don’t have a half-done transaction.
+    </p>
+  
+    <p class='mb-3'>
+      One way to prove accountability, just like <a href='computing/security/ssdlc/integrity' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Integrity</a> is to use <em>hashing</em>. We could also have <em>header and trailer records</em> for files passed between systems, so we could identify if a files was missing, or if half the file was transmitted.
+    </p>
+  
+    <p class='mb-3'>
+      This is the reason <em>end of report notices</em> exists: to prove completion of the printing of a report (even on empty reports).
+    </p>
+  
+    <p class='mb-3'>
+      The next important concept is <strong>non-repudiation</strong>: to know who did what, and they have no way to <em>repudiate</em> (deny) that they were the one doing the activity.
+    </p>
+  
+    <p class='mb-3'>
+      Non-repudiation can be achieve with strong logging system: who, when, what and comments on why a certain action was taken.
+    </p>
+  
+    <p class='mb-3'>
+      Logs need to be retained for a certain length of time. This is sometimes for legal requirements but also it serves internal investigations. Depending on the use case, it can be month or years, or in other cases days.
+    </p>
+  
+    <p class='mb-3'>
+      During that time, logs should be protected against alteration, access, and deletion.
+    </p>
+  
+    <p class='mb-3'>
+      The log should be taken at the <strong>point of activity</strong> (error, during modification, access etc), analysed, and aggregated centrally if possible to get a better overview of everything happening.
+    </p>
+  
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/ruby/puts-return.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/accountability.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -413,14 +440,14 @@ nil
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-test'>
-            Study Guide for Test
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/core-security-principles'>
+            Core Security Principles
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/puts-return' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>puts vs return</a></div>
+      <div><a href='computing/security/ssdlc/accountability' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Accountability</a></div>
     </div>
   
 </div>
@@ -428,14 +455,14 @@ nil
         </li>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby'>
-            Ruby
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/access-control-requirements'>
+            Access Control Requirements
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/puts-return' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>puts vs return</a></div>
+      <div><p>See <a href='computing/security/ssdlc/accountability' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Accountability</a></p></div>
     </div>
   
 </div>
@@ -454,7 +481,7 @@ nil
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-09-22T14:28
+      2023-10-01T19:55:01+09:00
     </time>
   
 </div>
