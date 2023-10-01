@@ -12,5 +12,5 @@ secure software:
 3.  [[integrity]]#
 4.  [[availability]]#
 5.  [[access-control-requirements]]#
-6.  Authorization
-7.  Accountability
+6.  [[authorization]]#
+7.  [[accountability]]#
