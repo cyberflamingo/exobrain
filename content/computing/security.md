@@ -25,6 +25,7 @@ Portals
 ### Secure Software Development LifeCycle
 
 - [[core-security-principles]]#
+- [[integrating-security-into-software]]#
 
 ### Governance, Risk and Compliance (GRC)
 
