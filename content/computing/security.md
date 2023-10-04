@@ -26,6 +26,8 @@ Portals
 
 - [[core-security-principles]]#
 - [[integrating-security-into-software]]#
+- [[software-development-methodology]]#
+- [[managing-software-lifecycle-risk]]#
 
 ### Governance, Risk and Compliance (GRC)
 

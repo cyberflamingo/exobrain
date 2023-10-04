@@ -44,3 +44,5 @@ Let’s review the main concepts to integrate security into software:
 -   [[describe-psychological-acceptability]]#
 -   [[defense-in-depth]]#
 -   [[least-privilege]]#
+-   [[economy-of-mechanism]]#
+-   [[resilience]]#
