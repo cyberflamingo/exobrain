@@ -18,7 +18,7 @@ Portals
 -   [[what-is-opsec]]#
 -   [[difference-between-penetration-tester-and-red-teamer]]#
 -   [[the-confused-deputy-problem]]#
--   [[economy-of-mechanism]]#
+-   [[ssdlc/economy-of-mechanism]]#
 -   [[android]]#
 -   [[install-kali-nethunter-on-pixel-3a]]#
 
@@ -26,8 +26,9 @@ Portals
 
 - [[core-security-principles]]#
 - [[integrating-security-into-software]]#
-- [[software-development-methodology]]#
+- [[software-development-methodologies]]#
 - [[managing-software-lifecycle-risk]]#
+- [[managing-software-operational-security]]#
 
 ### Governance, Risk and Compliance (GRC)
 

@@ -4,7 +4,7 @@ date: 2023-10-02T07:47:08+09:00
 
 # Integrating Security into Software
 
-Let’s see how to integrate the #[[core-concepts]] into software.
+Let’s see how to integrate the #[[core-security-principles]] into software.
 
 We know that security needs to be integrated into software development right
 from the beggining.
@@ -44,5 +44,5 @@ Let’s review the main concepts to integrate security into software:
 -   [[describe-psychological-acceptability]]#
 -   [[defense-in-depth]]#
 -   [[least-privilege]]#
--   [[economy-of-mechanism]]#
+-   [[ssdlc/economy-of-mechanism]]#
 -   [[resilience]]#
