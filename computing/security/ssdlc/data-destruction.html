@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Core Security Principles – エキソブレイン
+    Data Destruction – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='The following core security principles are necessary to develop and operate secure software:' />
+      <meta property='og:description' content='When removing software, we need to be very careful not to cause a breach of data privacy or integrity.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Core Security Principles' />
+      <meta property='og:title' content='Data Destruction' />
     
     
       <base href='/' />
@@ -258,6 +258,17 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc/decommissioning-software-securely'>
+      Decommissioning Software Securely
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
     <a href='computing/security'>
       Security
     </a>
@@ -295,8 +306,8 @@
     </ul>
   
 </li>
-          
-            <li>
+      
+        <li>
 
   <div class='text-gray-900 forest-link'>
     <a href='computing/security/ssdlc'>
@@ -304,6 +315,10 @@
     </a>
   </div>
 
+  
+</li>
+      
+    </ul>
   
 </li>
           
@@ -327,53 +342,121 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Core Security Principles
+    Data Destruction
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      The following core security principles are necessary to develop and operate secure software:
+      When removing software, we need to be very careful not to cause a breach of data privacy or integrity.
+    </p>
+  <h2 id='data-retention-policies' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data Retention Policies</h2>
+    <p class='mb-3'>
+      Data retention can be based on <strong>legal requirements</strong> or <strong>business needs</strong>. Other case can be because of <strong>fear of liability</strong> or <strong>cost of retention</strong>.
+    </p>
+  <h2 id='retention' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Retention</h2>
+    <p class='mb-3'>
+      Data retention is the <strong>ability to recover old data</strong>, for example for regulatory inquiries.
     </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+    <p class='mb-3'>
+      This means we need to think about the <strong>lifespan of media</strong>: is that a media type we will still be able to use in 20, 40 years? The media were the data is stored also have <em>deterioration point</em>.
+    </p>
+  <h2 id='end-of-live-data' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>End of Live Data</h2>
+    <p class='mb-3'>
+      End of life data can be archived to prevent cluttering of database.
+    </p>
+  
+    <p class='mb-3'>
+      The question is “is the data <strong>encrypted</strong>?” and if yes, we must keep the encryption tools and the algorithms available as well for recovery.
+    </p>
+  
+    <p class='mb-3'>
+      Note: this also applies to backups.
+    </p>
+  
+    <p class='mb-3'>
+      When we <em>want</em> data to be deleted, we need to be very careful about <strong>recovery</strong>. This is specially true when dealing with privacy.
+    </p>
+  <h2 id='procedures' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Procedures</h2>
+    <p class='mb-3'>
+      Once again, we need procedures:
+    </p>
+  
+    <p class='mb-3'>
+      Data disposal can be done in several ways:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='computing/security/ssdlc/governance' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Governance</a>
+          Deletion
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/confidentiality' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Confidentiality</a>
+          Overwrite
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/integrity' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Integrity</a>
+          Purge
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/availability' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Availability</a>
+          Degaussing (magnetic force to reduce the magnetic flux density back to 0 making it difficult to recover the data)
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/access-control-requirements' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Access Control Requirements</a>
+          Crypto shredding/erasure (delete the encryption key to prevent recovering of encrypted data)
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/authorization' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Authorization</a>
-        </li>
-      
-        <li>
-          <a href='computing/security/ssdlc/accountability' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Accountability</a>
+          Destruction (physically chew it up and/or melt it down)
         </li>
       
     </ul>
+  <h2 id='residual-data' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Residual Data</h2>
+    <p class='mb-3'>
+      Data remanence is something to fear: data that were not correctly deleted and are still recoverable somehow.
+    </p>
+  
+    <p class='mb-3'>
+      For some types of media such as HDD, SSD, tapes and optical disks, physical destruction is the most secure way to make sure there is no residual data left for someone to snoop in.
+    </p>
+  <h2 id='archival' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Archival</h2>
+    <p class='mb-3'>
+      There are things we <strong>want</strong> to keep: for example for historical significance (memorabilia).
+    </p>
+  
+    <p class='mb-3'>
+      When doing so, we need to be careful of:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Age of media: will the media be unusable at some point?_
+        </li>
+      
+        <li>
+          Ability to read all media: will we still be able to read the media?
+        </li>
+      
+        <li>
+          Encryption keys: to be able to decrypt the data
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      <strong>Key points review:</strong> Ensure data is retained or disposed of according to policy. Secure (defensible) data deletion: we have assurance the data was deleted.
+    </p>
   
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/core-security-principles.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/data-destruction.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -390,29 +473,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security'>
-            Security
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/decommissioning-software-securely'>
+            Decommissioning Software Securely
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/security/ssdlc/core-security-principles' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Core Security Principles</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/integrating-security-into-software'>
-            Integrating Security into Software
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>Let’s see how to integrate the <a href='computing/security/ssdlc/core-security-principles' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkTag'>Core Security Principles</a> into software.</p></div>
+      <div><p>See also <a href='computing/security/ssdlc/data-destruction' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Data Destruction</a>.</p></div>
     </div>
   
 </div>
@@ -431,7 +499,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2023-09-29T18:01:52+09:00
+      2023-10-06T10:03:17+09:00
     </time>
   
 </div>

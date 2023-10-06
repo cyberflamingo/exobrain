@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Core Security Principles – エキソブレイン
+    Decommissioning Software Securely – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='The following core security principles are necessary to develop and operate secure software:' />
+      <meta property='og:description' content='We put a lot of effort to make sure our software is secure all through its life, but there is also a lot of care that must be taken during decommissioning of a software.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Core Security Principles' />
+      <meta property='og:title' content='Decommissioning Software Securely' />
     
     
       <base href='/' />
@@ -327,53 +327,109 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Core Security Principles
+    Decommissioning Software Securely
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      The following core security principles are necessary to develop and operate secure software:
+      We put a lot of effort to make sure our software is secure all through its life, but there is also a lot of care that must be taken during decommissioning of a software.
     </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+    <p class='mb-3'>
+      We want to make sure we are not going to end up with a breach of confidentiality or privacy, or an interruption to business processes as we decommission our software.
+    </p>
+  <h2 id='end-of-life-eol' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>End of Life (EOL)</h2>
+    <p class='mb-3'>
+      Software reaches EOL for a variety of reasons:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='computing/security/ssdlc/governance' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Governance</a>
+          Newer, better programs available
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/confidentiality' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Confidentiality</a>
+          Too difficult/expensive to maintain
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/integrity' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Integrity</a>
+          Lack of needed functionality (new regulations etc)
         </li>
       
         <li>
-          <a href='computing/security/ssdlc/availability' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Availability</a>
-        </li>
-      
-        <li>
-          <a href='computing/security/ssdlc/access-control-requirements' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Access Control Requirements</a>
-        </li>
-      
-        <li>
-          <a href='computing/security/ssdlc/authorization' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Authorization</a>
-        </li>
-      
-        <li>
-          <a href='computing/security/ssdlc/accountability' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Accountability</a>
+          Hardware incompatibility
         </li>
       
     </ul>
+  <h2 id='eol-practices' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>EOL Practices</h2>
+    <p class='mb-3'>
+      Like everything else, it starts with <strong>policies</strong>.
+    </p>
+  
+    <p class='mb-3'>
+      First, we want to remove the software from our asset management/configuration management database (CMDB), and then we delete securely.
+    </p>
+  
+    <p class='mb-3'>
+      Policies are nothing but words: we need to back up policies with <strong>procedures</strong>.
+    </p>
+  
+    <p class='mb-3'>
+      Procedures explain how to do things properly and securely in a consistent, standardized manner:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Notify all stakeholders
+        </li>
+      
+        <li>
+          Migrate to new system (if necessary)
+        </li>
+      
+        <li>
+          Backup applications, source code, object code, compilers, utilities, documentation, licenses, encryption keys etc in order to be able to get back in if necessary
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Decommission often starts with a discussion with people with who we have a <strong>service level agreement (SLA)</strong>. We should have a SLA termination clause with them.
+    </p>
+  
+    <p class='mb-3'>
+      We remove our software from the job schedules so that unnecessary resources are not used, and unexpected errors do not arise. Finally we remove access permissions from the people that were previously using the software.
+    </p>
+  
+    <p class='mb-3'>
+      The documentation and operation manuals should be updated to reflect the decommission and update the CMDB.
+    </p>
+  <h2 id='linkages' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Linkages</h2>
+    <p class='mb-3'>
+      Linkages are dependencies and linked systems.
+    </p>
+  
+    <p class='mb-3'>
+      We want to make sure unnecessary connections are removed, and see if other system are dependents with the decommissioned system. That downstream system could be looking for a now missing input files and failing because of that. Same with the monitoring systems.
+    </p>
+  
+    <p class='mb-3'>
+      <strong>Key points review:</strong> ensure software is decommissioned in a secure manner. Ensure all stakeholders are informed. Watch out for undetected dependencies.
+    </p>
+  
+    <p class='mb-3'>
+      See also <a href='computing/security/ssdlc/data-destruction' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Data Destruction</a>.
+    </p>
   
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/core-security-principles.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/decommissioning-software-securely.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -397,22 +453,7 @@
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/security/ssdlc/core-security-principles' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Core Security Principles</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/integrating-security-into-software'>
-            Integrating Security into Software
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><p>Let’s see how to integrate the <a href='computing/security/ssdlc/core-security-principles' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkTag'>Core Security Principles</a> into software.</p></div>
+      <div><a href='computing/security/ssdlc/decommissioning-software-securely' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Decommissioning Software Securely</a></div>
     </div>
   
 </div>
@@ -431,7 +472,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2023-09-29T18:01:52+09:00
+      2023-10-06T09:44:48+09:00
     </time>
   
 </div>
