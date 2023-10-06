@@ -24,11 +24,17 @@ Portals
 
 ### Secure Software Development LifeCycle
 
-- [[core-security-principles]]#
-- [[integrating-security-into-software]]#
-- [[software-development-methodologies]]#
-- [[managing-software-lifecycle-risk]]#
-- [[managing-software-operational-security]]#
+#### Secure Software Concepts
+
+-   [[core-security-principles]]#
+-   [[integrating-security-into-software]]#
+
+#### Secure Software Lifecycle Management
+
+-   [[software-development-methodologies]]#
+-   [[managing-software-lifecycle-risk]]#
+-   [[managing-software-operational-security]]#
+-   [[decommissioning-software-securely]]#
 
 ### Governance, Risk and Compliance (GRC)
 
