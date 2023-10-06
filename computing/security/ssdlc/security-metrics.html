@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Redirect AMP Links to Actual Websites with Privoxy – エキソブレイン
+    Security Metrics – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Google introduced AMP in 2015 and it has been controversialMy opinion is that the AMP initiative is fundamentally about control, to say the least.' />
+      <meta property='og:description' content='We can collect metrics on almost anything. We have to define: what are the goals? What is the desire results?' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Redirect AMP Links to Actual Websites with Privoxy' />
+      <meta property='og:title' content='Security Metrics' />
     
     
       <base href='/' />
@@ -258,8 +258,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='life/privacy'>
-      Privacy
+    <a href='computing/security/ssdlc/managing-software-operational-security'>
+      Managing Software Operational Security
     </a>
   </div>
 
@@ -269,8 +269,19 @@
         <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='life'>
-      Life
+    <a href='computing/security'>
+      Security
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      Computing
     </a>
   </div>
 
@@ -289,6 +300,21 @@
 </li>
       
     </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc'>
+      ssdlc
+    </a>
+  </div>
+
   
 </li>
       
@@ -316,57 +342,221 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Redirect AMP Links to Actual Websites with Privoxy
+    Security Metrics
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Google introduced AMP in 2015 and it has been controversial
-    <sup class='px-0.5'>
-      <a class='text-violet-600 hover:underline' href='life/privacy/redirect-amp-priovoxy#fn1'>
-        1
-      </a>
-    </sup>
-   to say the least.
+      We can collect metrics on almost anything. We have to define: what are the goals? What is the desire results?
     </p>
   
     <p class='mb-3'>
-      If like me you don’t care much about this gimmick, you’d be delighted to know there is a way to transparently redirect every AMP link to their actual website using Privoxy.
+      We want <strong>quantitative</strong> (measurable) and not qualitative goals, so that they are easily measurable. Quantitative does not mean the metrics can’t be subjective, however, and we want to make sure to have <strong>objective</strong> metrics.
     </p>
   
     <p class='mb-3'>
-      In the Privoxy settings file (<code class='py-0.5 px-0.5 bg-gray-100'>user.action</code> is a good place to start), add:
+      We also want <strong>consistent</strong> numbers: in order to compare month to month, year to year etc.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>{ +redirect{s@google.com/amp/s/@@} }
-google.com/amp/s/.*</code></pre></div>
+  
     <p class='mb-3'>
-      After restarting Privoxy, check with <code class='py-0.5 px-0.5 bg-gray-100'>curl</code> to see if the redirection is working all right:
+      We also want <strong>impartiality</strong>: bias can come from the person taking the metrics <em>and</em> interpreting the metrics, based on their own relation to the numbers (is the number tied to their results etc). We want metrics that are <em>the same no matter who measures them</em>.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>$ ALL_PROXY=127.0.0.1:8118 curl -LfI http://google.com/amp/s/example.com
-HTTP/1.1 302 Local Redirect from Privoxy
-Location: http://example.com
-Content-Length: 0</code></pre></div>
-    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
-      <header class='font-semibold'>Footnotes</header>
+  
+    <p class='mb-3'>
+      Finally, the metrics must be <strong>linked to business goals</strong>: companies don’t care about hard drive failure, but they care if that failure leads to sales loss.
+    </p>
+  
+    <p class='mb-3'>
+      Examples of metrics:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
       
-        <div id='fn1'>
-          <header class='italic'>
-            1.
-          </header>
-          <div class='inline-block mb-2 ml-4'>
-            My opinion is that the AMP initiative is fundamentally about control,
-          </div>
-        </div>
+        <li>
+          Coding practices
+        </li>
       
-    </div>
+        <li>
+          Defects per line of code
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Time to remediate
+        </li>
+      
+        <li>
+          Criticality level
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  <h2 id='keys-metrics' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Keys Metrics</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Key goal indicators: what we would like to do, the ideal state
+        </li>
+      
+        <li>
+          Key performance indicators: what we <em>must</em> do, the bare minimum
+        </li>
+      
+        <li>
+          Key risk indicators: used with key performance indicators to alert us if there is something that maybe will go wrong
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      An example of key risk indicator is: if I have a key performance indicator that says I must wrap up support phone call in less than 60min, the key risk indicator would send an alert at 50min to indicate we are near risk of not performing at agreed time.
+    </p>
+  <h2 id='review-of-performance' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Review of Performance</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Functional
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Operating criteria
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Non-functional
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Training of administrators and users
+        </li>
+      
+        <li>
+          Monitoring and log review
+        </li>
+      
+        <li>
+          Change control
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  <h2 id='metrics-generalities' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Metrics (Generalities)</h2>
+    <p class='mb-3'>
+      <strong>Measure what is important</strong> and <strong>what can be change</strong> (what we have an influence on).
+    </p>
+  
+    <p class='mb-3'>
+      <strong>Focus on consistent measurement criteria</strong>.
+    </p>
+  <h2 id='quality-assurance' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Quality Assurance</h2>
+    <p class='mb-3'>
+      Peer review the work, do vulnerability assessments (regularly), do penetration tests.
+    </p>
+  <h2 id='reporting-to-management' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Reporting to Management</h2>
+    <p class='mb-3'>
+      Metrics are any good if they are not reported to management so that someone can make a decision and act upon them. The following can (and should) be reported to management:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          SIEM (dashboards)
+        </li>
+      
+        <li>
+          Alarms
+        </li>
+      
+        <li>
+          Logs
+        </li>
+      
+        <li>
+          Audits (often called the “eyes and ears of management”)
+        </li>
+      
+        <li>
+          CMMI models (Capability Maturity Model Integration): are we making progress in the way we do various processes such as change control/SDLC? Are we maturing and not making the same mistakes over and over, year after year?
+        </li>
+      
+        <li>
+          Feedback cycles (from management)
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Steering committees (advisory board that has governance over a company, determines the order in which business will be taken up).
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  <h2 id='incident-management' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Incident Management</h2>
+    <p class='mb-3'>
+      Incident management is “how do I deal with those unexpected incidents that could cause a disruption to business processes?”
+    </p>
+  
+    <p class='mb-3'>
+      We should have a plan:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Incident response plan
+        </li>
+      
+        <li>
+          Documented procedures
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Mitigation, containment, restoration
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Communication with management
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Breach
+        </li>
+      
+        <li>
+          Impact on business
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      <strong>Key points review:</strong> Perception is the enemy of reality: many people <em>think</em> a system is not working to desired levels of performance, but they are often wrong. Have defined security metrics to define what is a <em>pass</em> or a <em>fail</em>.
+    </p>
   
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/life/privacy/redirect-amp-priovoxy.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/security-metrics.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -383,14 +573,14 @@ Content-Length: 0</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='life/privacy'>
-            Privacy
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/managing-software-operational-security'>
+            Managing Software Operational Security
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='life/privacy/redirect-amp-priovoxy' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Redirect AMP Links to Actual Websites with Privoxy</a></div>
+      <div><a href='computing/security/ssdlc/security-metrics' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Security Metrics</a></div>
     </div>
   
 </div>
@@ -404,30 +594,12 @@ Content-Length: 0</code></pre></div>
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
-      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
-        Perhaps Emanote should inject tagMetas with urls.
-      -->
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/privacy'>
-        <!-- DoNotFormat -->
-        #privacy
-        <!-- DoNotFormat -->
-      </a>
-    
-      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
-        Perhaps Emanote should inject tagMetas with urls.
-      -->
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/tips'>
-        <!-- DoNotFormat -->
-        #tips
-        <!-- DoNotFormat -->
-      </a>
-    
   </section>
 
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-08-05
+      <strong class='error'>expression error: can't find "date" in JSON object (&lt;value&gt; tag)</strong>
     </time>
   
 </div>

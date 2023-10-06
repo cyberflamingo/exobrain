@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Redirect AMP Links to Actual Websites with Privoxy – エキソブレイン
+    Version Control – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Google introduced AMP in 2015 and it has been controversialMy opinion is that the AMP initiative is fundamentally about control, to say the least.' />
+      <meta property='og:description' content='Version control lets us maintain security of software. Often, a patch of change management disturb the security controls that were present, and perhaps disabled or bypass them.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Redirect AMP Links to Actual Websites with Privoxy' />
+      <meta property='og:title' content='Version Control' />
     
     
       <base href='/' />
@@ -258,8 +258,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='life/privacy'>
-      Privacy
+    <a href='computing/security/ssdlc/managing-software-operational-security'>
+      Managing Software Operational Security
     </a>
   </div>
 
@@ -269,8 +269,19 @@
         <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='life'>
-      Life
+    <a href='computing/security'>
+      Security
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing'>
+      Computing
     </a>
   </div>
 
@@ -289,6 +300,21 @@
 </li>
       
     </ul>
+  
+</li>
+      
+    </ul>
+  
+</li>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc'>
+      ssdlc
+    </a>
+  </div>
+
   
 </li>
       
@@ -316,57 +342,105 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Redirect AMP Links to Actual Websites with Privoxy
+    Version Control
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Google introduced AMP in 2015 and it has been controversial
-    <sup class='px-0.5'>
-      <a class='text-violet-600 hover:underline' href='life/privacy/redirect-amp-priovoxy#fn1'>
-        1
-      </a>
-    </sup>
-   to say the least.
+      Version control lets us maintain security of software. Often, a patch of change management disturb the security controls that were present, and perhaps disabled or bypass them.
     </p>
   
     <p class='mb-3'>
-      If like me you don’t care much about this gimmick, you’d be delighted to know there is a way to transparently redirect every AMP link to their actual website using Privoxy.
+      With change management process, we can maintain a list of changes to the software, and also the underlying infrastructure:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Network security
+        </li>
+      
+        <li>
+          Server
+        </li>
+      
+        <li>
+          Database
+        </li>
+      
+        <li>
+          Operating system
+        </li>
+      
+        <li>
+          Utilities
+        </li>
+      
+        <li>
+          Hardware
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Every change must be reviewed for their potential impact on security, for all of the elements above.
     </p>
   
     <p class='mb-3'>
-      In the Privoxy settings file (<code class='py-0.5 px-0.5 bg-gray-100'>user.action</code> is a good place to start), add:
+      Source code must also be version controlled, and we need to make sure the <strong>object code (executable)</strong> is the same as the source bode that was compiled (or interpreted, depending on the language used).
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>{ +redirect{s@google.com/amp/s/@@} }
-google.com/amp/s/.*</code></pre></div>
+  <h2 id='risks-with-versions' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Risks with Versions</h2>
     <p class='mb-3'>
-      After restarting Privoxy, check with <code class='py-0.5 px-0.5 bg-gray-100'>curl</code> to see if the redirection is working all right:
+      We have to be careful with changes: change can bring multiple risks:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>$ ALL_PROXY=127.0.0.1:8118 curl -LfI http://google.com/amp/s/example.com
-HTTP/1.1 302 Local Redirect from Privoxy
-Location: http://example.com
-Content-Length: 0</code></pre></div>
-    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
-      <header class='font-semibold'>Footnotes</header>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
       
-        <div id='fn1'>
-          <header class='italic'>
-            1.
-          </header>
-          <div class='inline-block mb-2 ml-4'>
-            My opinion is that the AMP initiative is fundamentally about control,
-          </div>
-        </div>
+        <li>
+          Regression: the new version fix problem B but it causes already fixed problem B to reaper.
+        </li>
       
-    </div>
+        <li>
+          Undocumented changes
+        </li>
+      
+        <li>
+          Changes to link libraries: dynamic link not working anymore
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      To address the issues above, we can use <strong>version control software</strong>:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Document and track changes
+        </li>
+      
+        <li>
+          Document approvals
+        </li>
+      
+        <li>
+          Prevent overwriting of previous changes
+        </li>
+      
+        <li>
+          Retain previous versions (to revert back)
+        </li>
+      
+    </ul>
   
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/life/privacy/redirect-amp-priovoxy.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/version-control.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -383,14 +457,14 @@ Content-Length: 0</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='life/privacy'>
-            Privacy
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/managing-software-operational-security'>
+            Managing Software Operational Security
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='life/privacy/redirect-amp-priovoxy' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Redirect AMP Links to Actual Websites with Privoxy</a></div>
+      <div><a href='computing/security/ssdlc/version-control' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Version Control</a></div>
     </div>
   
 </div>
@@ -404,30 +478,12 @@ Content-Length: 0</code></pre></div>
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
-      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
-        Perhaps Emanote should inject tagMetas with urls.
-      -->
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/privacy'>
-        <!-- DoNotFormat -->
-        #privacy
-        <!-- DoNotFormat -->
-      </a>
-    
-      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
-        Perhaps Emanote should inject tagMetas with urls.
-      -->
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/tips'>
-        <!-- DoNotFormat -->
-        #tips
-        <!-- DoNotFormat -->
-      </a>
-    
   </section>
 
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-08-05
+      2023-10-05T08:35:29+09:00
     </time>
   
 </div>
