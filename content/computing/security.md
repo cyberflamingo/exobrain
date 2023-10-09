@@ -36,6 +36,10 @@ Portals
 -   [[managing-software-operational-security]]#
 -   [[decommissioning-software-securely]]#
 
+#### Secure Software Requirements
+
+-   [[discovering-secure-software-requirements]]#
+
 ### Governance, Risk and Compliance (GRC)
 
 -   Information Security Management System
