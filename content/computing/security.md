@@ -39,6 +39,7 @@ Portals
 #### Secure Software Requirements
 
 -   [[discovering-secure-software-requirements]]#
+-   [[data-protection]]#
 
 ### Governance, Risk and Compliance (GRC)
 
