@@ -74,3 +74,5 @@ Authorities (SAs) that oversee activities related to data.
 **Key Points Review:** You cannot protect an asset that you do not know about.
 Applications manage access to, and changes, to data therefore the software
 designer must be aware of the types of data the application will manage.
+
+-   [[data-lifecycle]]#
