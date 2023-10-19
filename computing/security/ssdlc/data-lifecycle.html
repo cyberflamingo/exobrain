@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    The inject and reduce Method – エキソブレイン
+    Data Lifecycle – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='The #inject and #reduce methods are aliases. There is no performance benefit to either. I will use #reduce below.' />
+      <meta property='og:description' content='Data must be protected at all stage of its lifecycle, from its generation until its disposal.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='The inject and reduce Method' />
+      <meta property='og:title' content='Data Lifecycle' />
     
     
       <base href='/' />
@@ -258,8 +258,8 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software/ruby'>
-      Ruby
+    <a href='computing/security/ssdlc/data-protection'>
+      Data Protection
     </a>
   </div>
 
@@ -269,8 +269,8 @@
         <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software'>
-      Software
+    <a href='computing/security'>
+      Security
     </a>
   </div>
 
@@ -307,6 +307,17 @@
   
 </li>
       
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc'>
+      ssdlc
+    </a>
+  </div>
+
+  
+</li>
+      
     </ul>
   
 </li>
@@ -331,85 +342,113 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    The inject and reduce Method
+    Data Lifecycle
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div class='ui info message'>
+  
     <p class='mb-3'>
-      The <code class='py-0.5 px-0.5 bg-gray-100'>#inject</code> and <code class='py-0.5 px-0.5 bg-gray-100'>#reduce</code> methods are aliases. There is no performance benefit to either. I will use <code class='py-0.5 px-0.5 bg-gray-100'>#reduce</code> below.
-    </p>
-  </div>
-    <p class='mb-3'>
-      The doc for those two methods is a bit unclear, therfore an example is better than thousands words.
+      Data must be protected at all stage of its lifecycle, from its <strong>generation</strong> until its <strong>disposal</strong>.
     </p>
   
     <p class='mb-3'>
-      Let’s start with an example without argument to the <code class='py-0.5 px-0.5 bg-gray-100'>#reduce</code> method.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>list = (1..5).to_a
-
-result = list.reduce do |sum, n|
-  sum + n
-end
-
-puts result # 15</code></pre></div>
-    <p class='mb-3'>
-      In this case, <code class='py-0.5 px-0.5 bg-gray-100'>#reduce</code> will pass the first element of the array (<code class='py-0.5 px-0.5 bg-gray-100'>1</code>) to the first argument (<code class='py-0.5 px-0.5 bg-gray-100'>sum</code>) and the second element (<code class='py-0.5 px-0.5 bg-gray-100'>2</code>) to the second argument (<code class='py-0.5 px-0.5 bg-gray-100'>n</code>).
+      This includes:
     </p>
   
-    <p class='mb-3'>
-      The block execution then kicks in and return <code class='py-0.5 px-0.5 bg-gray-100'>1 + 2 = 3</code>.
-    </p>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Generation: data creation (from another system or customer)
+        </li>
+      
+        <li>
+          Processing
+        </li>
+      
+        <li>
+          Storage
+        </li>
+      
+        <li>
+          Retention: keep the data for a certain length of time
+        </li>
+      
+        <li>
+          Disposition: orderly, planned process of handling data that may still have use
+        </li>
+      
+        <li>
+          Disposal: destruction, removal, or transfer to another organization (archive etc)
+        </li>
+      
+    </ul>
   
     <p class='mb-3'>
-      In the next iteration, that <code class='py-0.5 px-0.5 bg-gray-100'>3</code> will become the value of <code class='py-0.5 px-0.5 bg-gray-100'>sum</code> and the next element of the array (here, <code class='py-0.5 px-0.5 bg-gray-100'>3</code>) will become the value of <code class='py-0.5 px-0.5 bg-gray-100'>n</code>.
+      Protection requirements for the data <strong>may change</strong> over its lifecycle: not everything needs to be protected at all time.
+    </p>
+  <h2 id='data-collection-legal-issues' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data Collection Legal Issues</h2>
+    <p class='mb-3'>
+      Country dependent. There may be legal requirements such as:
     </p>
   
-    <p class='mb-3'>
-      The block execution then kicks in and return <code class='py-0.5 px-0.5 bg-gray-100'>3 + 3 = 6</code>.
-    </p>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          User consent
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Collection
+        </li>
+      
+        <li>
+          Marketing
+        </li>
+      
+    </ul>
   
-    <p class='mb-3'>
-      And so on until the end of the array.
-    </p>
-  <h2 id='example-with-one-numerical-argument' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example with one numerical argument</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>list = (1..5).to_a
-
-result = list.reduce(6) do |sum, n|
-  sum + n
-end
-
-puts result # 21</code></pre></div>
-    <p class='mb-3'>
-      The only difference here is the first element passed to <code class='py-0.5 px-0.5 bg-gray-100'>sum</code> is not the first element of the array <code class='py-0.5 px-0.5 bg-gray-100'>list</code>, but the argument <code class='py-0.5 px-0.5 bg-gray-100'>6</code> instead. The first element of the array (<code class='py-0.5 px-0.5 bg-gray-100'>1</code>) is passed to <code class='py-0.5 px-0.5 bg-gray-100'>n</code>.
-    </p>
+        </li>
+      
+        <li>
+          Allowed uses of data (only collecting data that we need)
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Sharing
+        </li>
+      
+        <li>
+          Third-parties (terms)
+        </li>
+      
+    </ul>
   
-    <p class='mb-3'>
-      In this scenario, when the block execution kicks in for the first time, it returns <code class='py-0.5 px-0.5 bg-gray-100'>6 + 1 = 7</code>.
-    </p>
-  <h2 id='example-with-one-symbol-argument' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example with one symbol argument</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='ruby language-ruby'>list = (1..5).to_a
-
-result = list.reduce(:*)
-
-puts result # 120</code></pre></div>
-    <p class='mb-3'>
-      In this case, <code class='py-0.5 px-0.5 bg-gray-100'>#reduce</code> will perform a multiplication istead of an addition.
-    </p>
+        </li>
+      
+        <li>
+          Data accuracy: responsibility to keep data accurate and up to date as much as possible
+        </li>
+      
+        <li>
+          Data retention: how long we keep the data, and why, and how to keep it safe
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Right to be forgotten
+        </li>
+      
+    </ul>
   
-    <p class='mb-3'>
-      The result will be <code class='py-0.5 px-0.5 bg-gray-100'>1 * 2 * 3 * 4 * 5 = 120</code>.
-    </p>
-  
-    <p class='mb-3'>
-      It is possible to add a first numerical argument as well.
-    </p>
+        </li>
+      
+    </ul>
   
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/ruby/inject-reduce-method.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/data-lifecycle.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -426,29 +465,14 @@ puts result # 120</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby/learning-tracks/study-guide-for-interview'>
-            Study Guide for Interview
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/data-protection'>
+            Data Protection
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/inject-reduce-method' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>The inject and reduce Method</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software/ruby'>
-            Ruby
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/ruby/inject-reduce-method' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>The inject and reduce Method</a></div>
+      <div><a href='computing/security/ssdlc/data-lifecycle' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Data Lifecycle</a></div>
     </div>
   
 </div>
@@ -462,21 +486,12 @@ puts result # 120</code></pre></div>
               
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
-      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
-        Perhaps Emanote should inject tagMetas with urls.
-      -->
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-violet-500' href='-/tags/ruby'>
-        <!-- DoNotFormat -->
-        #ruby
-        <!-- DoNotFormat -->
-      </a>
-    
   </section>
 
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-08-10
+      2023-10-16T17:09:01+09:00
     </time>
   
 </div>
