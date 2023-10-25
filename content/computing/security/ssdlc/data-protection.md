@@ -76,3 +76,5 @@ Applications manage access to, and changes, to data therefore the software
 designer must be aware of the types of data the application will manage.
 
 -   [[data-lifecycle]]#
+-   [[implementing-data-protection]]#
+-   [[data-sharing]]#

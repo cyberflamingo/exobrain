@@ -35,3 +35,34 @@ Country dependent. There may be legal requirements such as:
     as possible
 -   Data retention: how long we keep the data, and why, and how to keep it safe
     -   Right to be forgotten
+
+## Data Misuse and Abuse Risks
+
+What are the ways that data could be misused?
+
+-   Improper use by an employee
+-   Hacker stealing it
+
+A list of threats and risks must be created.
+
+Other issues:
+
+-   Data aggregation: data that were not sensible or personal in isolation
+    becomes, in aggregation, sensible
+-   Data inference: learning from watching some piece of data (marketing learns
+    about people’s behaviors through when/how/what people buy, for example)
+-   Unauthorized access
+    -   Ransomware
+-   Improper changes: data can’t be trusted anymore because we are being
+    provided wrong information (could be a liability in a financial report, for
+    example)
+
+## Data Anonymization/De-Anonymization
+
+-   (Pseudo-)Randomization: substitutes value for another so that it’s not
+    easily identifiable (obfuscation)
+-   Tokenization: identification numbers associated with a user that few people
+    know the association of
+-   Masking: data masked during input (password) or output (credit card numbers
+    partially masked)
+-   Encryption: for safe storage and transmission of data
