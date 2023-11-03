@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Pairwise (All-Pair) Testing – エキソブレイン
+    Implementing Data Protection – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Pairwsie testing (or all-pair testing) is used to test every possible discrete combinaison of values.' />
+      <meta property='og:description' content='Our software need to enforce access control. One of those concepts is need to know:' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Pairwise (All-Pair) Testing' />
+      <meta property='og:title' content='Implementing Data Protection' />
     
     
       <base href='/' />
@@ -258,8 +258,19 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software'>
-      Software
+    <a href='computing/security/ssdlc/data-protection'>
+      Data Protection
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security'>
+      Security
     </a>
   </div>
 
@@ -295,6 +306,21 @@
     </ul>
   
 </li>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc'>
+      ssdlc
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
           
         </ul>
       
@@ -316,40 +342,192 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Pairwise (All-Pair) Testing
+    Implementing Data Protection
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Pairwsie testing (or all-pair testing) is used to test every possible discrete combinaison of values.
-    </p>
-  
-    <p class='mb-3'>
-      The goal is to reduce the number of test to its minimum will still behing exhaustive, and this before the end of the world (or before your company runs out of money).
-    </p>
-  
-    <p class='mb-3'>
-      Creating pairwise combination is possible by hand but it’s also a field where computer excels so better let them do that.
-    </p>
-  
-    <p class='mb-3'>
-      A great tool to create pairwise combination is <a href='https://github.com/Microsoft/pict' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>PICT</a>, or <em>Pairwise Independent Combinatorial Testing</em> by Microsoft.
-    </p>
-  
-    <p class='mb-3'>
-      Sources:
+      Our software need to enforce <strong>access control</strong>. One of those concepts is <strong>need to know</strong>:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='http://www.pairwise.org/' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>http://www.pairwise.org/</a>
+          Access based on business need to know
         </li>
       
         <li>
-          <a href='https://www.javatpoint.com/all-pairs-testing-technique-in-black-box-testing' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://www.javatpoint.com/all-pairs-testing-technique-in-black-box-testing</a>
+          Restrict access to sensitive data
+        </li>
+      
+        <li>
+          Ensure training of staff (clearance, review of access…)
+        </li>
+      
+    </ul>
+  <h2 id='business-requirements' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Business Requirements</h2>
+    <p class='mb-3'>
+      To implement data protection based on business requirements, one need to think about the following:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Operations:
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Criticality
+        </li>
+      
+        <li>
+          Backups
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Proximity (where to keep the backup)
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Response time
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Storage type
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Disk
+        </li>
+      
+        <li>
+          Tape
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  <h2 id='labeling' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Labeling</h2>
+    <p class='mb-3'>
+      Labeling is there to indicate whether the data needs protection or not:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Indicate sensitivity (is it confidential data?)
+        </li>
+      
+        <li>
+          Retention (how long should this data be kept?)
+        </li>
+      
+        <li>
+          Ownership (who own and is responsible for the data?)
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      The labels can be electronic (headers with information) or physical, on a tape.
+    </p>
+  
+    <p class='mb-3'>
+      Codes can be used instead of names: this is a form of tokenization to prevent revealing what the data is and/or how it should be handled.
+    </p>
+  <h2 id='data-protection-controls' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data Protection Controls</h2>
+    <p class='mb-3'>
+      We need controls: in all forms, in all places, at all times.
+    </p>
+  
+    <p class='mb-3'>
+      The best way is <strong>encryption</strong>.
+    </p>
+  
+    <p class='mb-3'>
+      We must also assure its <strong>deletion</strong> using crypto erasure/shredding. We also must ensure the destruction was done with <strong>defensible destruction</strong>: evidence of compliance with the proper deletion of data.
+    </p>
+  <h2 id='data-retention' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data Retention</h2>
+    <p class='mb-3'>
+      How long should be keep the data?
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Legal requirements (ability to retrieve)
+        </li>
+      
+        <li>
+          Business needs
+        </li>
+      
+        <li>
+          Historical/cultural significance
+        </li>
+      
+    </ul>
+  <h2 id='backups' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Backups</h2>
+    <p class='mb-3'>
+      We want to make sure we can recover the information even in case of catastrophic event: this is called <strong>disaster recovery</strong>.
+    </p>
+  
+    <p class='mb-3'>
+      Location can be tricky: we want the data to be backed up far away from our location but make sure we can legally do so (some data can’t be backed up in another country, for example).
+    </p>
+  
+    <p class='mb-3'>
+      Data must be encrypted. In that case we must make sure we keep both the key and the encryption algorithm for as long as we keep the data.
+    </p>
+  <h2 id='data-recovery' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Data Recovery</h2>
+    <p class='mb-3'>
+      In case of a disaster, we want to make sure we can recover the data at the time needed for the business to recover operations. This needs two concepts:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Recovery Point Objective (RPO): how much data could I lose, in time (seconds or days or weeks)
+        </li>
+      
+        <li>
+          Recovery Time Objective (RTO): how much time to recover do we want to have (hours or days etc)
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      We need to know what data we need, how current they must be, and how could I access that data within the allowable time frame of the RTO.
+    </p>
+  
+    <p class='mb-3'>
+      Summary:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Data must be protected according to risk, legal requirements and business needs.
+        </li>
+      
+        <li>
+          Data protection is based on the sensitivity and criticality of the data.
         </li>
       
     </ul>
@@ -358,7 +536,7 @@
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/pairwise-testing.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/implementing-data-protection.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -375,14 +553,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
-            Software
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/data-protection'>
+            Data Protection
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/pairwise-testing' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pairwise (All-Pair) Testing</a></div>
+      <div><a href='computing/security/ssdlc/implementing-data-protection' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Implementing Data Protection</a></div>
     </div>
   
 </div>
@@ -401,7 +579,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-12-23T20:36
+      2023-10-25T10:12:21+0900
     </time>
   
 </div>

@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Pairwise (All-Pair) Testing – エキソブレイン
+    Data Sharing – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='Pairwsie testing (or all-pair testing) is used to test every possible discrete combinaison of values.' />
+      <meta property='og:description' content='We need to protect data that we do not have in our possession: data that we share with other organizations.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Pairwise (All-Pair) Testing' />
+      <meta property='og:title' content='Data Sharing' />
     
     
       <base href='/' />
@@ -258,8 +258,19 @@
             <li>
 
   <div class='text-gray-900 forest-link'>
-    <a href='computing/software'>
-      Software
+    <a href='computing/security/ssdlc/data-protection'>
+      Data Protection
+    </a>
+  </div>
+
+  
+    <ul>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security'>
+      Security
     </a>
   </div>
 
@@ -295,6 +306,21 @@
     </ul>
   
 </li>
+      
+        <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc'>
+      ssdlc
+    </a>
+  </div>
+
+  
+</li>
+      
+    </ul>
+  
+</li>
           
         </ul>
       
@@ -316,40 +342,100 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Pairwise (All-Pair) Testing
+    Data Sharing
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Pairwsie testing (or all-pair testing) is used to test every possible discrete combinaison of values.
+      We need to protect data that we do not have in our possession: data that we share with other organizations.
     </p>
   
     <p class='mb-3'>
-      The goal is to reduce the number of test to its minimum will still behing exhaustive, and this before the end of the world (or before your company runs out of money).
+      <strong>Even if an organization outsources the processing and storage of its data, the accountability for the protection of the data remains <em>primarily</em> with the data owner, not the processor.</strong>
     </p>
-  
+  <h2 id='cloud-and-third-party' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Cloud and Third Party</h2>
     <p class='mb-3'>
-      Creating pairwise combination is possible by hand but it’s also a field where computer excels so better let them do that.
-    </p>
-  
-    <p class='mb-3'>
-      A great tool to create pairwise combination is <a href='https://github.com/Microsoft/pict' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>PICT</a>, or <em>Pairwise Independent Combinatorial Testing</em> by Microsoft.
-    </p>
-  
-    <p class='mb-3'>
-      Sources:
+      Considerations to have:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='http://www.pairwise.org/' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>http://www.pairwise.org/</a>
+          Deletion of data in the cloud (original cloud but also their backups)
         </li>
       
         <li>
-          <a href='https://www.javatpoint.com/all-pairs-testing-technique-in-black-box-testing' class='text-violet-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://www.javatpoint.com/all-pairs-testing-technique-in-black-box-testing</a>
+          Bit splitting: split data in multiple cloud location so that only half (or more pieces) of the data is available in one location and can’t be read without the other half. It’s also possible to have a <em>N of M</em> system: 16 M locations and requires 9 to be able to recover the data
+        </li>
+      
+        <li>
+          Crypto-erasure: erase the data by encrypting it and deleting the key
+        </li>
+      
+        <li>
+          Ownership
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      The last point brings the topic of…
+    </p>
+  <h2 id='jurisdiction' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Jurisdiction</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Ownership of IP for outsourced functions: even if I outsource a function, making sure I don’t lose direct control over what should be my property
+        </li>
+      
+        <li>
+          Dispute resolution agreements: how will dispute be resolved, where etc
+        </li>
+      
+        <li>
+          Non-Disclosure Agreements (NDA): with the company and its employees
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Most laws and regulation only protect the data of their citizens. They are general laws: apply to all industries within that country. Some industry have industry-specific laws (finance and health, for example).
+    </p>
+  
+    <p class='mb-3'>
+      Most of these laws say you must make a <strong>declaration of a person accountable</strong> (not the organization).
+    </p>
+  <h3 id='treaties' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Treaties</h3>
+    <p class='mb-3'>
+      Some countries have treaties. For example a lot of countries have treaties to be GDPR-compliant.
+    </p>
+  
+    <p class='mb-3'>
+      We need to prove compliance and validate it through a BCP (Binding Corporate Rules) and SCC (Standard Contractual Clauses) which set out the agreements between the companies.
+    </p>
+  <h2 id='test-data-and-ip' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Test Data and IP</h2>
+    <p class='mb-3'>
+      Even for software testing, we need to have controls over the transmission of test data and intellectual property.
+    </p>
+  
+    <p class='mb-3'>
+      <strong>Key Points Review:</strong> Data must be protected throughout the data lifecycle:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          In all forms
+        </li>
+      
+        <li>
+          At all times
+        </li>
+      
+        <li>
+          In all places
         </li>
       
     </ul>
@@ -358,7 +444,7 @@
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/software/pairwise-testing.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/data-sharing.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -375,14 +461,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/software'>
-            Software
+          <a class='text-violet-600 mavenLinkBold hover:bg-violet-50' href='computing/security/ssdlc/data-protection'>
+            Data Protection
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/software/pairwise-testing' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Pairwise (All-Pair) Testing</a></div>
+      <div><a href='computing/security/ssdlc/data-sharing' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Data Sharing</a></div>
     </div>
   
 </div>
@@ -401,7 +487,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2020-12-23T20:36
+      2023-10-25T10:51:12+0900
     </time>
   
 </div>
