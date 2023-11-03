@@ -8,15 +8,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    IDOR: Insecure Direct Object References – エキソブレイン
+    Documenting Software Requirements – エキソブレイン
   </title>
   
     
-      <meta property='og:description' content='IDOR is a vulnerability that falls under Broken Access Control. It means that an attacker can access information or perform actions not intended for them.' />
+      <meta property='og:description' content='The recognition of risk and the determination of how to mitigate risk through the use of appropriate controls, is of paramount importance to building secure software.' />
       <meta property='og:site_name' content='エキソブレイン' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='IDOR: Insecure Direct Object References' />
+      <meta property='og:title' content='Documenting Software Requirements' />
     
     
       <base href='/' />
@@ -296,6 +296,17 @@
   
 </li>
           
+            <li>
+
+  <div class='text-gray-900 forest-link'>
+    <a href='computing/security/ssdlc'>
+      ssdlc
+    </a>
+  </div>
+
+  
+</li>
+          
         </ul>
       
     </li>
@@ -316,25 +327,89 @@
             <main class='px-4 py-4'>
               <h1 class='flex items-end justify-center mb-4 p-3 bg-violet-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    IDOR: Insecure Direct Object References
+    Documenting Software Requirements
   </a>
 </h1>
               <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      IDOR is a vulnerability that falls under Broken Access Control. It means that an attacker can access information or perform actions not intended for them.
+      <strong>The recognition of risk and the determination of how to mitigate risk through the use of <em>appropriate</em> controls, is of paramount importance to building secure software</strong>.
     </p>
   
     <p class='mb-3'>
-      An application using a user-supplied input to retrieve objects (files, data, documents) and they are numbered sequentially (i.e. the pattern is easy to figure out).
+      Previously we looked at <a href='computing/security/ssdlc/discovering-secure-software-requirements' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Discovering Secure Software Requirements</a> and <a href='computing/security/ssdlc/data-protection' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Data Protection</a>. Now we need to put everything together down on paper and document the software requirements.
+    </p>
+  
+    <p class='mb-3'>
+      The resulting document will help us check if requirements are met in the design architecture implementation and tests.
+    </p>
+  <h2 id='risk-identification' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Risk Identification</h2>
+    <p class='mb-3'>
+      We need to identify the needed controls. For this, a list of all risk needs to be made:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Software
+        </li>
+      
+        <li>
+          Users
+        </li>
+      
+        <li>
+          Business
+        </li>
+      
+        <li>
+          Process
+        </li>
+      
+        <li>
+          Data
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      This will justify the controls we use. This will help to <strong>identify controls required to mitigate risks</strong>. Each risk needs to be <strong>allocated to either an external or an internal control</strong>. The specific control will be detailed during the design phase.
+    </p>
+  
+    <p class='mb-3'>
+      We want to leverage <strong>common controls</strong>: controls that support more than one system at a location (example: power). We also want controls that support multiple locations (example: physical access control to all different offices).
+    </p>
+  
+    <p class='mb-3'>
+      Sometimes this is not possible and we need system-specific controls: controls designed specifically for one system (input validation…).
+    </p>
+  
+    <p class='mb-3'>
+      There are also <strong>hybrid controls</strong>: common controls modified for a specific system.
+    </p>
+  
+    <p class='mb-3'>
+      All controls must be documented: <em>if it’s not on paper, it does not exist</em>.
+    </p>
+  
+    <p class='mb-3'>
+      This can be done using a RTM: Requirements Traceability Matrix. This document helps track what have been addressed, how, if they were tested etc.
+    </p>
+  <h2 id='risk-acceptance' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Risk Acceptance</h2>
+    <p class='mb-3'>
+      Once controls are all documented, we can request a <strong>formal acceptance of risk</strong>: management sign-off of agreed-on security requirements and gateway.
+    </p>
+  
+    <p class='mb-3'>
+      See also <a href='computing/security/ssdlc/manage-security-requirements-with-third-party' class='text-violet-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Manage Security Requirements with Third Party</a>.
     </p>
   
 
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/idor-insecure-direct-object-references.md'>
+      <a class='text-gray-300 hover:text-violet-600 text-sm' title='Edit this page on GitHub' href='${value:editBaseUrl}/computing/security/ssdlc/documenting-software-requirements.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -358,7 +433,7 @@
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-violet-200 hover:border-violet-500'>
-      <div><a href='computing/security/idor-insecure-direct-object-references' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>IDOR: Insecure Direct Object References</a></div>
+      <div><a href='computing/security/ssdlc/documenting-software-requirements' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Documenting Software Requirements</a></div>
     </div>
   
 </div>
@@ -377,7 +452,7 @@
               <div class='flex items-center justify-end pb-3'>
   
     <time class='p-2 text-sm text-gray-500' datetime='<!-- TODO -->'>
-      2022-08-28
+      2023-11-03T12:56:13+0900
     </time>
   
 </div>
