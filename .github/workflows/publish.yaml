@@ -4,11 +4,26 @@ on:
   push:
     branches:
       - main
+
+# Read-only by default. The job below asks for more, by name, with a reason.
+permissions:
+  contents: read
+
+# Deploys are not cancelled mid-push: a half-finished push to gh-pages is worse than waiting.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   emanote:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write # push the built site to the gh-pages branch
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Build emanote site 🔧
         run: |
           mkdir -p output.docker
@@ -19,7 +34,7 @@ jobs:
             emanote --layers "/data/.deploy/github;/data/content" gen /data/output.docker
           cp -r output.docker output  # Ditch docker created root-owned files
       - name: Deploy to gh-pages 🚀
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847 # v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output/
