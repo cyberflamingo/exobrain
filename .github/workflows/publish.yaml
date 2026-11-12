@@ -24,14 +24,19 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      # The old sridca/emanote:latest on Docker Hub is a broken stub (a 2 KB layer whose command points
+      # at a Nix store path that is not in the image), so the build failed with "exec: not found".
+      # This is the maintained image, pinned by digest. Its entrypoint is already `emanote`, so the
+      # arguments start at --layers.
       - name: Build emanote site 🔧
         run: |
           mkdir -p output.docker
           docker run \
             -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 \
             --tmpfs /tmp \
-            -v $PWD:/data sridca/emanote \
-            emanote --layers "/data/.deploy/github;/data/content" gen /data/output.docker
+            -v "$PWD:/data" \
+            ghcr.io/srid/emanote:1.4.0.0@sha256:17489aac00b847a0c98256ec93cafa17cd244414ad8ef3514bd81f1c35e8ab2d \
+            --layers "/data/.deploy/github;/data/content" gen /data/output.docker
           cp -r output.docker output  # Ditch docker created root-owned files
       - name: Deploy to gh-pages 🚀
         uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847 # v3.9.3
