@@ -2,6 +2,9 @@
 # For documentation and available settings, see
 # https://github.com/srid/emanote/blob/master/default/index.yaml
 
+# Default so note-end.tpl does not fail on notes without a `date:` in their frontmatter
+date: ""
+
 template:
   # emanote 1.4 only ships the `default` layout (the old `note` layout is gone)
   name: /templates/layouts/default
@@ -13,10 +16,17 @@ template:
   # Change this to 'pretty' if you want URLs without the '.html' suffix.
   # If you are hosting on GitLab Pages, you may want to remove this.
   urlStrategy: pretty
+  # Neuron-style pages: uplinks (uptree) and backlinks, no sidebar, breadcrumbs or ToC
+  base:
+    containerClass: container mx-auto max-w-screen-lg
+  uptree:
+    enable: true
   sidebar:
-    # Whether this node in the sidebar tree should remain collapsed by default
-    # (unless a route in it is active)
-    collapsed: false
+    enable: false
+  breadcrumbs:
+    enable: false
+  toc:
+    enable: false
 
 # Put page-specific metadata here. Override them in Markdown frontmatter or
 # per-folder YAML as necessary.
