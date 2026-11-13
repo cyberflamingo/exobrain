@@ -3,11 +3,8 @@
 # https://github.com/srid/emanote/blob/master/default/index.yaml
 
 template:
-  # Uncomment this to get neuron-style pages
-  name: /templates/layouts/note
-  # layout:
-  #   note:
-  #     containerClass: container mx-auto max-w-screen-lg
+  # emanote 1.4 only ships the `default` layout (the old `note` layout is gone)
+  name: /templates/layouts/default
   # List of available colors:
   # https://v2.tailwindcss.com/docs/customizing-colors#default-color-palette
   theme: violet
